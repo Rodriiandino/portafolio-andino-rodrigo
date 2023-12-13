@@ -1,0 +1,91 @@
+---
+import { useTranslations } from '../i18n/utils'
+---
+
+<header class='header'>
+  <a href='#' class='header__logo'>
+    <img src='/icons/logo.svg' alt='' />
+  </a>
+  <nav class='header__nav'>
+    <ul class='nav__lists'>
+      <li class='list'><a href='#'>Sobre mi</a></li>
+      <li class='list'><a href='#'>Experiencia</a></li>
+      <li class='list'><a href='#'>Proyectos</a></li>
+      <li class='list'><a href='#'>Contáctame</a></li>
+    </ul>
+  </nav>
+  <div class='header__utils'>
+    <img src='/icons/language.svg' alt='' />
+    <img src='/icons/moon.svg' alt='' />
+  </div>
+</header>
+
+<style>
+  .header {
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__logo,
+  .header__utils {
+    width: 20%;
+    min-width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .header__logo {
+    justify-content: flex-start;
+  }
+
+  .header__utils {
+    justify-content: flex-end;
+  }
+
+  .header__nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav__lists {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .list a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: var(--step-0);
+    font-weight: 400;
+  }
+
+  .list a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--sky-blue);
+    transition: width 0.2s;
+  }
+
+  .list a:hover:after {
+    width: 100%;
+  }
+</style>
