@@ -1,22 +1,33 @@
 ---
-import { useTranslations } from '../i18n/utils'
+import { useTranslations, getLangFromUrl } from '../i18n/utils'
+import { IconLogo, IconLanguage, IconMoon } from './icons/icons'
+
+const lang = getLangFromUrl(Astro.url)
+
+const t = useTranslations(lang)
+
+const changeLang = lang === 'en' ? '' : 'en'
 ---
 
 <header class='header'>
   <a href='#' class='header__logo'>
-    <img src='/icons/logo.svg' alt='' />
+    <IconLogo />
   </a>
   <nav class='header__nav'>
     <ul class='nav__lists'>
-      <li class='list'><a href='#'>Sobre mi</a></li>
-      <li class='list'><a href='#'>Experiencia</a></li>
-      <li class='list'><a href='#'>Proyectos</a></li>
-      <li class='list'><a href='#'>Contáctame</a></li>
+      <li class='list'><a href='#'>{t('nav.home')}</a></li>
+      <li class='list'><a href='#'>{t('nav.skills')}</a></li>
+      <li class='list'><a href='#'>{t('nav.projects')}</a></li>
+      <li class='list'><a href='#'>{t('nav.contact')}</a></li>
     </ul>
   </nav>
   <div class='header__utils'>
-    <img src='/icons/language.svg' alt='' />
-    <img src='/icons/moon.svg' alt='' />
+    <a href={`/${changeLang}`} class='utils__button'>
+      <IconLanguage />
+    </a>
+    <button class='utils__button'>
+      <IconMoon />
+    </button>
   </div>
 </header>
 
@@ -45,6 +56,7 @@ import { useTranslations } from '../i18n/utils'
 
   .header__utils {
     justify-content: flex-end;
+    gap: 10px;
   }
 
   .header__nav {
@@ -87,5 +99,11 @@ import { useTranslations } from '../i18n/utils'
 
   .list a:hover:after {
     width: 100%;
+  }
+
+  .utils__button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
   }
 </style>
