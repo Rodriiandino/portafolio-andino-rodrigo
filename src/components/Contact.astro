@@ -1,0 +1,27 @@
+---
+import { useTranslations, getLangFromUrl } from '../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+
+const t = useTranslations(lang)
+---
+
+<section>
+  <h2>{t('title.contact')}</h2>
+  <article>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt atque
+        deserunt eveniet voluptate asperiores sed obcaecati, eius accusamus
+        enim, minus labore assumenda culpa corrupti veniam dicta repudiandae
+        commodi id facere.
+      </p>
+      <div>
+        <p>+51 1234567896</p>
+        <p>andinorodrigo03@gmail.com</p>
+        <button>Descarga mi CV</button>
+      </div>
+    </div>
+    <div>img</div>
+  </article>
+</section>

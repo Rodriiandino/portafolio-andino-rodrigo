@@ -1,0 +1,84 @@
+---
+import {
+  IconHouse,
+  IconExperience,
+  IconProyects,
+  IconContact,
+  IconLanguageNav,
+  IconMoonNav
+} from './icons/icons'
+---
+
+<nav class='nav'>
+  <ul class='nav__list'>
+    <li>
+      <a href=''>
+        <IconHouse />
+      </a>
+    </li>
+    <li>
+      <a href=''>
+        <IconExperience />
+      </a>
+    </li>
+    <li>
+      <a href=''>
+        <IconProyects />
+      </a>
+    </li>
+    <li>
+      <a href=''>
+        <IconContact />
+      </a>
+    </li>
+  </ul>
+  <ul class='nav__list'>
+    <li>
+      <a href=''>
+        <IconLanguageNav />
+      </a>
+    </li>
+    <li>
+      <button class='utils__button'>
+        <IconMoonNav />
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .nav {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--sky-blue-transparent);
+    backdrop-filter: blur(5px);
+    border-radius: var(--border-radius);
+    z-index: 100;
+  }
+
+  .nav__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 1.2rem;
+  }
+
+  .nav__list:last-child {
+    gap: 0.7rem;
+  }
+
+  .utils__button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+</style>

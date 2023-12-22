@@ -1,0 +1,35 @@
+---
+import { useTranslations, getLangFromUrl } from '../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+
+const t = useTranslations(lang)
+---
+
+<section class='experience'>
+  <h2>{t('title.experience')}</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum corporis sed
+    fugiat commodi, cupiditate harum id tempore aliquid atque corrupti maiores
+    voluptates perferendis distinctio, doloremque animi deserunt laboriosam ut?
+    Eaque!
+  </p>
+  <article>
+    <div>
+      <div>
+        <h3>Estudios</h3>
+      </div>
+      <div>
+        <h3>Cursos</h3>
+      </div>
+    </div>
+    <div><h3>Trabajo</h3></div>
+  </article>
+</section>
+
+<style>
+  .experience {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
