@@ -8,12 +8,56 @@ const t = useTranslations(lang)
 
 <section>
   <h2>{t('title.skills')}</h2>
-  <div>
-    <button>Todos</button>
-    <button>Front-End Development</button>
-    <button>Back-End Development</button>
-    <button>Databases</button>
-    <button>Otros</button>
+  <div class='btn__container'>
+    <button class='skills__btn'>Todos</button>
+    <button class='skills__btn active'>Front-End Development</button>
+    <button class='skills__btn'>Back-End Development</button>
+    <button class='skills__btn'>Databases</button>
+    <button class='skills__btn'>Otros</button>
   </div>
-  <article>Tecnologías</article>
+  <article class='skills_container'>Tecnologías</article>
 </section>
+
+<style>
+  .btn__container {
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 1px solid var(--sky-blue);
+  }
+
+  .skills__btn {
+    padding: 0.5rem 1rem 0 1rem;
+    border-radius: 5px;
+    color: var(--white);
+    font-size: var(--step-0);
+    font-weight: 500;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .skills__btn:hover {
+    color: var(--light-blue);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .skills_container {
+    height: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .active {
+    color: var(--light-blue);
+    font-size: var(--step-1);
+    font-weight: 700;
+  }
+</style>

@@ -2,7 +2,7 @@
 import {
   IconHouse,
   IconExperience,
-  IconProyects,
+  IconProjects,
   IconContact,
   IconLanguageNav,
   IconMoonNav
@@ -12,22 +12,22 @@ import {
 <nav class='nav'>
   <ul class='nav__list'>
     <li>
-      <a href=''>
+      <a href='' class='item'>
         <IconHouse />
       </a>
     </li>
     <li>
-      <a href=''>
+      <a href='' class='item'>
         <IconExperience />
       </a>
     </li>
     <li>
-      <a href=''>
-        <IconProyects />
+      <a href='' class='item'>
+        <IconProjects />
       </a>
     </li>
     <li>
-      <a href=''>
+      <a href='' class='item'>
         <IconContact />
       </a>
     </li>
@@ -70,6 +70,10 @@ import {
     align-items: center;
     height: 100%;
     gap: 1.2rem;
+  }
+
+  .item {
+    color: var(--white);
   }
 
   .nav__list:last-child {

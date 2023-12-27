@@ -10,7 +10,7 @@ const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} data-theme='light'>
   <head>
     <meta charset='UTF-8' />
     <meta name='description' content='Astro description' />
@@ -51,6 +51,54 @@ const { title } = Astro.props
     --step-5: clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem);
   }
 
+  [data-theme='dark'] {
+    --light-background: #f1fcfd;
+    --dark-background: #1f2937;
+
+    --white: #f3f4f6;
+    --black: #181823;
+
+    --light-blue: #a6d1e6;
+    --dark-blue: #06283d;
+
+    --sky-blue: #c7eeff;
+    --sky-blue-transparent: #c7eeff80;
+
+    .icon-sun {
+      display: none;
+    }
+
+    .logo-light {
+      display: none;
+    }
+  }
+
+  [data-theme='light'] {
+    --light-background: #1f2937;
+    --dark-background: #f1fcfd;
+
+    --white: #181823;
+    --black: #f3f4f6;
+
+    --light-blue: #06283d;
+    --dark-blue: #a6d1e6;
+
+    --sky-blue: #c7eeff;
+    --sky-blue-transparent: #c7eeff80;
+
+    .icon-moon {
+      display: none;
+    }
+
+    .logo-dark {
+      display: none;
+    }
+
+    .icon-variant {
+      color: var(--light-blue);
+    }
+  }
+
   *,
   *:before,
   *:after {
@@ -66,6 +114,10 @@ const { title } = Astro.props
     font-size: 16px;
   }
 
+  .dark {
+    color-scheme: dark;
+  }
+
   body {
     background-color: var(--dark-background);
     color: var(--white);
@@ -73,6 +125,9 @@ const { title } = Astro.props
     background-repeat: repeat;
     background-size: 150px;
     z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   main {

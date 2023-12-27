@@ -1,6 +1,12 @@
 ---
 import { useTranslations, getLangFromUrl } from '../i18n/utils'
-import { IconLogo, IconLanguage, IconMoon } from './icons/icons'
+import {
+  IconLogo,
+  IconLogoLight,
+  IconLanguage,
+  IconMoon,
+  IconSun
+} from './icons/icons'
 
 const lang = getLangFromUrl(Astro.url)
 
@@ -9,9 +15,35 @@ const t = useTranslations(lang)
 const changeLang = lang === 'en' ? '' : 'en'
 ---
 
+<script>
+  const btnSwitchTheme = document.querySelector('[btn-switch-theme]')
+  const html = document.querySelector('html')
+  const ls = localStorage
+  const d = document
+
+  btnSwitchTheme.addEventListener('click', () => {
+    if (html.getAttribute('data-theme') === 'light') {
+      ls.setItem('darkMode-portafolio-andino', 'true')
+      html.setAttribute('data-theme', 'dark')
+    } else {
+      ls.setItem('darkMode-portafolio-andino', 'false')
+      html.setAttribute('data-theme', 'light')
+    }
+  })
+
+  d.addEventListener('DOMContentLoaded', () => {
+    if (ls.getItem('darkMode-portafolio-andino') == 'true') {
+      html.setAttribute('data-theme', 'dark')
+    } else {
+      html.setAttribute('data-theme', 'light')
+    }
+  })
+</script>
+
 <header class='header'>
   <a href='#' class='header__logo'>
     <IconLogo />
+    <IconLogoLight />
   </a>
   <nav class='header__nav'>
     <ul class='nav__lists'>
@@ -25,8 +57,9 @@ const changeLang = lang === 'en' ? '' : 'en'
     <a href={`/${changeLang}`} class='utils__button'>
       <IconLanguage />
     </a>
-    <button class='utils__button'>
+    <button class='utils__button' btn-switch-theme>
       <IconMoon />
+      <IconSun />
     </button>
   </div>
 </header>
@@ -102,6 +135,7 @@ const changeLang = lang === 'en' ? '' : 'en'
   }
 
   .utils__button {
+    color: var(--white);
     cursor: pointer;
     background-color: transparent;
     border: none;

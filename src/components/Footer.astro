@@ -1,4 +1,75 @@
-<footer>
-  <div>icons</div>
-  <p>@Andino Rodrigo Agustín 2024</p>
+---
+import {
+  IconGitHub,
+  IconLinkedIn,
+  IconTwitter,
+  IconInstagram
+} from './icons/icons'
+---
+
+<footer class='footer'>
+  <nav class='footer__nav'>
+    <a class='item' href='#' target='_blank' rel='noopener noreferrer'>
+      <IconGitHub />
+    </a>
+    <a class='item' href='#' target='_blank' rel='noopener noreferrer'>
+      <IconLinkedIn />
+    </a>
+    <a class='item' href='#' target='_blank' rel='noopener noreferrer'>
+      <IconTwitter />
+    </a>
+    <a class='item' href='#' target='_blank' rel='noopener noreferrer'>
+      <IconInstagram />
+    </a>
+  </nav>
+  <p class='footer__text'>@Andino Rodrigo Agustín 2024</p>
 </footer>
+
+<style>
+  .footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 4.4rem;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(var(--max-width) - 8rem);
+    height: 1px;
+    background-color: var(--sky-blue);
+  }
+
+  .footer__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  .footer__text {
+    padding: 2.5rem 0;
+    font-size: var(--step-0);
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .item {
+    color: var(--white);
+  }
+
+  .item:hover {
+    color: var(--light-blue);
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+</style>
