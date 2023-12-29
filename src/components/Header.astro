@@ -1,5 +1,5 @@
 ---
-import { useTranslations, getLangFromUrl } from '../i18n/utils'
+import { useTranslations } from '../i18n/utils'
 import {
   IconLogo,
   IconLogoLight,
@@ -8,11 +8,11 @@ import {
   IconSun
 } from './icons/icons'
 
-const lang = getLangFromUrl(Astro.url)
+const { currentLocale = 'es' } = Astro
 
-const t = useTranslations(lang)
+const t = useTranslations(currentLocale)
 
-const changeLang = lang === 'en' ? '' : 'en'
+const changeLang = currentLocale === 'en' ? '' : 'en'
 ---
 
 <script>
@@ -68,10 +68,26 @@ const changeLang = lang === 'en' ? '' : 'en'
   .header {
     width: 100%;
     height: 100px;
+    background: transparent;
+
+    position: sticky;
+    top: 0;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    animation: fadeOut linear both;
+    animation-timeline: scroll();
+    animation-range: 0 300px;
+  }
+
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      top: -100px;
+      backdrop-filter: blur(5px);
+    }
   }
 
   .header__logo,
@@ -132,6 +148,7 @@ const changeLang = lang === 'en' ? '' : 'en'
 
   .list a:hover:after {
     width: 100%;
+    box-shadow: var(--shadow-elevation-high);
   }
 
   .utils__button {

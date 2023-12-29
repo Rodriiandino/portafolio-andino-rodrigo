@@ -1,9 +1,9 @@
 ---
-import { useTranslations, getLangFromUrl } from '../i18n/utils'
+import { useTranslations } from '../i18n/utils'
 
-const lang = getLangFromUrl(Astro.url)
+const { currentLocale = 'es' } = Astro
 
-const t = useTranslations(lang)
+const t = useTranslations(currentLocale)
 ---
 
 <section>
