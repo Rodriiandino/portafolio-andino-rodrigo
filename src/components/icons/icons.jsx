@@ -53,8 +53,8 @@ export function IconLanguage() {
   return (
     <svg
       width='45'
-      height='46'
-      viewBox='0 0 45 46'
+      height='45'
+      viewBox='0 0 45 45'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
@@ -72,8 +72,8 @@ export function IconMoon() {
     <svg
       className='icon-moon'
       width='45'
-      height='46'
-      viewBox='0 0 45 46'
+      height='45'
+      viewBox='0 0 45 45'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
@@ -94,8 +94,8 @@ export function IconSun() {
     <svg
       className='icon-sun'
       width='45'
-      height='46'
-      viewBox='0 0 45 46'
+      height='45'
+      viewBox='0 0 45 45'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
