@@ -15,54 +15,6 @@ const t = useTranslations(currentLocale)
 const changeLang = currentLocale === 'en' ? '' : 'en'
 ---
 
-<script>
-  const btnSwitchTheme = document.querySelector('[btn-switch-theme]')
-  const html = document.querySelector('html')
-  const header = document.querySelector('#header')
-  const ls = localStorage
-  const d = document
-
-  const setThemeDark = () => {
-    html.setAttribute('data-theme', 'dark')
-    html.classList.add('dark')
-    header.setAttribute('data-theme', 'dark')
-  }
-
-  const setThemeLight = () => {
-    html.setAttribute('data-theme', 'light')
-    html.classList.remove('dark')
-    header.setAttribute('data-theme', 'light')
-  }
-
-  const changeColor = () => {
-    if (html.getAttribute('data-theme') === 'light') {
-      setThemeDark()
-    } else {
-      setThemeLight()
-    }
-  }
-
-  const lsLoader = () => {
-    if (ls.getItem('darkMode-portafolio-andino') == 'true') {
-      setThemeDark()
-    } else {
-      setThemeLight()
-    }
-  }
-
-  btnSwitchTheme.addEventListener('click', () => {
-    changeColor()
-    ls.setItem(
-      'darkMode-portafolio-andino',
-      html.classList.contains('dark') ? 'true' : 'false'
-    )
-  })
-
-  d.addEventListener('DOMContentLoaded', () => {
-    lsLoader()
-  })
-</script>
-
 <header class='header' data-theme='light' id='header'>
   <a href='#' class='header__logo'>
     <IconLogo />

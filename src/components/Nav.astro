@@ -5,11 +5,16 @@ import {
   IconProjects,
   IconContact,
   IconLanguageNav,
-  IconMoonNav
+  IconLanguageNavLight,
+  IconMoonNav,
+  IconSunNav
 } from './icons/icons'
+
+const { currentLocale = 'es' } = Astro
+const changeLang = currentLocale === 'en' ? '' : 'en'
 ---
 
-<nav class='nav'>
+<nav class='nav' id='nav' data-theme='light'>
   <ul class='nav__list'>
     <li>
       <a href='' class='item'>
@@ -32,18 +37,17 @@ import {
       </a>
     </li>
   </ul>
-  <ul class='nav__list'>
-    <li>
-      <a href=''>
-        <IconLanguageNav />
-      </a>
-    </li>
-    <li>
-      <button class='utils__button'>
-        <IconMoonNav />
-      </button>
-    </li>
-  </ul>
+  <div class='nav__list'>
+    <a href={`${changeLang}`} class='utils__button'>
+      <IconLanguageNav />
+      <IconLanguageNavLight />
+    </a>
+
+    <button class='utils__button' btn-switch-theme>
+      <IconMoonNav />
+      <IconSunNav />
+    </button>
+  </div>
 </nav>
 
 <style>
@@ -86,6 +90,14 @@ import {
 
   .item {
     color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .item:hover {
+    box-shadow: var(--shadow-elevation-medium);
   }
 
   .nav__list:last-child {
@@ -93,8 +105,41 @@ import {
   }
 
   .utils__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     cursor: pointer;
     background-color: transparent;
     border: none;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .utils__button:hover {
+    transform: scale(1.1);
+  }
+
+  [data-theme='dark'] {
+    .icon-language-nav-light {
+      display: none;
+    }
+
+    .icon-sun-nav {
+      display: none;
+    }
+  }
+
+  [data-theme='light'] {
+    .icon-language-nav {
+      display: none;
+    }
+
+    .icon-moon-nav {
+      display: none;
+    }
+
+    .item {
+      color: var(--light-blue);
+    }
   }
 </style>

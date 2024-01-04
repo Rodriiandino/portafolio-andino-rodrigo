@@ -1,0 +1,117 @@
+---
+interface Props {
+  title: string
+  description: string
+  link?: string
+  date: string
+}
+
+const { title, description, link, date } = Astro.props
+---
+
+<div class='timeline__separator'></div>
+<time class='timeline__time'>{date}</time>
+<h4 class='timeline__header'>{title}</h4>
+<p class='timeline__description'>
+  {description}
+</p>
+{
+  link && (
+    <a href={link} class='timeline__link'>
+      Saber más...
+      <svg
+        width='21'
+        height='21'
+        viewBox='0 0 21 21'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          opacity='0.5'
+          d='M5.67514 15.6194L5.32158 15.2659L16.097 4.49043L16.4506 4.84399L5.67514 15.6194Z'
+          stroke='currentColor'
+          stroke-width='1.5'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+        />
+        <path
+          d='M16.5641 12.8623L16.6274 4.31369L8.0788 4.37701'
+          stroke='currentColor'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+        />
+      </svg>
+    </a>
+  )
+}
+
+<style>
+  .timeline__separator {
+    position: absolute;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-top: 0.375rem;
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: var(--sky-blue);
+    background-color: var(--sky-blue);
+    left: -0.3rem;
+  }
+
+  .timeline__time {
+    margin-bottom: 0.2rem;
+    font-size: var(--step--2);
+    line-height: 1rem;
+    font-weight: 600;
+    color: var(--grey);
+  }
+
+  .timeline__header {
+    color: var(--light-blue);
+    font-size: var(--step-1);
+    line-height: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline__description {
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-size: var(--step--1);
+    line-height: 1.5rem;
+    font-weight: 400;
+  }
+
+  .timeline__link {
+    width: fit-content;
+    padding: 0.2rem 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    cursor: pointer;
+    color: var(--black);
+    font-size: var(--step--1);
+    font-weight: 500;
+    border: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .timeline__link:hover {
+    text-decoration-color: var(--black);
+    transition: all 0.3s ease-in-out;
+    text-decoration: underline;
+    position: relative;
+    left: 0.1rem;
+    bottom: 0.1rem;
+  }
+
+  .timeline__link svg {
+    color: var(--grey);
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+</style>

@@ -1,29 +1,74 @@
 ---
 import { useTranslations } from '../i18n/utils'
+import ExperienceTimeLineItem from './ExperienceTimeLineItem.astro'
 
 const { currentLocale = 'es' } = Astro
 
 const t = useTranslations(currentLocale)
+
+const EDUCATION = [
+  {
+    date: 'fecha',
+    title: 'titulo',
+    description: 'descripcion',
+    link: '/en'
+  },
+  {
+    date: 'fecha',
+    title: 'titulo',
+    description: 'descripcion'
+  },
+  {
+    date: 'fecha',
+    title: 'titulo',
+    description: 'descripcion'
+  }
+]
 ---
 
 <section class='experience'>
   <h2>{t('title.experience')}</h2>
-  <p>
+  <p class='experience__description'>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum corporis sed
     fugiat commodi, cupiditate harum id tempore aliquid atque corrupti maiores
     voluptates perferendis distinctio, doloremque animi deserunt laboriosam ut?
     Eaque!
   </p>
-  <article>
+  <article class='experience__timeline'>
     <div>
-      <div>
-        <h3>Estudios</h3>
-      </div>
-      <div>
-        <h3>Cursos</h3>
-      </div>
+      <h3 class='timeline__title-theme'>Educación</h3>
+      <ol class='timeline'>
+        {
+          EDUCATION.map(experiencie => (
+            <li class='timeline__item'>
+              <ExperienceTimeLineItem {...experiencie} />
+            </li>
+          ))
+        }
+      </ol>
+      <h3 class='timeline__title-theme'>Cursos</h3>
+      <ol class='timeline'>
+        {
+          EDUCATION.map(experiencie => (
+            <li class='timeline__item'>
+              <ExperienceTimeLineItem {...experiencie} />
+            </li>
+          ))
+        }
+      </ol>
     </div>
-    <div><h3>Trabajo</h3></div>
+    <div>
+      <h3 class='timeline__title-theme'>Trabajo</h3>
+      <ol class='timeline'>
+        {
+          EDUCATION.map(experiencie => (
+            <li class='timeline__item'>
+              <ExperienceTimeLineItem {...experiencie} />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
   </article>
 </section>
 
@@ -31,5 +76,43 @@ const t = useTranslations(currentLocale)
   .experience {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+  }
+
+  .experience__timeline {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .experience__timeline > div {
+    width: 100%;
+  }
+
+  .timeline__title-theme {
+    font-size: var(--step-1);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline {
+    list-style: none;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--sky-blue);
+  }
+
+  .timeline__item {
+    margin-bottom: 2.5rem;
+    padding-left: 1rem;
   }
 </style>

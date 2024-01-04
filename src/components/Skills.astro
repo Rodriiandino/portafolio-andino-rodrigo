@@ -6,7 +6,7 @@ const { currentLocale = 'es' } = Astro
 const t = useTranslations(currentLocale)
 ---
 
-<section>
+<section class='skills'>
   <h2>{t('title.skills')}</h2>
   <div class='btn__container'>
     <button class='skills__btn'>Todos</button>
@@ -19,8 +19,13 @@ const t = useTranslations(currentLocale)
 </section>
 
 <style>
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .btn__container {
-    margin-top: 2rem;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -48,17 +53,17 @@ const t = useTranslations(currentLocale)
     transition: all 0.3s ease-in-out;
   }
 
+  .active {
+    color: var(--light-blue);
+    font-size: var(--step-1);
+    font-weight: 700;
+  }
+
   .skills_container {
     height: 30vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-  }
-
-  .active {
-    color: var(--light-blue);
-    font-size: var(--step-1);
-    font-weight: 700;
   }
 </style>
