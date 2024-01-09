@@ -9,56 +9,11 @@ const { title } = Astro.props
 ---
 
 <script>
-  const btnSwitchTheme = document.querySelectorAll('[btn-switch-theme]')
-  const html = document.querySelector('html')
-  const header = document.querySelector('#header')
-  const nav = document.querySelector('#nav')
-  const ls = localStorage
-  const d = document
+  import themeChange from '../components/dom/theme-change'
+  import skillsList from '../components/dom/skills-list'
 
-  const setThemeDark = () => {
-    html.setAttribute('data-theme', 'dark')
-    html.classList.add('dark')
-    header.setAttribute('data-theme', 'dark')
-    nav.setAttribute('data-theme', 'dark')
-  }
-
-  const setThemeLight = () => {
-    html.setAttribute('data-theme', 'light')
-    html.classList.remove('dark')
-    header.setAttribute('data-theme', 'light')
-    nav.setAttribute('data-theme', 'light')
-  }
-
-  const changeColor = () => {
-    if (html.getAttribute('data-theme') === 'light') {
-      setThemeDark()
-    } else {
-      setThemeLight()
-    }
-  }
-
-  const lsLoader = () => {
-    if (ls.getItem('darkMode-portafolio-andino') == 'true') {
-      setThemeDark()
-    } else {
-      setThemeLight()
-    }
-  }
-
-  btnSwitchTheme.forEach(btn => {
-    btn.addEventListener('click', () => {
-      changeColor()
-      ls.setItem(
-        'darkMode-portafolio-andino',
-        html.classList.contains('dark') ? 'true' : 'false'
-      )
-    })
-  })
-
-  d.addEventListener('DOMContentLoaded', () => {
-    lsLoader()
-  })
+  themeChange()
+  skillsList()
 </script>
 
 <html lang={currentLocale} data-theme='light'>
@@ -213,5 +168,36 @@ const { title } = Astro.props
     border-bottom: 5px solid var(--sky-blue);
 
     box-shadow: 0 6px 3px -5px var(--sky-blue);
+  }
+
+  .responsive-svg {
+    max-width: 70px;
+    width: 100%;
+    height: auto;
+  }
+
+  .icon__svg {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--step-0);
+    font-weight: 500;
+    color: var(--white);
+
+    transition: all 0.3s ease-in-out;
+  }
+
+  .icon__svg:hover {
+    filter: drop-shadow(0 2px 2px var(--light-blue));
+    color: var(--sky-blue);
+    scale: 1.1;
+  }
+
+  .icon__svg:active {
+    color: var(--sky-blue);
+    scale: 0.9;
   }
 </style>

@@ -9,13 +9,17 @@ const t = useTranslations(currentLocale)
 <section class='skills'>
   <h2>{t('title.skills')}</h2>
   <div class='btn__container'>
-    <button class='skills__btn'>Todos</button>
-    <button class='skills__btn active'>Front-End Development</button>
-    <button class='skills__btn'>Back-End Development</button>
-    <button class='skills__btn'>Databases</button>
-    <button class='skills__btn'>Otros</button>
+    <button class='skills__btn' id='all'>Todos</button>
+    <button class='skills__btn active' id='frontEnd'
+      >Front-End Development</button
+    >
+    <button class='skills__btn' id='backEnd'>Back-End Development</button>
+    <button class='skills__btn' id='databases'>Databases</button>
+    <button class='skills__btn' id='else'>Otros</button>
   </div>
-  <article class='skills_container'>Tecnologías</article>
+  <article class='skills_container'>
+    <ul class='skills__list'></ul>
+  </article>
 </section>
 
 <style>
@@ -60,10 +64,18 @@ const t = useTranslations(currentLocale)
   }
 
   .skills_container {
-    height: 30vh;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 2rem 0;
+  }
+
+  .skills__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
   }
 </style>
