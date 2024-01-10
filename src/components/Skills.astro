@@ -22,7 +22,7 @@ const t = useTranslations(currentLocale)
   </article>
 </section>
 
-<style>
+<style is:global>
   .skills {
     display: flex;
     flex-direction: column;
@@ -77,5 +77,36 @@ const t = useTranslations(currentLocale)
     flex-wrap: wrap;
     gap: 1.5rem;
     list-style: none;
+  }
+
+  .responsive-svg {
+    max-width: 70px;
+    width: 100%;
+    height: auto;
+  }
+
+  .icon__svg {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--step-0);
+    font-weight: 500;
+    color: var(--white);
+
+    transition: all 0.3s ease-in-out;
+  }
+
+  .icon__svg:hover {
+    filter: drop-shadow(0 2px 2px var(--light-blue));
+    color: var(--sky-blue);
+    scale: 1.1;
+  }
+
+  .icon__svg:active {
+    color: var(--sky-blue);
+    scale: 0.9;
   }
 </style>

@@ -1,0 +1,29 @@
+---
+import { useTranslations } from '../../i18n/utils'
+import ProjectsGalery from './ProjectsGalery.astro'
+
+const { currentLocale = 'es' } = Astro
+
+const t = useTranslations(currentLocale)
+---
+
+<section class='projects'>
+  <h2>{t('title.projects')}</h2>
+  <header class='projects__filter'><p>filter</p></header>
+  <ProjectsGalery />
+</section>
+
+<style>
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .projects__filter {
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 5px solid var(--sky-blue);
+  }
+</style>

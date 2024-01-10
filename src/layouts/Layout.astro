@@ -36,7 +36,11 @@ const { title } = Astro.props
     --dark-background: #1f2937;
 
     --white: #f3f4f6;
+
     --black: #181823;
+    --black-transparent-02: #18182333;
+    --black-transparent-08: #181823cc;
+
     --grey: #8199b4;
 
     --light-blue: #a6d1e6;
@@ -95,6 +99,8 @@ const { title } = Astro.props
 
     --white: #181823;
     --black: #f3f4f6;
+    --black-transparent-02: #f3f4f633;
+    --black-transparent-08: #f3f4f6cc;
 
     --light-blue: #06283d;
     --dark-blue: #a6d1e6;
@@ -168,36 +174,5 @@ const { title } = Astro.props
     border-bottom: 5px solid var(--sky-blue);
 
     box-shadow: 0 6px 3px -5px var(--sky-blue);
-  }
-
-  .responsive-svg {
-    max-width: 70px;
-    width: 100%;
-    height: auto;
-  }
-
-  .icon__svg {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: var(--step-0);
-    font-weight: 500;
-    color: var(--white);
-
-    transition: all 0.3s ease-in-out;
-  }
-
-  .icon__svg:hover {
-    filter: drop-shadow(0 2px 2px var(--light-blue));
-    color: var(--sky-blue);
-    scale: 1.1;
-  }
-
-  .icon__svg:active {
-    color: var(--sky-blue);
-    scale: 0.9;
   }
 </style>
