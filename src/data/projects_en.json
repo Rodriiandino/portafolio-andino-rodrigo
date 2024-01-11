@@ -1,0 +1,142 @@
+[
+  {
+    "title": "Project Title 1",
+    "description": "A brief description of the project.",
+    "what_i_learned": "List of skills or knowledge gained during the project.",
+    "features": ["Feature 1", "Feature 2", "Feature 3"],
+    "date": "YYYY-MM-DD",
+    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
+    "status": "Completed/In Progress/Abandoned",
+    "deploy": {
+      "page": "URL where the project is deployed",
+      "demo": "Any additional notes or instructions related to deployment."
+    },
+    "github": "URL to the project's GitHub repository",
+    "images": [
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 1"
+      },
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 2"
+      },
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 3"
+      }
+    ]
+  },
+  {
+    "title": "Project Title 2",
+    "description": "A brief description of the project.",
+    "what_i_learned": "List of skills or knowledge gained during the project.",
+    "features": ["Feature 1", "Feature 2", "Feature 3"],
+    "date": "YYYY-MM-DD",
+    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
+    "status": "Completed/In Progress/Abandoned",
+    "deploy": {
+      "page": "URL where the project is deployed",
+      "demo": "Any additional notes or instructions related to deployment."
+    },
+    "github": "URL to the project's GitHub repository",
+    "images": [
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 1"
+      },
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 2"
+      },
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 3"
+      }
+    ]
+  },
+  {
+    "title": "Project Title 3",
+    "description": "A brief description of the project.",
+    "what_i_learned": "List of skills or knowledge gained during the project.",
+    "features": ["Feature 1", "Feature 2", "Feature 3"],
+    "date": "YYYY-MM-DD",
+    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
+    "status": "Completed/In Progress/Abandoned",
+    "deploy": {
+      "page": "URL where the project is deployed",
+      "demo": "Any additional notes or instructions related to deployment."
+    },
+    "github": "URL to the project's GitHub repository",
+    "images": [
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 1"
+      },
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 2"
+      },
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 3"
+      }
+    ]
+  },
+  {
+    "title": "Project Title 4",
+    "description": "A brief description of the project.",
+    "what_i_learned": "List of skills or knowledge gained during the project.",
+    "features": ["Feature 1", "Feature 2", "Feature 3"],
+    "date": "YYYY-MM-DD",
+    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
+    "status": "Completed/In Progress/Abandoned",
+    "deploy": {
+      "page": "URL where the project is deployed",
+      "demo": "Any additional notes or instructions related to deployment."
+    },
+    "github": "URL to the project's GitHub repository",
+    "images": [
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 1"
+      },
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 2"
+      },
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 3"
+      }
+    ]
+  },
+  {
+    "title": "Project Title 5",
+    "description": "A brief description of the project.",
+    "what_i_learned": "List of skills or knowledge gained during the project.",
+    "features": ["Feature 1", "Feature 2", "Feature 3"],
+    "date": "YYYY-MM-DD",
+    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
+    "status": "Completed/In Progress/Abandoned",
+    "deploy": {
+      "page": "URL where the project is deployed",
+      "demo": "Any additional notes or instructions related to deployment."
+    },
+    "github": "URL to the project's GitHub repository",
+    "images": [
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 1"
+      },
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 2"
+      },
+      {
+        "src": "https://via.placeholder.com/600",
+        "alt": "Image 3"
+      }
+    ]
+  }
+]

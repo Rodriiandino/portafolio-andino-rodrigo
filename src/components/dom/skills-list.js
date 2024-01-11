@@ -1,4 +1,4 @@
-import { skillsData } from '../utils/skills'
+import { skillsData } from '../../data/skills'
 
 export default function skillsList() {
   const d = document,

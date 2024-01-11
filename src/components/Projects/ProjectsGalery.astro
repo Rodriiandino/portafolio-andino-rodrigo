@@ -1,24 +1,21 @@
 ---
 import ProjectsGaleryCard from './ProjectsGaleryCard.astro'
+import projects_es from '../../data/projects_es.json'
+import convertTitleToURL from '../utils/convert_title_to_url'
 ---
 
 <div class='projects__galery'>
-  <ProjectsGaleryCard
-    title='Project 1'
-    description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam ultrices. Donec euismod, nisl quis lacinia ultricies, nisl nisl ultricies nisl, quis lacinia eros nisl vitae eros.'
-  />
-  <ProjectsGaleryCard
-    title='Project 1'
-    description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam ultrices. Donec euismod, nisl quis lacinia ultricies, nisl nisl ultricies nisl, quis lacinia eros nisl vitae eros.'
-  />
-  <ProjectsGaleryCard
-    title='Project 1'
-    description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam ultrices. Donec euismod, nisl quis lacinia ultricies, nisl nisl ultricies nisl, quis lacinia eros nisl vitae eros.'
-  />
-  <ProjectsGaleryCard
-    title='Project 1'
-    description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam ultrices. Donec euismod, nisl quis lacinia ultricies, nisl nisl ultricies nisl, quis lacinia eros nisl vitae eros.'
-  />
+  {
+    projects_es.map(project => (
+      <ProjectsGaleryCard
+        title={project.title}
+        description={project.description}
+        image={project.images[0].src}
+        image_alt={project.images[0].alt}
+        title_url={`/projects/${convertTitleToURL(project.title)}`}
+      />
+    ))
+  }
 </div>
 
 <style>

@@ -1,4 +1,5 @@
 ---
+// import { ViewTransitions } from 'astro:transitions'
 const { currentLocale = 'es' } = Astro
 
 interface Props {
@@ -24,155 +25,156 @@ const { title } = Astro.props
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
+    <!-- <ViewTransitions /> -->
   </head>
   <body>
     <slot />
+    <style is:global>
+      :root {
+        --light-background: #f1fcfd;
+        --dark-background: #1f2937;
+
+        --white: #f3f4f6;
+
+        --black: #181823;
+        --black-transparent-02: #18182333;
+        --black-transparent-08: #181823cc;
+
+        --grey: #8199b4;
+
+        --light-blue: #a6d1e6;
+        --dark-blue: #06283d;
+
+        --sky-blue: #c7eeff;
+        --sky-blue-transparent: #c7eeff80;
+
+        --max-width: 1300px;
+        --border-radius: 1.875rem;
+
+        --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+        --step--1: clamp(0.95rem, 0.93rem + 0.12vw, 1.1rem);
+        --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+        --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+        --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+        --step-3: clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem);
+        --step-4: clamp(2.3325rem, 2.0823rem + 1.2511vw, 3.0519rem);
+        --step-5: clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem);
+
+        --shadow-color: 199deg 40% 56%;
+        --shadow-elevation-low: 0px 0.9px 1.2px hsl(var(--shadow-color) / 0.22),
+          0px 1.6px 2.1px -0.6px hsl(var(--shadow-color) / 0.35),
+          0px 3.8px 5px -1.3px hsl(var(--shadow-color) / 0.48);
+        --shadow-elevation-medium: 0px 0.4px 0.5px
+            hsl(var(--shadow-color) / 0.36),
+          0px 1.5px 1.7px -0.8px hsl(var(--shadow-color) / 0.36),
+          0px 3.7px 4.2px -1.7px hsl(var(--shadow-color) / 0.36),
+          0px 8.9px 10px -2.5px hsl(var(--shadow-color) / 0.36);
+        --shadow-elevation-high: 0px 0.4px 0.5px hsl(var(--shadow-color) / 0.34),
+          0px 2.6px 2.9px -0.4px hsl(var(--shadow-color) / 0.34),
+          0px 4.9px 5.5px -0.7px hsl(var(--shadow-color) / 0.34),
+          0px 8px 9px -1.1px hsl(var(--shadow-color) / 0.34),
+          -0.1px 12.8px 14.4px -1.4px hsl(var(--shadow-color) / 0.34),
+          -0.1px 19.9px 22.4px -1.8px hsl(var(--shadow-color) / 0.34),
+          -0.1px 30.3px 34.1px -2.1px hsl(var(--shadow-color) / 0.34),
+          -0.2px 44.7px 50.3px -2.5px hsl(var(--shadow-color) / 0.34);
+      }
+
+      [data-theme='dark'] {
+        --light-background: #f1fcfd;
+        --dark-background: #1f2937;
+
+        --white: #f3f4f6;
+        --black: #181823;
+
+        --light-blue: #a6d1e6;
+        --dark-blue: #06283d;
+
+        --sky-blue: #c7eeff;
+        --sky-blue-transparent: #c7eeff80;
+      }
+
+      [data-theme='light'] {
+        --light-background: #1f2937;
+        --dark-background: #f1fcfd;
+
+        --white: #181823;
+        --black: #f3f4f6;
+        --black-transparent-02: #f3f4f633;
+        --black-transparent-08: #f3f4f6cc;
+
+        --light-blue: #06283d;
+        --dark-blue: #a6d1e6;
+
+        --sky-blue: #c7eeff;
+        --sky-blue-transparent: #c7eeff80;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      html {
+        font-family: system-ui, sans-serif;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        font-size: 16px;
+      }
+
+      .dark {
+        color-scheme: dark;
+      }
+
+      body {
+        background-color: var(--dark-background);
+        color: var(--white);
+        background-image: url('/noise/dark-perlin.png');
+        background-repeat: repeat;
+        background-size: 150px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 6.25rem;
+      }
+
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      header,
+      section,
+      footer {
+        max-width: calc(var(--max-width) - 4rem);
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      h2 {
+        width: max-content;
+        font-size: var(--step-2);
+        font-weight: 600;
+        text-transform: uppercase;
+        border-bottom: 5px solid var(--sky-blue);
+
+        box-shadow: 0 6px 3px -5px var(--sky-blue);
+      }
+    </style>
   </body>
 </html>
-
-<style is:global>
-  :root {
-    --light-background: #f1fcfd;
-    --dark-background: #1f2937;
-
-    --white: #f3f4f6;
-
-    --black: #181823;
-    --black-transparent-02: #18182333;
-    --black-transparent-08: #181823cc;
-
-    --grey: #8199b4;
-
-    --light-blue: #a6d1e6;
-    --dark-blue: #06283d;
-
-    --sky-blue: #c7eeff;
-    --sky-blue-transparent: #c7eeff80;
-
-    --max-width: 1300px;
-    --border-radius: 1.875rem;
-
-    --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
-    --step--1: clamp(0.95rem, 0.93rem + 0.12vw, 1.1rem);
-    --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
-    --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
-    --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
-    --step-3: clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem);
-    --step-4: clamp(2.3325rem, 2.0823rem + 1.2511vw, 3.0519rem);
-    --step-5: clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem);
-
-    --shadow-color: 199deg 40% 56%;
-    --shadow-elevation-low: 0px 0.4px 0.5px hsl(var(--shadow-color) / 0.34),
-      0px 0.7px 0.8px -1.2px hsl(var(--shadow-color) / 0.34),
-      0px 1.8px 2px -2.5px hsl(var(--shadow-color) / 0.34);
-    --shadow-elevation-medium: 0px 0.4px 0.5px hsl(var(--shadow-color) / 0.36),
-      0px 1.5px 1.7px -0.8px hsl(var(--shadow-color) / 0.36),
-      0px 3.7px 4.2px -1.7px hsl(var(--shadow-color) / 0.36),
-      0px 8.9px 10px -2.5px hsl(var(--shadow-color) / 0.36);
-    --shadow-elevation-high: 0px 0.4px 0.5px hsl(var(--shadow-color) / 0.34),
-      0px 2.6px 2.9px -0.4px hsl(var(--shadow-color) / 0.34),
-      0px 4.9px 5.5px -0.7px hsl(var(--shadow-color) / 0.34),
-      0px 8px 9px -1.1px hsl(var(--shadow-color) / 0.34),
-      -0.1px 12.8px 14.4px -1.4px hsl(var(--shadow-color) / 0.34),
-      -0.1px 19.9px 22.4px -1.8px hsl(var(--shadow-color) / 0.34),
-      -0.1px 30.3px 34.1px -2.1px hsl(var(--shadow-color) / 0.34),
-      -0.2px 44.7px 50.3px -2.5px hsl(var(--shadow-color) / 0.34);
-  }
-
-  [data-theme='dark'] {
-    --light-background: #f1fcfd;
-    --dark-background: #1f2937;
-
-    --white: #f3f4f6;
-    --black: #181823;
-
-    --light-blue: #a6d1e6;
-    --dark-blue: #06283d;
-
-    --sky-blue: #c7eeff;
-    --sky-blue-transparent: #c7eeff80;
-  }
-
-  [data-theme='light'] {
-    --light-background: #1f2937;
-    --dark-background: #f1fcfd;
-
-    --white: #181823;
-    --black: #f3f4f6;
-    --black-transparent-02: #f3f4f633;
-    --black-transparent-08: #f3f4f6cc;
-
-    --light-blue: #06283d;
-    --dark-blue: #a6d1e6;
-
-    --sky-blue: #c7eeff;
-    --sky-blue-transparent: #c7eeff80;
-  }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-
-  html {
-    font-family: system-ui, sans-serif;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    font-size: 16px;
-  }
-
-  .dark {
-    color-scheme: dark;
-  }
-
-  body {
-    background-color: var(--dark-background);
-    color: var(--white);
-    background-image: url('/noise/dark-perlin.png');
-    background-repeat: repeat;
-    background-size: 150px;
-    z-index: -1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 6.25rem;
-  }
-
-  img,
-  video {
-    max-width: 100%;
-    height: auto;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  header,
-  section,
-  footer {
-    max-width: calc(var(--max-width) - 4rem);
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  h2 {
-    width: max-content;
-    font-size: var(--step-2);
-    font-weight: 600;
-    text-transform: uppercase;
-    border-bottom: 5px solid var(--sky-blue);
-
-    box-shadow: 0 6px 3px -5px var(--sky-blue);
-  }
-</style>
