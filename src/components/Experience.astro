@@ -1,29 +1,12 @@
 ---
 import { useTranslations } from '../i18n/utils'
 import ExperienceTimeLineItem from './ExperienceTimeLineItem.astro'
+import experience_es from '../data/experience_es.json'
+import experience_en from '../data/experience_en.json'
 
 const { currentLocale = 'es' } = Astro
 
 const t = useTranslations(currentLocale)
-
-const EDUCATION = [
-  {
-    date: 'fecha',
-    title: 'titulo',
-    description: 'descripcion',
-    link: '/en'
-  },
-  {
-    date: 'fecha',
-    title: 'titulo',
-    description: 'descripcion'
-  },
-  {
-    date: 'fecha',
-    title: 'titulo',
-    description: 'descripcion'
-  }
-]
 ---
 
 <section class='experience'>
@@ -39,21 +22,41 @@ const EDUCATION = [
       <h3 class='timeline__title-theme'>Educación</h3>
       <ol class='timeline'>
         {
-          EDUCATION.map(experiencie => (
-            <li class='timeline__item'>
-              <ExperienceTimeLineItem {...experiencie} />
-            </li>
-          ))
+          currentLocale === 'es'
+            ? experience_es?.map(item =>
+                item.education?.map(educationItem => (
+                  <li class='timeline__item'>
+                    <ExperienceTimeLineItem {...educationItem} />
+                  </li>
+                ))
+              )
+            : experience_en?.map(item =>
+                item.education?.map(educationItem => (
+                  <li class='timeline__item'>
+                    <ExperienceTimeLineItem {...educationItem} />
+                  </li>
+                ))
+              )
         }
       </ol>
       <h3 class='timeline__title-theme'>Cursos</h3>
       <ol class='timeline'>
         {
-          EDUCATION.map(experiencie => (
-            <li class='timeline__item'>
-              <ExperienceTimeLineItem {...experiencie} />
-            </li>
-          ))
+          currentLocale === 'es'
+            ? experience_es?.map(item =>
+                item.professionalCourses?.map(coursesItem => (
+                  <li class='timeline__item'>
+                    <ExperienceTimeLineItem {...coursesItem} />
+                  </li>
+                ))
+              )
+            : experience_en?.map(item =>
+                item.professionalCourses?.map(coursesItem => (
+                  <li class='timeline__item'>
+                    <ExperienceTimeLineItem {...coursesItem} />
+                  </li>
+                ))
+              )
         }
       </ol>
     </div>
@@ -61,11 +64,21 @@ const EDUCATION = [
       <h3 class='timeline__title-theme'>Trabajo</h3>
       <ol class='timeline'>
         {
-          EDUCATION.map(experiencie => (
-            <li class='timeline__item'>
-              <ExperienceTimeLineItem {...experiencie} />
-            </li>
-          ))
+          currentLocale === 'es'
+            ? experience_es?.map(item =>
+                item.workExperience?.map(workItem => (
+                  <li class='timeline__item'>
+                    <ExperienceTimeLineItem {...workItem} />
+                  </li>
+                ))
+              )
+            : experience_en?.map(item =>
+                item.workExperience?.map(workItem => (
+                  <li class='timeline__item'>
+                    <ExperienceTimeLineItem {...workItem} />
+                  </li>
+                ))
+              )
         }
       </ol>
     </div>

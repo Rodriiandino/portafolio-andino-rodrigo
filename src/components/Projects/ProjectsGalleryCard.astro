@@ -24,9 +24,9 @@ const {
 } = Astro.props
 ---
 
-<article class='projects__galery-item'>
-  <img src={image} alt={image_alt} class='galery__img' />
-  <div class='galery__item-info'>
+<article class='projects__gallery-item'>
+  <img src={image} alt={image_alt} class='gallery__img' />
+  <div class='gallery__item-info'>
     <h4 class='item__title'>
       <a href={title_url}>{title}</a>
     </h4>
@@ -35,8 +35,12 @@ const {
     </p>
     <footer class='item__footer'>
       <div class='footer__links'>
-        <a href={link_code}> <IconCode /> Code</a>
-        <a href={link_demo}> <IconDemo /> Demo</a>
+        <a href={link_code} target='_blank' rel='noopener noreferrer'>
+          <IconCode /> Code</a
+        >
+        <a href={link_demo} target='_blank' rel='noopener noreferrer'>
+          <IconDemo /> Demo</a
+        >
       </div>
       <p class='footer__icons'>{icons}</p>
     </footer>
@@ -44,17 +48,17 @@ const {
 </article>
 
 <style is:global>
-  .projects__galery-item {
+  .projects__gallery-item {
     position: relative;
   }
 
-  .galery__img {
+  .gallery__img {
     border-radius: var(--border-radius);
     margin-bottom: 20px;
     box-shadow: var(--shadow-elevation-low);
   }
 
-  .galery__item-info {
+  .gallery__item-info {
     width: 100%;
     height: calc(100% - 24px);
     position: absolute;
@@ -75,7 +79,7 @@ const {
     opacity: 0;
   }
 
-  .galery__item-info:hover {
+  .gallery__item-info:hover {
     opacity: 1;
     box-shadow: var(--shadow-elevation-medium);
   }

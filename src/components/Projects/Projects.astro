@@ -1,6 +1,6 @@
 ---
 import { useTranslations } from '../../i18n/utils'
-import ProjectsGalery from './ProjectsGalery.astro'
+import ProjectsGallery from './ProjectsGallery.astro'
 
 const { currentLocale = 'es' } = Astro
 
@@ -10,7 +10,7 @@ const t = useTranslations(currentLocale)
 <section class='projects'>
   <h2>{t('title.projects')}</h2>
   <header class='projects__filter'><p>filter</p></header>
-  <ProjectsGalery />
+  <ProjectsGallery />
 </section>
 
 <style>

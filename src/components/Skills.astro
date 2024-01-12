@@ -6,6 +6,12 @@ const { currentLocale = 'es' } = Astro
 const t = useTranslations(currentLocale)
 ---
 
+<script>
+  import skillsList from './dom/skills-list'
+
+  skillsList()
+</script>
+
 <section class='skills'>
   <h2>{t('title.skills')}</h2>
   <div class='btn__container'>

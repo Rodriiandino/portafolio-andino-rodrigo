@@ -1,5 +1,6 @@
 ---
 // import { ViewTransitions } from 'astro:transitions'
+import Nav from '../components/Nav.astro'
 const { currentLocale = 'es' } = Astro
 
 interface Props {
@@ -11,10 +12,8 @@ const { title } = Astro.props
 
 <script>
   import themeChange from '../components/dom/theme-change'
-  import skillsList from '../components/dom/skills-list'
 
   themeChange()
-  skillsList()
 </script>
 
 <html lang={currentLocale} data-theme='light'>
@@ -29,6 +28,7 @@ const { title } = Astro.props
   </head>
   <body>
     <slot />
+    <Nav />
     <style is:global>
       :root {
         --light-background: #f1fcfd;

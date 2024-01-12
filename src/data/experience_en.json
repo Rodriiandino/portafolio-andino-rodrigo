@@ -1,0 +1,87 @@
+[
+  {
+    "education": [
+      {
+        "date": "date",
+        "title": "title",
+        "description": "lore",
+        "link": "/en"
+      },
+      {
+        "date": "date",
+        "title": "title",
+        "description": "description",
+        "link": "/en"
+      },
+      {
+        "date": "date",
+        "title": "title",
+        "description": "description",
+        "link": "/en"
+      },
+      {
+        "date": "date",
+        "title": "title",
+        "description": "description",
+        "link": "/en"
+      }
+    ]
+  },
+  {
+    "workExperience": [
+      {
+        "date": "date",
+        "title": "title",
+        "description": "description",
+        "link": "/en"
+      },
+      {
+        "date": "date",
+        "title": "title",
+        "description": "description",
+        "link": "/en"
+      },
+      {
+        "date": "date",
+        "title": "title",
+        "description": "description",
+        "link": "/en"
+      },
+      {
+        "date": "date",
+        "title": "title",
+        "description": "description",
+        "link": "/en"
+      }
+    ]
+  },
+
+  {
+    "professionalCourses": [
+      {
+        "date": "date",
+        "title": "title",
+        "description": "description",
+        "link": "/en"
+      },
+      {
+        "date": "date",
+        "title": "title",
+        "description": "description",
+        "link": "/en"
+      },
+      {
+        "date": "date",
+        "title": "title",
+        "description": "description",
+        "link": "/en"
+      },
+      {
+        "date": "date",
+        "title": "title",
+        "description": "description",
+        "link": "/en"
+      }
+    ]
+  }
+]

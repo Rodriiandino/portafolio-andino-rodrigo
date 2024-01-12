@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro'
 import Layout from '../../layouts/Layout.astro'
 import projects_es from '../../data/projects_es.json'
 import convertTitleToURL from '../../components/utils/convert_title_to_url'
+import { IconCode, IconDemo } from '../../components/icons/icons'
 
 const { title } = Astro.params
 console.log(title)
@@ -26,21 +27,330 @@ console.log(project)
 
 <Layout title={project.title}>
   <main class='project__page'>
-    <div><img src={project.images[0].src} alt={project.images[0].alt} /></div>
-    <aside>
-      <h1>{project.title}</h1>
-      <p>{project.description}</p>
-    </aside>
+    <div class='project__image'>
+      <img src={project.images[0].src} alt={project.images[0].alt} />
+    </div>
+    <div class='project__aside-container'>
+      <aside class='project__aside'>
+        <div class='aside__move-top'>--</div>
+
+        <div>
+          <h1 class='aside__title'>{project.title}</h1>
+          <p>{project.description}</p>
+        </div>
+
+        <div>
+          <h2 class='aside__title'>Que Aprendi</h2>
+          <p>{project.what_i_learned}</p>
+        </div>
+
+        <table class='aside__table'>
+          <tbody class='aside__tbody'>
+            <tr class='aside__tr'>
+              <th>Caracteristicas</th>
+              <td>{project.features}</td>
+            </tr>
+            <tr class='aside__tr'>
+              <th>Fecha</th>
+              <td>{project.date}</td>
+            </tr>
+            <tr class='aside__tr'>
+              <th>Tecnologías</th>
+              <td>{project.technologies}</td>
+            </tr>
+            <tr class='aside__tr'>
+              <th>Estado</th>
+              <td>{project.status}</td>
+            </tr>
+            <tr class='aside__tr'>
+              <th>Deploy</th>
+              <td>{project.deploy.page}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <footer class='aside__footer'>
+          <a href={project.github} target='_blank' rel='noopener noreferrer'>
+            <IconCode /> Code
+          </a>
+          <a
+            href={project.deploy.demo}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <IconDemo /> Demo
+          </a>
+        </footer>
+      </aside>
+    </div>
   </main>
 </Layout>
 
-<style>
+<script>
+  // const $moveTop = document.querySelector('.aside__move-top') as HTMLDivElement
+  // const $asideContainer = document.querySelector(
+  //   '.project__aside-container'
+  // ) as HTMLDivElement
+  // const $image = document.querySelector('.project__image') as HTMLDivElement
+
+  // let isDragging = false
+  // let startY: number
+  // let initialAsideHeight: number
+  // let initialImageHeight: number
+  // const asideHeight = $asideContainer.offsetHeight
+
+  // function updateHeights(asideHeight: number, imageHeight: any) {
+  //   $asideContainer.style.height = `${asideHeight}px`
+  //   $image.style.height = `${imageHeight}px`
+  // }
+
+  // $moveTop.addEventListener('mousedown', function (e) {
+  //   isDragging = true
+  //   startY = e.clientY
+  //   initialAsideHeight = $asideContainer.offsetHeight
+  //   initialImageHeight = $image.offsetHeight
+  // })
+
+  // document.addEventListener('mousemove', function (e) {
+  //   if (!isDragging) return
+
+  //   const deltaY = e.clientY - startY
+
+  //   const newAsideHeight = initialAsideHeight - deltaY
+  //   const newImageHeight = initialImageHeight + deltaY
+
+  //   updateHeights(newAsideHeight, newImageHeight)
+  // })
+
+  // document.addEventListener('mouseup', function () {
+  //   isDragging = false
+  // })
+
+  // $moveTop.addEventListener('touchstart', function (e) {
+  //   isDragging = true
+  //   startY = e.touches[0].clientY
+  //   initialAsideHeight = $asideContainer.offsetHeight
+  //   initialImageHeight = $image.offsetHeight
+  // })
+
+  // document.addEventListener('touchmove', function (e) {
+  //   if (!isDragging) return
+
+  //   const deltaY = e.touches[0].clientY - startY
+
+  //   const newAsideHeight = initialAsideHeight - deltaY
+  //   const newImageHeight = initialImageHeight + deltaY
+
+  //   updateHeights(newAsideHeight, newImageHeight)
+  // })
+
+  // document.addEventListener('touchend', function () {
+  //   isDragging = false
+  // })
+</script>
+
+<style is:global>
   .project__page {
     width: 100%;
     height: 100vh;
+  }
+
+  .project__image {
+    position: fixed;
+    inset: 0;
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project__image img {
+    border-radius: var(--border-radius);
+    transform: translateX(-208.558px) translateY(0px) translateZ(0px);
+  }
+
+  .project__aside-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .project__aside {
+    position: relative;
+    width: 100%;
+    max-width: 30%;
+    min-width: 25rem;
+    height: fit-content;
+    min-height: 100%;
+    padding: 2.3rem 2.6rem;
+    background-color: var(--black);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .aside__move-top {
+    display: none;
+  }
+
+  .aside__title {
+    width: max-content;
+    font-size: var(--step-2);
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 5px solid var(--sky-blue);
+
+    box-shadow: 0 6px 3px -5px var(--sky-blue);
+  }
+
+  .aside__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .aside__tbody {
+    width: 100%;
+  }
+
+  .aside__tr {
+    width: 100%;
+    padding: 0.5rem 0;
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 3px solid var(--sky-blue);
+  }
+
+  .aside__tr th {
+    font-size: var(--step-0);
+    font-weight: 600;
+    color: var(--light-blue);
+    text-align: left;
+  }
+
+  .aside__tr td {
+    font-size: var(--step--1);
+    font-weight: 500;
+    color: var(--white);
+    text-align: right;
+  }
+
+  .aside__footer {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .aside__footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--white);
+    font-size: var(--step-0);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .aside__footer a:hover {
+    color: var(--light-blue);
+    text-decoration: underline;
+  }
+
+  .aside__footer a svg {
+    color: var(--light-blue);
+  }
+
+  @media (max-width: 933px) {
+    .project__image {
+      position: fixed;
+      width: 100%;
+    }
+
+    .project__image img {
+      transform: none;
+    }
+
+    .project__aside-container {
+      position: fixed;
+      width: 100%;
+      /* transform: translateY(0%); */
+      height: fit-content;
+      overflow: hidden;
+    }
+
+    .project__aside {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      min-height: auto;
+      padding: 1.3rem 1.6rem;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+
+    .aside__move-top {
+      display: block;
+      width: 100%;
+      height: 1.3rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: var(--step-0);
+      font-weight: 600;
+      color: var(--black);
+      background-color: var(--sky-blue);
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      user-select: none;
+    }
+
+    .aside__move-top:hover {
+      transform: scaleY(1.1);
+      background-color: var(--light-blue);
+    }
+
+    .aside__move-top:active {
+      transform: scaleY(1.2);
+      background-color: var(--light-blue);
+    }
+
+    .aside__title {
+      padding-top: 0.5rem;
+      font-size: var(--step-1);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .project__aside {
+      padding: 1rem 1.3rem;
+      min-width: fit-content;
+    }
+
+    .aside__title {
+      font-size: var(--step-1);
+    }
+
+    .aside__tr th {
+      font-size: var(--step--1);
+    }
+
+    .aside__tr td {
+      font-size: var(--step--2);
+    }
+
+    .aside__footer a {
+      font-size: var(--step--1);
+    }
   }
 </style>
