@@ -7,9 +7,9 @@ const { currentLocale = 'es' } = Astro
 const t = useTranslations(currentLocale)
 ---
 
-<section class='projects'>
+<section class='projects' id='projects'>
   <h2>{t('title.projects')}</h2>
-  <header class='projects__filter'><p>filter</p></header>
+  <header class='projects__filter'><p>{t('projects.filter')}</p></header>
   <ProjectsGallery />
 </section>
 

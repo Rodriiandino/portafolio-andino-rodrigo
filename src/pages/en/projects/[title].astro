@@ -1,10 +1,10 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import { useTranslations } from '../../i18n/utils'
-import Layout from '../../layouts/Layout.astro'
-import projects_es from '../../data/projects_es.json'
-import convertTitleToURL from '../../components/utils/convert_title_to_url'
-import { IconCode, IconDemo } from '../../components/icons/icons'
+import { useTranslations } from '../../../i18n/utils'
+import Layout from '../../../layouts/Layout.astro'
+import projects_es from '../../../data/projects_es.json'
+import convertTitleToURL from '../../../components/utils/convert_title_to_url'
+import { IconCode, IconDemo } from '../../../components/icons/icons'
 
 const { title } = Astro.params
 console.log(title)

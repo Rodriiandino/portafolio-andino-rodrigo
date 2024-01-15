@@ -2,6 +2,11 @@
 import ProjectsGalleryCard from './ProjectsGalleryCard.astro'
 import projects_es from '../../data/projects_es.json'
 import convertTitleToURL from '../utils/convert_title_to_url'
+import { useTranslations } from '../../i18n/utils'
+
+const { currentLocale = 'es' } = Astro
+
+const t = useTranslations(currentLocale)
 ---
 
 <div class='projects__gallery'>
@@ -17,11 +22,30 @@ import convertTitleToURL from '../utils/convert_title_to_url'
     ))
   }
 </div>
+<button class='projects__btn'>{t('projects.btn')}</button>
 
 <style>
   .projects__gallery {
     columns: 2 350px;
     column-gap: 20px;
     display: block;
+  }
+
+  .projects__btn {
+    background-color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--dark-background);
+    cursor: pointer;
+    font-size: var(--step-1);
+    font-weight: 700;
+    margin: 0 auto;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+
+  .projects__btn:hover {
+    background-color: var(--light-blue);
   }
 </style>

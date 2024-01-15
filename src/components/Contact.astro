@@ -7,7 +7,7 @@ const { currentLocale = 'es' } = Astro
 const t = useTranslations(currentLocale)
 ---
 
-<section>
+<section id='contact'>
   <h2>{t('title.contact')}</h2>
   <article class='contact__container'>
     <div class='contact__container_info'>
@@ -26,7 +26,7 @@ const t = useTranslations(currentLocale)
           <IconGmail /> andinorodrigo03@gmail.com
         </a>
 
-        <button class='contact__btn'>Descarga mi CV</button>
+        <button class='contact__btn'>{t('contact.btn')}</button>
       </nav>
     </div>
     <div class='contact__img'>

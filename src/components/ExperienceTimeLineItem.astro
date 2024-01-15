@@ -1,4 +1,5 @@
 ---
+import { useTranslations } from '../i18n/utils'
 interface Props {
   title: string
   description: string
@@ -7,6 +8,10 @@ interface Props {
 }
 
 const { title, description, link, date } = Astro.props
+
+const { currentLocale = 'es' } = Astro
+
+const t = useTranslations(currentLocale)
 ---
 
 <div class='timeline__separator'></div>
@@ -18,7 +23,7 @@ const { title, description, link, date } = Astro.props
 {
   link && (
     <a href={link} class='timeline__link'>
-      Saber más...
+      {t('experience.btn')}
       <svg
         width='21'
         height='21'

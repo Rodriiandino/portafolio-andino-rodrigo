@@ -12,14 +12,16 @@ const t = useTranslations(currentLocale)
   skillsList()
 </script>
 
-<section class='skills'>
+<section class='skills' id='skills'>
   <h2>{t('title.skills')}</h2>
   <div class='btn__container'>
-    <button class='skills__btn' id='all'>Todos</button>
-    <button class='skills__btn active' id='frontEnd'>Front-End</button>
-    <button class='skills__btn' id='backEnd'>Back-End</button>
-    <button class='skills__btn' id='databases'>Databases</button>
-    <button class='skills__btn' id='else'>Otros</button>
+    <button class='skills__btn' id='all'>{t('skills.all')}</button>
+    <button class='skills__btn active' id='frontEnd'
+      >{t('skills.frontend')}</button
+    >
+    <button class='skills__btn' id='backEnd'>{t('skills.backend')}</button>
+    <button class='skills__btn' id='databases'>{t('skills.database')}</button>
+    <button class='skills__btn' id='else'>{t('skills.other')}</button>
   </div>
   <article class='skills_container'>
     <ul class='skills__list'></ul>

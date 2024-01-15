@@ -9,7 +9,7 @@ const { currentLocale = 'es' } = Astro
 const t = useTranslations(currentLocale)
 ---
 
-<section class='experience'>
+<section class='experience' id='experience'>
   <h2>{t('title.experience')}</h2>
   <p class='experience__description'>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum corporis sed
@@ -19,7 +19,7 @@ const t = useTranslations(currentLocale)
   </p>
   <article class='experience__timeline'>
     <div>
-      <h3 class='timeline__title-theme'>Educación</h3>
+      <h3 class='timeline__title-theme'>{t('experience.education')}</h3>
       <ol class='timeline'>
         {
           currentLocale === 'es'
@@ -39,7 +39,7 @@ const t = useTranslations(currentLocale)
               )
         }
       </ol>
-      <h3 class='timeline__title-theme'>Cursos</h3>
+      <h3 class='timeline__title-theme'>{t('experience.course')}</h3>
       <ol class='timeline'>
         {
           currentLocale === 'es'
@@ -61,7 +61,7 @@ const t = useTranslations(currentLocale)
       </ol>
     </div>
     <div>
-      <h3 class='timeline__title-theme'>Trabajo</h3>
+      <h3 class='timeline__title-theme'>{t('experience.work')}</h3>
       <ol class='timeline'>
         {
           currentLocale === 'es'
