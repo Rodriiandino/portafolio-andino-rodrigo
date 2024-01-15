@@ -28,7 +28,7 @@ console.log(project)
 <Layout title={project.title}>
   <main class='project__page'>
     <div class='project__image'>
-      <img src={project.images[0].src} alt={project.images[0].alt} />
+      <img src={project.images[0].src} alt={project.images[0].alt} id='img' />
     </div>
     <div class='project__aside-container'>
       <aside class='project__aside'>
@@ -87,70 +87,73 @@ console.log(project)
 </Layout>
 
 <script>
-  // const $moveTop = document.querySelector('.aside__move-top') as HTMLDivElement
-  // const $asideContainer = document.querySelector(
-  //   '.project__aside-container'
-  // ) as HTMLDivElement
-  // const $image = document.querySelector('.project__image') as HTMLDivElement
+  const $moveTop = document.querySelector('.aside__move-top') as HTMLDivElement
+  const $asideContainer = document.querySelector(
+    '.project__aside-container'
+  ) as HTMLDivElement
+  const $projectImage = document.querySelector(
+    '.project__image'
+  ) as HTMLDivElement
 
-  // let isDragging = false
-  // let startY: number
-  // let initialAsideHeight: number
-  // let initialImageHeight: number
-  // const asideHeight = $asideContainer.offsetHeight
+  const $img = document.querySelector('#img') as HTMLImageElement
 
-  // function updateHeights(asideHeight: number, imageHeight: any) {
-  //   $asideContainer.style.height = `${asideHeight}px`
-  //   $image.style.height = `${imageHeight}px`
-  // }
+  const breakpoint = window.matchMedia('(max-width: 933px)')
+  let translate = 0
 
-  // $moveTop.addEventListener('mousedown', function (e) {
-  //   isDragging = true
-  //   startY = e.clientY
-  //   initialAsideHeight = $asideContainer.offsetHeight
-  //   initialImageHeight = $image.offsetHeight
-  // })
+  const updateProjectImg = (def = true) => {
+    if (def) {
+      $projectImage.style.cursor = 'default'
+      $projectImage.style.backdropFilter = 'none'
+      $img.style.filter = 'none'
+      $projectImage.style.userSelect = 'auto'
+    } else {
+      $projectImage.style.cursor = 'pointer'
+      $projectImage.style.backdropFilter = 'saturate(100%) brightness(60%)'
+      $img.style.filter = 'saturate(100%) brightness(60%)'
+      $projectImage.style.userSelect = 'none'
+    }
+  }
 
-  // document.addEventListener('mousemove', function (e) {
-  //   if (!isDragging) return
+  $moveTop.addEventListener('click', e => {
+    if (translate == 0) {
+      updateProjectImg(false)
+      $asideContainer.style.transform = `translateY(${translate}%)`
+      translate = 88
+    } else {
+      updateProjectImg()
+      $asideContainer.style.transform = `translateY(${translate}%)`
+      translate = 0
+    }
+  })
 
-  //   const deltaY = e.clientY - startY
+  $projectImage.addEventListener('click', e => {
+    if (translate == 88) {
+      updateProjectImg()
+      $asideContainer.style.transform = `translateY(${translate}%)`
+      translate = 0
+    }
+  })
 
-  //   const newAsideHeight = initialAsideHeight - deltaY
-  //   const newImageHeight = initialImageHeight + deltaY
+  breakpoint.addEventListener('change', e => {
+    if (e.matches) {
+      updateProjectImg()
+      $asideContainer.style.transform = `translateY(88%)`
+      translate = 0
+    }
+  })
 
-  //   updateHeights(newAsideHeight, newImageHeight)
-  // })
-
-  // document.addEventListener('mouseup', function () {
-  //   isDragging = false
-  // })
-
-  // $moveTop.addEventListener('touchstart', function (e) {
-  //   isDragging = true
-  //   startY = e.touches[0].clientY
-  //   initialAsideHeight = $asideContainer.offsetHeight
-  //   initialImageHeight = $image.offsetHeight
-  // })
-
-  // document.addEventListener('touchmove', function (e) {
-  //   if (!isDragging) return
-
-  //   const deltaY = e.touches[0].clientY - startY
-
-  //   const newAsideHeight = initialAsideHeight - deltaY
-  //   const newImageHeight = initialImageHeight + deltaY
-
-  //   updateHeights(newAsideHeight, newImageHeight)
-  // })
-
-  // document.addEventListener('touchend', function () {
-  //   isDragging = false
-  // })
+  window.addEventListener('resize', e => {
+    if (window.innerWidth > 933) {
+      updateProjectImg()
+      $asideContainer.style.transform = `translateY(0%)`
+      translate = 0
+    }
+  })
 </script>
 
 <style is:global>
   .project__page {
+    position: relative;
     width: 100%;
     height: 100vh;
   }
@@ -272,20 +275,28 @@ console.log(project)
 
   @media (max-width: 933px) {
     .project__image {
-      position: fixed;
       width: 100%;
+      transition: all 0.3s ease-in-out;
     }
 
     .project__image img {
       transform: none;
+      transition: all 0.3s ease-in-out;
     }
 
     .project__aside-container {
       position: fixed;
+      inset: auto 0 0 0;
+      height: 100%;
       width: 100%;
-      /* transform: translateY(0%); */
+      transform: translateY(90%);
       height: fit-content;
       overflow: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .project__aside-container:hover {
+      transform: translateY(88%);
     }
 
     .project__aside {
