@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from '../i18n/utils'
+
 interface Props {
   title: string
   description: string
@@ -103,15 +104,13 @@ const t = useTranslations(currentLocale)
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
+    transition: all 0.3s ease-in-out;
   }
 
   .timeline__link:hover {
     text-decoration-color: var(--black);
-    transition: all 0.3s ease-in-out;
     text-decoration: underline;
-    position: relative;
-    left: 0.1rem;
-    bottom: 0.1rem;
+    transform: translateY(-2px) translateX(2px);
   }
 
   .timeline__link svg {

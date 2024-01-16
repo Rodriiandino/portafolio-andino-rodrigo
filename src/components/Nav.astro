@@ -15,63 +15,59 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
 ---
 
 <nav class='nav' id='nav' data-theme='light'>
-  <ul class='nav__list'>
-    <li>
-      <a href='#home' class='item'>
-        <IconHouse />
+  <div class='nav__container'>
+    <ul class='nav__list'>
+      <li>
+        <a href='#home' class='item'>
+          <IconHouse />
+        </a>
+      </li>
+      <li>
+        <a href='#experience' class='item'>
+          <IconExperience />
+        </a>
+      </li>
+      <li>
+        <a href='#projects' class='item'>
+          <IconProjects />
+        </a>
+      </li>
+      <li>
+        <a href='#contact' class='item'>
+          <IconContact />
+        </a>
+      </li>
+    </ul>
+    <div class='nav__list'>
+      <a href={`/${changeLang}`} class='utils__button'>
+        <IconLanguageNav />
+        <IconLanguageNavLight />
       </a>
-    </li>
-    <li>
-      <a href='#experience' class='item'>
-        <IconExperience />
-      </a>
-    </li>
-    <li>
-      <a href='#projects' class='item'>
-        <IconProjects />
-      </a>
-    </li>
-    <li>
-      <a href='#contact' class='item'>
-        <IconContact />
-      </a>
-    </li>
-  </ul>
-  <div class='nav__list'>
-    <a href={`/${changeLang}`} class='utils__button'>
-      <IconLanguageNav />
-      <IconLanguageNavLight />
-    </a>
 
-    <button class='utils__button' btn-switch-theme>
-      <IconMoonNav />
-      <IconSunNav />
-    </button>
+      <button class='utils__button' btn-switch-theme>
+        <IconMoonNav />
+        <IconSunNav />
+      </button>
+    </div>
   </div>
 </nav>
 
-<style>
+<style is:global>
   .nav {
     position: fixed;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%) translateY(100px);
-    width: 420px;
-    height: 60px;
+    padding: 0 1.5rem;
+    width: 100%;
+    height: fit-content;
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    background-color: var(--sky-blue-transparent);
-    backdrop-filter: blur(5px);
-    border-radius: var(--border-radius);
-    z-index: 100;
-
     animation: fadeIn linear both;
     animation-timeline: scroll();
     animation-range: 0 300px;
-
-    box-shadow: var(--shadow-elevation-medium);
   }
 
   @keyframes fadeIn {
@@ -80,12 +76,27 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
     }
   }
 
+  .nav__container {
+    width: 100%;
+    max-width: 420px;
+    height: 60px;
+    display: flex;
+    box-shadow: var(--shadow-elevation-medium);
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1.5rem;
+    background-color: var(--sky-blue-transparent);
+    backdrop-filter: blur(5px);
+    border-radius: var(--border-radius);
+  }
+
   .nav__list {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    gap: 1.2rem;
+    gap: 1rem;
   }
 
   .item {
@@ -140,6 +151,44 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
 
     .item {
       color: var(--light-blue);
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    .nav {
+      animation-range: 0 200px;
+    }
+  }
+
+  @media screen and (max-width: 460px) {
+    .nav__container {
+      padding: 0 0.5rem;
+    }
+
+    .nav__list {
+      gap: 0.5rem;
+    }
+
+    .nav__list:last-child {
+      flex-direction: row;
+      gap: 0.7rem;
+    }
+
+    .icon__variant-nav {
+      width: 32px;
+      height: 32px;
+    }
+
+    .icon-language-nav,
+    .icon-language-nav-light {
+      width: 40px;
+      height: 40px;
+    }
+
+    .icon-moon-nav,
+    .icon-sun-nav {
+      width: 40px;
+      height: 40px;
     }
   }
 </style>

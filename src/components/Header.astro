@@ -174,4 +174,16 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
       display: none;
     }
   }
+
+  @media (max-width: 850px) {
+    .header__logo,
+    .header__utils {
+      width: max-content;
+      min-width: 0;
+    }
+
+    .header__nav {
+      display: none;
+    }
+  }
 </style>

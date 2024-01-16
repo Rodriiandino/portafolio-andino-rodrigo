@@ -39,6 +39,8 @@ const t = useTranslations(currentLocale)
               )
         }
       </ol>
+    </div>
+    <div>
       <h3 class='timeline__title-theme'>{t('experience.course')}</h3>
       <ol class='timeline'>
         {
@@ -95,11 +97,10 @@ const t = useTranslations(currentLocale)
   .experience__timeline {
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 2rem;
-  }
-
-  .experience__timeline > div {
-    width: 100%;
+    flex-wrap: wrap-reverse;
   }
 
   .timeline__title-theme {
@@ -127,5 +128,9 @@ const t = useTranslations(currentLocale)
   .timeline__item {
     margin-bottom: 2.5rem;
     padding-left: 1rem;
+  }
+
+  .timeline__item:last-child {
+    margin-bottom: 0;
   }
 </style>

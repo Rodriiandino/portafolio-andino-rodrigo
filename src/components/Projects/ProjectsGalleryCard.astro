@@ -28,7 +28,29 @@ const {
   <img src={image} alt={image_alt} class='gallery__img' />
   <div class='gallery__item-info'>
     <h4 class='item__title'>
-      <a href={title_url}>{title}</a>
+      <a href={title_url}
+        >{title}
+        <svg
+          class='item__title-icon'
+          viewBox='0 0 18 18'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            opacity='0.5'
+            d='M5.67514 15.6194L5.32158 15.2659L16.097 4.49043L16.4506 4.84399L5.67514 15.6194Z'
+            stroke='currentColor'
+            stroke-width='1.5'
+            stroke-linecap='round'
+            stroke-linejoin='round'></path>
+          <path
+            d='M16.5641 12.8623L16.6274 4.31369L8.0788 4.37701'
+            stroke='currentColor'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'></path>
+        </svg></a
+      >
     </h4>
     <p class='item__description'>
       {description}
@@ -74,7 +96,7 @@ const {
       var(--black-transparent-02),
       var(--black-transparent-08)
     );
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     overflow: hidden;
     opacity: 0;
   }
@@ -92,10 +114,20 @@ const {
   .item__title a {
     color: var(--light-blue);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: 0.3s ease-in-out;
   }
 
   .item__title a:hover {
     text-decoration: underline;
+    transform: translateY(-2px) translateX(2px);
+  }
+
+  .item__title-icon {
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .item__description {

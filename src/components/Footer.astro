@@ -9,16 +9,16 @@ import {
 
 <footer class='footer'>
   <nav class='footer__nav'>
-    <a class='item' href='#' target='_blank' rel='noopener noreferrer'>
+    <a class='footer__item' href='#' target='_blank' rel='noopener noreferrer'>
       <IconGitHub />
     </a>
-    <a class='item' href='#' target='_blank' rel='noopener noreferrer'>
+    <a class='footer__item' href='#' target='_blank' rel='noopener noreferrer'>
       <IconLinkedIn />
     </a>
-    <a class='item' href='#' target='_blank' rel='noopener noreferrer'>
+    <a class='footer__item' href='#' target='_blank' rel='noopener noreferrer'>
       <IconTwitter />
     </a>
-    <a class='item' href='#' target='_blank' rel='noopener noreferrer'>
+    <a class='footer__item' href='#' target='_blank' rel='noopener noreferrer'>
       <IconInstagram />
     </a>
   </nav>
@@ -45,8 +45,10 @@ import {
     left: 50%;
     transform: translateX(-50%);
     width: calc(var(--max-width) - 8rem);
+    max-width: 100%;
     height: 1px;
     background-color: var(--sky-blue);
+    box-shadow: var(--shadow-elevation-high);
   }
 
   .footer__nav {
@@ -61,15 +63,33 @@ import {
     font-size: var(--step-0);
     font-weight: 500;
     color: var(--white);
+    text-wrap: nowrap;
   }
 
-  .item {
+  .footer__item {
     color: var(--white);
   }
 
-  .item:hover {
+  .footer__item:hover {
     color: var(--light-blue);
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
+  }
+
+  @media (max-width: 400px) {
+    .footer {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .footer__nav {
+      gap: 1rem;
+    }
+
+    .footer__text {
+      font-size: var(--step--1);
+      font-weight: 600;
+      padding: 1.5rem 0;
+    }
   }
 </style>
