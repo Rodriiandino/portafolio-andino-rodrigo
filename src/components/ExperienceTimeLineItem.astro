@@ -23,7 +23,12 @@ const t = useTranslations(currentLocale)
 </p>
 {
   link && (
-    <a href={link} class='timeline__link'>
+    <a
+      href={link}
+      class='timeline__link'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
       {t('experience.btn')}
       <svg
         width='21'

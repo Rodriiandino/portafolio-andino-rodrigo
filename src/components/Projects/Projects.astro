@@ -1,4 +1,5 @@
 ---
+import { IconProjects } from '../icons/icons'
 import { useTranslations } from '../../i18n/utils'
 import ProjectsGallery from './ProjectsGallery.astro'
 
@@ -8,7 +9,7 @@ const t = useTranslations(currentLocale)
 ---
 
 <section class='projects' id='projects'>
-  <h2>{t('title.projects')}</h2>
+  <h2><IconProjects /> {t('title.projects')}</h2>
   <header class='projects__filter'><p>{t('projects.filter')}</p></header>
   <ProjectsGallery />
 </section>

@@ -2,85 +2,54 @@
   {
     "education": [
       {
-        "date": "date",
-        "title": "title",
-        "description": "lore",
-        "link": "/en"
+        "date": "2014 - 2021",
+        "title": "ELECTRICAL TECHNICIAN",
+        "description": "During my high school period at 'Instituto Mariano Fragueiro', I acquired solid skills in the design, installation, and maintenance of electrical systems. I actively participated in practical projects, gaining a practical understanding of the theoretical concepts learned in the classroom.",
+        "link": ""
       },
       {
-        "date": "date",
-        "title": "title",
-        "description": "description",
-        "link": "/en"
-      },
-      {
-        "date": "date",
-        "title": "title",
-        "description": "description",
-        "link": "/en"
-      },
-      {
-        "date": "date",
-        "title": "title",
-        "description": "description",
-        "link": "/en"
+        "date": "2022 - Ongoing",
+        "title": "BACHELOR'S DEGREE IN COMPUTER SCIENCE",
+        "description": "I am currently in my third year of the program at 'Universidad Siglo 21'.",
+        "link": ""
       }
     ]
   },
   {
     "workExperience": [
       {
-        "date": "date",
-        "title": "title",
-        "description": "description",
-        "link": "/en"
+        "date": "2021",
+        "title": "Internship in Instrumentation and Control at Embalse Nuclear Power Plant",
+        "description": "This experience provided me with valuable practical insight into industrial processes and the application of advanced technologies in a critical environment.",
+        "link": ""
       },
       {
-        "date": "date",
-        "title": "title",
-        "description": "description",
-        "link": "/en"
+        "date": "09/26/2022 to 12/02/2022",
+        "title": "Instrumentation Technician during the Shutdown at Embalse Nuclear Power Plant",
+        "description": "Skilled Instrumentation and Control Officer during the shutdown of Embalse Nuclear Power Plant.",
+        "link": ""
       },
       {
-        "date": "date",
-        "title": "title",
-        "description": "description",
-        "link": "/en"
-      },
-      {
-        "date": "date",
-        "title": "title",
-        "description": "description",
-        "link": "/en"
+        "date": "2021 - Present",
+        "title": "Customer Service",
+        "description": "Family business venture with over 2 years of experience in customer service, acquiring communication, teamwork, and leadership skills.",
+        "link": ""
       }
     ]
   },
-
   {
     "professionalCourses": [
       {
-        "date": "date",
-        "title": "title",
-        "description": "description",
-        "link": "/en"
+        "date": "04/03/2023 to 01/12/2024",
+        "title": "Oracle Next Education F2 T5 Back-end Program",
+        "description": "A course focused on Backend with an intensive learning experience that covered over 330 hours of specialized content. During this course, I consolidated my knowledge in key back-end development technologies, including Java, SQL 'MySQL', Spring, and Oracle Cloud, along with agile methodologies and programming best practices.",
+        "link": "https://app.aluracursos.com/user/andinorodrigo03/fullCertificate/7a7bb74f2a0a42146251f5f83344e9b6"
       },
       {
-        "date": "date",
-        "title": "title",
-        "description": "description",
-        "link": "/en"
-      },
-      {
-        "date": "date",
-        "title": "title",
-        "description": "description",
-        "link": "/en"
-      },
-      {
-        "date": "date",
-        "title": "title",
-        "description": "description",
-        "link": "/en"
+        "date": "2023 - Completed",
+        "title": "Python, Data Science in OCI, and Oracle Analytics",
+        "description": "A course covering the use of Python along with pandas, numpy, matplotlib, seaborn, scikit-learn, Oracle Accelerated Data Science Library (ADSL), and Oracle Analytics Cloud (OAC).",
+        "link": "https://app.aluracursos.com/degree/certificate/d17398d7-6350-41f0-b0ff-ac73f416d951"
       }
     ]
   }

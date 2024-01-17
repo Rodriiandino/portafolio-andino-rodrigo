@@ -7,7 +7,6 @@ import convertTitleToURL from '../../components/utils/convert_title_to_url'
 import { IconCode, IconDemo } from '../../components/icons/icons'
 
 const { title } = Astro.params
-console.log(title)
 
 export const getStaticPaths = (() => {
   return projects_es.map(project => {
@@ -43,7 +42,11 @@ const t = useTranslations(currentLocale)
 
         <div>
           <h2 class='aside__title'>{t('project.learn')}</h2>
-          <p>{project.what_i_learned}</p>
+          {
+            project.what_i_learned.map(learn => (
+              <p class='aside__learn'>{learn}</p>
+            ))
+          }
         </div>
 
         <table class='aside__table'>
@@ -58,7 +61,13 @@ const t = useTranslations(currentLocale)
             </tr>
             <tr class='aside__tr'>
               <th>{t('project.technologies')}</th>
-              <td>{project.technologies}</td>
+              <td
+                >{
+                  project.technologies.map((tech, i) =>
+                    i === project.technologies.length - 1 ? tech : `${tech}, `
+                  )
+                }</td
+              >
             </tr>
             <tr class='aside__tr'>
               <th>{t('project.state')}</th>
@@ -75,13 +84,18 @@ const t = useTranslations(currentLocale)
           <a href={project.github} target='_blank' rel='noopener noreferrer'>
             <IconCode /> Code
           </a>
-          <a
-            href={project.deploy.demo}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <IconDemo /> Demo
-          </a>
+
+          {
+            project.deploy.demo && (
+              <a
+                href={project.deploy.demo}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <IconDemo /> Demo
+              </a>
+            )
+          }
         </footer>
       </aside>
     </div>
@@ -167,11 +181,15 @@ const t = useTranslations(currentLocale)
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease-in-out;
   }
 
   .project__image img {
+    max-width: 750px;
+    width: 100%;
     border-radius: var(--border-radius);
     transform: translateX(-208.558px) translateY(0px) translateZ(0px);
+    transition: all 0.3s ease-in-out;
   }
 
   .project__aside-container {
@@ -212,6 +230,11 @@ const t = useTranslations(currentLocale)
     border-bottom: 5px solid var(--sky-blue);
 
     box-shadow: 0 6px 3px -5px var(--sky-blue);
+    margin-bottom: 0.5rem;
+  }
+
+  .aside__learn {
+    margin-bottom: 0.5rem;
   }
 
   .aside__table {

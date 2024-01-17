@@ -1,113 +1,120 @@
 [
   {
-    "title": "Project Title 1",
-    "description": "A brief description of the project.",
-    "what_i_learned": "List of skills or knowledge gained during the project.",
-    "features": ["Feature 1", "Feature 2", "Feature 3"],
-    "date": "YYYY-MM-DD",
-    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
-    "status": "Completed/In Progress/Abandoned",
+    "title": "Foro API SpringBoot",
+    "description": "API RESTful - Realizada con Spring Boot.",
+    "what_i_learned": [
+      "Desarrollo en Spring Framework",
+      "Spring Security",
+      "Autenticación basada en tokens (JWT) y autorización, para proteger tu API.",
+      "Persistencia de Datos con JPA",
+      "Documentación de API",
+      "Gestión de Solicitudes y Respuestas HTTP",
+      "Mensajes de Error y Excepciones, y Validación de Datos de una api"
+    ],
+    "features": "Aprendizaje",
+    "date": "2023",
+    "technologies": ["Java", "Spring Boot", "MySQL"],
+    "status": "En Progreso",
     "deploy": {
-      "page": "URL where the project is deployed",
-      "demo": "Any additional notes or instructions related to deployment."
+      "page": "No Deploy",
+      "demo": ""
     },
-    "github": "URL to the project's GitHub repository",
+    "github": "https://github.com/Rodriiandino/Foro_API_SpringBoot",
     "images": [
       {
-        "src": "https://via.placeholder.com/500",
-        "alt": "Image 1"
+        "src": "/projects/foro_api_springboot/foro_api_springboot_1.png",
+        "alt": "Foro API SpringBoot"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 2"
+        "src": "/projects/foro_api_springboot/foro_api_springboot_2.png",
+        "alt": "Foro API SpringBoot"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 3"
+        "src": "/projects/foro_api_springboot/foro_api_springboot_3.png",
+        "alt": "Foro API SpringBoot"
       }
     ]
   },
   {
-    "title": "Project Title 2",
-    "description": "A brief description of the project.",
-    "what_i_learned": "List of skills or knowledge gained during the project.",
-    "features": ["Feature 1", "Feature 2", "Feature 3"],
-    "date": "YYYY-MM-DD",
-    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
-    "status": "Completed/In Progress/Abandoned",
+    "title": "Hotel Alura",
+    "description": "El 'Sistema de Gestión de Reservas de Hotel' es una aplicación diseñada para facilitar y agilizar la administración de reservas de habitaciones en un hotel.",
+    "what_i_learned": [
+      "La misión: crear un sistema de gestión hotelera, con las funciones de CRUD: Crear, Leer, Actualizar y Eliminar registros de huéspedes almacenados en la base de datos.",
+      "Se adopté una arquitectura sólida de Modelo, Controlador y Objeto de Acceso a Datos (DAO) para nuestras entidades. Además, se utilizo JavaFX para diseñar una interfaz de usuario intuitiva y amigable.",
+      "Se utilizó el patrón de diseño MVC (Modelo-Vista-Controlador) para separar las responsabilidades de la aplicación en capas."
+    ],
+    "features": "Aprendizaje",
+    "date": "2023",
+    "technologies": ["Java", "JDBC", "MySQL"],
+    "status": "Completed",
     "deploy": {
-      "page": "URL where the project is deployed",
-      "demo": "Any additional notes or instructions related to deployment."
+      "page": "Aplicación de Escritorio",
+      "demo": ""
     },
-    "github": "URL to the project's GitHub repository",
+    "github": "https://github.com/Rodriiandino/Challenge_One_HotelAlura_G5",
     "images": [
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 1"
+        "src": "/projects/hotel_alura/hotel_alura_1.png",
+        "alt": "Hotel Alura"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 2"
+        "src": "/projects/hotel_alura/hotel_alura_2.png",
+        "alt": "Hotel Alura"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 3"
+        "src": "/projects/hotel_alura/hotel_alura_3.png",
+        "alt": "Hotel Alura"
       }
     ]
   },
   {
-    "title": "Project Title 3",
-    "description": "A brief description of the project.",
-    "what_i_learned": "List of skills or knowledge gained during the project.",
-    "features": ["Feature 1", "Feature 2", "Feature 3"],
-    "date": "YYYY-MM-DD",
-    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
-    "status": "Completed/In Progress/Abandoned",
+    "title": "Encriptado de Texto",
+    "description": "Este es un proyecto desarrollado como parte de un challenge ofrecido por One, en asociación con Oracle. El proyecto consiste en un encriptado de texto desarrollado utilizando tecnologías web como HTML, CSS y JavaScript.",
+    "what_i_learned": [
+      "Mejorar mis habilidades de programación en JavaScript.",
+      "Mejorar mis habilidades de programación en HTML y CSS."
+    ],
+    "features": "Aprendizaje",
+    "date": "2023",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "status": "En Progreso",
     "deploy": {
-      "page": "URL where the project is deployed",
-      "demo": "Any additional notes or instructions related to deployment."
+      "page": "github",
+      "demo": "https://rodriiandino.github.io/Challenge_One_Encriptador_G5/"
     },
-    "github": "URL to the project's GitHub repository",
+    "github": "https://github.com/Rodriiandino/Challenge_One_Encriptador_G5",
     "images": [
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 1"
+        "src": "/projects/encriptador/encriptador_1.png",
+        "alt": "Encriptado de Texto"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 2"
-      },
-      {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 3"
+        "src": "/projects/encriptador/encriptador_2.png",
+        "alt": "Encriptado de Texto"
       }
     ]
   },
   {
-    "title": "Project Title 4",
-    "description": "A brief description of the project.",
-    "what_i_learned": "List of skills or knowledge gained during the project.",
-    "features": ["Feature 1", "Feature 2", "Feature 3"],
-    "date": "YYYY-MM-DD",
-    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
-    "status": "Completed/In Progress/Abandoned",
+    "title": "Conversor con Java",
+    "description": "Este proyecto es un convertidor que permite al usuario realizar conversiones entre diferentes unidades de medida, como monedas, tiempo, temperatura, área y longitud. El convertidor de monedas utiliza una API externa para obtener tasas de cambio actualizadas, mientras que las conversiones de tiempo, temperatura, área y longitud se realizan internamente dentro de la aplicación.",
+    "what_i_learned": [
+      "Utilizar una API externa para obtener tasas de cambio actualizadas.",
+      "Crear diseños con JavaFX.",
+      "Mejorar mis habilidades de programación en Java."
+    ],
+    "features": "Aprendizaje",
+    "date": "2023",
+    "technologies": ["Java", "JavaFX", "API"],
+    "status": "Completed",
     "deploy": {
-      "page": "URL where the project is deployed",
-      "demo": "Any additional notes or instructions related to deployment."
+      "page": "No Deploy",
+      "demo": ""
     },
-    "github": "URL to the project's GitHub repository",
+    "github": "https://github.com/Rodriiandino/Challenge_One_Conversor_G5",
     "images": [
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 1"
-      },
-      {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 2"
-      },
-      {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 3"
+        "src": "/projects/conversor/conversor_1.png",
+        "alt": "conversor"
       }
     ]
   },

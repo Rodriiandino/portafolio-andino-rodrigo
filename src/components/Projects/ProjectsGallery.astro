@@ -18,6 +18,8 @@ const t = useTranslations(currentLocale)
         image={project.images[0].src}
         image_alt={project.images[0].alt}
         title_url={`/projects/${convertTitleToURL(project.title)}`}
+        link_code={project.github}
+        link_demo={project.deploy.demo}
       />
     ))
   }

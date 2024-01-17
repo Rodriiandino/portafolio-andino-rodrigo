@@ -1,4 +1,6 @@
 ---
+import { IconExperience } from './icons/icons'
+
 import { useTranslations } from '../i18n/utils'
 import ExperienceTimeLineItem from './ExperienceTimeLineItem.astro'
 import experience_es from '../data/experience_es.json'
@@ -10,7 +12,7 @@ const t = useTranslations(currentLocale)
 ---
 
 <section class='experience' id='experience'>
-  <h2>{t('title.experience')}</h2>
+  <h2><IconExperience /> {t('title.experience')}</h2>
   <p class='experience__description'>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum corporis sed
     fugiat commodi, cupiditate harum id tempore aliquid atque corrupti maiores
@@ -18,6 +20,28 @@ const t = useTranslations(currentLocale)
     Eaque!
   </p>
   <article class='experience__timeline'>
+    <div>
+      <h3 class='timeline__title-theme'>{t('experience.work')}</h3>
+      <ol class='timeline'>
+        {
+          currentLocale === 'es'
+            ? experience_es?.map(item =>
+                item.workExperience?.map(workItem => (
+                  <li class='timeline__item'>
+                    <ExperienceTimeLineItem {...workItem} />
+                  </li>
+                ))
+              )
+            : experience_en?.map(item =>
+                item.workExperience?.map(workItem => (
+                  <li class='timeline__item'>
+                    <ExperienceTimeLineItem {...workItem} />
+                  </li>
+                ))
+              )
+        }
+      </ol>
+    </div>
     <div>
       <h3 class='timeline__title-theme'>{t('experience.education')}</h3>
       <ol class='timeline'>
@@ -62,28 +86,6 @@ const t = useTranslations(currentLocale)
         }
       </ol>
     </div>
-    <div>
-      <h3 class='timeline__title-theme'>{t('experience.work')}</h3>
-      <ol class='timeline'>
-        {
-          currentLocale === 'es'
-            ? experience_es?.map(item =>
-                item.workExperience?.map(workItem => (
-                  <li class='timeline__item'>
-                    <ExperienceTimeLineItem {...workItem} />
-                  </li>
-                ))
-              )
-            : experience_en?.map(item =>
-                item.workExperience?.map(workItem => (
-                  <li class='timeline__item'>
-                    <ExperienceTimeLineItem {...workItem} />
-                  </li>
-                ))
-              )
-        }
-      </ol>
-    </div>
   </article>
 </section>
 
@@ -96,11 +98,18 @@ const t = useTranslations(currentLocale)
 
   .experience__timeline {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
     gap: 2rem;
-    flex-wrap: wrap-reverse;
+  }
+
+  @media (min-width: 844px) {
+    .experience__timeline {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .experience__timeline > div {
+    width: 100%;
   }
 
   .timeline__title-theme {

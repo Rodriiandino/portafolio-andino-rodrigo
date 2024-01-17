@@ -1,4 +1,5 @@
 ---
+import { IconContact } from './icons/icons'
 import { useTranslations } from '../i18n/utils'
 import { IconWhatsApp, IconGmail } from './icons/icons'
 
@@ -8,7 +9,7 @@ const t = useTranslations(currentLocale)
 ---
 
 <section id='contact'>
-  <h2>{t('title.contact')}</h2>
+  <h2><IconContact /> {t('title.contact')}</h2>
   <article class='contact__container'>
     <div class='contact__container_info'>
       <p class='info__text'>

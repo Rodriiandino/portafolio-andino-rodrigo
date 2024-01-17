@@ -170,8 +170,24 @@ const { title } = Astro.props
         font-weight: 600;
         text-transform: uppercase;
         border-bottom: 5px solid var(--sky-blue);
-
         box-shadow: 0 6px 3px -5px var(--sky-blue);
+
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-wrap: balance;
+      }
+
+      p {
+        text-wrap: pretty;
       }
     </style>
   </body>
