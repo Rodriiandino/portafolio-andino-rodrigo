@@ -119,30 +119,178 @@
     ]
   },
   {
-    "title": "Project Title 5",
-    "description": "A brief description of the project.",
-    "what_i_learned": "List of skills or knowledge gained during the project.",
-    "features": ["Feature 1", "Feature 2", "Feature 3"],
-    "date": "YYYY-MM-DD",
-    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
-    "status": "Completed/In Progress/Abandoned",
+    "title": "Digital Retouch",
+    "description": "Pagina en la cual se puede colocar filtros a las imágenes con javaScript vanilla.",
+    "what_i_learned": [
+      "Mejorar mis habilidades de programación en JavaScript.",
+      "Mejorar mis habilidades de programación en HTML y CSS."
+    ],
+    "features": "Aprendizaje",
+    "date": "2023",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "status": "Completed",
     "deploy": {
-      "page": "URL where the project is deployed",
-      "demo": "Any additional notes or instructions related to deployment."
+      "page": "Netlify",
+      "demo": "https://digitalretouch.netlify.app/"
     },
-    "github": "URL to the project's GitHub repository",
+    "github": "https://github.com/Rodriiandino/DigitalRetouch",
     "images": [
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 1"
+        "src": "/projects/digitalRetouch/digitalRetouch_1.webp",
+        "alt": "digitalRetouch"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 2"
+        "src": "/projects/digitalRetouch/digitalRetouch_2.webp",
+        "alt": "digitalRetouch"
+      }
+    ]
+  },
+  {
+    "title": "CV Jensen Ackles",
+    "description": "Pagina que muestra información de actor Jensen Ackles al estilo de un portafolio.",
+    "what_i_learned": [
+      "Programación en HTML y CSS. Primer proyecto realizado en el curso de Proyecto para Argentina Programa 4.0."
+    ],
+    "features": "Aprendizaje",
+    "date": "2023",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "status": "Completed",
+    "deploy": {
+      "page": "Github",
+      "demo": "https://rodriiandino.github.io/CV-JensenAckles/"
+    },
+    "github": "https://github.com/Rodriiandino/CV-JensenAckles",
+    "images": [
+      {
+        "src": "/projects/cv_jensen_ackles/cv_jensen_ackles_1.webp",
+        "alt": "cvJensenAckles"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 3"
+        "src": "/projects/cv_jensen_ackles/cv_jensen_ackles_2.webp",
+        "alt": "cvJensenAckles"
+      }
+    ]
+  },
+  {
+    "title": "1er Generación Pokedex",
+    "description": "Diseño de la Pokedex de la primera generación realizado con CSS, y usando JavaScript para hacer el fetch a la api de pokeApi. Se utilizo el framework 'Astro'.",
+    "what_i_learned": [
+      "Aprender usar el framework Astro.",
+      "Mejorar mis habilidades de programación en HTML y CSS."
+    ],
+    "features": "Aprendizaje",
+    "date": "2023",
+    "technologies": ["HTML", "CSS", "JavaScript", "Astro"],
+    "status": "Completed",
+    "deploy": {
+      "page": "Netlify",
+      "demo": "https://pokedex1ra-generacion.netlify.app/"
+    },
+    "github": "https://github.com/Rodriiandino/1erGeneracion-pokedex",
+    "images": [
+      {
+        "src": "/projects/1erGeneracion_pokedex/1erGeneracion_pokedex_1.webp",
+        "alt": "1erGeneracionPokedex"
+      },
+      {
+        "src": "/projects/1erGeneracion_pokedex/1erGeneracion_pokedex_2.webp",
+        "alt": "1erGeneracionPokedex"
+      }
+    ]
+  },
+  {
+    "title": "Calculadora Java",
+    "description": "Aplicación desarrollada en Java y JavaFX que implementa el concepto de pila para realizar operaciones matemáticas.",
+    "what_i_learned": [
+      "Aprender mejor el entendimiento de la estructura de datos de la pila.",
+      "Mejorar mis habilidades de programación en Java.",
+      "Aprender a programar con JavaFX."
+    ],
+    "features": "Aprendizaje",
+    "date": "2023",
+    "technologies": ["Java", "JavaFX"],
+    "status": "Completed",
+    "deploy": {
+      "page": "No Deploy",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/Calculadora-Java",
+    "images": [
+      {
+        "src": "/projects/calculadora_java/calculadora_java_1.webp",
+        "alt": "Calculadora Java"
+      },
+      {
+        "src": "/projects/calculadora_java/calculadora_java_2.webp",
+        "alt": "Calculadora Java"
+      }
+    ]
+  },
+  {
+    "title": "Matchmatic Android App",
+    "description": "Este es mi proyecto realizado como parte del Curso de Desarrollo de Aplicaciones Móviles de Ticma y Argentina Programa 4. Como desarrollador web, en este mes de agosto decidí aventurarme en el mundo de las aplicaciones móviles y este es mi primer paso.",
+    "what_i_learned": [
+      "MatchMatic es una sencilla aplicación de comparación de texto. Te permite ingresar dos cadenas de texto y te dice si son iguales o diferentes. Está desarrollada en Kotlin y sigue la arquitectura MVVM.",
+      "Aprender a programar en Kotlin.",
+      "Aprender a programar en Android Studio.",
+      "Aprender a usar la arquitectura MVVM."
+    ],
+    "features": "Aprendizaje",
+    "date": "2023",
+    "technologies": ["Kotlin", "Android Studio"],
+    "status": "Completed",
+    "deploy": {
+      "page": "No Deploy",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/matchmatic-android-app",
+    "images": [
+      {
+        "src": "/projects/matchmatic_android_app/matchmatic_android_app_1.webp",
+        "alt": "Matchmatic Android App"
+      }
+    ]
+  },
+  {
+    "title": "5 Proyectos con React Aprendiendo Hooks",
+    "description": "Este es una serie de 5 proyectos con React, en el cual se aprende a usar los Hooks de React y test con vitest.",
+    "what_i_learned": [
+      "Aprender a usar los Hooks de React.",
+      "Mejorar mis habilidades de programación en React.",
+      "Aprender a usar vitest y testear los componentes.",
+      "Mejorar mis habilidades de programación en JavaScript.",
+      "Mejorar mis habilidades de programación en HTML y CSS.",
+      "Manejo del LocalStorage."
+    ],
+    "features": "Aprendizaje",
+    "date": "2023",
+    "technologies": ["React", "JavaScript", "vite", "vitest"],
+    "status": "Completed",
+    "deploy": {
+      "page": "Vercel - Netlify",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/Aprendiendo-React",
+    "images": [
+      {
+        "src": "/projects/react_projects/react_project_5.webp",
+        "alt": "Aprendiendo React"
+      },
+      {
+        "src": "/projects/react_projects/react_project_1.webp",
+        "alt": "Aprendiendo React"
+      },
+      {
+        "src": "/projects/react_projects/react_project_2.webp",
+        "alt": "Aprendiendo React"
+      },
+      {
+        "src": "/projects/react_projects/react_project_3.webp",
+        "alt": "Aprendiendo React"
+      },
+      {
+        "src": "/projects/react_projects/react_project_4.webp",
+        "alt": "Aprendiendo React"
       }
     ]
   }

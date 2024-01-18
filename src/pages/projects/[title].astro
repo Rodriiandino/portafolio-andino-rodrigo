@@ -43,7 +43,7 @@ const t = useTranslations(currentLocale)
         <div>
           <h2 class='aside__title'>{t('project.learn')}</h2>
           {
-            project.what_i_learned.map(learn => (
+            project.what_i_learned?.map(learn => (
               <p class='aside__learn'>{learn}</p>
             ))
           }
@@ -185,11 +185,14 @@ const t = useTranslations(currentLocale)
   }
 
   .project__image img {
-    max-width: 750px;
+    max-width: 700px;
+    max-height: 700px;
     width: 100%;
+    height: 100%;
     border-radius: var(--border-radius);
     transform: translateX(-208.558px) translateY(0px) translateZ(0px);
     transition: all 0.3s ease-in-out;
+    object-fit: contain;
   }
 
   .project__aside-container {
