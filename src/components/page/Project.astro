@@ -1,0 +1,387 @@
+---
+import { useTranslations } from '../../i18n/utils'
+import Layout from '../../layouts/Layout.astro'
+import projects_es from '../../data/projects_es.json'
+import projects_en from '../../data/projects_en.json'
+import convertTitleToURL from '../utils/convert_title_to_url'
+import { IconCode, IconDemo } from '../../components/icons/icons'
+
+const { title } = Astro.params
+const { currentLocale = 'es' } = Astro
+const t = useTranslations(currentLocale)
+
+const project = (() => {
+  const projects = currentLocale === 'es' ? projects_es : projects_en
+
+  return projects.find(project => convertTitleToURL(project.title) === title)
+})()
+---
+
+<Layout title={project.title}>
+  <main class='project__page'>
+    <div class='project__image'>
+      <img src={project.images[0].src} alt={project.images[0].alt} id='img' />
+    </div>
+    <div class='project__aside-container'>
+      <aside class='project__aside'>
+        <div class='aside__move-top'>--</div>
+
+        <div>
+          <h1 class='aside__title'>{project.title}</h1>
+          <p>{project.description}</p>
+        </div>
+
+        <div>
+          <h2 class='aside__title'>{t('project.learn')}</h2>
+          {
+            project.what_i_learned?.map(learn => (
+              <p class='aside__learn'>{learn}</p>
+            ))
+          }
+        </div>
+
+        <table class='aside__table'>
+          <tbody class='aside__tbody'>
+            <tr class='aside__tr'>
+              <th>{t('project.characteristics')}</th>
+              <td>{project.features}</td>
+            </tr>
+            <tr class='aside__tr'>
+              <th>{t('project.date')}</th>
+              <td>{project.date}</td>
+            </tr>
+            <tr class='aside__tr'>
+              <th>{t('project.technologies')}</th>
+              <td
+                >{
+                  project.technologies.map((tech, i) =>
+                    i === project.technologies.length - 1 ? tech : `${tech}, `
+                  )
+                }</td
+              >
+            </tr>
+            <tr class='aside__tr'>
+              <th>{t('project.state')}</th>
+              <td>{project.status}</td>
+            </tr>
+            <tr class='aside__tr'>
+              <th>{t('project.deploy')}</th>
+              <td>{project.deploy.page}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <footer class='aside__footer'>
+          <a href={project.github} target='_blank' rel='noopener noreferrer'>
+            <IconCode /> Code
+          </a>
+
+          {
+            project.deploy.demo && (
+              <a
+                href={project.deploy.demo}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <IconDemo /> Demo
+              </a>
+            )
+          }
+        </footer>
+      </aside>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const $moveTop = document.querySelector('.aside__move-top') as HTMLDivElement
+  const $asideContainer = document.querySelector(
+    '.project__aside-container'
+  ) as HTMLDivElement
+  const $projectImage = document.querySelector(
+    '.project__image'
+  ) as HTMLDivElement
+
+  const $img = document.querySelector('#img') as HTMLImageElement
+
+  const breakpoint = window.matchMedia('(max-width: 933px)')
+  let translate = 0
+
+  const updateProjectImg = (def = true) => {
+    if (def) {
+      $projectImage.style.cursor = 'default'
+      $projectImage.style.backdropFilter = 'none'
+      $img.style.filter = 'none'
+      $projectImage.style.userSelect = 'auto'
+    } else {
+      $projectImage.style.cursor = 'pointer'
+      $projectImage.style.backdropFilter = 'saturate(100%) brightness(60%)'
+      $img.style.filter = 'saturate(100%) brightness(60%)'
+      $projectImage.style.userSelect = 'none'
+    }
+  }
+
+  $moveTop.addEventListener('click', e => {
+    if (translate == 0) {
+      updateProjectImg(false)
+      $asideContainer.style.transform = `translateY(${translate}%)`
+      translate = 88
+    } else {
+      updateProjectImg()
+      $asideContainer.style.transform = `translateY(${translate}%)`
+      translate = 0
+    }
+  })
+
+  $projectImage.addEventListener('click', e => {
+    if (translate == 88) {
+      updateProjectImg()
+      $asideContainer.style.transform = `translateY(${translate}%)`
+      translate = 0
+    }
+  })
+
+  breakpoint.addEventListener('change', e => {
+    if (e.matches) {
+      updateProjectImg()
+      $asideContainer.style.transform = `translateY(88%)`
+      translate = 0
+    }
+  })
+
+  window.addEventListener('resize', e => {
+    if (window.innerWidth > 933) {
+      updateProjectImg()
+      $asideContainer.style.transform = `translateY(0%)`
+      translate = 0
+    }
+  })
+</script>
+
+<style is:global>
+  .project__page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .project__image {
+    position: fixed;
+    inset: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .project__image img {
+    max-width: 700px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    transform: translateX(-208.558px) translateY(0px) translateZ(0px);
+    transition: all 0.3s ease-in-out;
+    object-fit: contain;
+  }
+
+  .project__aside-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .project__aside {
+    position: relative;
+    width: 100%;
+    max-width: 30%;
+    min-width: 25rem;
+    height: fit-content;
+    min-height: 100%;
+    padding: 2.3rem 2.6rem;
+    background-color: var(--black);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .aside__move-top {
+    display: none;
+  }
+
+  .aside__title {
+    width: max-content;
+    font-size: var(--step-2);
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 5px solid var(--sky-blue);
+
+    box-shadow: 0 6px 3px -5px var(--sky-blue);
+    margin-bottom: 0.5rem;
+  }
+
+  .aside__learn {
+    margin-bottom: 0.5rem;
+  }
+
+  .aside__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .aside__tbody {
+    width: 100%;
+  }
+
+  .aside__tr {
+    width: 100%;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 3px solid var(--sky-blue);
+  }
+
+  .aside__tr th {
+    font-size: var(--step-0);
+    font-weight: 600;
+    color: var(--light-blue);
+    text-align: left;
+    text-transform: capitalize;
+  }
+
+  .aside__tr td {
+    font-size: var(--step--1);
+    font-weight: 500;
+    color: var(--white);
+    text-align: right;
+  }
+
+  .aside__footer {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .aside__footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--white);
+    font-size: var(--step-0);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .aside__footer a:hover {
+    color: var(--light-blue);
+    text-decoration: underline;
+  }
+
+  .aside__footer a svg {
+    color: var(--light-blue);
+  }
+
+  @media (max-width: 933px) {
+    .project__image {
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .project__image img {
+      transform: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .project__aside-container {
+      position: fixed;
+      inset: auto 0 0 0;
+      height: 100%;
+      width: 100%;
+      transform: translateY(90%);
+      height: fit-content;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .project__aside-container:hover {
+      transform: translateY(88%);
+    }
+
+    .project__aside {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      min-height: auto;
+      padding: 1.3rem 1.6rem;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+
+    .aside__move-top {
+      display: block;
+      width: 100%;
+      height: 1.3rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: var(--step-0);
+      font-weight: 600;
+      color: var(--black);
+      background-color: var(--sky-blue);
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      user-select: none;
+    }
+
+    .aside__move-top:hover {
+      transform: scaleY(1.1);
+      background-color: var(--light-blue);
+    }
+
+    .aside__move-top:active {
+      transform: scaleY(1.2);
+      background-color: var(--light-blue);
+    }
+
+    .aside__title {
+      padding-top: 0.5rem;
+      font-size: var(--step-1);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .project__aside {
+      padding: 1rem 1.3rem;
+      min-width: fit-content;
+    }
+
+    .aside__title {
+      font-size: var(--step-1);
+    }
+
+    .aside__tr th {
+      font-size: var(--step--1);
+    }
+
+    .aside__tr td {
+      font-size: var(--step--2);
+    }
+
+    .aside__footer a {
+      font-size: var(--step--1);
+    }
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import ProjectsGalleryCard from './ProjectsGalleryCard.astro'
 import projects_es from '../../data/projects_es.json'
+import projects_en from '../../data/projects_en.json'
 import convertTitleToURL from '../utils/convert_title_to_url'
 import { useTranslations } from '../../i18n/utils'
 
@@ -11,24 +12,36 @@ const t = useTranslations(currentLocale)
 
 <div class='projects__gallery'>
   {
-    projects_es?.map(project => (
-      <ProjectsGalleryCard
-        title={project.title}
-        description={project.description}
-        image={project.images[0].src}
-        image_alt={project.images[0].alt}
-        title_url={`/projects/${convertTitleToURL(project.title)}`}
-        link_code={project.github}
-        link_demo={project.deploy.demo}
-      />
-    ))
+    currentLocale == 'es'
+      ? projects_es?.map(project => (
+          <ProjectsGalleryCard
+            title={project.title}
+            description={project.description}
+            image={project.images[0].src}
+            image_alt={project.images[0].alt}
+            title_url={`/projects/${convertTitleToURL(project.title)}`}
+            link_code={project.github}
+            link_demo={project.deploy.demo}
+          />
+        ))
+      : projects_en?.map(project => (
+          <ProjectsGalleryCard
+            title={project.title}
+            description={project.description}
+            image={project.images[0].src}
+            image_alt={project.images[0].alt}
+            title_url={`/en/projects/${convertTitleToURL(project.title)}`}
+            link_code={project.github}
+            link_demo={project.deploy.demo}
+          />
+        ))
   }
 </div>
 <button class='projects__btn'>{t('projects.btn')}</button>
 
 <style>
   .projects__gallery {
-    columns: 2 330px;
+    columns: 3 330px;
     column-gap: 20px;
     display: block;
   }
