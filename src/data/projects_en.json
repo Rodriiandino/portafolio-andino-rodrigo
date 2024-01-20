@@ -1,141 +1,296 @@
 [
   {
-    "title": "Project Title 1",
-    "description": "A brief description of the project.",
-    "what_i_learned": "List of skills or knowledge gained during the project.",
-    "features": ["Feature 1", "Feature 2", "Feature 3"],
-    "date": "YYYY-MM-DD",
-    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
-    "status": "Completed/In Progress/Abandoned",
+    "title": "SpringBoot API Forum",
+    "description": "RESTful API - Built with Spring Boot.",
+    "what_i_learned": [
+      "Development in Spring Framework",
+      "Spring Security",
+      "Token-based authentication (JWT) and authorization to secure your API.",
+      "Data persistence with JPA",
+      "API documentation",
+      "Handling HTTP Requests and Responses",
+      "Error messages and exceptions, and data validation in an API"
+    ],
+    "features": "Learning",
+    "date": "2023",
+    "technologies": ["Java", "Spring Boot", "MySQL"],
+    "status": "In Progress",
     "deploy": {
-      "page": "URL where the project is deployed",
-      "demo": "Any additional notes or instructions related to deployment."
+      "page": "Not Deployed",
+      "demo": ""
     },
-    "github": "URL to the project's GitHub repository",
+    "github": "https://github.com/Rodriiandino/Foro_API_SpringBoot",
     "images": [
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 1"
+        "src": "/projects/foro_api_springboot/foro_api_springboot_1.webp",
+        "alt": "SpringBoot API Forum"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 2"
+        "src": "/projects/foro_api_springboot/foro_api_springboot_2.webp",
+        "alt": "SpringBoot API Forum"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 3"
+        "src": "/projects/foro_api_springboot/foro_api_springboot_3.webp",
+        "alt": "SpringBoot API Forum"
       }
     ]
   },
   {
-    "title": "Project Title 2",
-    "description": "A brief description of the project.",
-    "what_i_learned": "List of skills or knowledge gained during the project.",
-    "features": ["Feature 1", "Feature 2", "Feature 3"],
-    "date": "YYYY-MM-DD",
-    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
-    "status": "Completed/In Progress/Abandoned",
+    "title": "Alura Hotel",
+    "description": "The 'Hotel Reservation Management System' is an application designed to facilitate and streamline the management of room reservations in a hotel.",
+    "what_i_learned": [
+      "Mission: create a hotel management system with CRUD functions: Create, Read, Update, and Delete guest records stored in the database.",
+      "Adopted a solid Model-View-Controller (MVC) architecture for our entities. Additionally, used JavaFX to design an intuitive and user-friendly user interface.",
+      "Used the MVC (Model-View-Controller) design pattern to separate the responsibilities of the application into layers."
+    ],
+    "features": "Learning",
+    "date": "2023",
+    "technologies": ["Java", "JDBC", "MySQL"],
+    "status": "Completed",
     "deploy": {
-      "page": "URL where the project is deployed",
-      "demo": "Any additional notes or instructions related to deployment."
+      "page": "Desktop Application",
+      "demo": ""
     },
-    "github": "URL to the project's GitHub repository",
+    "github": "https://github.com/Rodriiandino/Challenge_One_HotelAlura_G5",
     "images": [
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 1"
+        "src": "/projects/hotel_alura/hotel_alura_1.webp",
+        "alt": "Alura Hotel"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 2"
+        "src": "/projects/hotel_alura/hotel_alura_2.webp",
+        "alt": "Alura Hotel"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 3"
+        "src": "/projects/hotel_alura/hotel_alura_3.webp",
+        "alt": "Alura Hotel"
       }
     ]
   },
   {
-    "title": "Project Title 3",
-    "description": "A brief description of the project.",
-    "what_i_learned": "List of skills or knowledge gained during the project.",
-    "features": ["Feature 1", "Feature 2", "Feature 3"],
-    "date": "YYYY-MM-DD",
-    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
-    "status": "Completed/In Progress/Abandoned",
+    "title": "Text Encryption",
+    "description": "This project was developed as part of a challenge offered by One, in partnership with Oracle. The project involves text encryption developed using web technologies such as HTML, CSS, and JavaScript.",
+    "what_i_learned": [
+      "Improve my programming skills in JavaScript.",
+      "Improve my programming skills in HTML and CSS."
+    ],
+    "features": "Learning",
+    "date": "2023",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "status": "In Progress",
     "deploy": {
-      "page": "URL where the project is deployed",
-      "demo": "Any additional notes or instructions related to deployment."
+      "page": "GitHub",
+      "demo": "https://rodriiandino.github.io/Challenge_One_Encriptador_G5/"
     },
-    "github": "URL to the project's GitHub repository",
+    "github": "https://github.com/Rodriiandino/Challenge_One_Encriptador_G5",
     "images": [
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 1"
+        "src": "/projects/encriptador/encriptador_1.webp",
+        "alt": "Text Encryption"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 2"
-      },
-      {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 3"
+        "src": "/projects/encriptador/encriptador_2.webp",
+        "alt": "Text Encryption"
       }
     ]
   },
   {
-    "title": "Project Title 4",
-    "description": "A brief description of the project.",
-    "what_i_learned": "List of skills or knowledge gained during the project.",
-    "features": ["Feature 1", "Feature 2", "Feature 3"],
-    "date": "YYYY-MM-DD",
-    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
-    "status": "Completed/In Progress/Abandoned",
+    "title": "Java Converter",
+    "description": "This project is a converter that allows the user to perform conversions between different units of measure, such as currency, time, temperature, area, and length. The currency converter uses an external API to obtain updated exchange rates, while time, temperature, area, and length conversions are performed internally within the application.",
+    "what_i_learned": [
+      "Use an external API to obtain updated exchange rates.",
+      "Create designs with JavaFX.",
+      "Improve my programming skills in Java."
+    ],
+    "features": "Learning",
+    "date": "2023",
+    "technologies": ["Java", "JavaFX", "API"],
+    "status": "Completed",
     "deploy": {
-      "page": "URL where the project is deployed",
-      "demo": "Any additional notes or instructions related to deployment."
+      "page": "Not Deployed",
+      "demo": ""
     },
-    "github": "URL to the project's GitHub repository",
+    "github": "https://github.com/Rodriiandino/Challenge_One_Conversor_G5",
     "images": [
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 1"
-      },
-      {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 2"
-      },
-      {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 3"
+        "src": "/projects/conversor/conversor_1.webp",
+        "alt": "Converter"
       }
     ]
   },
   {
-    "title": "Project Title 5",
-    "description": "A brief description of the project.",
-    "what_i_learned": "List of skills or knowledge gained during the project.",
-    "features": ["Feature 1", "Feature 2", "Feature 3"],
-    "date": "YYYY-MM-DD",
-    "technologies": ["Technology 1", "Technology 2", "Technology 3"],
-    "status": "Completed/In Progress/Abandoned",
+    "title": "Digital Retouch",
+    "description": "A page where you can apply filters to images using vanilla JavaScript.",
+    "what_i_learned": [
+      "Improve my programming skills in JavaScript.",
+      "Improve my programming skills in HTML and CSS."
+    ],
+    "features": "Learning",
+    "date": "2023",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "status": "Completed",
     "deploy": {
-      "page": "URL where the project is deployed",
-      "demo": "Any additional notes or instructions related to deployment."
+      "page": "Netlify",
+      "demo": "https://digitalretouch.netlify.app/"
     },
-    "github": "URL to the project's GitHub repository",
+    "github": "https://github.com/Rodriiandino/DigitalRetouch",
     "images": [
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 1"
+        "src": "/projects/digitalRetouch/digitalRetouch_1.webp",
+        "alt": "Digital Retouch"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 2"
+        "src": "/projects/digitalRetouch/digitalRetouch_2.webp",
+        "alt": "Digital Retouch"
+      }
+    ]
+  },
+  {
+    "title": "CV Jensen Ackles",
+    "description": "A page displaying information about actor Jensen Ackles in the style of a portfolio.",
+    "what_i_learned": [
+      "Programming in HTML and CSS. First project completed in the Proyecto para Argentina Programa 4.0 course."
+    ],
+    "features": "Learning",
+    "date": "2023",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "status": "Completed",
+    "deploy": {
+      "page": "GitHub",
+      "demo": "https://rodriiandino.github.io/CV-JensenAckles/"
+    },
+    "github": "https://github.com/Rodriiandino/CV-JensenAckles",
+    "images": [
+      {
+        "src": "/projects/cv_jensen_ackles/cv_jensen_ackles_1.webp",
+        "alt": "Jensen Ackles CV"
       },
       {
-        "src": "https://via.placeholder.com/600",
-        "alt": "Image 3"
+        "src": "/projects/cv_jensen_ackles/cv_jensen_ackles_2.webp",
+        "alt": "Jensen Ackles CV"
+      }
+    ]
+  },
+  {
+    "title": "1st Generation Pokedex",
+    "description": "Design of the first-generation Pokedex created with CSS and using JavaScript to fetch data from the PokeApi. The 'Astro' framework was used.",
+    "what_i_learned": [
+      "Learn to use the Astro framework.",
+      "Improve my programming skills in HTML and CSS."
+    ],
+    "features": "Learning",
+    "date": "2023",
+    "technologies": ["HTML", "CSS", "JavaScript", "Astro"],
+    "status": "Completed",
+    "deploy": {
+      "page": "Netlify",
+      "demo": "https://pokedex1ra-generacion.netlify.app/"
+    },
+    "github": "https://github.com/Rodriiandino/1erGeneracion-pokedex",
+    "images": [
+      {
+        "src": "/projects/1erGeneracion_pokedex/1erGeneracion_pokedex_1.webp",
+        "alt": "1st Generation Pokedex"
+      },
+      {
+        "src": "/projects/1erGeneracion_pokedex/1erGeneracion_pokedex_2.webp",
+        "alt": "1st Generation Pokedex"
+      }
+    ]
+  },
+  {
+    "title": "Java Calculator",
+    "description": "Application developed in Java and JavaFX that implements the stack concept for mathematical operations.",
+    "what_i_learned": [
+      "Better understand the stack data structure.",
+      "Improve my programming skills in Java.",
+      "Learn to program with JavaFX."
+    ],
+    "features": "Learning",
+    "date": "2023",
+    "technologies": ["Java", "JavaFX"],
+    "status": "Completed",
+    "deploy": {
+      "page": "Not Deployed",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/Calculadora-Java",
+    "images": [
+      {
+        "src": "/projects/calculadora_java/calculadora_java_1.webp",
+        "alt": "Java Calculator"
+      },
+      {
+        "src": "/projects/calculadora_java/calculadora_java_2.webp",
+        "alt": "Java Calculator"
+      }
+    ]
+  },
+  {
+    "title": "Matchmatic Android App",
+    "description": "This is my project as part of the Mobile Application Development Course by Ticma and Argentina Programa 4. As a web developer, this August, I decided to venture into the world of mobile applications, and this is my first step.",
+    "what_i_learned": [
+      "MatchMatic is a simple text comparison application. It allows you to enter two text strings and tells you if they are equal or different. It is developed in Kotlin and follows the MVVM architecture.",
+      "Learn to program in Kotlin.",
+      "Learn to program in Android Studio.",
+      "Learn to use the MVVM architecture."
+    ],
+    "features": "Learning",
+    "date": "2023",
+    "technologies": ["Kotlin", "Android Studio"],
+    "status": "Completed",
+    "deploy": {
+      "page": "Not Deployed",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/matchmatic-android-app",
+    "images": [
+      {
+        "src": "/projects/matchmatic_android_app/matchmatic_android_app_1.webp",
+        "alt": "Matchmatic Android App"
+      }
+    ]
+  },
+  {
+    "title": "5 Projects with React Learning Hooks",
+    "description": "This is a series of 5 projects with React, in which you learn to use React Hooks and test with vitest.",
+    "what_i_learned": [
+      "Learn to use React Hooks.",
+      "Improve my programming skills in React.",
+      "Learn to use vitest and test components.",
+      "Improve my programming skills in JavaScript.",
+      "Improve my programming skills in HTML and CSS.",
+      "LocalStorage handling."
+    ],
+    "features": "Learning",
+    "date": "2023",
+    "technologies": ["React", "JavaScript", "vite", "vitest"],
+    "status": "Completed",
+    "deploy": {
+      "page": "Vercel - Netlify",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/Aprendiendo-React",
+    "images": [
+      {
+        "src": "/projects/react_projects/react_project_5.webp",
+        "alt": "Learning React"
+      },
+      {
+        "src": "/projects/react_projects/react_project_1.webp",
+        "alt": "Learning React"
+      },
+      {
+        "src": "/projects/react_projects/react_project_2.webp",
+        "alt": "Learning React"
+      },
+      {
+        "src": "/projects/react_projects/react_project_3.webp",
+        "alt": "Learning React"
+      },
+      {
+        "src": "/projects/react_projects/react_project_4.webp",
+        "alt": "Learning React"
       }
     ]
   }
