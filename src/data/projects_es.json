@@ -22,15 +22,15 @@
     "github": "https://github.com/Rodriiandino/Foro_API_SpringBoot",
     "images": [
       {
-        "src": "/projects/foro_api_springboot/foro_api_springboot_1.png",
+        "src": "/projects/foro_api_springboot/foro_api_springboot_1.webp",
         "alt": "Foro API SpringBoot"
       },
       {
-        "src": "/projects/foro_api_springboot/foro_api_springboot_2.png",
+        "src": "/projects/foro_api_springboot/foro_api_springboot_2.webp",
         "alt": "Foro API SpringBoot"
       },
       {
-        "src": "/projects/foro_api_springboot/foro_api_springboot_3.png",
+        "src": "/projects/foro_api_springboot/foro_api_springboot_3.webp",
         "alt": "Foro API SpringBoot"
       }
     ]
@@ -54,15 +54,15 @@
     "github": "https://github.com/Rodriiandino/Challenge_One_HotelAlura_G5",
     "images": [
       {
-        "src": "/projects/hotel_alura/hotel_alura_1.png",
+        "src": "/projects/hotel_alura/hotel_alura_1.webp",
         "alt": "Hotel Alura"
       },
       {
-        "src": "/projects/hotel_alura/hotel_alura_2.png",
+        "src": "/projects/hotel_alura/hotel_alura_2.webp",
         "alt": "Hotel Alura"
       },
       {
-        "src": "/projects/hotel_alura/hotel_alura_3.png",
+        "src": "/projects/hotel_alura/hotel_alura_3.webp",
         "alt": "Hotel Alura"
       }
     ]
@@ -85,11 +85,11 @@
     "github": "https://github.com/Rodriiandino/Challenge_One_Encriptador_G5",
     "images": [
       {
-        "src": "/projects/encriptador/encriptador_1.png",
+        "src": "/projects/encriptador/encriptador_1.webp",
         "alt": "Encriptado de Texto"
       },
       {
-        "src": "/projects/encriptador/encriptador_2.png",
+        "src": "/projects/encriptador/encriptador_2.webp",
         "alt": "Encriptado de Texto"
       }
     ]
@@ -113,7 +113,7 @@
     "github": "https://github.com/Rodriiandino/Challenge_One_Conversor_G5",
     "images": [
       {
-        "src": "/projects/conversor/conversor_1.png",
+        "src": "/projects/conversor/conversor_1.webp",
         "alt": "conversor"
       }
     ]
