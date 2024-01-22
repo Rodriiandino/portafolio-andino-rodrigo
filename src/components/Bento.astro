@@ -6,6 +6,8 @@
   <article class='bento_5 bento-item'></article>
   <article class='bento_6 bento-item'></article>
   <article class='bento_7 bento-item'></article>
+  <article class='bento_8 bento-item'></article>
+  <article class='bento_9 bento-item'></article>
 </section>
 
 <style>
@@ -19,13 +21,14 @@
   }
 
   .bento-item {
-    border: 5px solid var(--white);
+    border: 5px solid var(--dark-background);
     border-radius: var(--border-radius);
     background: linear-gradient(
       180deg,
-      var(--light-blue) 32.81%,
-      var(--white) 100%
+      var(--dark-blue) 32.81%,
+      var(--black) 100%
     );
+    box-shadow: var(--shadow-elevation-medium);
   }
 
   .bento_1 {
@@ -44,9 +47,15 @@
     grid-area: 3 / 5 / 4 / 7;
   }
   .bento_6 {
-    grid-area: 5 / 1 / 7 / 5;
+    grid-area: 4 / 5 / 7 / 7;
   }
   .bento_7 {
-    grid-area: 4 / 5 / 7 / 7;
+    grid-area: 5 / 1 / 7 / 3;
+  }
+  .bento_8 {
+    grid-area: 5 / 3 / 6 / 5;
+  }
+  .bento_9 {
+    grid-area: 6 / 3 / 7 / 5;
   }
 </style>
