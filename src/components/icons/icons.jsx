@@ -471,3 +471,53 @@ export function IconDemo() {
     </svg>
   )
 }
+
+export function IconArgentina() {
+  return (
+    <svg
+      width='65'
+      height='41'
+      viewBox='0 0 65 41'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <path d='M1.5 1.5H63.5V39.5H1.5V1.5Z' fill='#1E50A0' />
+      <path d='M1.5 1.5H63.5V39.5H1.5V1.5Z' fill='white' />
+      <path
+        d='M1.5 26.5H63.5V39.5H1.5V26.5ZM1.5 1.5H63.5V14.5H1.5V1.5Z'
+        fill='#61B2E4'
+      />
+      <path
+        d='M32.5 18.397L33.736 16.5L33.676 18.799L35.736 18.028L34.402 19.85L36.5 20.5L34.402 21.15L35.736 22.972L33.676 22.201L33.736 24.5L32.5 22.603L31.264 24.5L31.324 22.201L29.264 22.972L30.598 21.15L28.5 20.5L30.598 19.85L29.264 18.028L31.324 18.799L31.264 16.5L32.5 18.397Z'
+        fill='#F1B31C'
+        stroke='#F1B31C'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+      />
+      <path
+        d='M1.5 1.5H63.5V39.5H1.5V1.5Z'
+        stroke='black'
+        stroke-width='2'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+      />
+    </svg>
+  )
+}
+
+export function IconStar() {
+  return (
+    <svg
+      width='26'
+      height='27'
+      viewBox='0 0 26 27'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <path
+        d='M6.3105 24.3333L8.07091 16.7229L2.16675 11.6042L9.96675 10.9271L13.0001 3.75L16.0334 10.9271L23.8334 11.6042L17.9292 16.7229L19.6897 24.3333L13.0001 20.2979L6.3105 24.3333Z'
+        fill='#F1B31C'
+      />
+    </svg>
+  )
+}

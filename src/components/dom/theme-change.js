@@ -5,12 +5,16 @@ export default function themeChange() {
   const nav = document.querySelector('#nav')
   const ls = localStorage
   const d = document
+  const $bento_9_img_dark = document.querySelector('.bento_9-img-dark')
+  const $bento_9_img_light = document.querySelector('.bento_9-img-light')
 
   const setThemeDark = () => {
     html.setAttribute('data-theme', 'dark')
     html.classList.add('dark')
     header.setAttribute('data-theme', 'dark')
     nav.setAttribute('data-theme', 'dark')
+    $bento_9_img_dark.classList.remove('hidden')
+    $bento_9_img_light.classList.add('hidden')
   }
 
   const setThemeLight = () => {
@@ -18,6 +22,8 @@ export default function themeChange() {
     html.classList.remove('dark')
     header.setAttribute('data-theme', 'light')
     nav.setAttribute('data-theme', 'light')
+    $bento_9_img_dark.classList.add('hidden')
+    $bento_9_img_light.classList.remove('hidden')
   }
 
   const changeColor = () => {
