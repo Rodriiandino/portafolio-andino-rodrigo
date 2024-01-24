@@ -1,5 +1,6 @@
-import { defineConfig } from 'astro/config'
-import react from '@astrojs/react'
+import { defineConfig } from 'astro/config';
+
+import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,5 +11,5 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
-  integrations: [react()]
-})
+  integrations: [preact()]
+});

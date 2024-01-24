@@ -1,30 +1,32 @@
 ---
+import { useTranslations } from '../i18n/utils'
 import {
   IconGitHub,
   IconInstagram,
   IconLinkedIn,
   IconTwitter,
-  IconArgentina,
-  IconStar
+  IconArgentina
 } from './icons/icons'
+
+const { currentLocale = 'es' } = Astro
+
+const t = useTranslations(currentLocale)
 ---
 
 <section class='bento'>
   <article class='bento_1 bento-item'>
     <header class='bento_1-header'>
-      <h1>ANDINO RODRIGO AGUSTÍN</h1>
-      <span>Full Stack Developer</span>
+      <h1>{t('bento.title')}</h1>
+      <span>{t('bento.subtitle')}</span>
     </header>
     <p>
-      En búsqueda de oportunidades para mejorar y crecer profesionalmente.
-      Dispuesto a enfrentar nuevos desafíos y llevar proyectos web emocionantes
-      al siguiente nivel.
+      {t('bento.description')}
     </p>
     <footer class='bento_1-footer'>
       <nav class='footer__nav'>
         <a
           class='footer__item'
-          href='#'
+          href='https://github.com/Rodriiandino'
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -32,7 +34,7 @@ import {
         </a>
         <a
           class='footer__item'
-          href='#'
+          href='https://www.linkedin.com/in/rodrigoandino03/'
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -40,7 +42,7 @@ import {
         </a>
         <a
           class='footer__item'
-          href='#'
+          href='https://twitter.com/Rodriiandino1'
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -48,7 +50,7 @@ import {
         </a>
         <a
           class='footer__item'
-          href='#'
+          href='https://www.instagram.com/rodriiandino/'
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -81,29 +83,31 @@ import {
           stroke-linejoin='round'></path>
       </svg>
       <strong>CV</strong>
-      <span>Descargar</span>
+      <span>{t('bento.download')}</span>
     </button>
   </article>
   <article class='bento_4 bento-item'></article>
   <article class='bento_5 bento-item'>
     <div>
-      <strong>ARGENTINA</strong>
+      <strong>{t('bento.country')}</strong>
       <IconArgentina />
     </div>
     <div>
-      <IconStar />
-      <IconStar />
-      <IconStar />
+      <img src='/icons/star.svg' alt='star icon' />
+      <img src='/icons/star.svg' alt='star icon' />
+      <img src='/icons/star.svg' alt='star icon' />
     </div>
   </article>
-  <article class='bento_6 bento-item'></article>
+  <article class='bento_6 bento-item'>
+    <ul class='bento_6-list'></ul>
+    <strong>{t('bento.myStack')}</strong>
+  </article>
   <article class='bento_7 bento-item'>
     <blockquote>
       <p>
-        “Hay que trabajar, hay que aprender, hay que comer, hay que descansar, y
-        también hay que jugar”
+        {t('bento.phrase')}
       </p>
-      <cite>Maestro Roshi</cite>
+      <cite>{t('bento.author')}</cite>
     </blockquote>
     <svg
       class='bento_7-icon'
@@ -143,8 +147,8 @@ import {
 </section>
 
 <script>
-  import time from './dom/time.js'
-  time()
+  import bento from './dom/bento.js'
+  bento()
 </script>
 
 <style>
@@ -166,6 +170,11 @@ import {
       var(--black) 100%
     );
     box-shadow: var(--shadow-elevation-medium);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .bento-item:hover {
+    transform: scale(1.02);
   }
 
   .bento_1 {
@@ -173,7 +182,7 @@ import {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.8rem;
     padding: 1rem;
   }
   .bento_2 {
@@ -194,6 +203,8 @@ import {
   }
   .bento_6 {
     grid-area: 4 / 5 / 7 / 7;
+    position: relative;
+    padding: 1rem;
   }
   .bento_7 {
     grid-area: 5 / 1 / 7 / 4;
@@ -226,12 +237,14 @@ import {
     font-size: var(--step-3);
     font-weight: 700;
     color: var(--white);
+    line-height: 1.1;
   }
 
   .bento_1-header span {
     font-size: var(--step-2);
     font-weight: 600;
     color: var(--light-blue);
+    line-height: 1.1;
   }
 
   .bento_1 p {
@@ -254,7 +267,7 @@ import {
 
   .footer__item {
     color: var(--white);
-    scale: 0.9;
+    scale: 0.8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -322,6 +335,25 @@ import {
     color: var(--white);
   }
 
+  .bento_6-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .bento_6 strong {
+    font-size: var(--step-1);
+    font-weight: 700;
+    color: var(--white);
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
   .bento_7 blockquote {
     font-size: var(--step-1);
     font-weight: 400;
@@ -365,6 +397,7 @@ import {
     height: 100%;
     object-fit: cover;
     border-radius: 25px;
+    aspect-ratio: 16/9;
   }
 
   .hidden {

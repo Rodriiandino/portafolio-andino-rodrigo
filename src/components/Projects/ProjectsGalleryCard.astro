@@ -25,7 +25,7 @@ const {
 ---
 
 <article class='projects__gallery-item'>
-  <img src={image} alt={image_alt} class='gallery__img' />
+  <img src={image} alt={image_alt} class='gallery__img' loading='lazy' />
   <div class='gallery__item-info'>
     <h4 class='item__title'>
       <a href={title_url}
@@ -73,6 +73,25 @@ const {
   </div>
 </article>
 
+<script>
+  const $galleryInfo = document.querySelectorAll(
+    '.gallery__item-info'
+  ) as NodeListOf<HTMLElement>
+  const isMobile = window.matchMedia('(max-width: 768px)')
+
+  isMobile.addEventListener('change', e => {
+    if (e.matches) {
+      $galleryInfo.forEach(item => {
+        item.style.opacity = '1'
+      })
+    } else {
+      $galleryInfo.forEach(item => {
+        item.style.opacity = '0'
+      })
+    }
+  })
+</script>
+
 <style is:global>
   .projects__gallery-item {
     position: relative;
@@ -111,7 +130,7 @@ const {
   }
 
   .item__title {
-    font-size: var(--step-2);
+    font-size: var(--step-1);
     font-weight: 700;
   }
 
@@ -137,6 +156,7 @@ const {
   .item__description {
     font-size: var(--step-0);
     font-weight: 400;
+    line-height: 1.2;
     color: var(--white);
     text-overflow: ellipsis;
     overflow: hidden;

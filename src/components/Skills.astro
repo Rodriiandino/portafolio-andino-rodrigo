@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from '../i18n/utils'
+import { IconTech } from './icons/icons'
 
 const { currentLocale = 'es' } = Astro
 
@@ -13,7 +14,7 @@ const t = useTranslations(currentLocale)
 </script>
 
 <section class='skills' id='skills'>
-  <h2>{t('title.skills')}</h2>
+  <h2><IconTech /> {t('title.skills')}</h2>
   <div class='btn__container'>
     <button class='skills__btn' id='all'>{t('skills.all')}</button>
     <button class='skills__btn active' id='frontEnd'

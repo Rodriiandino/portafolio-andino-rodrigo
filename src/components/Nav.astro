@@ -7,7 +7,8 @@ import {
   IconLanguageNav,
   IconLanguageNavLight,
   IconMoonNav,
-  IconSunNav
+  IconSunNav,
+  IconTech
 } from './icons/icons'
 
 const { currentLocale = 'es' } = Astro
@@ -30,6 +31,11 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
       <li>
         <a href='#projects' class='item'>
           <IconProjects />
+        </a>
+      </li>
+      <li>
+        <a href='#skills' class='item'>
+          <IconTech />
         </a>
       </li>
       <li>
@@ -189,6 +195,12 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
     .icon-sun-nav {
       width: 40px;
       height: 40px;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .nav {
+      padding: 0 0.3rem;
     }
   }
 </style>

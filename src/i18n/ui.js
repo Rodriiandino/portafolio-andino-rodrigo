@@ -11,6 +11,20 @@ export const ui = {
     'title.projects': 'Proyectos',
     'title.skills': 'tecnologías',
     'title.contact': 'Contactame',
+    'bento.title': 'ANDINO RODRIGO AGUSTÍN',
+    'bento.subtitle': 'Full Stack Developer',
+    'bento.description':
+      'Experimentado en el trabajo de entorno críticos de alta responsabilidad como Instrumentista de una central nuclear. En búsqueda en desarrollarme profesionalmente en el mundo del desarrollo de software.',
+    'bento.download': 'Descargar',
+    'bento.country': 'ARGENTINA',
+    'bento.phrase':
+      '“Hay que trabajar, hay que aprender, hay que comer, hay que descansar, y también hay que jugar”',
+    'bento.author': 'Maestro Roshi',
+    'bento.myStack': 'Mi Stack',
+    'experience.description': `Experimentado en instrumentación y control nuclear, con habilidades de
+    atención al cliente, liderazgo y trabajo en equipo. Además, soy técnico
+    electricista e informático en formación. Mi pasión es el desarrollo de
+    software, donde puedo innovar y crear soluciones con mi talento.`,
     'experience.education': 'Educación',
     'experience.work': 'Trabajo',
     'experience.course': 'Cursos',
@@ -41,6 +55,16 @@ export const ui = {
     'title.projects': 'Projects',
     'title.skills': 'My Skills',
     'title.contact': 'Contact me',
+    'bento.title': 'ANDINO RODRIGO AGUSTÍN',
+    'bento.subtitle': 'Full Stack Developer',
+    'bento.description': `Experienced in the work of critical environments of high responsibility as an Instrumentation Technician of a nuclear power plant. In search of developing professionally in the world of software development.`,
+    'bento.download': 'Download',
+    'bento.country': 'ARGENTINA',
+    'bento.phrase':
+      '"You have to work, you have to learn, you have to eat, you have to rest, and you also have to play"',
+    'bento.author': 'Master Roshi',
+    'bento.myStack': 'My Stack',
+    'experience.description': `Experienced in nuclear instrumentation and control, with customer service, leadership and teamwork skills. In addition, I am an electrical and computer technician in training. My passion is software development, where I can innovate and create solutions with my talent.`,
     'experience.education': 'Education',
     'experience.work': 'Work Experience',
     'experience.course': 'Courses',
