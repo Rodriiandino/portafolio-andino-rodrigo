@@ -45,7 +45,7 @@
     ],
     "features": "Aprendizaje",
     "date": "2023",
-    "technologies": ["Java", "JDBC", "MySQL"],
+    "technologies": ["Java", "JDBC", "MySQL", "JavaFX"],
     "status": "Completed",
     "deploy": {
       "page": "Aplicación de Escritorio",
@@ -104,7 +104,7 @@
     ],
     "features": "Aprendizaje",
     "date": "2023",
-    "technologies": ["Java", "JavaFX", "API"],
+    "technologies": ["Java", "JavaFX"],
     "status": "Completed",
     "deploy": {
       "page": "No Deploy",
@@ -237,7 +237,7 @@
     ],
     "features": "Aprendizaje",
     "date": "2023",
-    "technologies": ["Kotlin", "Android Studio"],
+    "technologies": ["Kotlin"],
     "status": "Completed",
     "deploy": {
       "page": "No Deploy",
@@ -264,7 +264,7 @@
     ],
     "features": "Aprendizaje",
     "date": "2023",
-    "technologies": ["React", "JavaScript", "vite", "vitest"],
+    "technologies": ["React", "JavaScript", "vitest"],
     "status": "Completed",
     "deploy": {
       "page": "Vercel - Netlify",
