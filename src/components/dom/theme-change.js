@@ -5,8 +5,8 @@ export default function themeChange() {
   const nav = document.querySelector('#nav')
   const ls = localStorage
   const d = document
-  const $bento_9_img_dark = document.querySelector('.bento_9-img-dark')
-  const $bento_9_img_light = document.querySelector('.bento_9-img-light')
+  const $bento_9_img_dark = document.querySelector('.bento__9-img-dark')
+  const $bento_9_img_light = document.querySelector('.bento__9-img-light')
 
   const setThemeDark = () => {
     html.setAttribute('data-theme', 'dark')

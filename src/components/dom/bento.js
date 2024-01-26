@@ -4,7 +4,7 @@ export default function bento() {
   const $hour = document.getElementById('hour')
   const $day = document.getElementById('day')
   const $date = document.getElementById('date')
-  const $bento_6_list = document.querySelector('.bento_6-list')
+  const $bento_6_list = document.querySelector('.bento__6-list')
 
   const language = $html.getAttribute('lang')
   let locales

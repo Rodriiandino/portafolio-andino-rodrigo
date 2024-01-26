@@ -493,8 +493,7 @@ export function IconDemo() {
 export function IconArgentina() {
   return (
     <svg
-      width='65'
-      height='41'
+      className='icon-argentina'
       viewBox='0 0 65 41'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'

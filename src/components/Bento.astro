@@ -14,18 +14,18 @@ const t = useTranslations(currentLocale)
 ---
 
 <section class='bento'>
-  <article class='bento_1 bento-item'>
-    <header class='bento_1-header'>
+  <article class='bento__1 bento-item'>
+    <header class='bento__1-header'>
       <h1>{t('bento.title')}</h1>
       <span>{t('bento.subtitle')}</span>
     </header>
     <p>
       {t('bento.description')}
     </p>
-    <footer class='bento_1-footer'>
-      <nav class='footer__nav'>
+    <footer class='bento__1-footer'>
+      <nav class='bento__1-footer__nav'>
         <a
-          class='footer__item'
+          class='bento__1-footer__item'
           href='https://github.com/Rodriiandino'
           target='_blank'
           rel='noopener noreferrer'
@@ -33,7 +33,7 @@ const t = useTranslations(currentLocale)
           <IconGitHub />
         </a>
         <a
-          class='footer__item'
+          class='bento__1-footer__item'
           href='https://www.linkedin.com/in/rodrigoandino03/'
           target='_blank'
           rel='noopener noreferrer'
@@ -41,7 +41,7 @@ const t = useTranslations(currentLocale)
           <IconLinkedIn />
         </a>
         <a
-          class='footer__item'
+          class='bento__1-footer__item'
           href='https://twitter.com/Rodriiandino1'
           target='_blank'
           rel='noopener noreferrer'
@@ -49,7 +49,7 @@ const t = useTranslations(currentLocale)
           <IconTwitter />
         </a>
         <a
-          class='footer__item'
+          class='bento__1-footer__item'
           href='https://www.instagram.com/rodriiandino/'
           target='_blank'
           rel='noopener noreferrer'
@@ -59,9 +59,15 @@ const t = useTranslations(currentLocale)
       </nav>
     </footer>
   </article>
-  <article class='bento_2 bento-item'></article>
-  <article class='bento_3 bento-item'>
-    <button class='bento_3-button'>
+  <article class='bento__2 bento-item'>
+    <img
+      class='bento__2-img'
+      src='/img/bento-img.webp'
+      alt='Retrato de Rodrigo Andino, morocho de ojos marrones, pelo corto y con una chomba negra'
+    />
+  </article>
+  <article class='bento__3 bento-item'>
+    <button class='bento__3-button'>
       <svg
         class='beno_3-icon'
         viewBox='0 0 21 21'
@@ -86,8 +92,8 @@ const t = useTranslations(currentLocale)
       <span>{t('bento.download')}</span>
     </button>
   </article>
-  <article class='bento_4 bento-item'></article>
-  <article class='bento_5 bento-item'>
+  <article class='bento__4 bento-item'></article>
+  <article class='bento__5 bento-item'>
     <div>
       <strong>{t('bento.country')}</strong>
       <IconArgentina />
@@ -98,11 +104,11 @@ const t = useTranslations(currentLocale)
       <img src='/icons/star.svg' alt='star icon' />
     </div>
   </article>
-  <article class='bento_6 bento-item'>
-    <ul class='bento_6-list'></ul>
+  <article class='bento__6 bento-item'>
+    <ul class='bento__6-list'></ul>
     <strong>{t('bento.myStack')}</strong>
   </article>
-  <article class='bento_7 bento-item'>
+  <article class='bento__7 bento-item'>
     <blockquote>
       <p>
         {t('bento.phrase')}
@@ -110,7 +116,7 @@ const t = useTranslations(currentLocale)
       <cite>{t('bento.author')}</cite>
     </blockquote>
     <svg
-      class='bento_7-icon'
+      class='bento__7-icon'
       viewBox='0 0 47 53'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
@@ -127,19 +133,19 @@ const t = useTranslations(currentLocale)
       </defs>
     </svg>
   </article>
-  <article class='bento_8 bento-item'>
+  <article class='bento__8 bento-item'>
     <time id='hour'>hour</time>
     <time id='day'>day</time>
     <time id='date'>date</time>
   </article>
-  <article class='bento_9 bento-item'>
+  <article class='bento__9 bento-item'>
     <img
-      class='bento_9-img-dark bento_9-img'
+      class='bento__9-img-dark bento__9-img'
       src='/img/star-wars-dark.webp'
       alt='star wars dark'
     />
     <img
-      class='bento_9-img-light bento_9-img'
+      class='bento__9-img-light bento__9-img'
       src='/img/star-wars-light.webp'
       alt='star wars light'
     />
@@ -151,7 +157,7 @@ const t = useTranslations(currentLocale)
   bento()
 </script>
 
-<style>
+<style is:global>
   .bento {
     width: 100%;
     display: grid;
@@ -177,7 +183,7 @@ const t = useTranslations(currentLocale)
     transform: scale(1.02);
   }
 
-  .bento_1 {
+  .bento__1 {
     grid-area: 1 / 1 / 3 / 5;
     display: flex;
     flex-direction: column;
@@ -185,36 +191,39 @@ const t = useTranslations(currentLocale)
     gap: 0.8rem;
     padding: 1rem;
   }
-  .bento_2 {
+  .bento__2 {
     grid-area: 1 / 5 / 3 / 7;
   }
-  .bento_3 {
+  .bento__3 {
     grid-area: 3 / 1 / 5 / 3;
   }
-  .bento_4 {
+  .bento__4 {
     grid-area: 3 / 3 / 5 / 5;
+    padding: 1rem;
   }
-  .bento_5 {
+  .bento__5 {
     grid-area: 3 / 5 / 4 / 7;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .bento_6 {
+  .bento__6 {
     grid-area: 4 / 5 / 7 / 7;
     position: relative;
     padding: 1rem;
   }
-  .bento_7 {
+  .bento__7 {
     grid-area: 5 / 1 / 7 / 4;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
   }
-  .bento_8 {
+  .bento__8 {
     grid-area: 5 / 4 / 6 / 5;
     display: flex;
     flex-direction: column;
@@ -223,41 +232,41 @@ const t = useTranslations(currentLocale)
     padding: 1rem;
   }
 
-  .bento_9 {
+  .bento__9 {
     grid-area: 6 / 4 / 7 / 5;
   }
 
-  .bento_1-header {
+  .bento__1-header {
     padding: 0;
     display: flex;
     flex-direction: column;
   }
 
-  .bento_1-header h1 {
+  .bento__1-header h1 {
     font-size: var(--step-3);
     font-weight: 700;
     color: var(--white);
     line-height: 1.1;
   }
 
-  .bento_1-header span {
+  .bento__1-header span {
     font-size: var(--step-2);
     font-weight: 600;
     color: var(--light-blue);
     line-height: 1.1;
   }
 
-  .bento_1 p {
+  .bento__1 p {
     font-size: var(--step--1);
     font-weight: 400;
     color: var(--white);
   }
 
-  .bento_1-footer {
+  .bento__1-footer {
     padding: 0;
   }
 
-  .footer__nav {
+  .bento__1-footer__nav {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -265,7 +274,7 @@ const t = useTranslations(currentLocale)
     opacity: 0.6;
   }
 
-  .footer__item {
+  .bento__1-footer__item {
     color: var(--white);
     scale: 0.8;
     display: flex;
@@ -273,13 +282,22 @@ const t = useTranslations(currentLocale)
     align-items: center;
   }
 
-  .footer__item:hover {
+  .bento__1-footer__item:hover {
     color: var(--light-blue);
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
   }
 
-  .bento_3-button {
+  .bento__2-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+    aspect-ratio: 16/9;
+    object-position: 0 -40px;
+  }
+
+  .bento__3-button {
     cursor: pointer;
     width: 100%;
     height: 100%;
@@ -304,38 +322,43 @@ const t = useTranslations(currentLocale)
     transition: all 0.3s ease-in-out;
   }
 
-  .bento_3-button:hover .beno_3-icon {
+  .bento__3-button:hover .beno_3-icon {
     transform: translateX(3px) translateY(-3px);
   }
 
-  .bento_3 strong {
+  .bento__3 strong {
     font-size: calc(var(--step-5) * 1.5);
     font-weight: 800;
     color: var(--light-blue);
     line-height: 1;
   }
 
-  .bento_3 span {
+  .bento__3 span {
     font-size: var(--step-2);
     font-weight: 600;
     color: var(--white);
     line-height: 1;
   }
 
-  .bento_5 div {
+  .bento__5 div {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
   }
 
-  .bento_5 strong {
+  .bento__5 strong {
     font-size: var(--step-2);
     font-weight: 600;
     color: var(--white);
   }
 
-  .bento_6-list {
+  .icon-argentina {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .bento__6-list {
     width: 100%;
     height: 100%;
     display: flex;
@@ -345,7 +368,7 @@ const t = useTranslations(currentLocale)
     gap: 0.5rem;
   }
 
-  .bento_6 strong {
+  .bento__6 strong {
     font-size: var(--step-1);
     font-weight: 700;
     color: var(--white);
@@ -354,15 +377,20 @@ const t = useTranslations(currentLocale)
     left: 1rem;
   }
 
-  .bento_7 blockquote {
+  .bento__7 blockquote {
     font-size: var(--step-1);
     font-weight: 400;
     color: var(--white);
     text-align: center;
     line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  .bento_7 cite {
+  .bento__7 cite {
     font-size: var(--step-1);
     font-weight: 600;
     color: var(--light-blue);
@@ -370,7 +398,7 @@ const t = useTranslations(currentLocale)
     line-height: 1.5;
   }
 
-  .bento_7-icon {
+  .bento__7-icon {
     width: 2rem;
     height: 2rem;
     color: var(--light-blue);
@@ -380,19 +408,20 @@ const t = useTranslations(currentLocale)
     right: 1rem;
   }
 
-  .bento_8 time {
+  .bento__8 time {
     font-size: var(--step--2);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--light-blue);
   }
 
-  .bento_8 time:first-child {
-    font-size: var(--step-1);
-    font-weight: 700;
+  .bento__8 time:first-child {
+    font-size: var(--step-0);
     color: var(--white);
+    font-weight: 600;
+    text-wrap: nowrap;
   }
 
-  .bento_9-img {
+  .bento__9-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -402,5 +431,238 @@ const t = useTranslations(currentLocale)
 
   .hidden {
     display: none;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .bento__2-img {
+      object-position: center;
+    }
+
+    .bento__5 strong {
+      font-size: var(--step-1);
+    }
+
+    .icon-argentina {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    .bento {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+
+    .bento__1 {
+      grid-area: 1 / 1 / 2 / 6;
+    }
+    .bento__2 {
+      grid-area: 2 / 1 / 3 / 3;
+    }
+    .bento__3 {
+      grid-area: 2 / 3 / 3 / 6;
+    }
+    .bento__4 {
+      grid-area: 3 / 1 / 4 / 3;
+    }
+    .bento__5 {
+      grid-area: 3 / 3 / 4 / 6;
+    }
+    .bento__6 {
+      grid-area: 4 / 4 / 6 / 6;
+    }
+    .bento__7 {
+      grid-area: 4 / 1 / 6 / 4;
+    }
+    .bento__8 {
+      grid-area: 6 / 1 / 7 / 3;
+    }
+    .bento__9 {
+      grid-area: 6 / 3 / 7 / 6;
+    }
+
+    .bento__5 strong {
+      font-size: var(--step-3);
+    }
+
+    .icon-argentina {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+
+    .bento__8 time {
+      font-size: var(--step--1);
+      font-weight: 500;
+      color: var(--light-blue);
+    }
+
+    .bento__8 time:first-child {
+      font-size: var(--step-2);
+      color: var(--white);
+      font-weight: 700;
+      text-wrap: nowrap;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .bento {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(7, minmax(min-content, max-content));
+    }
+
+    .bento__1 {
+      grid-area: 1 / 1 / 2 / 6;
+    }
+    .bento__2 {
+      grid-area: 2 / 1 / 3 / 3;
+      min-height: 250px;
+    }
+    .bento__3 {
+      grid-area: 2 / 3 / 3 / 6;
+    }
+    .bento__4 {
+      grid-area: 4 / 1 / 5 / 6;
+    }
+    .bento__5 {
+      grid-area: 3 / 1 / 4 / 6;
+    }
+    .bento__6 {
+      grid-area: 5 / 1 / 6 / 6;
+      padding: 1rem 1rem 3.5rem 1rem;
+    }
+    .bento__7 {
+      grid-area: 6 / 1 / 8 / 4;
+    }
+    .bento__8 {
+      grid-area: 6 / 4 / 7 / 6;
+    }
+    .bento__9 {
+      grid-area: 7 / 4 / 8 / 6;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .bento {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(8, minmax(min-content, max-content));
+    }
+
+    .bento__1 {
+      grid-area: 1 / 1 / 2 / 7;
+    }
+    .bento__2 {
+      grid-area: 2 / 1 / 4 / 5;
+    }
+    .bento__3 {
+      grid-area: 2 / 5 / 4 / 7;
+    }
+    .bento__4 {
+      grid-area: 5 / 1 / 6 / 7;
+    }
+    .bento__5 {
+      grid-area: 4 / 1 / 5 / 7;
+    }
+    .bento__6 {
+      grid-area: 6 / 1 / 7 / 7;
+    }
+    .bento__7 {
+      grid-area: 7 / 1 / 8 / 7;
+    }
+    .bento__8 {
+      grid-area: 8 / 1 / 9 / 4;
+    }
+    .bento__9 {
+      grid-area: 8 / 4 / 9 / 7;
+    }
+
+    .beno_3-icon {
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-right: 0.5rem;
+      top: 0.5rem;
+      right: 0.1rem;
+    }
+
+    .bento__3 strong {
+      font-size: var(--step-5);
+    }
+
+    .bento__3 span {
+      font-size: var(--step-0);
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .bento__3 strong {
+      font-size: var(--step-4);
+    }
+
+    .bento__3 span {
+      font-size: var(--step--1);
+    }
+
+    .bento__8 time:first-child {
+      font-size: var(--step-1);
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .bento {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(9, minmax(min-content, max-content));
+    }
+
+    .bento__1 {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+    .bento__2 {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    .bento__3 {
+      grid-area: 3 / 1 / 4 / 2;
+      padding: 1rem;
+    }
+    .bento__4 {
+      grid-area: 4 / 1 / 5 / 2;
+    }
+    .bento__5 {
+      grid-area: 5 / 1 / 6 / 2;
+    }
+    .bento__6 {
+      grid-area: 6 / 1 / 7 / 2;
+    }
+    .bento__7 {
+      grid-area: 7 / 1 / 8 / 2;
+    }
+    .bento__8 {
+      grid-area: 8 / 1 / 9 / 2;
+    }
+    .bento__9 {
+      grid-area: 9 / 1 / 10 / 2;
+    }
+
+    .beno_3-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      top: 0rem;
+      right: 0rem;
+    }
+
+    .bento__3 strong {
+      font-size: var(--step-5);
+    }
+
+    .bento__3 span {
+      font-size: var(--step-1);
+    }
+
+    .bento__8 time:first-child {
+      font-size: var(--step-2);
+    }
+
+    .bento__8 time {
+      font-size: var(--step-0);
+    }
   }
 </style>
