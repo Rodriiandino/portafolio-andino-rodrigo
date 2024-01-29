@@ -11,14 +11,19 @@ const t = useTranslations(currentLocale)
 <section id='contact'>
   <h2><IconContact /> {t('title.contact')}</h2>
   <article class='contact__container'>
-    <div class='contact__container_info'>
-      <p class='info__text'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla feugiat,
-        libero quis ullamcorper varius, elit urna mattis mauris, vitae convallis
-        tellus sapien at massa. Integer risus ex, mollis a massa eget, commodo
-        fringilla diam. Fusce tempus turpis eget leo suscipit dictum.
-        Suspendisse quis dignissim elit, quis efficitur sem.
-      </p>
+    <div class='contact__container-info'>
+      <div class='container__info'>
+        <p class='info__text'>
+          {t('contact.paragraph.1')}
+        </p>
+        <p class='info__text'>
+          {t('contact.paragraph.2')}
+        </p>
+        <p class='info__text'>
+          {t('contact.paragraph.3')}
+        </p>
+      </div>
+
       <nav class='info__contact'>
         <a href='tel:+51 3571316384' rel='noopener noreferrer'>
           <IconWhatsApp /> +51 3571316384
@@ -44,11 +49,17 @@ const t = useTranslations(currentLocale)
     gap: 2rem;
   }
 
-  .contact__container_info {
-    width: 55%;
+  .contact__container-info {
+    width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .container__info {
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
   }
 
@@ -120,7 +131,7 @@ const t = useTranslations(currentLocale)
       gap: 1.5rem;
     }
 
-    .contact__container_info {
+    .contact__container-info {
       width: 100%;
     }
 

@@ -3,7 +3,6 @@ import ProjectsGalleryCard from './ProjectsGalleryCard'
 import convertTitleToURL from '../utils/convert_title_to_url'
 import { useTranslations } from '../../i18n/utils'
 import { useState } from 'preact/hooks'
-import { h } from 'preact'
 
 export default function ProjectsGallery({ projects, locale }) {
   const t = useTranslations(locale)

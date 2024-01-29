@@ -28,6 +28,8 @@ export default function ProjectsGalleryCard({
       }
     }
 
+    handleMediaChange(isMobile)
+
     isMobile.addEventListener('change', handleMediaChange)
 
     return () => {

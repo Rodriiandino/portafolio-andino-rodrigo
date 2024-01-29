@@ -37,6 +37,15 @@ export const ui = {
     'skills.backend': 'Back-end',
     'skills.database': 'Base de datos',
     'skills.other': 'Otras',
+    'contact.paragraph.1': `Hey, soy andino rodrigo un estudiante en licenciatura de informática
+    en la universidad siglo 21, quien disfruta del desarrollo de software
+    y de las actividades físicas llevando una vida saludable.`,
+    'contact.paragraph.2': `Me considero una persona tranquila que disfruta de la vida y de seguir
+    aprendiendo cada día. Para mí, la programación es una herramienta
+    poderosa para crear soluciones que mejoren la vida de las personas y
+    estoy siempre dispuesto a asumir nuevos retos y proyectos.`,
+    'contact.paragraph.3': `Si tienes alguna pregunta o quieres trabajar conmigo, no dudes en
+    contactarme.`,
     'contact.btn': 'Descargar CV',
     'project.learn': 'Lo que aprendí',
     'project.characteristics': 'Características',
@@ -78,6 +87,11 @@ export const ui = {
     'skills.backend': 'Back-end',
     'skills.database': 'Database',
     'skills.other': 'Other',
+    'contact.paragraph.1': `Hey, I'm andino rodrigo a student in computer science degree at the
+    university siglo 21, who enjoys software development and physical activities leading a healthy life.`,
+    'contact.paragraph.2': `I consider myself a calm person who enjoys life and continues to
+    learning every day. For me, programming is a powerful tool to create solutions that improve people's lives and I am always willing to take on new challenges and projects.`,
+    'contact.paragraph.3': `If you have any questions or want to work with me, do not hesitate to contact me.`,
     'contact.btn': 'Download CV',
     'project.learn': 'What I learned',
     'project.characteristics': 'Characteristics',
