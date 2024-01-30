@@ -2,15 +2,15 @@
   {
     "education": [
       {
-        "date": "2014 - 2021",
-        "title": "TÉCNICO ELECTRICISTA",
-        "description": "Durante este periodo de secundaria en el 'Instituto Mariano Fragueiro', adquirí habilidades sólidas en el diseño, instalación y mantenimiento de sistemas eléctricos. Participé activamente en proyectos prácticos, lo que me proporcionó una comprensión práctica de los conceptos teóricos aprendidos en el aula.",
-        "link": ""
-      },
-      {
         "date": "2022 - Cursando",
         "title": "LICENCIATURA EN INFORMÁTICA",
         "description": "Actualmente estoy cursando el Tercer año de la carrera en la 'Universidad Siglo 21'.",
+        "link": ""
+      },
+      {
+        "date": "2014 - 2021",
+        "title": "TÉCNICO ELECTRICISTA",
+        "description": "Durante este periodo de secundaria en el 'Instituto Mariano Fragueiro', adquirí habilidades sólidas en el diseño, instalación y mantenimiento de sistemas eléctricos. Participé activamente en proyectos prácticos, lo que me proporcionó una comprensión práctica de los conceptos teóricos aprendidos en el aula.",
         "link": ""
       }
     ]
@@ -18,21 +18,22 @@
   {
     "workExperience": [
       {
-        "date": "2021 - finalizado",
-        "title": "Pasantías realizadas en instrumentación y control, en la central nuclear de Embalse",
-        "description": "Esta experiencia me proporcionó una valiosa comprensión práctica de los procesos industriales y la aplicación de tecnologías avanzadas en un entorno crítico.",
+        "date": "2021 - Actualidad",
+        "title": "Atención al Cliente",
+        "description": "Emprendimiento familiar con mas de 2 años de experiencia en el rubro de atención al cliente, en el cual se adquirieron habilidades de comunicación, trabajo en equipo y liderazgo.",
         "link": ""
       },
       {
-        "date": "26/09/2022 al 02/12/2022",
+        "date": "09/2022 al 12/2022",
         "title": "Instrumentista en la parada de la central nuclear de Embalse",
         "description": "Oficial Experto en Instrumentación y Control, en la parada de la central nuclear de Embalse.",
         "link": ""
       },
+
       {
-        "date": "2021 - Actualidad",
-        "title": "Atención al Cliente",
-        "description": "Emprendimiento familiar con mas de 2 años de experiencia en el rubro de atención al cliente, en el cual se adquirieron habilidades de comunicación, trabajo en equipo y liderazgo.",
+        "date": "10/2021 al 11/2021",
+        "title": "Pasantías realizadas en instrumentación y control, en la central nuclear de Embalse",
+        "description": "Esta experiencia me proporcionó una valiosa comprensión práctica de los procesos industriales y la aplicación de tecnologías avanzadas en un entorno crítico.",
         "link": ""
       }
     ]
@@ -41,7 +42,7 @@
   {
     "professionalCourses": [
       {
-        "date": "03/04/2023 al 12/01/2024",
+        "date": "04/2023 al 01/2024",
         "title": "Programa Oracle Next Education F2 T5 Back-end",
         "description": "Curso destinado al Backend con una experiencia formativa intensiva que abarcó más de 330 horas de contenido especializado. Durante este curso, he consolidado mis conocimientos en tecnologías clave del desarrollo back-end, incluyendo Java, SQL 'MySql', Spring, y Oracle Cloud, como ademas de metodologías ágiles y buenas prácticas de programación.",
         "link": "https://app.aluracursos.com/user/andinorodrigo03/fullCertificate/7a7bb74f2a0a42146251f5f83344e9b6"
