@@ -19,38 +19,42 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
   <div class='nav__container'>
     <ul class='nav__list'>
       <li>
-        <a href='#home' class='item'>
+        <a href='#home' class='item' aria-label='Go to home'>
           <IconHouse />
         </a>
       </li>
       <li>
-        <a href='#experience' class='item'>
+        <a href='#experience' class='item' aria-label='Go to experience'>
           <IconExperience />
         </a>
       </li>
       <li>
-        <a href='#projects' class='item'>
+        <a href='#projects' class='item' aria-label='Go to projects'>
           <IconProjects />
         </a>
       </li>
       <li>
-        <a href='#skills' class='item'>
+        <a href='#skills' class='item' aria-label='Go to skills'>
           <IconTech />
         </a>
       </li>
       <li>
-        <a href='#contact' class='item'>
+        <a href='#contact' class='item' aria-label='Go to contact'>
           <IconContact />
         </a>
       </li>
     </ul>
     <div class='nav__list'>
-      <a href={`/${changeLang}`} class='utils__button'>
+      <a
+        href={`/${changeLang}`}
+        class='utils__button'
+        aria-label='change language'
+      >
         <IconLanguageNav />
         <IconLanguageNavLight />
       </a>
 
-      <button class='utils__button' btn-switch-theme>
+      <button class='utils__button' btn-switch-theme aria-label='switch theme'>
         <IconMoonNav />
         <IconSunNav />
       </button>

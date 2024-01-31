@@ -1,20 +1,11 @@
 ---
 import Project from '../../../components/page/Project.astro'
-import projects_es from '../../../data/projects_es.json'
 import projects_en from '../../../data/projects_en.json'
 import type { GetStaticPaths } from 'astro'
 import convertTitleToURL from '../../../components/utils/convert_title_to_url'
 
 export const getStaticPaths = (() => {
   const paths = []
-
-  projects_es.map(project => {
-    paths.push({
-      params: {
-        title: convertTitleToURL(project.title)
-      }
-    })
-  })
 
   projects_en.map(project => {
     paths.push({

@@ -29,6 +29,7 @@ const t = useTranslations(currentLocale)
           href='https://github.com/Rodriiandino'
           target='_blank'
           rel='noopener noreferrer'
+          aria-label='Go to GitHub'
         >
           <IconGitHub />
         </a>
@@ -37,6 +38,7 @@ const t = useTranslations(currentLocale)
           href='https://www.linkedin.com/in/rodrigoandino03/'
           target='_blank'
           rel='noopener noreferrer'
+          aria-label='Go to LinkedIn'
         >
           <IconLinkedIn />
         </a>
@@ -45,6 +47,7 @@ const t = useTranslations(currentLocale)
           href='https://twitter.com/Rodriiandino1'
           target='_blank'
           rel='noopener noreferrer'
+          aria-label='Go to Twitter'
         >
           <IconTwitter />
         </a>
@@ -53,6 +56,7 @@ const t = useTranslations(currentLocale)
           href='https://www.instagram.com/rodriiandino/'
           target='_blank'
           rel='noopener noreferrer'
+          aria-label='Go to Instagram'
         >
           <IconInstagram />
         </a>
@@ -67,9 +71,15 @@ const t = useTranslations(currentLocale)
     />
   </article>
   <article class='bento__3 bento-item'>
-    <button class='bento__3-button'>
+    <a
+      class='bento__3-link'
+      href='https://drive.google.com/file/d/1Hd-NRVkPy0IInIuP1LvE1oQFVmi3vvkf/view?usp=sharing'
+      target='_blank'
+      rel='noopener noreferrer'
+      aria-label='Go to download CV'
+    >
       <svg
-        class='beno_3-icon'
+        class='bento__3-icon'
         viewBox='0 0 21 21'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
@@ -90,7 +100,7 @@ const t = useTranslations(currentLocale)
       </svg>
       <strong>CV</strong>
       <span>{t('bento.download')}</span>
-    </button>
+    </a>
   </article>
   <article class='bento__4 bento-item'></article>
   <article class='bento__5 bento-item'>
@@ -99,9 +109,9 @@ const t = useTranslations(currentLocale)
       <IconArgentina />
     </div>
     <div>
-      <img src='/icons/star.svg' alt='star icon' />
-      <img src='/icons/star.svg' alt='star icon' />
-      <img src='/icons/star.svg' alt='star icon' />
+      <img src='/icons/star.svg' alt='star icon' height='25' width='25' />
+      <img src='/icons/star.svg' alt='star icon' height='25' width='25' />
+      <img src='/icons/star.svg' alt='star icon' height='25' width='25' />
     </div>
   </article>
   <article class='bento__6 bento-item'>
@@ -270,7 +280,7 @@ const t = useTranslations(currentLocale)
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 0.6rem;
     opacity: 0.6;
   }
 
@@ -297,7 +307,7 @@ const t = useTranslations(currentLocale)
     object-position: 0 -40px;
   }
 
-  .bento__3-button {
+  .bento__3-link {
     cursor: pointer;
     width: 100%;
     height: 100%;
@@ -308,9 +318,10 @@ const t = useTranslations(currentLocale)
     justify-content: center;
     align-items: center;
     position: relative;
+    text-decoration: none;
   }
 
-  .beno_3-icon {
+  .bento__3-icon {
     width: 2rem;
     height: 2rem;
     margin-right: 0.5rem;
@@ -322,7 +333,7 @@ const t = useTranslations(currentLocale)
     transition: all 0.3s ease-in-out;
   }
 
-  .bento__3-button:hover .beno_3-icon {
+  .bento__3-link:hover .bento__3-icon {
     transform: translateX(3px) translateY(-3px);
   }
 
@@ -576,7 +587,7 @@ const t = useTranslations(currentLocale)
       grid-area: 8 / 4 / 9 / 7;
     }
 
-    .beno_3-icon {
+    .bento__3-icon {
       width: 1.8rem;
       height: 1.8rem;
       margin-right: 0.5rem;
@@ -642,7 +653,7 @@ const t = useTranslations(currentLocale)
       grid-area: 9 / 1 / 10 / 2;
     }
 
-    .beno_3-icon {
+    .bento__3-icon {
       width: 1.5rem;
       height: 1.5rem;
       top: 0rem;
@@ -663,6 +674,17 @@ const t = useTranslations(currentLocale)
 
     .bento__8 time {
       font-size: var(--step-0);
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .bento__5 strong {
+      font-size: var(--step-2);
+    }
+
+    .icon-argentina {
+      width: 3rem;
+      height: 3rem;
     }
   }
 </style>
