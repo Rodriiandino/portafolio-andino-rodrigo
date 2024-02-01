@@ -14,10 +14,7 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(
       JSON.stringify({ error: 'Email and message are required' }),
       {
-        status: 400,
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        status: 400
       }
     )
   }
@@ -31,17 +28,11 @@ export const POST: APIRoute = async ({ request }) => {
     })
   } catch (error) {
     return new Response(JSON.stringify({ error: 'Error sending email' }), {
-      status: 500,
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      status: 500
     })
   }
 
   return new Response(JSON.stringify({ message: 'Message received' }), {
-    status: 200,
-    headers: {
-      'Content-Type': 'application/json'
-    }
+    status: 200
   })
 }
