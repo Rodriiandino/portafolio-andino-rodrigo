@@ -1,9 +1,10 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
 
-import preact from "@astrojs/preact";
+import preact from '@astrojs/preact'
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'server',
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
@@ -12,4 +13,4 @@ export default defineConfig({
     }
   },
   integrations: [preact()]
-});
+})
