@@ -102,7 +102,38 @@ const t = useTranslations(currentLocale)
       <span>{t('bento.download')}</span>
     </a>
   </article>
-  <article class='bento__4 bento-item'></article>
+  <article class='bento__4 bento-item'>
+    <h4>{t('bento.contact')}</h4>
+    <span>{t('bento.contactDescription')}</span>
+    <form action='' class='bento__4-form'>
+      <input
+        type='email'
+        name='email'
+        id='email'
+        placeholder='andinorodrigo03@gmail.com'
+      />
+      {
+        currentLocale === 'es' ? (
+          <textarea
+            name='message'
+            id='message'
+            cols='20'
+            rows='4'
+            placeholder='Escribe tu mensaje'
+          />
+        ) : (
+          <textarea
+            name='message'
+            id='message'
+            cols='20'
+            rows='4'
+            placeholder='Write your message'
+          />
+        )
+      }
+      <button type='submit'>{t('bento.send')}</button>
+    </form>
+  </article>
   <article class='bento__5 bento-item'>
     <div>
       <strong>{t('bento.country')}</strong>
@@ -172,7 +203,7 @@ const t = useTranslations(currentLocale)
     width: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(6, calc(var(--max-width) / 11));
     grid-column-gap: 20px;
     grid-row-gap: 20px;
   }
@@ -197,12 +228,13 @@ const t = useTranslations(currentLocale)
     grid-area: 1 / 1 / 3 / 5;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 0.8rem;
     padding: 1rem;
   }
   .bento__2 {
     grid-area: 1 / 5 / 3 / 7;
+    overflow: hidden;
   }
   .bento__3 {
     grid-area: 3 / 1 / 5 / 3;
@@ -253,14 +285,14 @@ const t = useTranslations(currentLocale)
   }
 
   .bento__1-header h1 {
-    font-size: var(--step-3);
+    font-size: var(--step-2);
     font-weight: 700;
     color: var(--white);
     line-height: 1.1;
   }
 
   .bento__1-header span {
-    font-size: var(--step-2);
+    font-size: var(--step-1);
     font-weight: 600;
     color: var(--light-blue);
     line-height: 1.1;
@@ -299,11 +331,8 @@ const t = useTranslations(currentLocale)
   }
 
   .bento__2-img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     border-radius: 25px;
-    aspect-ratio: 16/9;
     object-position: 0 -40px;
   }
 
@@ -349,6 +378,58 @@ const t = useTranslations(currentLocale)
     font-weight: 600;
     color: var(--white);
     line-height: 1;
+  }
+
+  .bento__4 h4 {
+    font-size: var(--step-0);
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .bento__4 span {
+    font-size: var(--step--1);
+    font-weight: 400;
+    color: var(--light-blue);
+  }
+
+  .bento__4-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .bento__4-form input,
+  .bento__4-form textarea {
+    padding: 0.5rem;
+    border: none;
+    background: var(--dark-blue);
+    color: var(--white);
+    font-size: var(--step--2);
+    border-radius: 7px;
+  }
+
+  .bento__4-form textarea {
+    resize: none;
+  }
+
+  .bento__4-form button {
+    width: 50%;
+    border: none;
+    padding: 0.3rem;
+    background: var(--white);
+    color: var(--black);
+    font-size: var(--step--2);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .bento__4-form button:hover {
+    background: var(--light-blue);
+    box-shadow: var(--shadow-elevation-medium);
   }
 
   .bento__5 div {
@@ -462,7 +543,7 @@ const t = useTranslations(currentLocale)
   @media screen and (max-width: 850px) {
     .bento {
       grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(6, 1fr);
+      grid-template-rows: repeat(6, minmax(min-content, max-content));
     }
 
     .bento__1 {
@@ -470,18 +551,21 @@ const t = useTranslations(currentLocale)
     }
     .bento__2 {
       grid-area: 2 / 1 / 3 / 3;
+      min-height: 200px;
+      max-height: 280px;
     }
     .bento__3 {
       grid-area: 2 / 3 / 3 / 6;
     }
     .bento__4 {
-      grid-area: 3 / 1 / 4 / 3;
+      grid-area: 3 / 1 / 4 / 4;
     }
     .bento__5 {
-      grid-area: 3 / 3 / 4 / 6;
+      grid-area: 3 / 4 / 4 / 6;
     }
     .bento__6 {
       grid-area: 4 / 4 / 6 / 6;
+      padding: 1rem 1rem 3.5rem 1rem;
     }
     .bento__7 {
       grid-area: 4 / 1 / 6 / 4;
@@ -494,12 +578,12 @@ const t = useTranslations(currentLocale)
     }
 
     .bento__5 strong {
-      font-size: var(--step-3);
+      font-size: var(--step-1);
     }
 
     .icon-argentina {
-      width: 3.5rem;
-      height: 3.5rem;
+      width: 3rem;
+      height: 3rem;
     }
 
     .bento__8 time {
@@ -516,6 +600,12 @@ const t = useTranslations(currentLocale)
     }
   }
 
+  @media screen and (max-width: 685px) {
+    .bento__5 strong {
+      font-size: var(--step-0);
+    }
+  }
+
   @media screen and (max-width: 600px) {
     .bento {
       grid-template-columns: repeat(5, 1fr);
@@ -527,7 +617,6 @@ const t = useTranslations(currentLocale)
     }
     .bento__2 {
       grid-area: 2 / 1 / 3 / 3;
-      min-height: 250px;
     }
     .bento__3 {
       grid-area: 2 / 3 / 3 / 6;
@@ -540,7 +629,6 @@ const t = useTranslations(currentLocale)
     }
     .bento__6 {
       grid-area: 5 / 1 / 6 / 6;
-      padding: 1rem 1rem 3.5rem 1rem;
     }
     .bento__7 {
       grid-area: 6 / 1 / 8 / 4;
@@ -550,6 +638,10 @@ const t = useTranslations(currentLocale)
     }
     .bento__9 {
       grid-area: 7 / 4 / 8 / 6;
+    }
+
+    .bento__5 strong {
+      font-size: var(--step-1);
     }
   }
 
