@@ -3,6 +3,7 @@ import Project from '../../components/page/Project.astro'
 import projects_es from '../../data/projects_es.json'
 import type { GetStaticPaths } from 'astro'
 import convertTitleToURL from '../../components/utils/convert_title_to_url'
+export const prerender = true
 
 export const getStaticPaths = (() => {
   const paths = []
