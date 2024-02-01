@@ -2,7 +2,8 @@ import type { APIRoute } from 'astro'
 import { Resend } from 'resend'
 
 const emailTo = import.meta.env.EMAIL
-const resend = new Resend(import.meta.env.RESEND)
+const key = import.meta.env.RESEND
+const resend = new Resend(key)
 const domain = import.meta.env.DOMAIN
 
 export const POST: APIRoute = async ({ request }) => {
