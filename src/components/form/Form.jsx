@@ -9,7 +9,7 @@ export default function Form({ currentLocale }) {
   async function submit(e) {
     e.preventDefault()
     const formData = new FormData(e.target)
-    const response = await fetch('/api/contact', {
+    const response = await fetch('/api/contact.json', {
       method: 'POST',
       body: formData
     })
