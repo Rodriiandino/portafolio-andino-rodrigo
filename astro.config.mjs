@@ -1,11 +1,11 @@
 import { defineConfig } from 'astro/config'
 import preact from '@astrojs/preact'
-import netlify from '@astrojs/netlify'
+import vercel from '@astrojs/vercel/static'
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',
-  adapter: netlify(),
+  output: 'static',
+  adapter: vercel(),
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],

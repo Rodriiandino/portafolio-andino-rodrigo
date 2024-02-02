@@ -22,8 +22,7 @@ export const ui = {
     'bento.author': 'Maestro Roshi',
     'bento.myStack': 'Mi Stack',
     'bento.contact': 'Hola 👋',
-    'bento.contactDescription': 'No dudes en contactarme',
-    'bento.send': 'Enviar 🚀',
+
     'experience.description': `Experimentado en instrumentación y control nuclear, con habilidades de
     atención al cliente, liderazgo y trabajo en equipo. Además, soy técnico
     electricista e informático en formación. Mi pasión es el desarrollo de
@@ -77,8 +76,6 @@ export const ui = {
       '"You have to work, you have to learn, you have to eat, you have to rest, and you also have to play"',
     'bento.author': 'Master Roshi',
     'bento.myStack': 'My Stack',
-    'bento.contact': 'Hello 👋',
-    'bento.contactDescription': 'Do not hesitate to contact me',
     'bento.send': 'Send 🚀',
     'experience.description': `Experienced in nuclear instrumentation and control, with customer service, leadership and teamwork skills. In addition, I am an electrical and computer technician in training. My passion is software development, where I can innovate and create solutions with my talent.`,
     'experience.education': 'EDUCATION',
