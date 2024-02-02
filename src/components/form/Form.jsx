@@ -11,6 +11,9 @@ export default function Form({ currentLocale }) {
     const formData = new FormData(e.target)
     const response = await fetch('/api/contact.json', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: formData
     })
     const data = await response.json()
