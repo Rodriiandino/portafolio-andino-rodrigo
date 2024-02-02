@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro'
 import { Resend } from 'resend'
 
+export const prerender = false
 const emailTo = import.meta.env.EMAIL
 const key = import.meta.env.RESEND
 const resend = new Resend(key)
