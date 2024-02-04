@@ -22,8 +22,8 @@
   border-radius: var(--border-radius);
   background: linear-gradient(
     180deg,
-    var(--black-transparent-02),
-    var(--black-transparent-08)
+    var(--black-transparent-02) 20%,
+    var(--black-transparent-08) 75%
   );
   transition: all 0.3s ease-in-out;
   overflow: hidden;
@@ -61,7 +61,7 @@
 
 .item__description {
   font-size: var(--step-0);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.2;
   color: var(--white);
   text-overflow: ellipsis;
@@ -75,7 +75,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   padding: 0;
 }
 
@@ -86,7 +86,7 @@
 
 .footer__links a {
   font-size: var(--step--1);
-  font-weight: 400;
+  font-weight: 500;
   color: var(--white);
   text-decoration: none;
   transition: 0.3s ease-in-out;

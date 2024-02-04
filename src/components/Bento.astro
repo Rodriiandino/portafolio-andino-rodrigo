@@ -103,11 +103,13 @@ const t = useTranslations(currentLocale)
     </a>
   </article>
   <article class='bento__4 bento-item'>
-    <img
-      class='bento__4-img'
-      src='/projects/hotel_alura/hotel_alura_1.webp'
-      alt=''
-    />
+    <a
+      href='https://www.linkedin.com/in/rodrigoandino03/'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      {t('bento.availability')}
+    </a>
   </article>
   <article class='bento__5 bento-item'>
     <div>
@@ -178,7 +180,7 @@ const t = useTranslations(currentLocale)
     width: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, calc(var(--max-width) / 11));
+    grid-template-rows: repeat(6, calc(var(--max-width) / 11 + 5px));
     grid-column-gap: 20px;
     grid-row-gap: 20px;
   }
@@ -216,6 +218,13 @@ const t = useTranslations(currentLocale)
   }
   .bento__4 {
     grid-area: 3 / 3 / 5 / 5;
+    position: relative;
+    overflow: hidden;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 7px 1px #97ffef;
   }
   .bento__5 {
     grid-area: 3 / 5 / 4 / 7;
@@ -354,11 +363,57 @@ const t = useTranslations(currentLocale)
     line-height: 1;
   }
 
-  .bento__4-img {
+  .bento__4::before {
+    content: '';
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+    background-image: conic-gradient(
+      from 90deg at 50% 50%,
+      #48d4aa,
+      #97ffef,
+      #48d4aa
+    );
+    animation: spin 3s linear infinite;
+    border-radius: var(--border-radius);
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .bento__4 a {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    text-align: center;
+    text-decoration: none;
+    font-size: var(--step-0);
+    font-weight: 800;
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      var(--dark-blue) 32.81%,
+      var(--black) 100%
+    );
     border-radius: 25px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .bento__4 a:hover {
+    text-decoration: underline;
+    text-decoration-color: #48d4aa;
   }
 
   .bento__5 div {
