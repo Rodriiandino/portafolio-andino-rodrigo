@@ -15,9 +15,11 @@ const project = (() => {
 
   return projects.find(project => convertTitleToURL(project.title) === title)
 })()
+
+const ogImage = new URL(`${Astro.url}og-image.png`).href
 ---
 
-<Layout title={project.title}>
+<Layout title={project.title} description={project.description} image={ogImage}>
   <main class='project__page'>
     <div class='project__buttons'>
       <div class='buttons__container'>

@@ -8,9 +8,30 @@ import Skills from '../Skills.astro'
 import Contact from '../Contact.astro'
 import Footer from '../Footer.astro'
 import Nav from '../Nav.astro'
+
+const { currentLocale = 'es' } = Astro
+
+const locales = {
+  es: {
+    title: 'Andino-Rodrigo | Portafolio',
+    description:
+      'Contrata a un desarrollador web con conocimiento en tecnologías modernas y buenas prácticas, y con experiencia en trabajos en entornos criticos.'
+  },
+  en: {
+    title: 'Andino-Rodrigo | Portfolio',
+    description:
+      'Hire a web developer with knowledge in modern technologies and best practices, and with experience in critical environments.'
+  }
+}
+
+const ogImage = new URL(`${Astro.url}og-image.png`).href
 ---
 
-<Layout title='Andino-Rodrigo | Portafolio'>
+<Layout
+  title={locales[currentLocale].title}
+  description={locales[currentLocale].description}
+  image={ogImage}
+>
   <Header />
   <main>
     <Bento />
