@@ -24,7 +24,13 @@ const locales = {
   }
 }
 
-const ogImage = new URL(`${Astro.url}og-image.png`).href
+interface Props {
+  image?: string
+}
+
+const { image } = Astro.props
+
+const ogImage = image || new URL(`${Astro.site}og-image.png`).href
 ---
 
 <Layout

@@ -6,6 +6,7 @@ import vercel from '@astrojs/vercel/static'
 export default defineConfig({
   output: 'static',
   adapter: vercel(),
+  site: 'https://portafolio-andino-rodrigo.vercel.app/',
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
