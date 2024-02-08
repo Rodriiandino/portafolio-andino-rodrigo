@@ -293,5 +293,40 @@
         "alt": "Learning React"
       }
     ]
+  },
+  {
+    "title": "Real estate with Next.js 14",
+    "description": "Test project where I've put into practice my skills with Next14, MySQL, and the next.js API Router, along with their hooks.",
+    "what_i_learned": [
+      "Improve my skills with Next.js 14",
+      "API Router of next.js",
+      "Hooks of next.js",
+      "Connection with MySQL",
+      "Improve my skills with React and its hooks",
+      "Filter with SearchParams and QueryParams"
+    ],
+    "features": "Learning",
+    "date": "2023 - 2024",
+    "technologies": ["Next.js", "React", "MySQL"],
+    "status": "Completed",
+    "deploy": {
+      "page": "Not Deployed",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/inmobiliaria-next14",
+    "images": [
+      {
+        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_1.webp",
+        "alt": "Real estate with Next.js 14"
+      },
+      {
+        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_2.webp",
+        "alt": "Real estate with Next.js 14"
+      },
+      {
+        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_3.webp",
+        "alt": "Real estate with Next.js 14"
+      }
+    ]
   }
 ]

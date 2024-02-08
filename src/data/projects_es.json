@@ -46,7 +46,7 @@
     "features": "Aprendizaje",
     "date": "2023",
     "technologies": ["Java", "JDBC", "MySQL", "JavaFX"],
-    "status": "Completed",
+    "status": "Completo",
     "deploy": {
       "page": "Aplicación de Escritorio",
       "demo": ""
@@ -105,7 +105,7 @@
     "features": "Aprendizaje",
     "date": "2023",
     "technologies": ["Java", "JavaFX"],
-    "status": "Completed",
+    "status": "Completo",
     "deploy": {
       "page": "No Deploy",
       "demo": ""
@@ -128,7 +128,7 @@
     "features": "Aprendizaje",
     "date": "2023",
     "technologies": ["HTML", "CSS", "JavaScript"],
-    "status": "Completed",
+    "status": "Completo",
     "deploy": {
       "page": "Netlify",
       "demo": "https://digitalretouch.netlify.app/"
@@ -154,7 +154,7 @@
     "features": "Aprendizaje",
     "date": "2023",
     "technologies": ["HTML", "CSS", "JavaScript"],
-    "status": "Completed",
+    "status": "Completo",
     "deploy": {
       "page": "Github",
       "demo": "https://rodriiandino.github.io/CV-JensenAckles/"
@@ -181,7 +181,7 @@
     "features": "Aprendizaje",
     "date": "2023",
     "technologies": ["HTML", "CSS", "JavaScript", "Astro"],
-    "status": "Completed",
+    "status": "Completo",
     "deploy": {
       "page": "Netlify",
       "demo": "https://pokedex1ra-generacion.netlify.app/"
@@ -209,7 +209,7 @@
     "features": "Aprendizaje",
     "date": "2023",
     "technologies": ["Java", "JavaFX"],
-    "status": "Completed",
+    "status": "Completo",
     "deploy": {
       "page": "No Deploy",
       "demo": ""
@@ -238,7 +238,7 @@
     "features": "Aprendizaje",
     "date": "2023",
     "technologies": ["Kotlin"],
-    "status": "Completed",
+    "status": "Completo",
     "deploy": {
       "page": "No Deploy",
       "demo": ""
@@ -265,7 +265,7 @@
     "features": "Aprendizaje",
     "date": "2023",
     "technologies": ["React", "JavaScript", "vitest"],
-    "status": "Completed",
+    "status": "Completo",
     "deploy": {
       "page": "Vercel - Netlify",
       "demo": ""
@@ -291,6 +291,41 @@
       {
         "src": "/projects/react_projects/react_project_4.webp",
         "alt": "Aprendiendo React"
+      }
+    ]
+  },
+  {
+    "title": "Inmobiliaria con Next.js 14",
+    "description": "Proyecto de prueba en el que he puesto en práctica mis habilidades con Next14, MySQL y la API Router de next.js, junto con sus hooks",
+    "what_i_learned": [
+      "Mejorar mis habilidades con Next.js 14",
+      "API Router de next.js",
+      "Hooks de next.js",
+      "Conexión con MySQL",
+      "Mejorar mis habilidades con React y sus hooks",
+      "Filtro con SearchParams y QueryParams"
+    ],
+    "features": "Aprendizaje",
+    "date": "2023 - 2024",
+    "technologies": ["Next.js", "React", "MySQL"],
+    "status": "Completo",
+    "deploy": {
+      "page": "Not Deploy",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/inmobiliaria-next14",
+    "images": [
+      {
+        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_1.webp",
+        "alt": "Inmobiliaria con Next.js 14"
+      },
+      {
+        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_2.webp",
+        "alt": "Inmobiliaria con Next.js 14"
+      },
+      {
+        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_3.webp",
+        "alt": "Inmobiliaria con Next.js 14"
       }
     ]
   }
