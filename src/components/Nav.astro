@@ -1,4 +1,6 @@
 ---
+import { useTranslations } from '../i18n/utils'
+
 import {
   IconHouse,
   IconExperience,
@@ -13,198 +15,266 @@ import {
 
 const { currentLocale = 'es' } = Astro
 const changeLang = currentLocale === 'en' ? '' : 'en'
+
+const t = useTranslations(currentLocale)
 ---
 
 <nav class='nav' id='nav' data-theme='light'>
   <div class='nav__container'>
     <ul class='nav__list'>
       <li>
-        <a href='#home' class='item' aria-label='Go to home'>
+        <a href='#home' class='item tooltip' aria-label='Go to home'>
           <IconHouse />
+          <span class='tooltip__text'>{t('nav.home')}</span>
         </a>
       </li>
       <li>
-        <a href='#experience' class='item' aria-label='Go to experience'>
+        <a
+          href='#experience'
+          class='item tooltip'
+          aria-label='Go to experience'
+        >
           <IconExperience />
+          <span class='tooltip__text'>{t('nav.experience')}</span>
         </a>
       </li>
       <li>
-        <a href='#projects' class='item' aria-label='Go to projects'>
+        <a href='#projects' class='item tooltip' aria-label='Go to projects'>
           <IconProjects />
+          <span class='tooltip__text'>{t('nav.projects')}</span>
         </a>
       </li>
       <li>
-        <a href='#skills' class='item' aria-label='Go to skills'>
+        <a href='#skills' class='item tooltip' aria-label='Go to skills'>
           <IconTech />
+          <span class='tooltip__text'>{t('nav.skills')}</span>
         </a>
       </li>
       <li>
-        <a href='#contact' class='item' aria-label='Go to contact'>
+        <a href='#contact' class='item tooltip' aria-label='Go to contact'>
           <IconContact />
+          <span class='tooltip__text'>{t('nav.contact')}</span>
         </a>
       </li>
+      <div class='nav__list'>
+        <a
+          href={`/${changeLang}`}
+          class='utils__button'
+          aria-label='change language'
+        >
+          <IconLanguageNav />
+          <IconLanguageNavLight />
+        </a>
+
+        <button
+          class='utils__button'
+          btn-switch-theme
+          aria-label='switch theme'
+        >
+          <IconMoonNav />
+          <IconSunNav />
+        </button>
+      </div>
     </ul>
-    <div class='nav__list'>
-      <a
-        href={`/${changeLang}`}
-        class='utils__button'
-        aria-label='change language'
-      >
-        <IconLanguageNav />
-        <IconLanguageNavLight />
-      </a>
-
-      <button class='utils__button' btn-switch-theme aria-label='switch theme'>
-        <IconMoonNav />
-        <IconSunNav />
-      </button>
-    </div>
   </div>
-</nav>
 
-<style is:global>
-  .nav {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    padding: 0 1.5rem;
-    width: 100%;
-    height: fit-content;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn linear both;
-    animation-timeline: scroll();
-    animation-range: 0 300px;
-  }
-
-  @keyframes fadeIn {
-    to {
-      transform: translateX(-50%) translateY(0);
-    }
-  }
-
-  .nav__container {
-    width: 100%;
-    max-width: 420px;
-    height: 60px;
-    display: flex;
-    box-shadow: var(--shadow-elevation-medium);
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 1rem;
-    padding: 0 1.5rem;
-    background-color: var(--sky-blue-transparent);
-    backdrop-filter: blur(5px);
-    border-radius: var(--border-radius);
-  }
-
-  .nav__list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    gap: 1rem;
-  }
-
-  .item {
-    color: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: box-shadow 0.3s ease-in-out;
-  }
-
-  .item:hover {
-    box-shadow: var(--shadow-elevation-medium);
-  }
-
-  .nav__list:last-child {
-    gap: 0.7rem;
-  }
-
-  .utils__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .utils__button:hover {
-    transform: scale(1.1);
-  }
-
-  [data-theme='dark'] {
-    .icon-language-nav-light {
-      display: none;
-    }
-
-    .icon-sun-nav {
-      display: none;
-    }
-  }
-
-  [data-theme='light'] {
-    .icon-language-nav {
-      display: none;
-    }
-
-    .icon-moon-nav {
-      display: none;
-    }
-
-    .item {
-      color: var(--light-blue);
-    }
-  }
-
-  @media screen and (max-width: 850px) {
+  <style is:global>
     .nav {
-      animation-range: 0 200px;
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      padding: 0 1.5rem;
+      width: 100%;
+      height: fit-content;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn linear both;
+      animation-timeline: scroll();
+      animation-range: 0 300px;
     }
-  }
 
-  @media screen and (max-width: 460px) {
+    @keyframes fadeIn {
+      to {
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
     .nav__container {
-      padding: 0 0.5rem;
+      width: 100%;
+      max-width: 420px;
+      height: 60px;
+      display: flex;
+      box-shadow: var(--shadow-elevation-medium);
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 1.5rem;
+      background-color: var(--sky-blue-transparent);
+      backdrop-filter: blur(5px);
+      border-radius: var(--border-radius);
     }
 
     .nav__list {
-      gap: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      gap: 1rem;
+    }
+
+    .item {
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .item:hover {
+      box-shadow: var(--shadow-elevation-medium);
     }
 
     .nav__list:last-child {
-      flex-direction: row;
       gap: 0.7rem;
     }
 
-    .icon__variant-nav {
-      width: 32px;
-      height: 32px;
+    .utils__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      transition: transform 0.3s ease-in-out;
     }
 
-    .icon-language-nav,
-    .icon-language-nav-light {
-      width: 40px;
-      height: 40px;
+    .utils__button:hover {
+      transform: scale(1.1);
     }
 
-    .icon-moon-nav,
-    .icon-sun-nav {
-      width: 40px;
-      height: 40px;
-    }
-  }
+    [data-theme='dark'] {
+      .icon-language-nav-light {
+        display: none;
+      }
 
-  @media screen and (max-width: 360px) {
-    .nav {
-      padding: 0 0.3rem;
+      .icon-sun-nav {
+        display: none;
+      }
     }
-  }
-</style>
+
+    [data-theme='light'] {
+      .icon-language-nav {
+        display: none;
+      }
+
+      .icon-moon-nav {
+        display: none;
+      }
+
+      .item {
+        color: var(--light-blue);
+      }
+    }
+
+    .tooltip {
+      position: relative;
+    }
+
+    .tooltip__text {
+      visibility: hidden;
+      font-size: var(--step--1);
+      font-weight: 500;
+      text-align: center;
+      text-wrap: nowrap;
+      color: var(--black);
+      background-color: var(--light-background);
+      border-radius: var(--border-radius);
+      padding: 0.3rem;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip__text::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: var(--white) transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltip__text {
+      visibility: visible;
+      opacity: 0.8;
+      animation: navfadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes navfadeIn {
+      to {
+        transform: translateY(0);
+      }
+
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+    }
+
+    @media screen and (max-width: 850px) {
+      .nav {
+        animation-range: 0 200px;
+      }
+    }
+
+    @media screen and (max-width: 460px) {
+      .nav__container {
+        padding: 0 0.5rem;
+      }
+
+      .nav__list {
+        gap: 0.5rem;
+      }
+
+      .nav__list:last-child {
+        flex-direction: row;
+        gap: 0.7rem;
+      }
+
+      .icon__variant-nav {
+        width: 32px;
+        height: 32px;
+      }
+
+      .icon-language-nav,
+      .icon-language-nav-light {
+        width: 40px;
+        height: 40px;
+      }
+
+      .icon-moon-nav,
+      .icon-sun-nav {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media screen and (max-width: 360px) {
+      .nav {
+        padding: 0 0.3rem;
+      }
+
+      .nav__list:last-child {
+        gap: 0.3rem;
+      }
+    }
+  </style>
+</nav>
