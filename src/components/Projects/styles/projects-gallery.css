@@ -79,7 +79,7 @@
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  width: 330px;
+  width: 250px;
   filter: opacity(0.9);
   animation: slideIn 0.3s ease-in-out;
 }
