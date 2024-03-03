@@ -6,7 +6,7 @@ import { useState } from 'preact/hooks'
 
 export default function ProjectsGallery({ projects, locale }) {
   const t = useTranslations(locale)
-  const [limit, setLimit] = useState(5)
+  const [limit, setLimit] = useState(6)
   const [filteredProjects, setFilteredProjects] = useState(
     projects.slice(0, limit)
   )

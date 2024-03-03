@@ -119,6 +119,68 @@
     ]
   },
   {
+    "title": "Inmobiliaria con Next.js 14",
+    "description": "Proyecto de prueba en el que he puesto en práctica mis habilidades con Next14, MySQL y la API Router de next.js, junto con sus hooks",
+    "what_i_learned": [
+      "Mejorar mis habilidades con Next.js 14",
+      "API Router de next.js",
+      "Hooks de next.js",
+      "Conexión con MySQL",
+      "Mejorar mis habilidades con React y sus hooks",
+      "Filtro con SearchParams y QueryParams"
+    ],
+    "features": "Aprendizaje",
+    "date": "2023 - 2024",
+    "technologies": ["Next.js", "React", "MySQL"],
+    "status": "Completo",
+    "deploy": {
+      "page": "Not Deploy",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/inmobiliaria-next14",
+    "images": [
+      {
+        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_1.webp",
+        "alt": "Inmobiliaria con Next.js 14"
+      },
+      {
+        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_2.webp",
+        "alt": "Inmobiliaria con Next.js 14"
+      },
+      {
+        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_3.webp",
+        "alt": "Inmobiliaria con Next.js 14"
+      }
+    ]
+  },
+  {
+    "title": "1er Generación Pokedex",
+    "description": "Diseño de la Pokedex de la primera generación realizado con CSS, y usando JavaScript para hacer el fetch a la api de pokeApi. Se utilizo el framework 'Astro'.",
+    "what_i_learned": [
+      "Aprender usar el framework Astro.",
+      "Mejorar mis habilidades de programación en HTML y CSS."
+    ],
+    "features": "Aprendizaje",
+    "date": "2023",
+    "technologies": ["HTML", "CSS", "JavaScript", "Astro"],
+    "status": "Completo",
+    "deploy": {
+      "page": "Netlify",
+      "demo": "https://pokedex1ra-generacion.netlify.app/"
+    },
+    "github": "https://github.com/Rodriiandino/1erGeneracion-pokedex",
+    "images": [
+      {
+        "src": "/projects/1erGeneracion_pokedex/1erGeneracion_pokedex_1.webp",
+        "alt": "1erGeneracionPokedex"
+      },
+      {
+        "src": "/projects/1erGeneracion_pokedex/1erGeneracion_pokedex_2.webp",
+        "alt": "1erGeneracionPokedex"
+      }
+    ]
+  },
+  {
     "title": "Digital Retouch",
     "description": "Pagina en la cual se puede colocar filtros a las imágenes con javaScript vanilla.",
     "what_i_learned": [
@@ -168,33 +230,6 @@
       {
         "src": "/projects/cv_jensen_ackles/cv_jensen_ackles_2.webp",
         "alt": "cvJensenAckles"
-      }
-    ]
-  },
-  {
-    "title": "1er Generación Pokedex",
-    "description": "Diseño de la Pokedex de la primera generación realizado con CSS, y usando JavaScript para hacer el fetch a la api de pokeApi. Se utilizo el framework 'Astro'.",
-    "what_i_learned": [
-      "Aprender usar el framework Astro.",
-      "Mejorar mis habilidades de programación en HTML y CSS."
-    ],
-    "features": "Aprendizaje",
-    "date": "2023",
-    "technologies": ["HTML", "CSS", "JavaScript", "Astro"],
-    "status": "Completo",
-    "deploy": {
-      "page": "Netlify",
-      "demo": "https://pokedex1ra-generacion.netlify.app/"
-    },
-    "github": "https://github.com/Rodriiandino/1erGeneracion-pokedex",
-    "images": [
-      {
-        "src": "/projects/1erGeneracion_pokedex/1erGeneracion_pokedex_1.webp",
-        "alt": "1erGeneracionPokedex"
-      },
-      {
-        "src": "/projects/1erGeneracion_pokedex/1erGeneracion_pokedex_2.webp",
-        "alt": "1erGeneracionPokedex"
       }
     ]
   },
@@ -291,41 +326,6 @@
       {
         "src": "/projects/react_projects/react_project_4.webp",
         "alt": "Aprendiendo React"
-      }
-    ]
-  },
-  {
-    "title": "Inmobiliaria con Next.js 14",
-    "description": "Proyecto de prueba en el que he puesto en práctica mis habilidades con Next14, MySQL y la API Router de next.js, junto con sus hooks",
-    "what_i_learned": [
-      "Mejorar mis habilidades con Next.js 14",
-      "API Router de next.js",
-      "Hooks de next.js",
-      "Conexión con MySQL",
-      "Mejorar mis habilidades con React y sus hooks",
-      "Filtro con SearchParams y QueryParams"
-    ],
-    "features": "Aprendizaje",
-    "date": "2023 - 2024",
-    "technologies": ["Next.js", "React", "MySQL"],
-    "status": "Completo",
-    "deploy": {
-      "page": "Not Deploy",
-      "demo": ""
-    },
-    "github": "https://github.com/Rodriiandino/inmobiliaria-next14",
-    "images": [
-      {
-        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_1.webp",
-        "alt": "Inmobiliaria con Next.js 14"
-      },
-      {
-        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_2.webp",
-        "alt": "Inmobiliaria con Next.js 14"
-      },
-      {
-        "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_3.webp",
-        "alt": "Inmobiliaria con Next.js 14"
       }
     ]
   }
