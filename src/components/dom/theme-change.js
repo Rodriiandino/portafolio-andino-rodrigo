@@ -34,11 +34,22 @@ export default function themeChange() {
     }
   }
 
+  const prefersDarkMode = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches
+
   const lsLoader = () => {
-    if (ls.getItem('darkMode-portafolio-andino') == 'true') {
+    const storedMode = ls.getItem('darkMode-portafolio-andino')
+    if (storedMode === 'true') {
       setThemeDark()
-    } else {
+    } else if (storedMode === 'false') {
       setThemeLight()
+    } else {
+      if (prefersDarkMode) {
+        setThemeDark()
+      } else {
+        setThemeLight()
+      }
     }
   }
 
