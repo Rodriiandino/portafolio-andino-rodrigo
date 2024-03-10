@@ -70,16 +70,18 @@ const t = useTranslations(currentLocale)
   }
 
   .contact__img {
-    width: 45%;
+    width: 35%;
     display: flex;
     justify-content: flex-end;
   }
 
   .contact__img img {
-    width: max-content;
     height: 100%;
-    max-height: 600px;
-    object-fit: contain;
+    max-height: 450px;
+    object-fit: cover;
+    border: 3px solid var(--sky-blue);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-elevation-medium);
   }
 
   .info__text {
@@ -122,21 +124,21 @@ const t = useTranslations(currentLocale)
     font-weight: 700;
     text-decoration: none;
     text-align: center;
+    transition: all 0.3s ease-in-out;
   }
 
   .contact__link-btn:hover {
     background-color: var(--light-blue);
     text-decoration: underline;
     text-decoration-color: var(--black);
-    transition: all 0.3s ease-in-out;
     box-shadow: var(--shadow-elevation-medium);
   }
 
-  @media (max-width: 644px) {
+  @media (max-width: 744px) {
     .contact__container {
       padding: 2rem 0;
-      flex-direction: column;
       gap: 1.5rem;
+      flex-direction: column-reverse;
     }
 
     .contact__container-info {
@@ -144,8 +146,8 @@ const t = useTranslations(currentLocale)
     }
 
     .contact__img {
-      width: 100%;
-      justify-content: center;
+      width: fit-content;
+      align-self: center;
     }
 
     .contact__img img {

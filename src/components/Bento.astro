@@ -107,6 +107,7 @@ const t = useTranslations(currentLocale)
       href='https://www.linkedin.com/in/rodrigoandino03/'
       target='_blank'
       rel='noopener noreferrer'
+      aria-label='Go to LinkedIn'
     >
       {t('bento.availability')}
     </a>
@@ -210,7 +211,7 @@ const t = useTranslations(currentLocale)
     padding: 1rem;
   }
   .bento__2 {
-    grid-area: 1 / 5 / 3 / 7;
+    grid-area: 1 / 5 /4 / 7;
     overflow: hidden;
   }
   .bento__3 {
@@ -227,7 +228,7 @@ const t = useTranslations(currentLocale)
     box-shadow: 0 0 7px 1px #97ffef;
   }
   .bento__5 {
-    grid-area: 3 / 5 / 4 / 7;
+    grid-area: 4 / 5 / 5 / 7;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -235,9 +236,10 @@ const t = useTranslations(currentLocale)
     align-items: center;
   }
   .bento__6 {
-    grid-area: 4 / 5 / 7 / 7;
+    grid-area: 5 / 5 / 7 / 7;
     position: relative;
-    padding: 1rem;
+
+    padding: 1rem 1rem 3.5rem 1rem;
   }
   .bento__7 {
     grid-area: 5 / 1 / 7 / 4;
@@ -315,8 +317,10 @@ const t = useTranslations(currentLocale)
 
   .bento__2-img {
     object-fit: cover;
-    border-radius: 25px;
-    object-position: 0 -40px;
+    width: 100%;
+    height: 100%;
+    object-position: top;
+    filter: drop-shadow(0 0 2px var(--light-blue));
   }
 
   .bento__3-link {
@@ -510,10 +514,6 @@ const t = useTranslations(currentLocale)
   }
 
   @media screen and (max-width: 1024px) {
-    .bento__2-img {
-      object-position: center;
-    }
-
     .bento__5 strong {
       font-size: var(--step-1);
     }
@@ -549,7 +549,6 @@ const t = useTranslations(currentLocale)
     }
     .bento__6 {
       grid-area: 4 / 4 / 6 / 6;
-      padding: 1rem 1rem 3.5rem 1rem;
     }
     .bento__7 {
       grid-area: 4 / 1 / 6 / 4;

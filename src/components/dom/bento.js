@@ -57,7 +57,7 @@ export default function bento() {
   const skillsFilter = allSkills.filter(skill => mySkills.includes(skill.name))
 
   skillsFilter.forEach(skill => {
-    $bento_6_list.innerHTML += `<li class="icon__svg" style="width: 60px"
+    $bento_6_list.innerHTML += `<li class="icon__svg" style="width: 58px"
     >${skill.icon}</li>`
   })
 }
