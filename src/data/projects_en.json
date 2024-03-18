@@ -1,5 +1,43 @@
 [
   {
+    "title": "AI Interview Odyssey",
+    "description": "Interview Simulator Using InfoJobs and OpenAI APIs.",
+    "what_i_learned": [
+      "Developing a web application with Next.js",
+      "Learn to use TypeScript",
+      "Learn to use Tailwind",
+      "Consumption of third-party APIs."
+    ],
+    "features": "Learning",
+    "date": "2024",
+    "technologies": ["Next.js", "React", "Tailwind", "TypeScript"],
+    "status": "Completed",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://ai-interview-odyssey-infojobs.vercel.app/"
+    },
+    "github": "https://github.com/Rodriiandino/ai-interview-odyssey-infojobs",
+    "images": [
+      {
+        "src": "/projects/ai_interview/ai_interview_1.webp",
+        "alt": "AI Interview Odyssey"
+      },
+      {
+        "src": "/projects/ai_interview/ai_interview_2.webp",
+        "alt": "AI Interview Odyssey"
+      },
+      {
+        "src": "/projects/ai_interview/ai_interview_3.webp",
+        "alt": "AI Interview Odyssey"
+      },
+      {
+        "src": "/projects/ai_interview/ai_interview_4.webp",
+        "alt": "AI Interview Odyssey"
+      }
+    ]
+  },
+
+  {
     "title": "SpringBoot API Forum",
     "description": "RESTful API - Built with Spring Boot.",
     "what_i_learned": [

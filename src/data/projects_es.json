@@ -1,5 +1,42 @@
 [
   {
+    "title": "AI Interview Odyssey",
+    "description": "Simulador de Entrevistas Utilizando las APIs de InfoJobs y OpenAI.",
+    "what_i_learned": [
+      "Desarrollo de una aplicación web con Next.js",
+      "Aprender a usar TypeScript",
+      "Aprender a usar Tailwind",
+      "Consumo de APIs de terceros."
+    ],
+    "features": "Aprendizaje",
+    "date": "2024",
+    "technologies": ["Next.js", "React", "Tailwind", "TypeScript"],
+    "status": "Completo",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://ai-interview-odyssey-infojobs.vercel.app/"
+    },
+    "github": "https://github.com/Rodriiandino/ai-interview-odyssey-infojobs",
+    "images": [
+      {
+        "src": "/projects/ai_interview/ai_interview_1.webp",
+        "alt": "AI Interview Odyssey"
+      },
+      {
+        "src": "/projects/ai_interview/ai_interview_2.webp",
+        "alt": "AI Interview Odyssey"
+      },
+      {
+        "src": "/projects/ai_interview/ai_interview_3.webp",
+        "alt": "AI Interview Odyssey"
+      },
+      {
+        "src": "/projects/ai_interview/ai_interview_4.webp",
+        "alt": "AI Interview Odyssey"
+      }
+    ]
+  },
+  {
     "title": "Foro API SpringBoot",
     "description": "API RESTful - Realizada con Spring Boot.",
     "what_i_learned": [
@@ -72,7 +109,8 @@
     "description": "Este es un proyecto desarrollado como parte de un challenge ofrecido por One, en asociación con Oracle. El proyecto consiste en un encriptado de texto desarrollado utilizando tecnologías web como HTML, CSS y JavaScript.",
     "what_i_learned": [
       "Mejorar mis habilidades de programación en JavaScript.",
-      "Mejorar mis habilidades de programación en HTML y CSS."
+      "Mejorar mis habilidades de programación en HTML y CSS.",
+      "Entender el funcionamiento básico de un encriptado de texto."
     ],
     "features": "Aprendizaje",
     "date": "2023",

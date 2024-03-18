@@ -62,7 +62,12 @@ const ogImage = image || new URL(`${Astro.site}og-image.jpg`).href
       </div>
     </div>
     <div class='project__image'>
-      <img src={project.images[0].src} alt={project.images[0].alt} id='img' />
+      <img
+        src={project.images[0].src}
+        alt={project.images[0].alt}
+        id='img'
+        loading='lazy'
+      />
     </div>
     <div class='project__aside-container'>
       <aside class='project__aside'>
@@ -264,7 +269,7 @@ const ogImage = image || new URL(`${Astro.site}og-image.jpg`).href
   .project__page {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
   }
 
   .project__image {
