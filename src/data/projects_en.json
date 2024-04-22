@@ -1,5 +1,43 @@
 [
   {
+    "title": "Learn Japanese",
+    "description": "Interactive learning experience for the Japanese alphabets Hiragana and Katakana.",
+    "what_i_learned": [
+      "Developing a web application with Next.js",
+      "Improve my programming skills in TypeScript",
+      "Improve my programming skills in Tailwind",
+      "Use zustand for global state management",
+      "Use shadcn/ui for the application components"
+    ],
+    "features": "Personal Project",
+    "date": "2024",
+    "technologies": ["Next.js", "React", "Tailwind", "TypeScript", "Zustand"],
+    "status": "In Progress",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://aprender-japones-flashcards.vercel.app/"
+    },
+    "github": "https://github.com/Rodriiandino/aprender-japones-flashcards",
+    "images": [
+      {
+        "src": "/projects/learn_japanese/learn_japanese_1.webp",
+        "alt": "Learn Japanese"
+      },
+      {
+        "src": "/projects/learn_japanese/learn_japanese_2.webp",
+        "alt": "Learn Japanese"
+      },
+      {
+        "src": "/projects/learn_japanese/learn_japanese_3.webp",
+        "alt": "Learn Japanese"
+      },
+      {
+        "src": "/projects/learn_japanese/learn_japanese_4.webp",
+        "alt": "Learn Japanese"
+      }
+    ]
+  },
+  {
     "title": "AI Interview Odyssey",
     "description": "Interview Simulator Using InfoJobs and OpenAI APIs.",
     "what_i_learned": [
@@ -36,7 +74,6 @@
       }
     ]
   },
-
   {
     "title": "SpringBoot API Forum",
     "description": "RESTful API - Built with Spring Boot.",

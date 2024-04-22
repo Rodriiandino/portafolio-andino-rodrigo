@@ -1,5 +1,43 @@
 [
   {
+    "title": "Aprende Japonés",
+    "description": "Experiencia de aprendizaje interactiva para los alfabetos japoneses Hiragana y Katakana.",
+    "what_i_learned": [
+      "Desarrollo de una aplicación web con Next.js",
+      "Mejorar mis habilidades de programación en TypeScript",
+      "Mejorar mis habilidades de programación en Tailwind",
+      "Usar zustand para el manejo del estado global",
+      "Usar shadcn/ui para los componentes de la aplicación"
+    ],
+    "features": "Proyecto Personal",
+    "date": "2024",
+    "technologies": ["Next.js", "React", "Tailwind", "TypeScript", "Zustand"],
+    "status": "En Progreso",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://aprender-japones-flashcards.vercel.app/"
+    },
+    "github": "https://github.com/Rodriiandino/aprender-japones-flashcards",
+    "images": [
+      {
+        "src": "/projects/learn_japanese/learn_japanese_1.webp",
+        "alt": "Aprende Japonés"
+      },
+      {
+        "src": "/projects/learn_japanese/learn_japanese_2.webp",
+        "alt": "Aprende Japonés"
+      },
+      {
+        "src": "/projects/learn_japanese/learn_japanese_3.webp",
+        "alt": "Aprende Japonés"
+      },
+      {
+        "src": "/projects/learn_japanese/learn_japanese_4.webp",
+        "alt": "Aprende Japonés"
+      }
+    ]
+  },
+  {
     "title": "AI Interview Odyssey",
     "description": "Simulador de Entrevistas Utilizando las APIs de InfoJobs y OpenAI.",
     "what_i_learned": [
