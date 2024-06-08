@@ -1,5 +1,53 @@
 [
   {
+    "title": "Note Creation FullStack",
+    "description": "Aplicación web para la creación de notas, con autenticación de usuarios y verificación por email. Almacenamiento de notas en una base de datos PostgreSQL. Desarrollada con Spring Boot y React.",
+    "what_i_learned": [
+      "Aplicación web FullStack con Spring Boot y React",
+      "Autenticación de usuarios con Spring Security y JWT",
+      "Spring Data JPA para la persistencia de datos",
+      "Almacenamiento de notas en una base de datos PostgreSQL",
+      "Se implementó el manejo de rutas con React Router",
+      "Dockerización de la aplicación",
+      "Control de migraciones con Flyway",
+      "Envío de correos electrónicos con JavaMailSender"
+    ],
+    "features": "Proyecto Personal",
+    "date": "2024",
+    "technologies": [
+      "Java",
+      "Spring Boot",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "status": "Completo",
+    "deploy": {
+      "page": "No Deploy",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/note-creation-fullstack",
+    "images": [
+      {
+        "src": "/projects/note_creation/note_creation_1.webp",
+        "alt": "Note Creation FullStack"
+      },
+      {
+        "src": "/projects/note_creation/note_creation_2.webp",
+        "alt": "Note Creation FullStack"
+      },
+      {
+        "src": "/projects/note_creation/note_creation_3.webp",
+        "alt": "Note Creation FullStack"
+      },
+      {
+        "src": "/projects/note_creation/note_creation_4.webp",
+        "alt": "Note Creation FullStack"
+      }
+    ]
+  },
+  {
     "title": "Aprende Japonés",
     "description": "Experiencia de aprendizaje interactiva para los alfabetos japoneses Hiragana y Katakana.",
     "what_i_learned": [
@@ -84,7 +132,8 @@
       "Persistencia de Datos con JPA",
       "Documentación de API",
       "Gestión de Solicitudes y Respuestas HTTP",
-      "Mensajes de Error y Excepciones, y Validación de Datos de una api"
+      "Mensajes de Error y Excepciones, y Validación de Datos de una api",
+      "Control de migraciones con Flyway"
     ],
     "features": "Aprendizaje",
     "date": "2023",
@@ -153,7 +202,7 @@
     "features": "Aprendizaje",
     "date": "2023",
     "technologies": ["HTML", "CSS", "JavaScript"],
-    "status": "En Progreso",
+    "status": "Completo",
     "deploy": {
       "page": "github",
       "demo": "https://rodriiandino.github.io/Challenge_One_Encriptador_G5/"
@@ -210,7 +259,7 @@
     "technologies": ["Next.js", "React", "MySQL"],
     "status": "Completo",
     "deploy": {
-      "page": "Not Deploy",
+      "page": "No Deploy",
       "demo": ""
     },
     "github": "https://github.com/Rodriiandino/inmobiliaria-next14",

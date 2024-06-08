@@ -1,5 +1,53 @@
 [
   {
+    "title": "Note Creation FullStack",
+    "description": "Web application for creating notes, with user authentication and email verification. Storage of notes in a PostgreSQL database. Developed with Spring Boot and React.",
+    "what_i_learned": [
+      "FullStack web application with Spring Boot and React",
+      "User authentication with Spring Security and JWT",
+      "Spring Data JPA for data persistence",
+      "Storage of notes in a PostgreSQL database",
+      "Route handling implemented with React Router",
+      "Dockerización of the application",
+      "Migration control with Flyway",
+      "Sending emails with JavaMailSender"
+    ],
+    "features": "Personal Project",
+    "date": "2024",
+    "technologies": [
+      "Java",
+      "Spring Boot",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "status": "Completed",
+    "deploy": {
+      "page": "Not Deployed",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/note-creation-fullstack",
+    "images": [
+      {
+        "src": "/projects/note_creation/note_creation_1.webp",
+        "alt": "Note Creation FullStack"
+      },
+      {
+        "src": "/projects/note_creation/note_creation_2.webp",
+        "alt": "Note Creation FullStack"
+      },
+      {
+        "src": "/projects/note_creation/note_creation_3.webp",
+        "alt": "Note Creation FullStack"
+      },
+      {
+        "src": "/projects/note_creation/note_creation_4.webp",
+        "alt": "Note Creation FullStack"
+      }
+    ]
+  },
+  {
     "title": "Learn Japanese",
     "description": "Interactive learning experience for the Japanese alphabets Hiragana and Katakana.",
     "what_i_learned": [
@@ -84,7 +132,8 @@
       "Data persistence with JPA",
       "API documentation",
       "Handling HTTP Requests and Responses",
-      "Error messages and exceptions, and data validation in an API"
+      "Error messages and exceptions, and data validation in an API",
+      "Migration control with Flyway"
     ],
     "features": "Learning",
     "date": "2023",
@@ -152,7 +201,7 @@
     "features": "Learning",
     "date": "2023",
     "technologies": ["HTML", "CSS", "JavaScript"],
-    "status": "In Progress",
+    "status": "Completed",
     "deploy": {
       "page": "GitHub",
       "demo": "https://rodriiandino.github.io/Challenge_One_Encriptador_G5/"
