@@ -1,7 +1,27 @@
 .projects__gallery-item {
   position: relative;
   width: fit-content;
+  animation: revele linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
 }
+
+@keyframes revele {
+	entry 0%  {
+		opacity: 0; transform: translateY(100px); scale: 0.8;
+	}
+	entry 100%  {
+		opacity: 1; transform: translateY(0); scale: 1;
+	}
+
+	exit 0% {
+		opacity: 1; transform: translateY(0); scale: 1;
+	}
+	exit 100% {
+		opacity: 0; transform: translateY(100px); scale: 0.8;
+	}
+}
+
 
 .gallery__img {
   border-radius: var(--border-radius);
@@ -67,6 +87,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
+  line-clamp: 3;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }

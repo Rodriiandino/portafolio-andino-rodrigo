@@ -2,37 +2,41 @@
   {
     "education": [
       {
-        "date": "2022 - Ongoing",
-        "title": "BACHELOR'S DEGREE IN COMPUTER SCIENCE",
-        "description": "I am currently in my third year of the program at 'Universidad Siglo 21'.",
+        "date": "2022 - Present",
+        "title": "Bachelor's Degree in Computer Science",
+        "description": "Currently in the third year of the program at 'Universidad Siglo 21', focusing on algorithms, data structures, OOP with Java, concurrency, parallelism, software architecture, databases (SQL), and software engineering. Additionally, I am developing skills in leadership, teamwork, and organizational management.",
         "link": ""
       },
       {
         "date": "2014 - 2021",
-        "title": "ELECTRICAL TECHNICIAN",
-        "description": "During my high school period at 'Instituto Mariano Fragueiro', I acquired solid skills in the design, installation, and maintenance of electrical systems. I actively participated in practical projects, gaining a practical understanding of the theoretical concepts learned in the classroom.",
+        "title": "Electrician Technician",
+        "description": "During my studies at 'Instituto Mariano Fragueiro', I acquired skills in the design, installation, and maintenance of electrical systems, along with proficiency in AutoCAD and SketchUp for 2D and 3D design and blueprint reading. I actively participated in practical projects that reinforced my technical understanding.",
         "link": ""
       }
-    ]
-  },
-  {
+    ],
     "workExperience": [
       {
         "date": "2021 - Present",
         "title": "Customer Service",
-        "description": "Family business venture with over 2 years of experience in customer service, acquiring communication, teamwork, and leadership skills.",
+        "description": "Family business with over 2 years of experience in customer service, where I acquired key skills such as effective communication, conflict resolution, teamwork, and leadership. I implemented strategies to improve customer satisfaction and optimize service processes.",
+        "link": ""
+      },
+      {
+        "date": "08/2024 to 10/2024",
+        "title": "Instrumentation Technician during the shutdown of Embalse Nuclear Power Plant 2024",
+        "description": "Specialized Officer in Instrumentation and Control during the shutdown of Embalse Nuclear Power Plant, where I performed preventive maintenance and calibration of high-precision equipment, such as valves and sensors, in a critical safety environment. Applied problem-solving techniques and ensured compliance with strict safety protocols.",
         "link": ""
       },
       {
         "date": "09/2022 to 12/2022",
-        "title": "Instrumentation Technician during the Shutdown at Embalse Nuclear Power Plant",
-        "description": "Specialized Officer in Instrumentation and Control with a temporary contract, during the shutdown of the Embalse nuclear power plant.",
+        "title": "Instrumentation Technician during the shutdown of Embalse Nuclear Power Plant 2022",
+        "description": "Specialized Officer in Instrumentation and Control with a temporary contract during the shutdown of Embalse Nuclear Power Plant. I participated in the calibration and maintenance of critical systems, working closely with safety teams to ensure the proper functioning of instruments.",
         "link": ""
       },
       {
         "date": "10/2021 to 11/2021",
-        "title": "Internship in Instrumentation and Control at Embalse Nuclear Power Plant",
-        "description": "This experience provided me with valuable practical understanding of industrial processes, involving calibrations and measurements of measuring instruments, sensors, and valves. Additionally, my work included assisting and verifying leaks in controlled areas.",
+        "title": "Internship in Instrumentation and Control",
+        "description": "During this internship, I gained experience in the calibration and measurement of instruments, sensors, and valves, as well as in leak verification in controlled areas. This experience provided me with valuable insight into industrial processes in a regulated environment.",
         "link": ""
       }
     ]
@@ -40,15 +44,15 @@
   {
     "professionalCourses": [
       {
-        "date": "03/2023 to 01/2024",
+        "date": "04/2023 to 01/2024",
         "title": "Oracle Next Education F2 T5 Back-end Program",
-        "description": "A course focused on Backend with an intensive learning experience that covered over 330 hours of specialized content. During this course, I consolidated my knowledge in key back-end development technologies, including Java, SQL 'MySQL', Spring, and Oracle Cloud, along with agile methodologies and programming best practices.",
+        "description": "This back-end course offered an intensive training experience spanning over 330 hours of specialized content. Throughout this course, I consolidated my knowledge in key back-end development technologies, including Java, SQL 'MySQL', Spring, and Oracle Cloud, as well as agile methodologies and programming best practices.",
         "link": "https://app.aluracursos.com/user/andinorodrigo03/fullCertificate/7a7bb74f2a0a42146251f5f83344e9b6"
       },
       {
         "date": "11/2023 to 01/2024",
-        "title": "Python, Data Science in OCI, and Oracle Analytics",
-        "description": "A course covering the use of Python along with pandas, numpy, matplotlib, seaborn, scikit-learn, Oracle Accelerated Data Science Library (ADSL), and Oracle Analytics Cloud (OAC).",
+        "title": "Python, Data Science on OCI and Oracle Analytics",
+        "description": "This course covered the use of Python along with pandas, numpy, matplotlib, seaborn, scikit-learn, Oracle Accelerated Data Science Library (ADSL), and Oracle Analytics Cloud (OAC).",
         "link": "https://app.aluracursos.com/degree/certificate/d17398d7-6350-41f0-b0ff-ac73f416d951"
       }
     ]

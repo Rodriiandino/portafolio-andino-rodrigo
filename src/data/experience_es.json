@@ -3,42 +3,44 @@
     "education": [
       {
         "date": "2022 - Cursando",
-        "title": "LICENCIATURA EN INFORMÁTICA",
-        "description": "Actualmente estoy cursando el Tercer año de la carrera en la 'Universidad Siglo 21'.",
+        "title": "Licenciatura en Informática",
+        "description": "Actualmente cursando el tercer año de la carrera en la 'Universidad Siglo 21', con enfoque en algoritmos, estructuras de datos, POO con Java, concurrencia, paralelismo, arquitectura de software, bases de datos (SQL) e ingeniería de software. Además, desarrollo habilidades en liderazgo, trabajo en equipo y gestión organizacional.",
         "link": ""
       },
       {
         "date": "2014 - 2021",
-        "title": "TÉCNICO ELECTRICISTA",
-        "description": "Durante este periodo de secundaria en el 'Instituto Mariano Fragueiro', adquirí habilidades sólidas en el diseño, instalación y mantenimiento de sistemas eléctricos. Participé activamente en proyectos prácticos, lo que me proporcionó una comprensión práctica de los conceptos teóricos aprendidos en el aula.",
+        "title": "Técnico Electricista",
+        "description": "Durante mi formación en el 'Instituto Mariano Fragueiro', adquirí habilidades en el diseño, instalación y mantenimiento de sistemas eléctricos, además de destrezas en AutoCAD y SketchUp para diseño en 2D y 3D, y lectura de planos. Participé activamente en proyectos prácticos que reforzaron mi comprensión técnica.",
         "link": ""
       }
-    ]
-  },
-  {
+    ],
     "workExperience": [
       {
         "date": "2021 - Actualidad",
         "title": "Atención al Cliente",
-        "description": "Emprendimiento familiar con mas de 2 años de experiencia en el rubro de atención al cliente, en el cual se adquirieron habilidades de comunicación, trabajo en equipo y liderazgo.",
+        "description": "Emprendimiento familiar con más de 2 años de experiencia en el área de atención al cliente, donde adquirí habilidades clave como comunicación efectiva, resolución de conflictos, trabajo en equipo y liderazgo. Apliqué estrategias para mejorar la satisfacción del cliente y optimizar los procesos de atención.",
+        "link": ""
+      },
+      {
+        "date": "08/2024 al 10/2024",
+        "title": "Instrumentista en la parada de la central nuclear de Embalse 2024",
+        "description": "Oficial Especializado en Instrumentación y Control durante la parada de la central nuclear de Embalse, donde realicé mantenimiento preventivo y calibración de equipos de alta precisión, como válvulas y sensores, en un entorno de seguridad crítica. Aplicación de técnicas de resolución de problemas y cumplimiento de estrictos protocolos de seguridad.",
         "link": ""
       },
       {
         "date": "09/2022 al 12/2022",
-        "title": "Instrumentista en la parada de la central nuclear de Embalse",
-        "description": "Oficial Especializado en Instrumentación y Control con contrato temporal, en la parada de la central nuclear de Embalse.",
+        "title": "Instrumentista en la parada de la central nuclear de Embalse 2022",
+        "description": "Oficial Especializado en Instrumentación y Control con contrato temporal, durante la parada de la central nuclear de Embalse. Participé en la calibración y mantenimiento de sistemas críticos, trabajando en estrecha colaboración con equipos de seguridad para garantizar el correcto funcionamiento de los instrumentos.",
         "link": ""
       },
-
       {
         "date": "10/2021 al 11/2021",
-        "title": "Pasantías realizadas en instrumentación y control, en la central nuclear de Embalse",
-        "description": "Esta experiencia me proporcionó una valiosa comprensión práctica de los procesos industriales y en la cual se realizaron calibraciones y mediciones de instrumentos de medición, sensores y válvulas. Asimismo, mi labor incluyó la asistencia y verificación de fugas en zonas controladas.",
+        "title": "Pasantías realizadas en Instrumentación y Control",
+        "description": "Durante esta pasantía, adquirí experiencia en la calibración y medición de instrumentos, sensores y válvulas, así como en la verificación de fugas en áreas controladas. Esta experiencia me brindó una valiosa comprensión de los procesos industriales en un entorno regulado.",
         "link": ""
       }
     ]
   },
-
   {
     "professionalCourses": [
       {
