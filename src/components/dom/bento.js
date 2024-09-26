@@ -40,13 +40,12 @@ export default function bento() {
   }, 10000)
 
   const mySkills = [
-    'JS',
+    'TS',
     'React',
     'Next js',
-    'Astro',
     'Java',
     'Spring Boot',
-    'MySQL'
+    'SQL'
   ]
 
   let allSkills = []

@@ -16,7 +16,7 @@ export const ui = {
     'bento.description':
       'Experimentado en el trabajo de entorno críticos de alta responsabilidad como Instrumentista de una central nuclear. En búsqueda en desarrollarme profesionalmente en el mundo del desarrollo de software.',
     'bento.download': 'Descargar',
-    'bento.availability': 'DISPONIBLE PARA TRABAJAR',
+    'bento.availability': 'Conectemos 🚀 Creemos algo increíble',
     'bento.country': 'ARGENTINA',
     'bento.phrase':
       '“Hay que trabajar, hay que aprender, hay que comer, hay que descansar, y también hay que jugar”',
@@ -72,7 +72,7 @@ export const ui = {
     'bento.subtitle': 'Full Stack Developer',
     'bento.description': `Experienced in the work of critical environments of high responsibility as an Instrumentation Technician of a nuclear power plant. In search of developing professionally in the world of software development.`,
     'bento.download': 'Download',
-    'bento.availability': 'AVAILABLE TO WORK',
+    'bento.availability': `Connect with me 🚀 Let's create something amazing`,
     'bento.country': 'ARGENTINA',
     'bento.phrase':
       '"You have to work, you have to learn, you have to eat, you have to rest, and you also have to play"',
