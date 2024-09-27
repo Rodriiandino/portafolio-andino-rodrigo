@@ -35,7 +35,8 @@ export default function ProjectsGallery({ projects, locale }) {
   }
 
   const handleFilterClick = event => {
-    const technology = event.target.textContent
+    const technology = event.currentTarget.dataset.technology
+
     handleFilter(technology)
     handleShowFilter()
   }
@@ -88,11 +89,14 @@ export default function ProjectsGallery({ projects, locale }) {
             <button
               className='projects__filter-list-item'
               onClick={handleFilterClick}
+              data-technology='All'
             >
               All
             </button>
             {uniqueTechnologies.map(technology => (
               <button
+                key={technology}
+                data-technology={technology}
                 className='projects__filter-list-item'
                 onClick={handleFilterClick}
               >
