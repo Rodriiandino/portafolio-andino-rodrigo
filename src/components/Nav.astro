@@ -23,7 +23,12 @@ const t = useTranslations(currentLocale)
   <div class='nav__container'>
     <ul class='nav__list'>
       <li>
-        <a href='#' class='item tooltip' aria-label='Go to home'>
+        <a
+          href='/'
+          class='item tooltip'
+          aria-label='Go to home'
+          data-section='home'
+        >
           <IconHouse />
           <span class='tooltip__text'>{t('nav.home')}</span>
         </a>
@@ -77,6 +82,25 @@ const t = useTranslations(currentLocale)
       </li>
     </ul>
   </div>
+
+  <script>
+    const $home = document
+      .getElementById('nav')
+      .querySelector('[data-section="home"]')
+
+    const isEnglish = window.location.pathname.includes('/en')
+
+    $home.addEventListener('click', e => {
+      e.preventDefault()
+      const section = document.getElementById('home')
+
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' })
+
+        window.history.pushState({}, '', isEnglish ? '/en' : '/')
+      }
+    })
+  </script>
 
   <style is:global>
     .nav {

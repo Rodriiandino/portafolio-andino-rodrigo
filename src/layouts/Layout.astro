@@ -13,8 +13,7 @@ const { title, description, image } = Astro.props
 ---
 
 <script>
-  import themeChange from '../components/dom/theme-change'
-
+  import themeChange from '../components/dom/theme-change.js'
   themeChange()
 </script>
 
@@ -161,6 +160,7 @@ const { title, description, image } = Astro.props
         display: flex;
         flex-direction: column;
         gap: 6.25rem;
+        overflow: hidden;
       }
 
       img,
