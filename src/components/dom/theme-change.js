@@ -1,69 +1,81 @@
 export default function themeChange() {
-  const btnSwitchTheme = document.querySelectorAll('[btn-switch-theme]')
-  const html = document.querySelector('html')
-  const header = document.querySelector('#header')
-  const nav = document.querySelector('#nav')
-  const ls = localStorage
-  const d = document
-  const $bento_9_img_dark = document.querySelector('.bento__9-img-dark')
-  const $bento_9_img_light = document.querySelector('.bento__9-img-light')
+  const handleThemeLogic = () => {
+    const $btnSwitchTheme = document.querySelectorAll('[btn-switch-theme]')
+    const $html = document.querySelector('html')
+    const $header = document.querySelector('#header')
+    const $nav = document.querySelector('#nav')
+    const $bento_9_img_dark = document.querySelector('.bento__9-img-dark')
+    const $bento_9_img_light = document.querySelector('.bento__9-img-light')
+    const ls = localStorage
 
-  const setThemeDark = () => {
-    html.setAttribute('data-theme', 'dark')
-    html.classList.add('dark')
-    header.setAttribute('data-theme', 'dark')
-    nav.setAttribute('data-theme', 'dark')
-    $bento_9_img_dark.classList.remove('hidden')
-    $bento_9_img_light.classList.add('hidden')
-  }
-
-  const setThemeLight = () => {
-    html.setAttribute('data-theme', 'light')
-    html.classList.remove('dark')
-    header.setAttribute('data-theme', 'light')
-    nav.setAttribute('data-theme', 'light')
-    $bento_9_img_dark.classList.add('hidden')
-    $bento_9_img_light.classList.remove('hidden')
-  }
-
-  const changeColor = () => {
-    if (html.getAttribute('data-theme') === 'light') {
-      setThemeDark()
-    } else {
-      setThemeLight()
+    const setThemeDark = () => {
+      $html?.classList.add('dark')
+      $html?.setAttribute('data-theme', 'dark')
+      $header?.setAttribute('data-theme', 'dark')
+      $nav?.setAttribute('data-theme', 'dark')
+      $bento_9_img_dark?.classList.remove('hidden')
+      $bento_9_img_light?.classList.add('hidden')
+      ls.setItem('darkMode-portafolio-andino', 'true')
     }
-  }
 
-  const prefersDarkMode = window.matchMedia(
-    '(prefers-color-scheme: dark)'
-  ).matches
+    const setThemeLight = () => {
+      $html?.classList.remove('dark')
+      $html?.setAttribute('data-theme', 'light')
+      $header?.setAttribute('data-theme', 'light')
+      $nav?.setAttribute('data-theme', 'light')
+      $bento_9_img_dark?.classList.add('hidden')
+      $bento_9_img_light?.classList.remove('hidden')
+      ls.setItem('darkMode-portafolio-andino', 'false')
+    }
 
-  const lsLoader = () => {
-    const storedMode = ls.getItem('darkMode-portafolio-andino')
-    if (storedMode === 'true') {
-      setThemeDark()
-    } else if (storedMode === 'false') {
-      setThemeLight()
-    } else {
-      if (prefersDarkMode) {
+    const changeColor = () => {
+      const isDark = $html?.classList.contains('dark')
+      isDark ? setThemeLight() : setThemeDark()
+    }
+
+    const initializeTheme = () => {
+      const storedMode = ls.getItem('darkMode-portafolio-andino')
+      const prefersDarkMode = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches
+
+      if (storedMode === 'true') {
+        setThemeDark()
+      } else if (storedMode === 'false') {
+        setThemeLight()
+      } else if (prefersDarkMode) {
         setThemeDark()
       } else {
         setThemeLight()
       }
     }
+
+    const cleanupEventListeners = () => {
+      $btnSwitchTheme.forEach(btn => {
+        btn.replaceWith(btn.cloneNode(true))
+      })
+    }
+
+    const setupEventListeners = () => {
+      const $updateBtnSwitchTheme =
+        document.querySelectorAll('[btn-switch-theme]')
+
+      $updateBtnSwitchTheme.forEach(btn => {
+        btn.addEventListener('click', changeColor)
+      })
+    }
+
+    cleanupEventListeners()
+    setupEventListeners()
+    initializeTheme()
   }
 
-  btnSwitchTheme.forEach(btn => {
-    btn.addEventListener('click', () => {
-      changeColor()
-      ls.setItem(
-        'darkMode-portafolio-andino',
-        html.classList.contains('dark') ? 'true' : 'false'
-      )
+  document.addEventListener('DOMContentLoaded', handleThemeLogic)
+  document.addEventListener('astro:page-load', handleThemeLogic)
+  document.addEventListener('astro:before-preparation', () => {
+    const btnSwitchTheme = document.querySelectorAll('[btn-switch-theme]')
+    btnSwitchTheme.forEach(btn => {
+      btn.replaceWith(btn.cloneNode(true))
     })
-  })
-
-  d.addEventListener('DOMContentLoaded', () => {
-    lsLoader()
   })
 }

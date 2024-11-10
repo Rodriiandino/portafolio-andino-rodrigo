@@ -70,23 +70,22 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
       />
     </div>
     <div class='project__aside-container'>
+      <div class='aside__move-top'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke-width='2'
+          stroke='currentColor'
+          class='w-6 h-6'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            d='M3.75 9h16.5m-16.5 6.75h16.5'></path>
+        </svg>
+      </div>
       <aside class='project__aside'>
-        <div class='aside__move-top'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke-width='2'
-            stroke='currentColor'
-            class='w-6 h-6'
-          >
-            <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M3.75 9h16.5m-16.5 6.75h16.5'></path>
-          </svg>
-        </div>
-
         <div>
           <h1 class='aside__title' id='title'>{project.title}</h1>
           <p class='aside__description'>{project.description}</p>
@@ -157,114 +156,170 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
 <script>
   import projects_es from '../../data/projects_es.json'
   import projects_en from '../../data/projects_en.json'
-  const $html = document.querySelector('html') as HTMLHtmlElement
-  const $moveTop = document.querySelector('.aside__move-top') as HTMLDivElement
-  const $asideContainer = document.querySelector(
-    '.project__aside-container'
-  ) as HTMLDivElement
-  const $projectImage = document.querySelector(
-    '.project__image'
-  ) as HTMLDivElement
 
-  const $img = document.querySelector('#img') as HTMLImageElement
-  const $buttonsContainer = document.querySelector(
-    '.buttons__container'
-  ) as HTMLDivElement
-  const $buttonLeft = document.querySelector(
-    '#button-left'
-  ) as HTMLButtonElement
-  const $buttonRight = document.querySelector(
-    '#button-right'
-  ) as HTMLButtonElement
-  const $title = document.querySelector('#title') as HTMLHeadingElement
+  const handleProjectLogic = () => {
+    const $html = document.querySelector('html') as HTMLHtmlElement
+    const $moveTop = document.querySelector(
+      '.aside__move-top'
+    ) as HTMLDivElement
+    const $asideContainer = document.querySelector(
+      '.project__aside-container'
+    ) as HTMLDivElement
+    const $projectImage = document.querySelector(
+      '.project__image'
+    ) as HTMLDivElement
+    const $img = document.querySelector('#img') as HTMLImageElement
+    const $buttonsContainer = document.querySelector(
+      '.buttons__container'
+    ) as HTMLDivElement
+    const $buttonLeft = document.querySelector(
+      '#button-left'
+    ) as HTMLButtonElement
+    const $buttonRight = document.querySelector(
+      '#button-right'
+    ) as HTMLButtonElement
+    const $title = document.querySelector('#title') as HTMLHeadingElement
 
-  const breakpoint = window.matchMedia('(max-width: 1100px)')
-  let translate = 0
-
-  const updateProjectImg = (def = true) => {
-    if (def) {
-      $projectImage.style.cursor = 'default'
-      $projectImage.style.backdropFilter = 'none'
-      $img.style.filter = 'none'
-      $projectImage.style.userSelect = 'auto'
-    } else {
-      $projectImage.style.cursor = 'pointer'
-      $projectImage.style.backdropFilter = 'saturate(100%) brightness(60%)'
-      $img.style.filter = 'saturate(100%) brightness(60%)'
-      $projectImage.style.userSelect = 'none'
+    if (
+      !$html ||
+      !$moveTop ||
+      !$asideContainer ||
+      !$projectImage ||
+      !$img ||
+      !$buttonsContainer ||
+      !$buttonLeft ||
+      !$buttonRight ||
+      !$title
+    ) {
+      return
     }
+
+    const breakpoint = window.matchMedia('(max-width: 1100px)')
+    let translate = 0
+    let currentImg = 0
+
+    const updateProjectImg = (def = true) => {
+      if (def) {
+        $projectImage.style.cursor = 'default'
+        $projectImage.style.backdropFilter = 'none'
+        $img.style.filter = 'none'
+        $projectImage.style.userSelect = 'auto'
+      } else {
+        $projectImage.style.cursor = 'pointer'
+        $projectImage.style.backdropFilter = 'saturate(100%) brightness(60%)'
+        $img.style.filter = 'saturate(100%) brightness(60%)'
+        $projectImage.style.userSelect = 'none'
+      }
+    }
+
+    const handleMoveTopClick = () => {
+      if (translate == 0) {
+        updateProjectImg(false)
+        $asideContainer.style.transform = `translateY(${translate}%)`
+        translate = 90
+      } else {
+        updateProjectImg()
+        $asideContainer.style.transform = `translateY(${translate}%)`
+        translate = 0
+      }
+    }
+
+    const handleProjectImageClick = () => {
+      if (translate == 90) {
+        updateProjectImg()
+        $asideContainer.style.transform = `translateY(${translate}%)`
+        translate = 0
+      }
+    }
+
+    const handleBreakpointChange = (e: MediaQueryListEvent) => {
+      if (e.matches) {
+        updateProjectImg()
+        $asideContainer.style.transform = `translateY(90%)`
+        translate = 0
+      }
+    }
+
+    const handleResize = () => {
+      if (window.innerWidth > 1100) {
+        updateProjectImg()
+        $asideContainer.style.transform = `translateY(0%)`
+        translate = 0
+      }
+    }
+
+    const currentLocale = $html.getAttribute('lang') as string
+    const projects = currentLocale === 'es' ? projects_es : projects_en
+    const project = projects.find(
+      project => project.title === $title.textContent
+    )
+
+    if (!project) return
+
+    const imgLength = project.images.length
+
+    if (imgLength === 1) {
+      $buttonsContainer.style.display = 'none'
+    }
+
+    const handleLeftClick = () => {
+      if (currentImg === 0) {
+        currentImg = imgLength - 1
+      } else {
+        currentImg--
+      }
+
+      $img.src = project.images[currentImg].src
+      $img.alt = project.images[currentImg].alt
+    }
+
+    const handleRightClick = () => {
+      if (currentImg === imgLength - 1) {
+        currentImg = 0
+      } else {
+        currentImg++
+      }
+
+      $img.src = project.images[currentImg].src
+      $img.alt = project.images[currentImg].alt
+    }
+
+    const cleanup = () => {
+      $moveTop.removeEventListener('click', handleMoveTopClick)
+      $projectImage.removeEventListener('click', handleProjectImageClick)
+      breakpoint.removeEventListener('change', handleBreakpointChange)
+      window.removeEventListener('resize', handleResize)
+      $buttonLeft.removeEventListener('click', handleLeftClick)
+      $buttonRight.removeEventListener('click', handleRightClick)
+    }
+
+    cleanup()
+    $moveTop.addEventListener('click', handleMoveTopClick)
+    $projectImage.addEventListener('click', handleProjectImageClick)
+    breakpoint.addEventListener('change', handleBreakpointChange)
+    window.addEventListener('resize', handleResize)
+    $buttonLeft.addEventListener('click', handleLeftClick)
+    $buttonRight.addEventListener('click', handleRightClick)
   }
 
-  $moveTop.addEventListener('click', e => {
-    if (translate == 0) {
-      updateProjectImg(false)
-      $asideContainer.style.transform = `translateY(${translate}%)`
-      translate = 90
-    } else {
-      updateProjectImg()
-      $asideContainer.style.transform = `translateY(${translate}%)`
-      translate = 0
+  document.addEventListener('DOMContentLoaded', handleProjectLogic)
+  document.addEventListener('astro:page-load', handleProjectLogic)
+  document.addEventListener('astro:before-preparation', () => {
+    const cleanup = () => {
+      const $moveTop = document.querySelector('.aside__move-top')
+      const $projectImage = document.querySelector('.project__image')
+      const $buttonLeft = document.querySelector('#button-left')
+      const $buttonRight = document.querySelector('#button-right')
+
+      if ($moveTop) $moveTop.replaceWith($moveTop.cloneNode(true))
+      if ($projectImage)
+        $projectImage.replaceWith($projectImage.cloneNode(true))
+      if ($buttonLeft) $buttonLeft.replaceWith($buttonLeft.cloneNode(true))
+      if ($buttonRight) $buttonRight.replaceWith($buttonRight.cloneNode(true))
     }
-  })
-
-  $projectImage.addEventListener('click', e => {
-    if (translate == 90) {
-      updateProjectImg()
-      $asideContainer.style.transform = `translateY(${translate}%)`
-      translate = 0
-    }
-  })
-
-  breakpoint.addEventListener('change', e => {
-    if (e.matches) {
-      updateProjectImg()
-      $asideContainer.style.transform = `translateY(90%)`
-      translate = 0
-    }
-  })
-
-  window.addEventListener('resize', e => {
-    if (window.innerWidth > 1100) {
-      updateProjectImg()
-      $asideContainer.style.transform = `translateY(0%)`
-      translate = 0
-    }
-  })
-
-  const currentLocale = $html.getAttribute('lang') as string
-  const projects = currentLocale === 'es' ? projects_es : projects_en
-  const project = projects.find(project => project.title === $title.textContent)
-  const imgLength = project.images.length
-
-  let currentImg = 0
-
-  if (imgLength === 1) {
-    $buttonsContainer.style.display = 'none'
-  }
-
-  $buttonLeft.addEventListener('click', e => {
-    if (currentImg === 0) {
-      currentImg = imgLength - 1
-    } else {
-      currentImg--
-    }
-
-    $img.src = project.images[currentImg].src
-    $img.alt = project.images[currentImg].alt
-  })
-
-  $buttonRight.addEventListener('click', e => {
-    if (currentImg === imgLength - 1) {
-      currentImg = 0
-    } else {
-      currentImg++
-    }
-
-    $img.src = project.images[currentImg].src
-    $img.alt = project.images[currentImg].alt
+    cleanup()
   })
 </script>
-
 <style is:global>
   .project__page {
     position: relative;
@@ -347,9 +402,9 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
     inset: 0;
     display: flex;
     justify-content: flex-end;
+    z-index: 100;
     overflow-x: hidden;
     overflow-y: scroll;
-    z-index: 100;
   }
 
   .project__aside {
@@ -370,6 +425,7 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
   }
 
   .aside__move-top {
+    z-index: 100;
     display: none;
   }
 
@@ -380,11 +436,10 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
 
   .aside__title {
     width: max-content;
-    font-size: var(--step-2);
+    font-size: var(--step-1);
     font-weight: 600;
     text-transform: uppercase;
     border-bottom: 5px solid var(--sky-blue);
-
     box-shadow: 0 6px 3px -5px var(--sky-blue);
     margin-bottom: 0.5rem;
   }
@@ -421,7 +476,7 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
   }
 
   .aside__tr th {
-    font-size: var(--step-0);
+    font-size: var(--step--1);
     font-weight: 600;
     color: var(--light-blue);
     text-align: left;
@@ -546,7 +601,6 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
 
     .aside__title {
       padding-top: 0.5rem;
-      font-size: var(--step-1);
     }
   }
 
@@ -554,14 +608,6 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
     .project__aside {
       padding: 1rem 1.3rem;
       min-width: fit-content;
-    }
-
-    .aside__title {
-      font-size: var(--step-1);
-    }
-
-    .aside__tr th {
-      font-size: var(--step--1);
     }
 
     .aside__tr td {

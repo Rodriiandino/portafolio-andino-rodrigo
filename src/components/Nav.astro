@@ -84,22 +84,9 @@ const t = useTranslations(currentLocale)
   </div>
 
   <script>
-    const $home = document
-      .getElementById('nav')
-      .querySelector('[data-section="home"]')
+    import nav from './dom/nav.js'
 
-    const isEnglish = window.location.pathname.includes('/en')
-
-    $home.addEventListener('click', e => {
-      e.preventDefault()
-      const section = document.getElementById('home')
-
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' })
-
-        window.history.pushState({}, '', isEnglish ? '/en' : '/')
-      }
-    })
+    nav()
   </script>
 
   <style is:global>

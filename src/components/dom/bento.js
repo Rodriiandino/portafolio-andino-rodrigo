@@ -1,62 +1,71 @@
 import { skillsData } from '../../data/skills'
+
 export default function bento() {
-  const $html = document.querySelector('html')
-  const $hour = document.getElementById('hour')
-  const $day = document.getElementById('day')
-  const $date = document.getElementById('date')
-  const $bento_6_list = document.querySelector('.bento__6-list')
+  let timeInterval
 
-  const language = $html.getAttribute('lang')
-  let locales
+  const handleBenToLogic = () => {
+    const $html = document.querySelector('html')
+    const $hour = document.getElementById('hour')
+    const $day = document.getElementById('day')
+    const $date = document.getElementById('date')
+    const $bento_6_list = document.querySelector('.bento__6-list')
 
-  language == 'es' ? (locales = 'es-AR') : (locales = 'en-US')
+    if (!$html || !$hour || !$day || !$date || !$bento_6_list) return
 
-  const getTime = () => {
-    const time = new Date().toLocaleTimeString(locales, {
-      hour: 'numeric',
-      minute: 'numeric',
-      hourCycle: 'h12'
-    })
+    const language = $html.getAttribute('lang')
+    let locales = language == 'es' ? 'es-AR' : 'en-US'
 
-    const dayName = new Date().toLocaleDateString(locales, {
-      weekday: 'long'
-    })
+    const getTime = () => {
+      const time = new Date().toLocaleTimeString(locales, {
+        hour: 'numeric',
+        minute: 'numeric',
+        hourCycle: 'h12'
+      })
 
-    const dateName = new Date().toLocaleDateString(locales, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    })
+      const dayName = new Date().toLocaleDateString(locales, {
+        weekday: 'long'
+      })
 
-    $hour.innerHTML = time
-    $day.innerHTML = dayName
-    $date.innerHTML = dateName
+      const dateName = new Date().toLocaleDateString(locales, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
+
+      $hour.innerHTML = time
+      $day.innerHTML = dayName
+      $date.innerHTML = dateName
+    }
+
+    if (timeInterval) {
+      clearInterval(timeInterval)
+    }
+
+    getTime()
+    timeInterval = setInterval(getTime, 10000)
+
+    if ($bento_6_list.children.length === 0) {
+      const mySkills = ['TS', 'React', 'Next js', 'Java', 'Spring Boot', 'SQL']
+      let allSkills = []
+      Object.values(skillsData).forEach(skillGroup => {
+        allSkills = [...allSkills, ...skillGroup]
+      })
+
+      const skillsFilter = allSkills.filter(skill =>
+        mySkills.includes(skill.name)
+      )
+
+      skillsFilter.forEach(skill => {
+        $bento_6_list.innerHTML += `<li class="icon__svg" style="width: 58px">${skill.icon}</li>`
+      })
+    }
   }
 
-  getTime()
-
-  setInterval(() => {
-    getTime()
-  }, 10000)
-
-  const mySkills = [
-    'TS',
-    'React',
-    'Next js',
-    'Java',
-    'Spring Boot',
-    'SQL'
-  ]
-
-  let allSkills = []
-  Object.values(skillsData).forEach(skillGroup => {
-    allSkills = [...allSkills, ...skillGroup]
+  document.addEventListener('astro:before-preparation', () => {
+    if (timeInterval) {
+      clearInterval(timeInterval)
+    }
   })
-
-  const skillsFilter = allSkills.filter(skill => mySkills.includes(skill.name))
-
-  skillsFilter.forEach(skill => {
-    $bento_6_list.innerHTML += `<li class="icon__svg" style="width: 58px"
-    >${skill.icon}</li>`
-  })
+  document.addEventListener('DOMContentLoaded', handleBenToLogic)
+  document.addEventListener('astro:page-load', handleBenToLogic)
 }
