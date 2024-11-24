@@ -1,6 +1,5 @@
 export default function themeChange() {
   const handleThemeLogic = () => {
-    const $btnSwitchTheme = document.querySelectorAll('[btn-switch-theme]')
     const $html = document.querySelector('html')
     const $header = document.querySelector('#header')
     const $nav = document.querySelector('#nav')
@@ -50,12 +49,6 @@ export default function themeChange() {
       }
     }
 
-    const cleanupEventListeners = () => {
-      $btnSwitchTheme.forEach(btn => {
-        btn.replaceWith(btn.cloneNode(true))
-      })
-    }
-
     const setupEventListeners = () => {
       const $updateBtnSwitchTheme =
         document.querySelectorAll('[btn-switch-theme]')
@@ -65,17 +58,9 @@ export default function themeChange() {
       })
     }
 
-    cleanupEventListeners()
     setupEventListeners()
     initializeTheme()
   }
 
-  document.addEventListener('DOMContentLoaded', handleThemeLogic)
   document.addEventListener('astro:page-load', handleThemeLogic)
-  document.addEventListener('astro:before-preparation', () => {
-    const btnSwitchTheme = document.querySelectorAll('[btn-switch-theme]')
-    btnSwitchTheme.forEach(btn => {
-      btn.replaceWith(btn.cloneNode(true))
-    })
-  })
 }

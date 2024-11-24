@@ -61,11 +61,5 @@ export default function bento() {
     }
   }
 
-  document.addEventListener('astro:before-preparation', () => {
-    if (timeInterval) {
-      clearInterval(timeInterval)
-    }
-  })
-  document.addEventListener('DOMContentLoaded', handleBenToLogic)
   document.addEventListener('astro:page-load', handleBenToLogic)
 }

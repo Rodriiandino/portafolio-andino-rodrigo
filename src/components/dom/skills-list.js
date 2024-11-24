@@ -14,12 +14,6 @@ export default function skillsList() {
       })
     }
 
-    const cleanupEventListeners = () => {
-      $btns.forEach(btn => {
-        btn.replaceWith(btn.cloneNode(true))
-      })
-    }
-
     const setupEventListeners = () => {
       const updatedBtns = document.querySelectorAll('.skills__btn')
 
@@ -52,17 +46,9 @@ export default function skillsList() {
       renderList(skillsData.frontEnd)
     }
 
-    cleanupEventListeners()
     setupEventListeners()
     initializeList()
   }
 
-  document.addEventListener('astro:before-preparation', () => {
-    const $btns = document.querySelectorAll('.skills__btn')
-    $btns.forEach(btn => {
-      btn.replaceWith(btn.cloneNode(true))
-    })
-  })
-  document.addEventListener('DOMContentLoaded', handleSkillsLogic)
   document.addEventListener('astro:page-load', handleSkillsLogic)
 }
