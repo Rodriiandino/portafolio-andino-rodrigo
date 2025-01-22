@@ -127,7 +127,7 @@
 }
 
 .projects__gallery {
-  columns: 3 330px;
+  columns: 2 370px;
   column-gap: 20px;
   display: block;
 }

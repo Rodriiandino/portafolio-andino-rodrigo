@@ -1,5 +1,120 @@
 [
   {
+    "title": "Vivero Irupe - Backend y Panel Administrativo",
+    "description": "Backend completo y panel administrativo para la gestión de un vivero online. Incluye medidas de seguridad robustas, rendimiento optimizado y una interfaz rica en funcionalidades para la gestión de productos y usuarios.",
+    "what_i_learned": [
+      "Desarrollo backend con Spring Boot y PostgreSQL",
+      "Autenticación JWT con Spring Security",
+      "Implementación de caché con Spring Boot y Caffeine",
+      "Limitación de tasas usando anotaciones personalizadas para proteger endpoints",
+      "Integración con Cloudflare R2 utilizando la API de S3 para el almacenamiento de imágenes",
+      "Migraciones de base de datos gestionadas con Flyway",
+      "Simplificación de código con Lombok",
+      "Documentación detallada de la API utilizando Swagger",
+      "Desarrollo frontend con React y Next.js",
+      "Gestión avanzada de caché y datos en tiempo real con TanStack/React-Query",
+      "TailwindCSS para una interfaz responsiva y personalizable",
+      "Protección de rutas con Middleware en Next.js"
+    ],
+    "features": "E-commerce",
+    "date": "2025",
+    "technologies": [
+      "Spring Boot",
+      "Java",
+      "PostgreSQL",
+      "Spring Security",
+      "JWT",
+      "Caffeine Cache",
+      "Flyway",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "TanStack Query",
+      "Cloudflare R2",
+      "Swagger"
+    ],
+    "status": "Completo",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://viveroirupe.com/"
+    },
+    "github": "https://github.com/Rodriiandino/vivero-irupe-admin-backend",
+    "images": [
+      {
+        "src": "/projects/vivero_irupe/backend_1.webp",
+        "alt": "Panel Administrativo - Dashboard"
+      },
+      {
+        "src": "/projects/vivero_irupe/backend_2.webp",
+        "alt": "Panel Administrativo - Dashboard"
+      },
+      {
+        "src": "/projects/vivero_irupe/backend_3.webp",
+        "alt": "Panel Administrativo - Dashboard"
+      },
+      {
+        "src": "/projects/vivero_irupe/backend_4.webp",
+        "alt": "Panel Administrativo - Dashboard"
+      }
+    ]
+  },
+  {
+    "title": "Vivero Irupe - Frontend",
+    "description": "Sitio web para un vivero online con más de 200 productos. Incluye animaciones fluidas, transiciones avanzadas y técnicas modernas de renderizado para un rendimiento óptimo. Realizado con Astro y React, con SEO avanzado y envío de correos.",
+    "what_i_learned": [
+      "Desarrollo de frontend con Astro y React",
+      "Uso de TypeScript para tipado seguro",
+      "Implementación de ViewTransitions para animaciones fluidas",
+      "Optimización del rendimiento combinando SSR, SSG y CSR",
+      "Gestión de datos con tanstack/react-query",
+      "Integración con un backend en Spring Boot para datos y funcionalidades",
+      "Configuración de Cloudflare como firewall y almacenamiento en R2",
+      "Implementación de SEO para posicionamiento en buscadores",
+      "Uso de Resend para envío de correos electrónicos",
+      "Deploy del frontend en Vercel y administración del dominio con Cloudflare"
+    ],
+    "features": "Comercio electrónico",
+    "date": "2025",
+    "technologies": [
+      "Astro",
+      "React",
+      "TypeScript",
+      "tanstack query",
+      "Resend",
+      "Vercel",
+      "Cloudflare"
+    ],
+    "status": "Completo",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://viveroirupe.com/"
+    },
+    "github": "https://github.com/Rodriiandino/vivero-irupe-website",
+    "images": [
+      {
+        "src": "/projects/vivero_irupe/vivero_1.webp",
+        "alt": "Página de Vivero Irupe"
+      },
+      {
+        "src": "/projects/vivero_irupe/vivero_2.webp",
+        "alt": "Página de Vivero Irupe"
+      },
+      {
+        "src": "/projects/vivero_irupe/vivero_3.webp",
+        "alt": "Página de Vivero Irupe"
+      },
+      {
+        "src": "/projects/vivero_irupe/vivero_4.webp",
+        "alt": "Página de Vivero Irupe"
+      },
+      {
+        "src": "/projects/vivero_irupe/vivero_5.webp",
+        "alt": "Página de Vivero Irupe"
+      }
+    ]
+  },
+  {
     "title": "Note Creation FullStack",
     "description": "Aplicación web para la creación de notas, con autenticación de usuarios y verificación por email. Almacenamiento de notas en una base de datos PostgreSQL. Desarrollada con Spring Boot y React.",
     "what_i_learned": [

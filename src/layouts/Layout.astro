@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 const { currentLocale = 'es' } = Astro
 import '@fontsource-variable/onest'
 
@@ -45,8 +45,9 @@ const { title, description, image } = Astro.props
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
 
+    <link rel='sitemap' href='/sitemap-index.xml' />
     <meta property='og:type' content='website' />
     <meta property='og:url' content={Astro.url} />
     <meta property='og:title' content={title} />

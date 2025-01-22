@@ -1,5 +1,120 @@
 [
   {
+    "title": "Vivero Irupe - Backend & Admin Panel",
+    "description": "Comprehensive backend and admin panel for managing an online plant nursery. Includes robust security measures, optimized performance, and a feature-rich interface for product and user management.",
+    "what_i_learned": [
+      "Backend development with Spring Boot and PostgreSQL",
+      "JWT authentication with Spring Security",
+      "Implementation of caching with Spring Boot and Caffeine",
+      "Rate limiting using custom annotations for endpoint protection",
+      "Integration with Cloudflare R2 using the S3 API for image storage",
+      "Database migrations managed with Flyway",
+      "Code simplification with Lombok",
+      "Detailed API documentation using Swagger",
+      "Frontend development with React and Next.js",
+      "Advanced caching and real-time data management with TanStack/React-Query",
+      "TailwindCSS for responsive and customizable UI",
+      "Middleware protection for secure routes in Next.js"
+    ],
+    "features": "E-commerce",
+    "date": "2025",
+    "technologies": [
+      "Spring Boot",
+      "Java",
+      "PostgreSQL",
+      "Spring Security",
+      "JWT",
+      "Caffeine Cache",
+      "Flyway",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "TailwindCSS",
+      "TanStack Query",
+      "Cloudflare R2",
+      "Swagger"
+    ],
+    "status": "Complete",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://viveroirupe.com/"
+    },
+    "github": "https://github.com/Rodriiandino/vivero-irupe-admin-backend",
+    "images": [
+      {
+        "src": "/projects/vivero_irupe/backend_1.webp",
+        "alt": "Admin Panel Dashboard"
+      },
+      {
+        "src": "/projects/vivero_irupe/backend_2.webp",
+        "alt": "Admin Panel Dashboard"
+      },
+      {
+        "src": "/projects/vivero_irupe/backend_3.webp",
+        "alt": "Admin Panel Dashboard"
+      },
+      {
+        "src": "/projects/vivero_irupe/backend_4.webp",
+        "alt": "Admin Panel Dashboard"
+      }
+    ]
+  },
+  {
+    "title": "Vivero Irupe - Frontend",
+    "description": "Website for an online plant nursery with over 200 products. Features smooth animations, advanced transitions, and modern rendering techniques for optimal performance. Built with Astro and React, with advanced SEO and email sending capabilities.",
+    "what_i_learned": [
+      "Frontend development with Astro and React",
+      "Using TypeScript for safe typing",
+      "Implementation of ViewTransitions for smooth animations",
+      "Performance optimization by combining SSR, SSG, and CSR",
+      "Data management with tanstack/react-query",
+      "Integration with a Spring Boot backend for data and functionalities",
+      "Cloudflare configuration as a firewall and R2 storage",
+      "SEO implementation for better search engine ranking",
+      "Using Resend for sending emails",
+      "Frontend deployment on Vercel and domain management with Cloudflare"
+    ],
+    "features": "E-commerce",
+    "date": "2025",
+    "technologies": [
+      "Astro",
+      "React",
+      "TypeScript",
+      "tanstack query",
+      "Resend",
+      "Vercel",
+      "Cloudflare"
+    ],
+    "status": "Complete",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://viveroirupe.com/"
+    },
+    "github": "https://github.com/Rodriiandino/vivero-irupe-website",
+    "images": [
+      {
+        "src": "/projects/vivero_irupe/vivero_1.webp",
+        "alt": "Vivero Irupe Website"
+      },
+      {
+        "src": "/projects/vivero_irupe/vivero_2.webp",
+        "alt": "Vivero Irupe Website"
+      },
+      {
+        "src": "/projects/vivero_irupe/vivero_3.webp",
+        "alt": "Vivero Irupe Website"
+      },
+      {
+        "src": "/projects/vivero_irupe/vivero_4.webp",
+        "alt": "Vivero Irupe Website"
+      },
+      {
+        "src": "/projects/vivero_irupe/vivero_5.webp",
+        "alt": "Vivero Irupe Website"
+      }
+    ]
+  },
+  {
     "title": "Note Creation FullStack",
     "description": "Web application for creating notes, with user authentication and email verification. Storage of notes in a PostgreSQL database. Developed with Spring Boot and React.",
     "what_i_learned": [

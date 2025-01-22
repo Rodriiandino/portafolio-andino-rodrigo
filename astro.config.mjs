@@ -1,11 +1,13 @@
 import { defineConfig } from 'astro/config'
 import preact from '@astrojs/preact'
-import vercel from '@astrojs/vercel/static'
+import vercelAdapter from '@astrojs/vercel'
+
+import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  adapter: vercel(),
+  adapter: vercelAdapter(),
   site: 'https://portafolio-andino-rodrigo.vercel.app/',
   i18n: {
     defaultLocale: 'es',
@@ -14,5 +16,13 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
-  integrations: [preact()]
+  integrations: [
+    preact(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'es',
+        locales: ['es', 'en']
+      }
+    })
+  ]
 })
