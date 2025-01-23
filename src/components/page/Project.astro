@@ -198,6 +198,20 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
     let translate = 0
     let currentImg = 0
 
+    const adjustAsideHeight = () => {
+      if (window.innerWidth > 1100) return
+      const windowHeight = window.innerHeight
+      const asideHeight = $asideContainer.scrollHeight
+
+      if (asideHeight > windowHeight) {
+        $asideContainer.style.height = `100%`
+        $asideContainer.style.overflowY = 'auto'
+      } else {
+        $asideContainer.style.maxHeight = 'none'
+        $asideContainer.style.overflowY = 'hidden'
+      }
+    }
+
     const updateProjectImg = (def = true) => {
       if (def) {
         $projectImage.style.cursor = 'default'
@@ -222,6 +236,7 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
         $asideContainer.style.transform = `translateY(${translate}%)`
         translate = 0
       }
+      adjustAsideHeight()
     }
 
     const handleProjectImageClick = () => {
@@ -230,6 +245,7 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
         $asideContainer.style.transform = `translateY(${translate}%)`
         translate = 0
       }
+      adjustAsideHeight()
     }
 
     const handleBreakpointChange = (e: MediaQueryListEvent) => {
@@ -238,14 +254,18 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
         $asideContainer.style.transform = `translateY(90%)`
         translate = 0
       }
+      adjustAsideHeight()
     }
 
     const handleResize = () => {
       if (window.innerWidth > 1100) {
         updateProjectImg()
         $asideContainer.style.transform = `translateY(0%)`
+        $asideContainer.style.overflowY = 'scroll'
+        $asideContainer.style.height = '100%'
         translate = 0
       }
+      adjustAsideHeight()
     }
 
     const currentLocale = $html.getAttribute('lang') as string
@@ -300,6 +320,8 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
     window.addEventListener('resize', handleResize)
     $buttonLeft.addEventListener('click', handleLeftClick)
     $buttonRight.addEventListener('click', handleRightClick)
+
+    adjustAsideHeight()
   }
 
   document.addEventListener('DOMContentLoaded', handleProjectLogic)
@@ -383,14 +405,14 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
   }
 
   .project__image-button svg {
-    color: var(--light-backgroud);
+    color: var(--light-background);
     width: 1.3rem;
     height: 1.3rem;
   }
 
   .project__image-button:hover {
     transform: scale(1.15);
-    background-color: var(--dark-backgroud);
+    background-color: var(--dark-background);
   }
 
   .project__image-button:hover svg {
@@ -430,12 +452,11 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
   }
 
   .aside__move-top svg {
-    color: var(--light-backgroud);
+    color: var(--light-background);
     width: 1rem;
   }
 
   .aside__title {
-    width: max-content;
     font-size: var(--step-1);
     font-weight: 600;
     text-transform: uppercase;
@@ -520,7 +541,7 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
 
   @media (max-width: 1100px) {
     .project__buttons {
-      bottom: 5rem;
+      bottom: 6.5rem;
       right: 0;
       left: 0;
       justify-content: center;
@@ -528,13 +549,6 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
     }
 
     .buttons__container {
-      display: flex;
-      gap: 1.5rem;
-      pointer-events: all;
-      background-color: var(--black);
-      border-radius: var(--border-radius);
-      padding: 0.4rem;
-      margin: 0 auto;
       transform: none;
     }
 
@@ -552,14 +566,14 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
       position: fixed;
       inset: auto 0 0 0;
       width: 100%;
-      transform: translateY(90%);
+      transform: translateY(93%);
       height: fit-content;
-      overflow: hidden;
+      overflow: none;
       transition: all 0.3s ease-in-out;
     }
 
     .project__aside-container:hover {
-      transform: translateY(88%);
+      transform: translateY(91%);
     }
 
     .project__aside {
@@ -569,6 +583,7 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
       min-height: auto;
       padding: 1.3rem 1.6rem;
       border-radius: var(--border-radius) var(--border-radius) 0 0;
+      overflow: auto;
     }
 
     .aside__move-top {
@@ -616,16 +631,6 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
 
     .aside__footer a {
       font-size: var(--step--1);
-    }
-  }
-
-  @media (max-height: 730px) {
-    .project__aside-container {
-      height: 100%;
-    }
-
-    .project__aside {
-      overflow: auto;
     }
   }
 </style>

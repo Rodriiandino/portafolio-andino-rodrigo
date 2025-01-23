@@ -4,11 +4,12 @@ import { useTranslations } from '../i18n/utils'
 interface Props {
   title: string
   description: string
+  complementary: string
   link?: string
   date: string
 }
 
-const { title, description, link, date } = Astro.props
+const { title, description, complementary, link, date } = Astro.props
 
 const { currentLocale = 'es' } = Astro
 
@@ -17,7 +18,10 @@ const t = useTranslations(currentLocale)
 
 <div class='timeline__separator'></div>
 <time class='timeline__time'>{date}</time>
-<h4 class='timeline__header'>{title}</h4>
+<div class='timeline__content'>
+  <h4 class='timeline__header'>{title}</h4>
+  <h5 class='timeline__subheader'>{complementary}</h5>
+</div>
 <p class='timeline__description'>
   {description}
 </p>
@@ -78,12 +82,25 @@ const t = useTranslations(currentLocale)
     color: var(--grey);
   }
 
+  .timeline__content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+
   .timeline__header {
     color: var(--light-blue);
     font-size: var(--step-1);
     line-height: 1.75rem;
     font-weight: 600;
-    margin-bottom: 0.25rem;
+  }
+
+  .timeline__subheader {
+    color: var(--light-background);
+    font-size: var(--step--1);
+    line-height: 1.5rem;
+    font-weight: 400;
+    opacity: 0.75;
   }
 
   .timeline__description {

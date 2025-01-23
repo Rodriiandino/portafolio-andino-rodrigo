@@ -29,9 +29,9 @@
       "React",
       "Next.js",
       "TypeScript",
-      "TailwindCSS",
+      "Tailwind",
       "TanStack Query",
-      "Cloudflare R2",
+      "Cloudflare",
       "Swagger"
     ],
     "status": "Completo",
@@ -80,9 +80,7 @@
       "Astro",
       "React",
       "TypeScript",
-      "tanstack query",
-      "Resend",
-      "Vercel",
+      "TanStack Query",
       "Cloudflare"
     ],
     "status": "Completo",

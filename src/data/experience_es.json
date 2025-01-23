@@ -4,38 +4,51 @@
       {
         "date": "2022 - Cursando",
         "title": "Licenciatura en Informática",
-        "description": "Actualmente cursando el tercer año de la carrera en la 'Universidad Siglo 21', con enfoque en algoritmos, estructuras de datos, POO con Java, concurrencia, paralelismo, arquitectura de software, bases de datos (SQL) e ingeniería de software. Además, desarrollo habilidades en liderazgo, trabajo en equipo y gestión organizacional.",
+        "complementary": "Universidad Siglo 21",
+        "description": "Actualmente cursando el Cuarto año de la carrera, con enfoque en algoritmos, estructuras de datos, POO con Java, concurrencia, paralelismo, arquitectura de software, bases de datos (SQL) e ingeniería de software. Además, desarrollo habilidades en liderazgo, trabajo en equipo y gestión organizacional.",
         "link": ""
       },
       {
         "date": "2014 - 2021",
         "title": "Técnico Electricista",
+        "complementary": "Instituto Mariano Fragueiro",
         "description": "Durante mi formación en el 'Instituto Mariano Fragueiro', adquirí habilidades en el diseño, instalación y mantenimiento de sistemas eléctricos, además de destrezas en AutoCAD y SketchUp para diseño en 2D y 3D, y lectura de planos. Participé activamente en proyectos prácticos que reforzaron mi comprensión técnica.",
         "link": ""
       }
     ],
     "workExperience": [
       {
+        "date": "2024 - Actualidad",
+        "title": "Desarrollador de software - Full Stack",
+        "complementary": "Freelance",
+        "description": "Diseño y desarrollo aplicaciones web full-stack utilizando tecnologías como React.js, Next.js, Astro y Tailwind CSS en el frontend, y Java con Spring Boot en el backend. Implemente sistemas de seguridad con Spring Security y JWT, y gestiono bases de datos relacionales (MySQL, PostgreSQL). Utilize Docker para contenerizar aplicaciones y despliegue en VPS con Linux, además de integrar soluciones cloud como Cloudflare R2 (compatible con AWS S3) para almacenamiento escalable.",
+        "link": ""
+      },
+      {
         "date": "2021 - Actualidad",
-        "title": "Atención al Cliente",
-        "description": "Emprendimiento familiar con más de 2 años de experiencia en el área de atención al cliente, donde adquirí habilidades clave como comunicación efectiva, resolución de conflictos, trabajo en equipo y liderazgo. Apliqué estrategias para mejorar la satisfacción del cliente y optimizar los procesos de atención.",
+        "title": "Desarrollador web y Atención al Cliente",
+        "complementary": "Vivero Irupé",
+        "description": "Emprendimiento familiar con más de 3 años de experiencia en atención al cliente, donde desarrollé habilidades clave como comunicación efectiva, resolución de conflictos y liderazgo. Durante este período, diseñé y desarrollé Vivero Irupé, una web full-stack con más de 200 productos.",
         "link": ""
       },
       {
         "date": "08/2024 al 10/2024",
-        "title": "Instrumentista en la parada de la central nuclear de Embalse 2024",
-        "description": "Oficial Especializado en Instrumentación y Control durante la parada de la central nuclear de Embalse, donde realicé mantenimiento preventivo y calibración de equipos de alta precisión, como válvulas y sensores, en un entorno de seguridad crítica. Aplicación de técnicas de resolución de problemas y cumplimiento de estrictos protocolos de seguridad.",
+        "title": "Oficial Especializado en Instrumentación y Control 2024",
+        "complementary": "Henisa Sudamericana s.a.",
+        "description": "Durante la parada de la central nuclear de Embalse, realicé mantenimiento preventivo y calibración de equipos de alta precisión, como válvulas y sensores, en un entorno de seguridad crítica. Apliqué técnicas de resolución de problemas y aseguré el cumplimiento de estrictos protocolos de seguridad.",
         "link": ""
       },
       {
         "date": "09/2022 al 12/2022",
-        "title": "Instrumentista en la parada de la central nuclear de Embalse 2022",
-        "description": "Oficial Especializado en Instrumentación y Control con contrato temporal, durante la parada de la central nuclear de Embalse. Participé en la calibración y mantenimiento de sistemas críticos, trabajando en estrecha colaboración con equipos de seguridad para garantizar el correcto funcionamiento de los instrumentos.",
+        "title": "Oficial Especializado en Instrumentación y Control 2022",
+        "complementary": "Henisa Sudamericana s.a.",
+        "description": "Calibré y mantuve sistemas críticos, trabajando en estrecha colaboración con equipos de seguridad para garantizar el correcto funcionamiento de los instrumentos.",
         "link": ""
       },
       {
         "date": "10/2021 al 11/2021",
         "title": "Pasantías realizadas en Instrumentación y Control",
+        "complementary": "Nucleoeléctrica Argentina s.a.",
         "description": "Durante esta pasantía, adquirí experiencia en la calibración y medición de instrumentos, sensores y válvulas, así como en la verificación de fugas en áreas controladas. Esta experiencia me brindó una valiosa comprensión de los procesos industriales en un entorno regulado.",
         "link": ""
       }
@@ -46,12 +59,14 @@
       {
         "date": "04/2023 al 01/2024",
         "title": "Programa Oracle Next Education F2 T5 Back-end",
+        "complementary": "ONE - Oracle Next Education - Alura",
         "description": "Curso destinado al Backend con una experiencia formativa intensiva que abarcó más de 330 horas de contenido especializado. Durante este curso, he consolidado mis conocimientos en tecnologías clave del desarrollo back-end, incluyendo Java, SQL 'MySql', Spring, y Oracle Cloud, como ademas de metodologías ágiles y buenas prácticas de programación.",
         "link": "https://app.aluracursos.com/user/andinorodrigo03/fullCertificate/7a7bb74f2a0a42146251f5f83344e9b6"
       },
       {
         "date": "11/2023 al 01/2024",
         "title": "Python, Data Science en OCI y Oracle Analytics",
+        "complementary": "ONE - Oracle Next Education - Alura",
         "description": "Curso en el que se abarco en el uso de Python junto con pandas, numpy, matplotlib, seaborn, scikit-learn, Oracle Accelerated Data Science Library (ADSL) y Oracle Analytics Cloud (OAC).",
         "link": "https://app.aluracursos.com/degree/certificate/d17398d7-6350-41f0-b0ff-ac73f416d951"
       }

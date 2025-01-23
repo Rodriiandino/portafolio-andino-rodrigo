@@ -14,7 +14,7 @@ export const ui = {
     'bento.title': 'ANDINO RODRIGO AGUSTÍN',
     'bento.subtitle': 'Full Stack Developer',
     'bento.description':
-      'Experimentado en el trabajo de entorno críticos de alta responsabilidad como Instrumentista de una central nuclear. En búsqueda en desarrollarme profesionalmente en el mundo del desarrollo de software.',
+      'Desarrollador de software especializado en aplicaciones web, con más de 1+ año de experiencia en el diseño y de soluciones full-stack. Abarcando desde la construcción de APIs RESTful con Java y Spring Boot hasta el desarrollo de interfaces con React.js, Astro, Next.js y TypeScript.',
     'bento.download': 'Descargar',
     'bento.availability': 'Conectemos 🚀 Creemos algo increíble',
     'bento.country': 'ARGENTINA',
@@ -40,14 +40,9 @@ export const ui = {
     'skills.backend': 'Back-end',
     'skills.database': 'Base de datos',
     'skills.other': 'Otras',
-    'contact.paragraph.1': `Hey, soy un estudiante en licenciatura de informática, quien disfruta del desarrollo de software
-    y de las actividades físicas llevando una vida saludable.`,
-    'contact.paragraph.2': `Me considero una persona tranquila que disfruta de la vida y de seguir
-    aprendiendo cada día. Para mí, la programación es una herramienta
-    poderosa para crear soluciones que mejoren la vida de las personas y
-    estoy siempre dispuesto a asumir nuevos retos y proyectos.`,
-    'contact.paragraph.3': `Si tienes alguna pregunta o quieres trabajar conmigo, no dudes en
-    contactarme.`,
+    'contact.paragraph.1': `Hey, soy un desarrollador de software apasionado por crear soluciones innovadoras que mejoren la vida de las personas. Disfruto del desarrollo de software y de las actividades físicas, llevando una vida saludable.`,
+    'contact.paragraph.2': `Me considero una persona tranquila que valora el aprendizaje continuo. Para mí, la programación es una herramienta poderosa para impactar positivamente en el mundo. Estoy siempre dispuesto a asumir nuevos retos y proyectos emocionantes. Próximo Licenciado en Informática.`,
+    'contact.paragraph.3': `Si tienes alguna pregunta o estás interesado en colaborar conmigo, no dudes en contactarme.`,
     'contact.btn': 'Descargar CV',
     'project.learn': 'Lo que aprendí',
     'project.characteristics': 'Características',
@@ -69,7 +64,7 @@ export const ui = {
     'title.contact': 'Contact me',
     'bento.title': 'ANDINO RODRIGO AGUSTÍN',
     'bento.subtitle': 'Full Stack Developer',
-    'bento.description': `Experienced in the work of critical environments of high responsibility as an Instrumentation Technician of a nuclear power plant. In search of developing professionally in the world of software development.`,
+    'bento.description': `Specializing in web applications, with 1+ year of experience designing and developing full-stack solutions. Proficient in building RESTful APIs using Java and Spring Boot, and crafting dynamic, high-performance interfaces with React.js, Next.js, Astro, and TypeScript.`,
     'bento.download': 'Download',
     'bento.availability': `Connect with me 🚀 Let's create something amazing`,
     'bento.country': 'ARGENTINA',
@@ -91,10 +86,9 @@ export const ui = {
     'skills.backend': 'Back-end',
     'skills.database': 'Database',
     'skills.other': 'Other',
-    'contact.paragraph.1': `Hey, I'm a student in computer science degree, who enjoys software development and physical activities leading a healthy life.`,
-    'contact.paragraph.2': `I consider myself a calm person who enjoys life and continues to
-    learning every day. For me, programming is a powerful tool to create solutions that improve people's lives and I am always willing to take on new challenges and projects.`,
-    'contact.paragraph.3': `If you have any questions or want to work with me, do not hesitate to contact me.`,
+    'contact.paragraph.1': `Hey, I'm a passionate software developer dedicated to creating innovative solutions that improve people's lives. I enjoy software development and physical activities, maintaining a healthy lifestyle.`,
+    'contact.paragraph.2': `I consider myself a calm individual who values continuous learning. For me, programming is a powerful tool to positively impact the world. I am always ready to take on new challenges and exciting projects. Future Computer Science Graduate.`,
+    'contact.paragraph.3': `If you have any questions or are interested in collaborating with me, feel free to reach out.`,
     'contact.btn': 'Download Resume',
     'project.learn': 'What I learned',
     'project.characteristics': 'Characteristics',
