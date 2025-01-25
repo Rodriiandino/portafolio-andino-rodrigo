@@ -127,9 +127,17 @@
 }
 
 .projects__gallery {
-  columns: 2 370px;
-  column-gap: 20px;
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-flow: dense;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .projects__gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
 }
 
 .projects__btn {

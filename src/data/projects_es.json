@@ -113,6 +113,44 @@
     ]
   },
   {
+    "title": "Aprende Japonés",
+    "description": "Experiencia de aprendizaje interactiva para los alfabetos japoneses Hiragana y Katakana.",
+    "what_i_learned": [
+      "Desarrollo de una aplicación web con Next.js",
+      "Mejorar mis habilidades de programación en TypeScript",
+      "Mejorar mis habilidades de programación en Tailwind",
+      "Usar zustand para el manejo del estado global",
+      "Usar shadcn/ui para los componentes de la aplicación"
+    ],
+    "features": "Proyecto Personal",
+    "date": "2024",
+    "technologies": ["Next.js", "React", "Tailwind", "TypeScript", "Zustand"],
+    "status": "En Progreso",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://aprender-japones-flashcards.vercel.app/"
+    },
+    "github": "https://github.com/Rodriiandino/aprender-japones-flashcards",
+    "images": [
+      {
+        "src": "/projects/learn_japanese/learn_japanese_1.webp",
+        "alt": "Aprende Japonés"
+      },
+      {
+        "src": "/projects/learn_japanese/learn_japanese_2.webp",
+        "alt": "Aprende Japonés"
+      },
+      {
+        "src": "/projects/learn_japanese/learn_japanese_3.webp",
+        "alt": "Aprende Japonés"
+      },
+      {
+        "src": "/projects/learn_japanese/learn_japanese_4.webp",
+        "alt": "Aprende Japonés"
+      }
+    ]
+  },
+  {
     "title": "Note Creation FullStack",
     "description": "Aplicación web para la creación de notas, con autenticación de usuarios y verificación por email. Almacenamiento de notas en una base de datos PostgreSQL. Desarrollada con Spring Boot y React.",
     "what_i_learned": [
@@ -157,44 +195,6 @@
       {
         "src": "/projects/note_creation/note_creation_4.webp",
         "alt": "Note Creation FullStack"
-      }
-    ]
-  },
-  {
-    "title": "Aprende Japonés",
-    "description": "Experiencia de aprendizaje interactiva para los alfabetos japoneses Hiragana y Katakana.",
-    "what_i_learned": [
-      "Desarrollo de una aplicación web con Next.js",
-      "Mejorar mis habilidades de programación en TypeScript",
-      "Mejorar mis habilidades de programación en Tailwind",
-      "Usar zustand para el manejo del estado global",
-      "Usar shadcn/ui para los componentes de la aplicación"
-    ],
-    "features": "Proyecto Personal",
-    "date": "2024",
-    "technologies": ["Next.js", "React", "Tailwind", "TypeScript", "Zustand"],
-    "status": "En Progreso",
-    "deploy": {
-      "page": "Vercel",
-      "demo": "https://aprender-japones-flashcards.vercel.app/"
-    },
-    "github": "https://github.com/Rodriiandino/aprender-japones-flashcards",
-    "images": [
-      {
-        "src": "/projects/learn_japanese/learn_japanese_1.webp",
-        "alt": "Aprende Japonés"
-      },
-      {
-        "src": "/projects/learn_japanese/learn_japanese_2.webp",
-        "alt": "Aprende Japonés"
-      },
-      {
-        "src": "/projects/learn_japanese/learn_japanese_3.webp",
-        "alt": "Aprende Japonés"
-      },
-      {
-        "src": "/projects/learn_japanese/learn_japanese_4.webp",
-        "alt": "Aprende Japonés"
       }
     ]
   },

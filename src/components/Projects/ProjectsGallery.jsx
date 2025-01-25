@@ -45,6 +45,24 @@ export default function ProjectsGallery({ projects, locale }) {
     handleFilter('All')
   }
 
+  const highlightedProjects = ['Vivero Irupe - Frontend']
+
+  const sortAndFilterProjects = projects => {
+    const highlighted = projects.filter(project =>
+      highlightedProjects.includes(project.title)
+    )
+
+    const normal = projects
+      .filter(project => !highlightedProjects.includes(project.title))
+      .sort((a, b) => {
+        const aRatio = a.images[0].height / a.images[0].width || 1
+        const bRatio = b.images[0].height / b.images[0].width || 1
+        return bRatio - aRatio
+      })
+
+    return [...highlighted, ...normal].slice(0, limit)
+  }
+
   return (
     <>
       <header className='projects__filter'>
@@ -107,8 +125,9 @@ export default function ProjectsGallery({ projects, locale }) {
         )}
       </header>
       <div className='projects__gallery'>
-        {filteredProjects.slice(0, limit).map(project => (
+        {sortAndFilterProjects(filteredProjects).map(project => (
           <ProjectsGalleryCard
+            key={project.title}
             title={project.title}
             description={project.description}
             image={project.images[0].src}
@@ -120,6 +139,7 @@ export default function ProjectsGallery({ projects, locale }) {
             }
             link_code={project.github}
             link_demo={project.deploy.demo}
+            highlight={highlightedProjects.includes(project.title)}
           />
         ))}
       </div>

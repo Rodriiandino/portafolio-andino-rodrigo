@@ -21,21 +21,19 @@ const { title, description, image } = Astro.props
   <head>
     <script is:inline>
       ;(function () {
-        function getInitialTheme() {
-          const storedTheme = localStorage.getItem('darkMode-portafolio-andino')
-          if (storedTheme === 'true') return 'dark'
-          if (storedTheme === 'false') return 'light'
+        const storedTheme = localStorage.getItem('darkMode-portafolio-andino')
+        const prefersDark = window.matchMedia(
+          '(prefers-color-scheme: dark)'
+        ).matches
 
-          return window.matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'dark'
-            : 'light'
-        }
+        let theme = 'light'
 
-        const theme = getInitialTheme()
-        document.documentElement.setAttribute('data-theme', theme)
-        if (theme === 'dark') {
+        if (storedTheme === 'true' || (storedTheme === null && prefersDark)) {
+          theme = 'dark'
           document.documentElement.classList.add('dark')
         }
+
+        document.documentElement.setAttribute('data-theme', theme)
       })()
     </script>
 
@@ -119,6 +117,7 @@ const { title, description, image } = Astro.props
         --black: #181823;
         --black-transparent-02: #1818234f;
         --black-transparent-08: #181823ec;
+        --black-transparent-09: #181823f0;
 
         --light-blue: #a6d1e6;
         --dark-blue: #06283d;
@@ -135,6 +134,7 @@ const { title, description, image } = Astro.props
         --black: #f3f4f6;
         --black-transparent-02: #f3f4f62a;
         --black-transparent-08: #f3f4f6f5;
+        --black-transparent-09: #f3f4f6f0;
 
         --light-blue: #06283d;
         --dark-blue: #a6d1e6;

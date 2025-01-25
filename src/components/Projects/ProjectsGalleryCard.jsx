@@ -1,6 +1,7 @@
 import './styles/projects-gallery-card.css'
-import { useEffect } from 'preact/hooks'
+import { useEffect, useRef } from 'preact/hooks'
 import { IconCode, IconDemo } from '../icons/icons'
+import { useImageDimensions } from '../hooks/useImageDimensions'
 
 export default function ProjectsGalleryCard({
   image,
@@ -10,36 +11,30 @@ export default function ProjectsGalleryCard({
   description,
   link_code,
   link_demo,
-  icons
+  icons,
+  highlight
 }) {
-  useEffect(() => {
-    const galleryInfo = document.querySelectorAll('.gallery__item-info')
-    const isMobile = window.matchMedia('(max-width: 768px)')
+  const cardRef = useRef(null)
 
-    const handleMediaChange = e => {
-      if (e.matches) {
-        galleryInfo.forEach(item => {
-          item.classList.add('opacity')
-        })
-      } else {
-        galleryInfo.forEach(item => {
-          item.classList.remove('opacity')
-        })
+  useEffect(() => {
+    const calculateSize = async () => {
+      const aspectRatio = await useImageDimensions(image)
+      const card = cardRef.current
+
+      if (card && aspectRatio > 1.5) {
+        card.classList.add('vertical')
       }
     }
 
-    handleMediaChange(isMobile)
-
-    isMobile.addEventListener('change', handleMediaChange)
-
-    return () => {
-      isMobile.removeEventListener('change', handleMediaChange)
-    }
-  }, [])
+    calculateSize()
+  }, [image])
 
   return (
     <>
-      <article class='projects__gallery-item'>
+      <article
+        ref={cardRef}
+        class={`projects__gallery-item ${highlight ? 'highlight' : ''}`}
+      >
         <img src={image} alt={image_alt} class='gallery__img' loading='lazy' />
         <div class='gallery__item-info'>
           <h4 class='item__title'>
