@@ -400,22 +400,27 @@ export function IconDemo() {
 
 export function IconArgentina() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 65 41'>
+    <svg
+      className='icon-argentina'
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      viewBox='0 0 65 41'
+    >
       <path fill='#1E50A0' d='M1.5 1.5h62v38h-62v-38Z' />
       <path fill='#fff' d='M1.5 1.5h62v38h-62v-38Z' />
       <path fill='#61B2E4' d='M1.5 26.5h62v13h-62v-13Zm0-25h62v13h-62v-13Z' />
       <path
         fill='#F1B31C'
         stroke='#F1B31C'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinecap='round'
+        strokeLinejoin='round'
         d='m32.5 18.397 1.236-1.897-.06 2.299 2.06-.771-1.334 1.822 2.098.65-2.098.65 1.334 1.822-2.06-.771.06 2.299-1.236-1.897-1.236 1.897.06-2.299-2.06.771 1.334-1.822-2.098-.65 2.098-.65-1.334-1.822 2.06.771-.06-2.299 1.236 1.897Z'
       />
       <path
         stroke='#000'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth='2'
         d='M1.5 1.5h62v38h-62v-38Z'
       />
     </svg>
