@@ -2,7 +2,8 @@
 import { IconContact } from './icons/icons'
 import { useTranslations } from '../i18n/utils'
 import { IconGmail } from './icons/icons'
-
+import { Image } from 'astro:assets'
+import contactImg from '/src/assets/main/contact-img.webp'
 const { currentLocale = 'es' } = Astro
 
 const t = useTranslations(currentLocale)
@@ -42,7 +43,7 @@ const t = useTranslations(currentLocale)
       </nav>
     </div>
     <div class='contact__img'>
-      <img src='/img/contact-img.webp' alt='contact-img' loading='lazy' />
+      <Image src={contactImg} alt='contact-img' width={500} quality={95} />
     </div>
   </article>
 </section>
@@ -76,6 +77,7 @@ const t = useTranslations(currentLocale)
   }
 
   .contact__img img {
+    width: fit-content;
     height: 100%;
     max-height: 450px;
     object-fit: cover;
@@ -163,6 +165,11 @@ const t = useTranslations(currentLocale)
       text-wrap: balance;
       word-break: break-all;
       gap: 0.25rem;
+    }
+
+    .contact__link {
+      padding: 0.5rem 1rem;
+      font-size: var(--step--1);
     }
   }
 </style>

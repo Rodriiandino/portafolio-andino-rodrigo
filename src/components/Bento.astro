@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import { useTranslations } from '../i18n/utils'
 import {
   IconGitHub,
@@ -7,6 +8,7 @@ import {
   IconTwitter,
   IconArgentina
 } from './icons/icons'
+import bentoImg from '/src/assets/main/bento-img.webp'
 
 const { currentLocale = 'es' } = Astro
 
@@ -64,10 +66,12 @@ const t = useTranslations(currentLocale)
     </footer>
   </article>
   <article class='bento__2 bento-item'>
-    <img
+    <Image
       class='bento__2-img'
-      src='/img/bento-img.webp'
+      src={bentoImg}
       alt='Retrato de Rodrigo Andino, morocho de ojos marrones, pelo corto y con una chomba negra'
+      width={500}
+      quality={95}
     />
   </article>
   <article class='bento__3 bento-item'>

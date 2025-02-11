@@ -67,6 +67,7 @@ const ogImage = image || new URL(`${Astro.site}og-image.png`).href
         alt={project.images[0].alt}
         id='img'
         loading='lazy'
+        decoding='async'
       />
     </div>
     <div class='project__aside-container'>

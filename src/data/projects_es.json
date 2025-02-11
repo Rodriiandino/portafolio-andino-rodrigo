@@ -1,5 +1,55 @@
 [
   {
+    "title": "Servicios Rimoldi - Sitio Web Corporativo",
+    "description": "Sitio web estático altamente optimizado para empresa de movimientos de suelos con más de 40 años de experiencia. Implementa las mejores prácticas de performance, accesibilidad y SEO, combinado con un diseño moderno y responsivo.",
+    "what_i_learned": [
+      "Desarrollo de sitios estáticos con Astro",
+      "Optimización de performance web (100/100 en PageSpeed Insights)",
+      "Implementación de animaciones eficientes con Intersection Observer API",
+      "Optimización avanzada de imágenes y assets",
+      "Diseño responsivo con TailwindCSS",
+      "TypeScript para type-safe development",
+      "Mejores prácticas de SEO técnico",
+      "Implementación de meta tags dinámicos",
+      "Estrategias de precarga de recursos",
+      "Configuración avanzada de build optimizado en Astro"
+    ],
+    "features": "Sitio Web Corporativo",
+    "date": "2025",
+    "technologies": [
+      "Astro",
+      "TailwindCSS",
+      "TypeScript",
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "status": "Completo",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://www.serviciosrimoldi.com/"
+    },
+    "github": "https://github.com/Rodriiandino/servicios-rimoldi",
+    "images": [
+      {
+        "src": "/projects/rimoldi/rimoldi_1.webp",
+        "alt": "Homepage - Vista principal"
+      },
+      {
+        "src": "/projects/rimoldi/rimoldi_2.webp",
+        "alt": "Mobile View - Diseño responsivo - datos de contacto"
+      },
+      {
+        "src": "/projects/rimoldi/rimoldi_3.webp",
+        "alt": "Maquinaria - Vista de productos"
+      },
+      {
+        "src": "/projects/rimoldi/rimoldi_4.webp",
+        "alt": "Servicios - Vista de servicios"
+      }
+    ]
+  },
+  {
     "title": "Vivero Irupe - Backend y Panel Administrativo",
     "description": "Backend completo y panel administrativo para la gestión de un vivero online. Incluye medidas de seguridad robustas, rendimiento optimizado y una interfaz rica en funcionalidades para la gestión de productos y usuarios.",
     "what_i_learned": [

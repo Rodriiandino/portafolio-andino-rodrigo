@@ -1,5 +1,55 @@
 [
   {
+    "title": "Servicios Rimoldi - Corporate Website",
+    "description": "Highly optimized static website for a soil movement company with over 40 years of experience. Implements best practices in performance, accessibility, and SEO, combined with a modern and responsive design.",
+    "what_i_learned": [
+      "Static site development with Astro",
+      "Web performance optimization (100/100 on PageSpeed Insights)",
+      "Implementation of efficient animations using Intersection Observer API",
+      "Advanced image and asset optimization",
+      "Responsive design with TailwindCSS",
+      "TypeScript for type-safe development",
+      "Best practices for technical SEO",
+      "Implementation of dynamic meta tags",
+      "Resource preloading strategies",
+      "Advanced configuration for optimized builds in Astro"
+    ],
+    "features": "Corporate Website",
+    "date": "2025",
+    "technologies": [
+      "Astro",
+      "TailwindCSS",
+      "TypeScript",
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "status": "Complete",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://www.serviciosrimoldi.com/"
+    },
+    "github": "https://github.com/Rodriiandino/servicios-rimoldi",
+    "images": [
+      {
+        "src": "/projects/rimoldi/rimoldi_1.webp",
+        "alt": "Homepage - Main view"
+      },
+      {
+        "src": "/projects/rimoldi/rimoldi_2.webp",
+        "alt": "Mobile View - Responsive design - Contact information"
+      },
+      {
+        "src": "/projects/rimoldi/rimoldi_3.webp",
+        "alt": "Machinery - Product view"
+      },
+      {
+        "src": "/projects/rimoldi/rimoldi_4.webp",
+        "alt": "Services - Services overview"
+      }
+    ]
+  },
+  {
     "title": "Vivero Irupe - Backend & Admin Panel",
     "description": "Comprehensive backend and admin panel for managing an online plant nursery. Includes robust security measures, optimized performance, and a feature-rich interface for product and user management.",
     "what_i_learned": [
