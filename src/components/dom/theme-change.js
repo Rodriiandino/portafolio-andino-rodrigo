@@ -1,29 +1,17 @@
 export default function themeChange() {
   const handleThemeLogic = () => {
     const $html = document.querySelector('html')
-    const $header = document.querySelector('#header')
-    const $nav = document.querySelector('#nav')
-    const $bento_9_img_dark = document.querySelector('.bento__9-img-dark')
-    const $bento_9_img_light = document.querySelector('.bento__9-img-light')
     const ls = localStorage
 
     const setThemeDark = () => {
       $html?.classList.add('dark')
       $html?.setAttribute('data-theme', 'dark')
-      $header?.setAttribute('data-theme', 'dark')
-      $nav?.setAttribute('data-theme', 'dark')
-      $bento_9_img_dark?.classList.remove('hidden')
-      $bento_9_img_light?.classList.add('hidden')
       ls.setItem('darkMode-portafolio-andino', 'true')
     }
 
     const setThemeLight = () => {
       $html?.classList.remove('dark')
       $html?.setAttribute('data-theme', 'light')
-      $header?.setAttribute('data-theme', 'light')
-      $nav?.setAttribute('data-theme', 'light')
-      $bento_9_img_dark?.classList.add('hidden')
-      $bento_9_img_light?.classList.remove('hidden')
       ls.setItem('darkMode-portafolio-andino', 'false')
     }
 

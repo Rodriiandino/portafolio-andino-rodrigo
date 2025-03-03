@@ -441,6 +441,30 @@
     ]
   },
   {
+    "title": "Conversor Universal de Unidades en Java",
+    "description": "Aplicación de conversión potente y versátil basada en Java que maneja sin problemas tasas de cambio de divisas en tiempo real, cálculos precisos de temperatura, conversiones exactas de tiempo y mediciones completas de área y longitud. Construida con JavaFX para una interfaz de usuario intuitiva, esta herramienta de conversión todo en uno integra datos de API de divisas en vivo para garantizar conversiones financieras actualizadas, mientras proporciona conversiones instantáneas sin conexión para unidades físicas. Perfecta para estudiantes, profesionales y cualquier persona que necesite conversiones de unidades rápidas y precisas.",
+    "what_i_learned": [
+      "Usar una API externa para obtener tasas de cambio actualizadas",
+      "Crear diseños con JavaFX",
+      "Mejorar mis habilidades de programación en Java"
+    ],
+    "features": "Aplicación de Escritorio",
+    "date": "2023",
+    "technologies": ["Java", "JavaFX"],
+    "status": "Completo",
+    "deploy": {
+      "page": "No Deploy",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/Challenge_One_Conversor_G5",
+    "images": [
+      {
+        "src": "/projects/conversor/conversor_1.webp",
+        "alt": "Converter"
+      }
+    ]
+  },
+  {
     "title": "Encriptador Texto | Cifrado de Mensajes",
     "description": "Innovadora aplicación web de encriptación que transforma mensajes en texto cifrado de forma segura y elegante. Desarrollada con tecnologías web modernas como parte del programa Oracle Next Education. Interfaz intuitiva que permite encriptar y desencriptar texto instantáneamente con animaciones fluidas y diseño responsive.",
     "what_i_learned": [

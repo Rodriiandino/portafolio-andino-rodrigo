@@ -441,6 +441,30 @@
     ]
   },
   {
+    "title": "Universal Java Unit Converter",
+    "description": "Powerful and versatile Java-based conversion application that seamlessly handles real-time currency exchange rates, precise temperature calculations, accurate time conversions, and comprehensive area and length measurements. Built with JavaFX for an intuitive user interface, this all-in-one converter tool integrates live currency API data to ensure up-to-date financial conversions while providing instant offline conversions for physical units. Perfect for students, professionals, and anyone needing quick, accurate unit conversions.",
+    "what_i_learned": [
+      "Use an external API to obtain updated exchange rates.",
+      "Create designs with JavaFX.",
+      "Improve my programming skills in Java."
+    ],
+    "features": "Desktop Application",
+    "date": "2023",
+    "technologies": ["Java", "JavaFX"],
+    "status": "Completed",
+    "deploy": {
+      "page": "Not Deployed",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/Challenge_One_Conversor_G5",
+    "images": [
+      {
+        "src": "/projects/conversor/conversor_1.webp",
+        "alt": "Converter"
+      }
+    ]
+  },
+  {
     "title": "Text Encryptor | Message Cipher",
     "description": "Innovative web encryption application that securely and elegantly transforms messages into ciphered text. Developed with modern web technologies as part of the Oracle Next Education program. Intuitive interface that allows instant text encryption and decryption with fluid animations and responsive design.",
     "what_i_learned": [

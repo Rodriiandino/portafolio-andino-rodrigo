@@ -15,15 +15,22 @@ const t = useTranslations(currentLocale)
 const changeLang = currentLocale === 'en' ? '' : 'en'
 ---
 
-<header class='header' data-theme='light' id='header'>
-  <a href='/' class='header__logo' aria-label='logo - go to home'>
+<header class='header' id='header'>
+  <a
+    href={`/${currentLocale === 'es' ? '' : 'en'}`}
+    class='header__logo'
+    aria-label='logo - go to home'
+  >
     <IconLogo />
     <IconLogoLight />
   </a>
   <nav class='header__nav'>
     <ul class='nav__lists'>
       <li class='list'>
-        <a href='/' aria-label='Go to home'>{t('nav.home')}</a>
+        <a
+          href={`/${currentLocale === 'es' ? '' : 'en'}`}
+          aria-label='Go to home'>{t('nav.home')}</a
+        >
       </li>
       <li class='list'>
         <a href='#experience' aria-label='Go to experience'
@@ -169,26 +176,6 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
   .utils__button:hover {
     box-shadow: var(--shadow-elevation-medium);
     transition: all 0.6s;
-  }
-
-  [data-theme='dark'] {
-    .icon-sun {
-      display: none;
-    }
-
-    .logo-light {
-      display: none;
-    }
-  }
-
-  [data-theme='light'] {
-    .icon-moon {
-      display: none;
-    }
-
-    .logo-dark {
-      display: none;
-    }
   }
 
   @media (max-width: 850px) {
