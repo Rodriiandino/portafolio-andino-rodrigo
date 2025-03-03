@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap'
 export default defineConfig({
   output: 'static',
   adapter: vercelAdapter(),
-  site: 'https://portafolio-andino-rodrigo.vercel.app/',
+  site: 'https://portafolio-andino-rodrigo.vercel.app',
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
@@ -21,7 +21,10 @@ export default defineConfig({
     sitemap({
       i18n: {
         defaultLocale: 'es',
-        locales: ['es', 'en']
+        locales: {
+          es: 'es-ES',
+          en: 'en-US'
+        }
       }
     })
   ]
