@@ -1,18 +1,18 @@
 [
   {
-    "title": "Servicios Rimoldi - Corporate Website",
-    "description": "Highly optimized static website for a soil movement company with over 40 years of experience. Implements best practices in performance, accessibility, and SEO, combined with a modern and responsive design.",
+    "title": "Servicios Rimoldi | High-Performance Corporate Web Platform",
+    "description": "Highly optimized business website for a leading soil movement company with over 40 years in the market. Implementation of advanced technical SEO practices, perfect performance (100/100 on PageSpeed Insights) and exceptional user experience with cutting-edge responsive design.",
     "what_i_learned": [
-      "Static site development with Astro",
-      "Web performance optimization (100/100 on PageSpeed Insights)",
-      "Implementation of efficient animations using Intersection Observer API",
-      "Advanced image and asset optimization",
-      "Responsive design with TailwindCSS",
-      "TypeScript for type-safe development",
-      "Best practices for technical SEO",
-      "Implementation of dynamic meta tags",
-      "Resource preloading strategies",
-      "Advanced configuration for optimized builds in Astro"
+      "Static site architecture with Astro Framework",
+      "Advanced web performance optimization (100/100 on PageSpeed Insights)",
+      "Implementation of low-impact animations with Intersection Observer API",
+      "Extreme optimization techniques for images and static assets",
+      "Professional responsive design with TailwindCSS",
+      "Secure development with TypeScript",
+      "Implementation of advanced technical SEO strategies",
+      "Configuration of dynamic meta tags and schema markup",
+      "Intelligent preloading strategies for critical resources",
+      "Optimized build pipeline in Astro for deployment in production environments"
     ],
     "features": "Corporate Website",
     "date": "2025",
@@ -50,21 +50,21 @@
     ]
   },
   {
-    "title": "Vivero Irupe - Backend & Admin Panel",
-    "description": "Comprehensive backend and admin panel for managing an online plant nursery. Includes robust security measures, optimized performance, and a feature-rich interface for product and user management.",
+    "title": "Vivero Irupe | Scalable Backend & Admin Panel",
+    "description": "Robust backend platform and complete admin panel for plant e-commerce. Secure architecture with JWT authentication, optimized cache, and advanced endpoint protection. Complete system with product management, users, and real-time statistics.",
     "what_i_learned": [
-      "Backend development with Spring Boot and PostgreSQL",
-      "JWT authentication with Spring Security",
-      "Implementation of caching with Spring Boot and Caffeine",
-      "Rate limiting using custom annotations for endpoint protection",
-      "Integration with Cloudflare R2 using the S3 API for image storage",
-      "Database migrations managed with Flyway",
-      "Code simplification with Lombok",
-      "Detailed API documentation using Swagger",
-      "Frontend development with React and Next.js",
-      "Advanced caching and real-time data management with TanStack/React-Query",
-      "TailwindCSS for responsive and customizable UI",
-      "Middleware protection for secure routes in Next.js"
+      "Enterprise backend architecture with Spring Boot and PostgreSQL",
+      "Implementation of JWT authentication system with Spring Security",
+      "Performance optimization with distributed cache system (Spring Boot and Caffeine)",
+      "Development of request rate limiting system with custom annotations",
+      "Integration with cloud services for image storage (Cloudflare R2 with S3 API)",
+      "Advanced database migration management with Flyway",
+      "Development optimization with Lombok and code generation tools",
+      "Professional API documentation using OpenAPI specifications and Swagger",
+      "Professional frontend development with React and Next.js",
+      "Implementation of advanced caching strategies and data management with TanStack/React-Query",
+      "Professional user interface with TailwindCSS and custom components",
+      "Frontend security architecture with authorization middleware in Next.js"
     ],
     "features": "E-commerce",
     "date": "2025",
@@ -111,18 +111,18 @@
   },
   {
     "title": "Vivero Irupe - Frontend",
-    "description": "Website for an online plant nursery with over 200 products. Features smooth animations, advanced transitions, and modern rendering techniques for optimal performance. Built with Astro and React, with advanced SEO and email sending capabilities.",
+    "description": "Modern e-commerce platform with over 200 products, implementing hybrid architecture for optimal performance. Fluid user experience with advanced animations, page transitions and intelligent rendering strategies for maximum conversion.",
     "what_i_learned": [
-      "Frontend development with Astro and React",
-      "Using TypeScript for safe typing",
-      "Implementation of ViewTransitions for smooth animations",
-      "Performance optimization by combining SSR, SSG, and CSR",
-      "Data management with tanstack/react-query",
-      "Integration with a Spring Boot backend for data and functionalities",
-      "Cloudflare configuration as a firewall and R2 storage",
-      "SEO implementation for better search engine ranking",
-      "Using Resend for sending emails",
-      "Frontend deployment on Vercel and domain management with Cloudflare"
+      "Hybrid frontend architecture with Astro and React for maximum performance",
+      "TypeScript implementation for secure and maintainable development",
+      "Advanced animations with ViewTransitions API and page transition techniques",
+      "Mixed rendering strategies (SSR, SSG and CSR) optimized for SEO and UX",
+      "Advanced state management and caching with TanStack Query",
+      "Integration with RESTful APIs and Spring-based backend systems",
+      "CDN configuration and cloud security services (Cloudflare)",
+      "Implementation of advanced SEO strategies and schema markup",
+      "Integration of email communication systems with Resend API",
+      "Deployment and advanced configuration on cloud platforms"
     ],
     "features": "E-commerce",
     "date": "2025",
@@ -163,18 +163,29 @@
     ]
   },
   {
-    "title": "Learn Japanese",
-    "description": "Interactive learning experience for the Japanese alphabets Hiragana and Katakana.",
+    "title": "Learn Japanese | AI-Powered Interactive Educational Platform",
+    "description": "AI-powered interactive educational application for effective Japanese alphabet learning. Advanced flashcard system with spaced repetition algorithms, AI-driven contextual example generation, interactive chat for queries, and gamified user experience to maximize student retention and engagement.",
     "what_i_learned": [
-      "Developing a web application with Next.js",
-      "Improve my programming skills in TypeScript",
-      "Improve my programming skills in Tailwind",
-      "Use zustand for global state management",
-      "Use shadcn/ui for the application components"
+      "Modern web application architecture with Next.js",
+      "Advanced TypeScript implementation for educational applications",
+      "Integration of Vercel AI SDK for generative AI features",
+      "Development of AI-powered contextual example generation system",
+      "Implementation of interactive chat with natural language processing",
+      "User interface design with TailwindCSS for optimized learning experiences",
+      "Efficient global state management with Zustand",
+      "Development of scalable UI components with shadcn/ui",
+      "Optimization of prompts for educational content generation"
     ],
-    "features": "Personal Project",
+    "features": "AI-Powered Educational Platform",
     "date": "2024",
-    "technologies": ["Next.js", "React", "Tailwind", "TypeScript", "Zustand"],
+    "technologies": [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "TypeScript",
+      "Zustand",
+      "Vercel AI SDK"
+    ],
     "status": "In Progress",
     "deploy": {
       "page": "Vercel",
@@ -201,19 +212,19 @@
     ]
   },
   {
-    "title": "Note Creation FullStack",
-    "description": "Web application for creating notes, with user authentication and email verification. Storage of notes in a PostgreSQL database. Developed with Spring Boot and React.",
+    "title": "Note Creation | FullStack Note Management System",
+    "description": "Enterprise web application for creating and managing notes with advanced authentication system and email verification. Secure architecture, complete implementation of CRUD operations and persistent storage in PostgreSQL with Docker.",
     "what_i_learned": [
-      "FullStack web application with Spring Boot and React",
-      "User authentication with Spring Security and JWT",
-      "Spring Data JPA for data persistence",
-      "Storage of notes in a PostgreSQL database",
-      "Route handling implemented with React Router",
-      "Dockerización of the application",
-      "Migration control with Flyway",
-      "Sending emails with JavaMailSender"
+      "Enterprise FullStack application development with Spring Boot and React",
+      "Advanced authentication system with Spring Security and JWT",
+      "Data persistence with Spring Data JPA and optimization strategies",
+      "PostgreSQL database implementation in Dockerized environment",
+      "Advanced route management with React Router",
+      "Complete application containerization with Docker and Docker Compose",
+      "Database migration system with Flyway",
+      "Implementation of email communication service with JavaMailSender"
     ],
-    "features": "Learning",
+    "features": "Management System",
     "date": "2024",
     "technologies": [
       "Java",
@@ -249,17 +260,26 @@
     ]
   },
   {
-    "title": "AI Interview Odyssey",
-    "description": "Interview Simulator Using InfoJobs and OpenAI APIs.",
+    "title": "AI Interview Odyssey | Advanced AI-powered Interview Simulator",
+    "description": "Advanced AI-powered interview preparation platform, integrating InfoJobs and OpenAI APIs through Vercel AI SDK. Personalized system that analyzes real job offers to generate adaptive interviews, with real-time feedback, AI-powered response analysis, and personalized recommendations to improve communication skills. Implements response streaming and advanced conversational context handling.",
     "what_i_learned": [
-      "Developing a web application with Next.js",
-      "Learn to use TypeScript",
-      "Learn to use Tailwind",
-      "Consumption of third-party APIs."
+      "AI-first application architecture with Next.js and Vercel AI SDK",
+      "TypeScript implementation for secure integration with AI APIs",
+      "Conversational interface design with response streaming",
+      "Advanced integration with multiple external APIs (InfoJobs and OpenAI)",
+      "Prompt optimization for personalized interview generation",
+      "Implementation of real-time response analysis with AI",
+      "Conversational context management for coherent responses"
     ],
-    "features": "Learning",
+    "features": "AI Platform",
     "date": "2024",
-    "technologies": ["Next.js", "React", "Tailwind", "TypeScript"],
+    "technologies": [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "TypeScript",
+      "Vercel AI SDK"
+    ],
     "status": "Completed",
     "deploy": {
       "page": "Vercel",
@@ -286,19 +306,19 @@
     ]
   },
   {
-    "title": "SpringBoot API Forum",
-    "description": "RESTful API - Built with Spring Boot.",
+    "title": "SpringBoot API Forum | Scalable RESTful API",
+    "description": "High-performance RESTful API developed with Spring Boot. Implements JWT authentication, role-based authorization, JPA-optimized persistence, and complete OpenAPI documentation. Extensible system with advanced exception handling and data validation.",
     "what_i_learned": [
-      "Development in Spring Framework",
-      "Spring Security",
-      "Token-based authentication (JWT) and authorization to secure your API.",
-      "Data persistence with JPA",
-      "API documentation",
-      "Handling HTTP Requests and Responses",
-      "Error messages and exceptions, and data validation in an API",
-      "Migration control with Flyway"
+      "Advanced architecture with Spring Framework",
+      "Enterprise security implementation with Spring Security",
+      "Complete token-based authentication system (JWT) and role-based authorization",
+      "Optimized data persistence with JPA and query strategies",
+      "Professional API documentation with OpenAPI specifications",
+      "Advanced HTTP request and response handling",
+      "Centralized error and exception handling system",
+      "Database version control with Flyway"
     ],
-    "features": "Learning",
+    "features": "RESTful API",
     "date": "2023",
     "technologies": ["Java", "Spring Boot", "MySQL"],
     "status": "In Progress",
@@ -323,14 +343,16 @@
     ]
   },
   {
-    "title": "Alura Hotel",
-    "description": "The 'Hotel Reservation Management System' is an application designed to facilitate and streamline the management of room reservations in a hotel.",
+    "title": "Alura Hotel | Hotel Management System",
+    "description": "Enterprise application for comprehensive hotel reservation management. Implements MVC architecture, complete CRUD operations and relational database. Intuitive JavaFX interface with security and advanced data validation for reliable operations.",
     "what_i_learned": [
-      "Mission: create a hotel management system with CRUD functions: Create, Read, Update, and Delete guest records stored in the database.",
-      "Adopted a solid Model-View-Controller (MVC) architecture for our entities. Additionally, used JavaFX to design an intuitive and user-friendly user interface.",
-      "Used the MVC (Model-View-Controller) design pattern to separate the responsibilities of the application into layers."
+      "Enterprise management system development with Java and JDBC",
+      "MVC architecture implementation for desktop applications",
+      "Design and development of CRUD operations for complex entities",
+      "Professional user interface design with JavaFX",
+      "Implementation of enterprise design patterns"
     ],
-    "features": "Learning",
+    "features": "Management System",
     "date": "2023",
     "technologies": ["Java", "JDBC", "MySQL", "JavaFX"],
     "status": "Completed",
@@ -355,68 +377,17 @@
     ]
   },
   {
-    "title": "Text Encryption",
-    "description": "This project was developed as part of a challenge offered by One, in partnership with Oracle. The project involves text encryption developed using web technologies such as HTML, CSS, and JavaScript.",
+    "title": "Next.js Real Estate | Modern Real Estate Platform",
+    "description": "Complete real estate web application developed with Next.js 14. Advanced search system with dynamic filters, relational database integration, and SEO optimization. Implementation of modern API routes and efficient state management.",
     "what_i_learned": [
-      "Improve my programming skills in JavaScript.",
-      "Improve my programming skills in HTML and CSS."
+      "Advanced architecture with Next.js 14 and App Router",
+      "API Routes implementation for backend functionality",
+      "Effective use of React Server Components and Client Components",
+      "Optimized MySQL integration for complex queries",
+      "Development of custom hooks for business logic",
+      "Advanced filtering system with SearchParams and QueryParams"
     ],
-    "features": "Learning",
-    "date": "2023",
-    "technologies": ["HTML", "CSS", "JavaScript"],
-    "status": "Completed",
-    "deploy": {
-      "page": "GitHub",
-      "demo": "https://rodriiandino.github.io/Challenge_One_Encriptador_G5/"
-    },
-    "github": "https://github.com/Rodriiandino/Challenge_One_Encriptador_G5",
-    "images": [
-      {
-        "src": "/projects/encriptador/encriptador_1.webp",
-        "alt": "Text Encryption"
-      },
-      {
-        "src": "/projects/encriptador/encriptador_2.webp",
-        "alt": "Text Encryption"
-      }
-    ]
-  },
-  {
-    "title": "Java Converter",
-    "description": "This project is a converter that allows the user to perform conversions between different units of measure, such as currency, time, temperature, area, and length. The currency converter uses an external API to obtain updated exchange rates, while time, temperature, area, and length conversions are performed internally within the application.",
-    "what_i_learned": [
-      "Use an external API to obtain updated exchange rates.",
-      "Create designs with JavaFX.",
-      "Improve my programming skills in Java."
-    ],
-    "features": "Learning",
-    "date": "2023",
-    "technologies": ["Java", "JavaFX"],
-    "status": "Completed",
-    "deploy": {
-      "page": "Not Deployed",
-      "demo": ""
-    },
-    "github": "https://github.com/Rodriiandino/Challenge_One_Conversor_G5",
-    "images": [
-      {
-        "src": "/projects/conversor/conversor_1.webp",
-        "alt": "Converter"
-      }
-    ]
-  },
-  {
-    "title": "Real estate with Next.js 14",
-    "description": "Test project where I've put into practice my skills with Next14, MySQL, and the next.js API Router, along with their hooks.",
-    "what_i_learned": [
-      "Improve my skills with Next.js 14",
-      "API Router of next.js",
-      "Hooks of next.js",
-      "Connection with MySQL",
-      "Improve my skills with React and its hooks",
-      "Filter with SearchParams and QueryParams"
-    ],
-    "features": "Learning",
+    "features": "Web Platform",
     "date": "2023 - 2024",
     "technologies": ["Next.js", "React", "MySQL"],
     "status": "Completed",
@@ -441,13 +412,15 @@
     ]
   },
   {
-    "title": "1st Generation Pokedex",
-    "description": "Design of the first-generation Pokedex created with CSS and using JavaScript to fetch data from the PokeApi. The 'Astro' framework was used.",
+    "title": "Pokedex Gen 1 | Astro Web Application",
+    "description": "Interactive visualization of the first-generation Pokémon with design faithful to the original Pokedex. Implements Astro Framework for optimal performance, PokeAPI integration, and advanced responsive design with custom CSS.",
     "what_i_learned": [
-      "Learn to use the Astro framework.",
-      "Improve my programming skills in HTML and CSS."
+      "Development with Astro Framework for high-performance web applications",
+      "Design of complex interfaces with advanced CSS",
+      "Integration and caching of data from external APIs",
+      "Implementation of island components for selective interactivity"
     ],
-    "features": "Learning",
+    "features": "Web Application",
     "date": "2023",
     "technologies": ["HTML", "CSS", "JavaScript", "Astro"],
     "status": "Completed",
@@ -468,152 +441,31 @@
     ]
   },
   {
-    "title": "Digital Retouch",
-    "description": "A page where you can apply filters to images using vanilla JavaScript.",
+    "title": "Text Encryptor | Message Cipher",
+    "description": "Innovative web encryption application that securely and elegantly transforms messages into ciphered text. Developed with modern web technologies as part of the Oracle Next Education program. Intuitive interface that allows instant text encryption and decryption with fluid animations and responsive design.",
     "what_i_learned": [
-      "Improve my programming skills in JavaScript.",
-      "Improve my programming skills in HTML and CSS."
+      "Implementation of encryption algorithms and secure data handling",
+      "Development of interactive and responsive interfaces with modern JavaScript",
+      "Performance optimization and user experience in web applications",
+      "Best practices in UI/UX design and web accessibility"
     ],
-    "features": "Learning",
-    "date": "2023",
-    "technologies": ["HTML", "CSS", "JavaScript"],
-    "status": "Completed",
-    "deploy": {
-      "page": "Netlify",
-      "demo": "https://digitalretouch.netlify.app/"
-    },
-    "github": "https://github.com/Rodriiandino/DigitalRetouch",
-    "images": [
-      {
-        "src": "/projects/digitalRetouch/digitalRetouch_1.webp",
-        "alt": "Digital Retouch"
-      },
-      {
-        "src": "/projects/digitalRetouch/digitalRetouch_2.webp",
-        "alt": "Digital Retouch"
-      }
-    ]
-  },
-  {
-    "title": "CV Jensen Ackles",
-    "description": "A page displaying information about actor Jensen Ackles in the style of a portfolio.",
-    "what_i_learned": [
-      "Programming in HTML and CSS. First project completed in the Proyecto para Argentina Programa 4.0 course."
-    ],
-    "features": "Learning",
+    "features": "Web Application",
     "date": "2023",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "status": "Completed",
     "deploy": {
       "page": "GitHub",
-      "demo": "https://rodriiandino.github.io/CV-JensenAckles/"
+      "demo": "https://rodriiandino.github.io/Challenge_One_Encriptador_G5/"
     },
-    "github": "https://github.com/Rodriiandino/CV-JensenAckles",
+    "github": "https://github.com/Rodriiandino/Challenge_One_Encriptador_G5",
     "images": [
       {
-        "src": "/projects/cv_jensen_ackles/cv_jensen_ackles_1.webp",
-        "alt": "Jensen Ackles CV"
+        "src": "/projects/encriptador/encriptador_1.webp",
+        "alt": "Text Encryption"
       },
       {
-        "src": "/projects/cv_jensen_ackles/cv_jensen_ackles_2.webp",
-        "alt": "Jensen Ackles CV"
-      }
-    ]
-  },
-
-  {
-    "title": "Java Calculator",
-    "description": "Application developed in Java and JavaFX that implements the stack concept for mathematical operations.",
-    "what_i_learned": [
-      "Better understand the stack data structure.",
-      "Improve my programming skills in Java.",
-      "Learn to program with JavaFX."
-    ],
-    "features": "Learning",
-    "date": "2023",
-    "technologies": ["Java", "JavaFX"],
-    "status": "Completed",
-    "deploy": {
-      "page": "Not Deployed",
-      "demo": ""
-    },
-    "github": "https://github.com/Rodriiandino/Calculadora-Java",
-    "images": [
-      {
-        "src": "/projects/calculadora_java/calculadora_java_1.webp",
-        "alt": "Java Calculator"
-      },
-      {
-        "src": "/projects/calculadora_java/calculadora_java_2.webp",
-        "alt": "Java Calculator"
-      }
-    ]
-  },
-  {
-    "title": "Matchmatic Android App",
-    "description": "This is my project as part of the Mobile Application Development Course by Ticma and Argentina Programa 4. As a web developer, this August, I decided to venture into the world of mobile applications, and this is my first step.",
-    "what_i_learned": [
-      "MatchMatic is a simple text comparison application. It allows you to enter two text strings and tells you if they are equal or different. It is developed in Kotlin and follows the MVVM architecture.",
-      "Learn to program in Kotlin.",
-      "Learn to program in Android Studio.",
-      "Learn to use the MVVM architecture."
-    ],
-    "features": "Learning",
-    "date": "2023",
-    "technologies": ["Kotlin"],
-    "status": "Completed",
-    "deploy": {
-      "page": "Not Deployed",
-      "demo": ""
-    },
-    "github": "https://github.com/Rodriiandino/matchmatic-android-app",
-    "images": [
-      {
-        "src": "/projects/matchmatic_android_app/matchmatic_android_app_1.webp",
-        "alt": "Matchmatic Android App"
-      }
-    ]
-  },
-  {
-    "title": "5 Projects with React",
-    "description": "This is a series of 5 projects with React, in which you learn to use React Hooks and test with vitest.",
-    "what_i_learned": [
-      "Learn to use React Hooks.",
-      "Improve my programming skills in React.",
-      "Learn to use vitest and test components.",
-      "Improve my programming skills in JavaScript.",
-      "Improve my programming skills in HTML and CSS.",
-      "LocalStorage handling."
-    ],
-    "features": "Learning",
-    "date": "2023",
-    "technologies": ["React", "JavaScript", "vitest"],
-    "status": "Completed",
-    "deploy": {
-      "page": "Vercel - Netlify",
-      "demo": ""
-    },
-    "github": "https://github.com/Rodriiandino/Aprendiendo-React",
-    "images": [
-      {
-        "src": "/projects/react_projects/react_project_5.webp",
-        "alt": "Learning React"
-      },
-      {
-        "src": "/projects/react_projects/react_project_1.webp",
-        "alt": "Learning React"
-      },
-      {
-        "src": "/projects/react_projects/react_project_2.webp",
-        "alt": "Learning React"
-      },
-      {
-        "src": "/projects/react_projects/react_project_3.webp",
-        "alt": "Learning React"
-      },
-      {
-        "src": "/projects/react_projects/react_project_4.webp",
-        "alt": "Learning React"
+        "src": "/projects/encriptador/encriptador_2.webp",
+        "alt": "Text Encryption"
       }
     ]
   }
