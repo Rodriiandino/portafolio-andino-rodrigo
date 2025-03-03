@@ -2,14 +2,16 @@
 import { ClientRouter } from 'astro:transitions'
 const { currentLocale = 'es' } = Astro
 import '@fontsource-variable/onest'
+import SEO from '../components/SEO.astro'
 
 interface Props {
   title: string
   description: string
-  image: string
+  canonical?: string
+  image?: string
 }
 
-const { title, description, image } = Astro.props
+const { title, description, canonical, image } = Astro.props
 ---
 
 <script>
@@ -36,27 +38,14 @@ const { title, description, image } = Astro.props
         document.documentElement.setAttribute('data-theme', theme)
       })()
     </script>
-
-    <meta charset='UTF-8' />
-    <meta name='description' content={description} />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
-    <title>{title}</title>
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      image={image}
+    />
     <ClientRouter />
-
-    <link rel='sitemap' href='/sitemap-index.xml' />
-    <meta property='og:type' content='website' />
-    <meta property='og:url' content={Astro.url} />
-    <meta property='og:title' content={title} />
-    <meta property='og:description' content={description} />
-    <meta property='og:image' content={new URL(image, Astro.url)} />
-
-    <meta property='twitter:card' content='summary_large_image' />
-    <meta property='twitter:url' content={Astro.url} />
-    <meta property='twitter:title' content={title} />
-    <meta property='twitter:description' content={description} />
-    <meta property='twitter:image' content={new URL(image, Astro.url)} />
   </head>
   <body id='home'>
     <slot />

@@ -10,11 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^4.0.3",
+    "@astrojs/preact": "^4.0.5",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/vercel": "^8.0.3",
+    "@astrojs/vercel": "^8.1.0",
     "@fontsource-variable/onest": "^5.1.1",
-    "astro": "^5.1.8",
+    "astro": "^5.4.1",
     "preact": "^10.25.4"
   },
   "devDependencies": {

@@ -16,16 +16,18 @@ const project = (() => {
   return projects.find(project => convertTitleToURL(project.title) === title)
 })()
 
-interface Props {
-  image?: string
-}
+const seoTitle =
+  currentLocale === 'es'
+    ? `${project.title} | ${project.technologies.slice(0, 3).join(', ')} | Portfolio de Rodrigo Andino`
+    : `${project.title} | ${project.technologies.slice(0, 3).join(', ')} | Rodrigo Andino's Portfolio`
 
-const { image } = Astro.props
-
-const ogImage = image || new URL(`${Astro.site}og-image.png`).href
+const seoDescription =
+  currentLocale === 'es'
+    ? `Proyecto: ${project.title}. ${project.description} Desarrollado con ${project.technologies.join(', ')}. Estado: ${project.status}. Ver código y demo del proyecto.`
+    : `Project: ${project.title}. ${project.description} Built with ${project.technologies.join(', ')}. Status: ${project.status}. View code and demo of the project.`
 ---
 
-<Layout title={project.title} description={project.description} image={ogImage}>
+<Layout title={seoTitle} description={seoDescription}>
   <main class='project__page'>
     <div class='project__buttons'>
       <div class='buttons__container'>

@@ -13,30 +13,22 @@ const { currentLocale = 'es' } = Astro
 
 const locales = {
   es: {
-    title: 'Andino-Rodrigo | Portafolio',
+    title:
+      'Rodrigo Andino | Desarrollador Full Stack | React, TypeScript, Java',
     description:
-      'Contrata a un desarrollador web con conocimiento en tecnologías modernas y buenas prácticas, y con experiencia en trabajos en entornos criticos.'
+      'Desarrollador Full Stack con experiencia en React, TypeScript, Next.js y Spring Boot. Especializado en crear aplicaciones web modernas y escalables. Más de 1 año de experiencia en desarrollo web y soluciones tecnológicas innovadoras.'
   },
   en: {
-    title: 'Andino-Rodrigo | Portfolio',
+    title: 'Rodrigo Andino | Full Stack Developer | React, TypeScript, Java',
     description:
-      'Hire a web developer with knowledge in modern technologies and best practices, and with experience in critical environments.'
+      'Full Stack Developer specialized in React, TypeScript, Next.js and Spring Boot. Expert in building modern and scalable web applications. Over 1 year of experience in web development and innovative technological solutions.'
   }
 }
-
-interface Props {
-  image?: string
-}
-
-const { image } = Astro.props
-
-const ogImage = image || new URL(`${Astro.site}og-image.png`).href
 ---
 
 <Layout
   title={locales[currentLocale].title}
   description={locales[currentLocale].description}
-  image={ogImage}
 >
   <Header />
   <main>
