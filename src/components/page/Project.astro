@@ -29,6 +29,29 @@ const seoDescription =
 
 <Layout title={seoTitle} description={seoDescription}>
   <main class='project__page'>
+    <div class='back-button-container'>
+      <a
+        href='javascript:history.back()'
+        class='back-button'
+        title={currentLocale === 'es' ? 'Volver' : 'Go back'}
+      >
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke-width='2'
+          stroke='currentColor'
+          class='w-6 h-6'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            d='M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18'></path>
+        </svg>
+        <span>{currentLocale === 'es' ? 'Volver' : 'Back'}</span>
+      </a>
+    </div>
+
     <div class='project__buttons'>
       <div class='buttons__container'>
         <button class='project__image-button' id='button-left'
@@ -352,6 +375,38 @@ const seoDescription =
     height: 100dvh;
   }
 
+  .back-button-container {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 200;
+  }
+
+  .back-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid var(--sky-blue);
+  }
+
+  .back-button:hover {
+    background-color: var(--dark-blue);
+    transform: translateX(-5px);
+  }
+
+  .back-button svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: var(--light-blue);
+  }
+
   .project__image {
     position: fixed;
     inset: 0;
@@ -363,13 +418,20 @@ const seoDescription =
   }
 
   .project__image img {
-    max-width: 700px;
-    max-height: 700px;
+    max-width: fit-content;
+    max-height: 550px;
     width: 100%;
     height: 100%;
     transform: translateX(-208.558px) translateY(0px) translateZ(0px);
     transition: all 0.3s ease-in-out;
     object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .project__image img:hover {
+    transform: translateX(-208.558px) translateY(0px) translateZ(0px)
+      scale(1.02);
   }
 
   .project__buttons {
@@ -543,6 +605,16 @@ const seoDescription =
   }
 
   @media (max-width: 1100px) {
+    .back-button-container {
+      top: 1rem;
+      left: 1rem;
+    }
+
+    .back-button {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+
     .project__buttons {
       bottom: 6.5rem;
       right: 0;
@@ -561,8 +633,15 @@ const seoDescription =
     }
 
     .project__image img {
+      height: fit-content;
       transform: none;
       transition: all 0.3s ease-in-out;
+      max-width: fit-content;
+      margin: 0 auto;
+    }
+
+    .project__image img:hover {
+      transform: scale(1.02);
     }
 
     .project__aside-container {
@@ -623,6 +702,14 @@ const seoDescription =
   }
 
   @media (max-width: 480px) {
+    .back-button span {
+      display: none;
+    }
+
+    .back-button {
+      padding: 0.4rem;
+    }
+
     .project__aside {
       padding: 1rem 1.3rem;
       min-width: fit-content;
