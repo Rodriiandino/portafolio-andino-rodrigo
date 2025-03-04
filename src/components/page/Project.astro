@@ -16,6 +16,32 @@ const project = (() => {
   return projects.find(project => convertTitleToURL(project.title) === title)
 })()
 
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/projects/**/*',
+  { eager: true }
+)
+
+function getImagePath(fileName: string | undefined) {
+  if (!fileName) return null
+
+  let normalizedPath = fileName
+
+  if (normalizedPath.startsWith('/projects/')) {
+    normalizedPath = normalizedPath.substring('/projects/'.length)
+  }
+
+  const path = `/src/assets/projects/${normalizedPath}`
+
+  const imageModule = images[path]
+
+  if (!imageModule) {
+    console.error(`Image not found: ${path}`)
+    return null
+  }
+
+  return imageModule.default
+}
+
 const seoTitle =
   currentLocale === 'es'
     ? `${project.title} | ${project.technologies.slice(0, 3).join(', ')} | Portfolio de Rodrigo Andino`
@@ -66,7 +92,7 @@ const seoDescription =
             <path
               stroke-linecap='round'
               stroke-linejoin='round'
-              d='M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18'></path>
+              d='M6.75 15.75 3 12m0 0l3.75-3.75M3 12h18'></path>
           </svg>
         </button>
         <button class='project__image-button' id='button-right'
@@ -86,14 +112,30 @@ const seoDescription =
         </button>
       </div>
     </div>
-    <div class='project__image'>
-      <img
-        src={project.images[0].src}
-        alt={project.images[0].alt}
-        id='img'
-        loading='lazy'
-        decoding='async'
-      />
+    <div class='project__image' id='my-gallery'>
+      {
+        project.images.map((image, index) => {
+          const imgPath = getImagePath(image.src)
+          return (
+            <a
+              href={imgPath.src}
+              data-cropped='true'
+              data-pswp-width={imgPath.width}
+              data-pswp-height={imgPath.height}
+              class={index === 0 ? 'gallery-item active' : 'gallery-item'}
+              style={index === 0 ? '' : 'display: none;'}
+            >
+              <img
+                src={imgPath.src}
+                alt={image.alt}
+                id={`img-${index}`}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding='async'
+              />
+            </a>
+          )
+        })
+      }
     </div>
     <div class='project__aside-container'>
       <div class='aside__move-top'>
@@ -177,550 +219,594 @@ const seoDescription =
       </aside>
     </div>
   </main>
-</Layout>
 
-<script>
-  import projects_es from '../../data/projects_es.json'
-  import projects_en from '../../data/projects_en.json'
+  <script>
+    import projects_es from '../../data/projects_es.json'
+    import projects_en from '../../data/projects_en.json'
 
-  const handleProjectLogic = () => {
-    const $html = document.querySelector('html') as HTMLHtmlElement
-    const $moveTop = document.querySelector(
-      '.aside__move-top'
-    ) as HTMLDivElement
-    const $asideContainer = document.querySelector(
-      '.project__aside-container'
-    ) as HTMLDivElement
-    const $projectImage = document.querySelector(
-      '.project__image'
-    ) as HTMLDivElement
-    const $img = document.querySelector('#img') as HTMLImageElement
-    const $buttonsContainer = document.querySelector(
-      '.buttons__container'
-    ) as HTMLDivElement
-    const $buttonLeft = document.querySelector(
-      '#button-left'
-    ) as HTMLButtonElement
-    const $buttonRight = document.querySelector(
-      '#button-right'
-    ) as HTMLButtonElement
-    const $title = document.querySelector('#title') as HTMLHeadingElement
+    const handleProjectLogic = () => {
+      const $html = document.querySelector('html') as HTMLHtmlElement
+      const $moveTop = document.querySelector(
+        '.aside__move-top'
+      ) as HTMLDivElement
+      const $asideContainer = document.querySelector(
+        '.project__aside-container'
+      ) as HTMLDivElement
+      const $projectImage = document.querySelector(
+        '.project__image'
+      ) as HTMLDivElement
+      const $buttonsContainer = document.querySelector(
+        '.buttons__container'
+      ) as HTMLDivElement
+      const $buttonLeft = document.querySelector(
+        '#button-left'
+      ) as HTMLButtonElement
+      const $buttonRight = document.querySelector(
+        '#button-right'
+      ) as HTMLButtonElement
+      const $title = document.querySelector('#title') as HTMLHeadingElement
 
-    if (
-      !$html ||
-      !$moveTop ||
-      !$asideContainer ||
-      !$projectImage ||
-      !$img ||
-      !$buttonsContainer ||
-      !$buttonLeft ||
-      !$buttonRight ||
-      !$title
-    ) {
-      return
-    }
-
-    const breakpoint = window.matchMedia('(max-width: 1100px)')
-    let translate = 0
-    let currentImg = 0
-
-    const adjustAsideHeight = () => {
-      if (window.innerWidth > 1100) return
-      const windowHeight = window.innerHeight
-      const asideHeight = $asideContainer.scrollHeight
-
-      if (asideHeight > windowHeight) {
-        $asideContainer.style.height = `100%`
-        $asideContainer.style.overflowY = 'auto'
-      } else {
-        $asideContainer.style.maxHeight = 'none'
-        $asideContainer.style.overflowY = 'hidden'
+      if (
+        !$html ||
+        !$moveTop ||
+        !$asideContainer ||
+        !$projectImage ||
+        !$buttonsContainer ||
+        !$buttonLeft ||
+        !$buttonRight ||
+        !$title
+      ) {
+        return
       }
-    }
 
-    const updateProjectImg = (def = true) => {
-      if (def) {
-        $projectImage.style.cursor = 'default'
-        $projectImage.style.backdropFilter = 'none'
-        $img.style.filter = 'none'
-        $projectImage.style.userSelect = 'auto'
-      } else {
-        $projectImage.style.cursor = 'pointer'
-        $projectImage.style.backdropFilter = 'saturate(100%) brightness(60%)'
-        $img.style.filter = 'saturate(100%) brightness(60%)'
-        $projectImage.style.userSelect = 'none'
-      }
-    }
+      const breakpoint = window.matchMedia('(max-width: 1100px)')
+      let translate = 0
+      let currentImg = 0
 
-    const handleMoveTopClick = () => {
-      if (translate == 0) {
-        updateProjectImg(false)
-        $asideContainer.style.transform = `translateY(${translate}%)`
-        translate = 90
-      } else {
-        updateProjectImg()
-        $asideContainer.style.transform = `translateY(${translate}%)`
-        translate = 0
+      const adjustAsideHeight = () => {
+        if (window.innerWidth > 1100) return
+        const windowHeight = window.innerHeight
+        const asideHeight = $asideContainer.scrollHeight
+
+        if (asideHeight > windowHeight) {
+          $asideContainer.style.height = `100%`
+          $asideContainer.style.overflowY = 'auto'
+        } else {
+          $asideContainer.style.maxHeight = 'none'
+          $asideContainer.style.overflowY = 'hidden'
+        }
       }
+
+      const updateProjectImg = (def = true) => {
+        if (def) {
+          $projectImage.style.cursor = 'default'
+          $projectImage.style.backdropFilter = 'none'
+          const activeImg = $projectImage.querySelector(
+            '.gallery-item.active img'
+          )
+          if (activeImg) {
+            ;(activeImg as HTMLElement).style.filter = 'none'
+          }
+          $projectImage.style.userSelect = 'auto'
+        } else {
+          $projectImage.style.cursor = 'pointer'
+          $projectImage.style.backdropFilter = 'saturate(100%) brightness(60%)'
+          const activeImg = $projectImage.querySelector(
+            '.gallery-item.active img'
+          )
+          if (activeImg) {
+            ;(activeImg as HTMLElement).style.filter =
+              'saturate(100%) brightness(60%)'
+          }
+          $projectImage.style.userSelect = 'none'
+        }
+      }
+
+      const handleMoveTopClick = () => {
+        if (translate == 0) {
+          updateProjectImg(false)
+          $asideContainer.style.transform = `translateY(${translate}%)`
+          translate = 90
+        } else {
+          updateProjectImg()
+          $asideContainer.style.transform = `translateY(${translate}%)`
+          translate = 0
+        }
+        adjustAsideHeight()
+      }
+
+      const handleProjectImageClick = () => {
+        if (translate == 90) {
+          updateProjectImg()
+          $asideContainer.style.transform = `translateY(${translate}%)`
+          translate = 0
+        }
+        adjustAsideHeight()
+      }
+
+      const handleBreakpointChange = (e: MediaQueryListEvent) => {
+        if (e.matches) {
+          updateProjectImg()
+          $asideContainer.style.transform = `translateY(90%)`
+          translate = 0
+        }
+        adjustAsideHeight()
+      }
+
+      const handleResize = () => {
+        if (window.innerWidth > 1100) {
+          updateProjectImg()
+          $asideContainer.style.removeProperty('transform')
+          $asideContainer.style.removeProperty('overflow-y')
+          $asideContainer.style.removeProperty('height')
+          $asideContainer.style.removeProperty('max-height')
+          translate = 0
+        }
+        adjustAsideHeight()
+      }
+
+      const currentLocale = $html.getAttribute('lang') as string
+      const projects = currentLocale === 'es' ? projects_es : projects_en
+      const project = projects.find(
+        project => project.title === $title.textContent
+      )
+
+      if (!project) return
+
+      const imgLength = project.images.length
+
+      if (imgLength === 1) {
+        $buttonsContainer.style.display = 'none'
+      }
+
+      const handleLeftClick = () => {
+        if (currentImg === 0) {
+          currentImg = imgLength - 1
+        } else {
+          currentImg--
+        }
+
+        const galleryItems = $projectImage.querySelectorAll('.gallery-item')
+        galleryItems.forEach(item => {
+          ;(item as HTMLElement).style.display = 'none'
+          item.classList.remove('active')
+        })
+
+        const currentItem = galleryItems[currentImg]
+        if (currentItem) {
+          ;(currentItem as HTMLElement).style.display = ''
+          currentItem.classList.add('active')
+        }
+      }
+
+      const handleRightClick = () => {
+        if (currentImg === imgLength - 1) {
+          currentImg = 0
+        } else {
+          currentImg++
+        }
+
+        const galleryItems = $projectImage.querySelectorAll('.gallery-item')
+        galleryItems.forEach(item => {
+          ;(item as HTMLElement).style.display = 'none'
+          item.classList.remove('active')
+        })
+
+        const currentItem = galleryItems[currentImg]
+        if (currentItem) {
+          ;(currentItem as HTMLElement).style.display = ''
+          currentItem.classList.add('active')
+        }
+      }
+
+      const cleanup = () => {
+        $moveTop.removeEventListener('click', handleMoveTopClick)
+        $projectImage.removeEventListener('click', handleProjectImageClick)
+        breakpoint.removeEventListener('change', handleBreakpointChange)
+        window.removeEventListener('resize', handleResize)
+        $buttonLeft.removeEventListener('click', handleLeftClick)
+        $buttonRight.removeEventListener('click', handleRightClick)
+      }
+
+      cleanup()
+      $moveTop.addEventListener('click', handleMoveTopClick)
+      $projectImage.addEventListener('click', handleProjectImageClick)
+      breakpoint.addEventListener('change', handleBreakpointChange)
+      window.addEventListener('resize', handleResize)
+      $buttonLeft.addEventListener('click', handleLeftClick)
+      $buttonRight.addEventListener('click', handleRightClick)
+
       adjustAsideHeight()
     }
 
-    const handleProjectImageClick = () => {
-      if (translate == 90) {
-        updateProjectImg()
-        $asideContainer.style.transform = `translateY(${translate}%)`
-        translate = 0
+    document.addEventListener('DOMContentLoaded', handleProjectLogic)
+    document.addEventListener('astro:page-load', handleProjectLogic)
+    document.addEventListener('astro:before-preparation', () => {
+      const cleanup = () => {
+        const $moveTop = document.querySelector('.aside__move-top')
+        const $projectImage = document.querySelector('.project__image')
+        const $buttonLeft = document.querySelector('#button-left')
+        const $buttonRight = document.querySelector('#button-right')
+
+        if ($moveTop) $moveTop.replaceWith($moveTop.cloneNode(true))
+        if ($projectImage)
+          $projectImage.replaceWith($projectImage.cloneNode(true))
+        if ($buttonLeft) $buttonLeft.replaceWith($buttonLeft.cloneNode(true))
+        if ($buttonRight) $buttonRight.replaceWith($buttonRight.cloneNode(true))
       }
-      adjustAsideHeight()
+      cleanup()
+    })
+  </script>
+  <style is:global>
+    .project__page {
+      position: relative;
+      width: 100%;
+      height: 100dvh;
     }
 
-    const handleBreakpointChange = (e: MediaQueryListEvent) => {
-      if (e.matches) {
-        updateProjectImg()
-        $asideContainer.style.transform = `translateY(90%)`
-        translate = 0
-      }
-      adjustAsideHeight()
-    }
-
-    const handleResize = () => {
-      if (window.innerWidth > 1100) {
-        updateProjectImg()
-        $asideContainer.style.transform = `translateY(0%)`
-        $asideContainer.style.overflowY = 'scroll'
-        $asideContainer.style.height = '100%'
-        translate = 0
-      }
-      adjustAsideHeight()
-    }
-
-    const currentLocale = $html.getAttribute('lang') as string
-    const projects = currentLocale === 'es' ? projects_es : projects_en
-    const project = projects.find(
-      project => project.title === $title.textContent
-    )
-
-    if (!project) return
-
-    const imgLength = project.images.length
-
-    if (imgLength === 1) {
-      $buttonsContainer.style.display = 'none'
-    }
-
-    const handleLeftClick = () => {
-      if (currentImg === 0) {
-        currentImg = imgLength - 1
-      } else {
-        currentImg--
-      }
-
-      $img.src = project.images[currentImg].src
-      $img.alt = project.images[currentImg].alt
-    }
-
-    const handleRightClick = () => {
-      if (currentImg === imgLength - 1) {
-        currentImg = 0
-      } else {
-        currentImg++
-      }
-
-      $img.src = project.images[currentImg].src
-      $img.alt = project.images[currentImg].alt
-    }
-
-    const cleanup = () => {
-      $moveTop.removeEventListener('click', handleMoveTopClick)
-      $projectImage.removeEventListener('click', handleProjectImageClick)
-      breakpoint.removeEventListener('change', handleBreakpointChange)
-      window.removeEventListener('resize', handleResize)
-      $buttonLeft.removeEventListener('click', handleLeftClick)
-      $buttonRight.removeEventListener('click', handleRightClick)
-    }
-
-    cleanup()
-    $moveTop.addEventListener('click', handleMoveTopClick)
-    $projectImage.addEventListener('click', handleProjectImageClick)
-    breakpoint.addEventListener('change', handleBreakpointChange)
-    window.addEventListener('resize', handleResize)
-    $buttonLeft.addEventListener('click', handleLeftClick)
-    $buttonRight.addEventListener('click', handleRightClick)
-
-    adjustAsideHeight()
-  }
-
-  document.addEventListener('DOMContentLoaded', handleProjectLogic)
-  document.addEventListener('astro:page-load', handleProjectLogic)
-  document.addEventListener('astro:before-preparation', () => {
-    const cleanup = () => {
-      const $moveTop = document.querySelector('.aside__move-top')
-      const $projectImage = document.querySelector('.project__image')
-      const $buttonLeft = document.querySelector('#button-left')
-      const $buttonRight = document.querySelector('#button-right')
-
-      if ($moveTop) $moveTop.replaceWith($moveTop.cloneNode(true))
-      if ($projectImage)
-        $projectImage.replaceWith($projectImage.cloneNode(true))
-      if ($buttonLeft) $buttonLeft.replaceWith($buttonLeft.cloneNode(true))
-      if ($buttonRight) $buttonRight.replaceWith($buttonRight.cloneNode(true))
-    }
-    cleanup()
-  })
-</script>
-<style is:global>
-  .project__page {
-    position: relative;
-    width: 100%;
-    height: 100dvh;
-  }
-
-  .back-button-container {
-    position: fixed;
-    top: 1.5rem;
-    left: 1.5rem;
-    z-index: 200;
-  }
-
-  .back-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: var(--black);
-    color: var(--white);
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 1px solid var(--sky-blue);
-  }
-
-  .back-button:hover {
-    background-color: var(--dark-blue);
-    transform: translateX(-5px);
-  }
-
-  .back-button svg {
-    width: 1.2rem;
-    height: 1.2rem;
-    color: var(--light-blue);
-  }
-
-  .project__image {
-    position: fixed;
-    inset: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .project__image img {
-    max-width: fit-content;
-    max-height: 550px;
-    width: 100%;
-    height: 100%;
-    transform: translateX(-208.558px) translateY(0px) translateZ(0px);
-    transition: all 0.3s ease-in-out;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  }
-
-  .project__image img:hover {
-    transform: translateX(-208.558px) translateY(0px) translateZ(0px)
-      scale(1.02);
-  }
-
-  .project__buttons {
-    z-index: 200;
-    position: fixed;
-    bottom: 1rem;
-    right: 0;
-    left: 0;
-    display: flex;
-    gap: 0.5rem;
-    pointer-events: none;
-  }
-
-  .buttons__container {
-    display: flex;
-    gap: 1.5rem;
-    pointer-events: all;
-    background-color: var(--black);
-    border-radius: var(--border-radius);
-    padding: 0.4rem;
-    margin: 0 auto;
-    transform: translateX(-208.558px) translateY(0px) translateZ(0px);
-  }
-
-  .project__image-button {
-    width: 2.3rem;
-    height: 2.3rem;
-    border-radius: 50%;
-    background-color: var(--dark-blue);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .project__image-button svg {
-    color: var(--light-background);
-    width: 1.3rem;
-    height: 1.3rem;
-  }
-
-  .project__image-button:hover {
-    transform: scale(1.15);
-    background-color: var(--dark-background);
-  }
-
-  .project__image-button:hover svg {
-    color: var(--white);
-  }
-
-  .project__aside-container {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    justify-content: flex-end;
-    z-index: 100;
-    overflow-x: hidden;
-    overflow-y: scroll;
-  }
-
-  .project__aside {
-    position: relative;
-    width: 100%;
-    max-width: 30%;
-    min-width: 25rem;
-    height: fit-content;
-    min-height: 100%;
-    padding: 2.3rem 2.6rem;
-    background-color: var(--black);
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  .aside__move-top {
-    z-index: 100;
-    display: none;
-  }
-
-  .aside__move-top svg {
-    color: var(--light-background);
-    width: 1rem;
-  }
-
-  .aside__title {
-    font-size: var(--step-1);
-    font-weight: 600;
-    text-transform: uppercase;
-    border-bottom: 5px solid var(--sky-blue);
-    box-shadow: 0 6px 3px -5px var(--sky-blue);
-    margin-bottom: 0.5rem;
-  }
-
-  .aside__description {
-    font-size: var(--step--1);
-    font-weight: 400;
-  }
-
-  .aside__learn {
-    font-size: var(--step--1);
-    font-weight: 400;
-    color: var(--white);
-    margin-bottom: 0.5rem;
-  }
-
-  .aside__table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .aside__tbody {
-    width: 100%;
-  }
-
-  .aside__tr {
-    width: 100%;
-    padding: 0.5rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    border-bottom: 3px solid var(--sky-blue);
-  }
-
-  .aside__tr th {
-    font-size: var(--step--1);
-    font-weight: 600;
-    color: var(--light-blue);
-    text-align: left;
-    text-transform: capitalize;
-  }
-
-  .aside__tr td {
-    font-size: var(--step--1);
-    font-weight: 500;
-    color: var(--white);
-    text-align: right;
-  }
-
-  .aside__footer {
-    padding: 0;
-    width: 100%;
-    display: flex;
-    gap: 1rem;
-  }
-
-  .aside__footer a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    color: var(--white);
-    font-size: var(--step-0);
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .aside__footer a:hover {
-    color: var(--light-blue);
-    text-decoration: underline;
-  }
-
-  .aside__footer a svg {
-    color: var(--light-blue);
-  }
-
-  @media (max-width: 1100px) {
     .back-button-container {
-      top: 1rem;
-      left: 1rem;
+      position: fixed;
+      top: 1.5rem;
+      left: 1.5rem;
+      z-index: 900;
     }
 
     .back-button {
-      padding: 0.4rem 0.8rem;
-      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--black);
+      color: var(--white);
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid var(--sky-blue);
     }
 
-    .project__buttons {
-      bottom: 6.5rem;
-      right: 0;
-      left: 0;
-      justify-content: center;
-      z-index: 90;
+    .back-button:hover {
+      background-color: var(--dark-blue);
+      transform: translateX(-5px);
     }
 
-    .buttons__container {
-      transform: none;
+    .back-button svg {
+      width: 1.2rem;
+      height: 1.2rem;
+      color: var(--light-blue);
     }
 
     .project__image {
-      width: 100%;
+      position: fixed;
+      inset: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: all 0.3s ease-in-out;
+      z-index: 800;
+    }
+
+    .pswp__scroll-wrap {
+      max-width: 100%;
+      padding: 0;
     }
 
     .project__image img {
-      height: fit-content;
-      transform: none;
+      max-width: 700px;
+      max-height: fit-content;
+      width: 100%;
+      height: 100%;
+      transform: translateX(-208.558px) translateY(0px) translateZ(0px);
       transition: all 0.3s ease-in-out;
-      max-width: fit-content;
-      margin: 0 auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
     .project__image img:hover {
-      transform: scale(1.02);
+      transform: translateX(-208.558px) translateY(0px) translateZ(0px)
+        scale(1.02);
+    }
+
+    .project__buttons {
+      z-index: 900;
+      position: fixed;
+      bottom: 1rem;
+      right: 0;
+      left: 0;
+      display: flex;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+
+    .buttons__container {
+      display: flex;
+      gap: 1.5rem;
+      pointer-events: all;
+      background-color: var(--black);
+      border-radius: var(--border-radius);
+      padding: 0.4rem;
+      margin: 0 auto;
+      transform: translateX(-208.558px) translateY(0px) translateZ(0px);
+    }
+
+    .project__image-button {
+      width: 2.3rem;
+      height: 2.3rem;
+      border-radius: 50%;
+      background-color: var(--dark-blue);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project__image-button svg {
+      color: var(--light-background);
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+
+    .project__image-button:hover {
+      transform: scale(1.15);
+      background-color: var(--dark-background);
+    }
+
+    .project__image-button:hover svg {
+      color: var(--white);
+    }
+
+    .project__image .gallery-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project__image .gallery-item.active {
+      display: flex;
     }
 
     .project__aside-container {
-      position: fixed;
-      inset: auto 0 0 0;
-      width: 100%;
-      transform: translateY(93%);
-      height: fit-content;
-      overflow: none;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .project__aside-container:hover {
-      transform: translateY(91%);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: flex-end;
+      overflow-x: hidden;
+      overflow-y: scroll;
     }
 
     .project__aside {
+      z-index: 900;
+      position: relative;
       width: 100%;
-      max-width: 100%;
-      height: 100%;
-      min-height: auto;
-      padding: 1.3rem 1.6rem;
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
-      overflow: auto;
+      max-width: 30%;
+      min-width: 25rem;
+      height: fit-content;
+      min-height: 100%;
+      padding: 2.3rem 2.6rem;
+      background-color: var(--black);
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
     }
 
     .aside__move-top {
-      display: block;
-      width: 100%;
-      height: 1.3rem;
-      position: absolute;
-      top: 0;
-      right: 0;
-      font-size: var(--step-0);
-      font-weight: 600;
-      color: var(--black);
-      background-color: var(--sky-blue);
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
-      cursor: pointer;
-      text-align: center;
-      transition: all 0.3s ease-in-out;
-      user-select: none;
-    }
-
-    .aside__move-top:hover {
-      transform: scaleY(1.1);
-      background-color: var(--light-blue);
-    }
-
-    .aside__move-top:active {
-      transform: scaleY(1.2);
-      background-color: var(--light-blue);
-    }
-
-    .aside__title {
-      padding-top: 0.5rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .back-button span {
+      z-index: 100;
       display: none;
     }
 
-    .back-button {
-      padding: 0.4rem;
+    .aside__move-top svg {
+      color: var(--light-background);
+      width: 1rem;
     }
 
-    .project__aside {
-      padding: 1rem 1.3rem;
-      min-width: fit-content;
+    .aside__title {
+      font-size: var(--step-1);
+      font-weight: 600;
+      text-transform: uppercase;
+      border-bottom: 5px solid var(--sky-blue);
+      box-shadow: 0 6px 3px -5px var(--sky-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .aside__description {
+      font-size: var(--step--1);
+      font-weight: 400;
+    }
+
+    .aside__learn {
+      font-size: var(--step--1);
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .aside__table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .aside__tbody {
+      width: 100%;
+    }
+
+    .aside__tr {
+      width: 100%;
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 3px solid var(--sky-blue);
+    }
+
+    .aside__tr th {
+      font-size: var(--step--1);
+      font-weight: 600;
+      color: var(--light-blue);
+      text-align: left;
+      text-transform: capitalize;
     }
 
     .aside__tr td {
-      font-size: var(--step--2);
+      font-size: var(--step--1);
+      font-weight: 500;
+      color: var(--white);
+      text-align: right;
+    }
+
+    .aside__footer {
+      padding: 0;
+      width: 100%;
+      display: flex;
+      gap: 1rem;
     }
 
     .aside__footer a {
-      font-size: var(--step--1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--white);
+      font-size: var(--step-0);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
     }
-  }
-</style>
+
+    .aside__footer a:hover {
+      color: var(--light-blue);
+      text-decoration: underline;
+    }
+
+    .aside__footer a svg {
+      color: var(--light-blue);
+    }
+
+    @media (max-width: 1100px) {
+      .back-button-container {
+        top: 1rem;
+        left: 1rem;
+      }
+
+      .back-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      .project__buttons {
+        bottom: 6.5rem;
+        right: 0;
+        left: 0;
+        justify-content: center;
+      }
+
+      .buttons__container {
+        transform: none;
+      }
+
+      .project__image {
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .project__image img {
+        height: fit-content;
+        transform: none;
+        transition: all 0.3s ease-in-out;
+        margin: 0 auto;
+      }
+
+      .project__image img:hover {
+        transform: scale(1.02);
+      }
+
+      .project__aside-container {
+        position: fixed;
+        inset: auto 0 0 0;
+        width: 100%;
+        transform: translateY(93%);
+        height: fit-content;
+        overflow: none;
+        transition: all 0.3s ease-in-out;
+        z-index: 900;
+      }
+
+      .project__aside-container:hover {
+        transform: translateY(91%);
+      }
+
+      .project__aside {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        min-height: auto;
+        padding: 1.3rem 1.6rem;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        overflow: auto;
+      }
+
+      .aside__move-top {
+        z-index: 950;
+        display: block;
+        width: 100%;
+        height: 1.3rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: var(--step-0);
+        font-weight: 600;
+        color: var(--black);
+        background-color: var(--sky-blue);
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        user-select: none;
+      }
+
+      .aside__move-top:hover {
+        transform: scaleY(1.1);
+        background-color: var(--light-blue);
+      }
+
+      .aside__move-top:active {
+        transform: scaleY(1.2);
+        background-color: var(--light-blue);
+      }
+
+      .aside__title {
+        padding-top: 0.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .back-button span {
+        display: none;
+      }
+
+      .back-button {
+        padding: 0.4rem;
+      }
+
+      .project__aside {
+        padding: 1rem 1.3rem;
+        min-width: fit-content;
+      }
+
+      .aside__tr td {
+        font-size: var(--step--2);
+      }
+
+      .aside__footer a {
+        font-size: var(--step--1);
+      }
+    }
+  </style>
+</Layout>

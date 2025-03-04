@@ -49,6 +49,9 @@ const { title, description, canonical, image } = Astro.props
   </head>
   <body id='home'>
     <slot />
+    <script>
+      import '../load-gallery.js'
+    </script>
     <style is:global>
       :root {
         --light-background: #f1fcfd;
