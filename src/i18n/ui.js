@@ -14,7 +14,7 @@ export const ui = {
     'bento.title': 'ANDINO RODRIGO AGUSTÍN',
     'bento.subtitle': 'Full Stack Developer',
     'bento.description':
-      'Desarrollador de software especializado en aplicaciones web, con más de 1+ año de experiencia en el diseño y de soluciones full-stack. Abarcando desde la construcción de APIs RESTful con Java y Spring Boot hasta el desarrollo de interfaces con React.js, Astro, Next.js y TypeScript.',
+      'Analista en Sistemas y Desarrollador Full Stack especializado en aplicaciones web, con más de 1 año de experiencia creando soluciones completas. Trabajo con Java y Spring Boot en el backend, y con React, Next.js, Astro y TypeScript en el frontend. Enfocado en el desarrollo de APIs RESTful, sistemas de gestión y arquitecturas escalables.',
     'bento.download': 'Descargar',
     'bento.availability': 'Conectemos 🚀 Creemos algo increíble',
     'bento.country': 'ARGENTINA',
@@ -23,11 +23,7 @@ export const ui = {
     'bento.author': 'Maestro Roshi',
     'bento.myStack': 'Mi Stack',
     'bento.contact': 'Hola 👋',
-
-    'experience.description': `Experimentado en instrumentación y control nuclear, con habilidades de
-    atención al cliente, liderazgo y trabajo en equipo. Además, soy técnico
-    electricista e informático en formación. Mi pasión es el desarrollo de
-    software, donde puedo innovar y crear soluciones con mi talento.`,
+    'experience.description': `Analista en Sistemas con experiencia en desarrollo de software y sistemas de gestión. Mi formación técnica en electricidad y mi experiencia en instrumentación nuclear me han proporcionado una base sólida en sistemas críticos. He liderado el desarrollo de múltiples proyectos full stack, desde sistemas de gestión empresarial hasta plataformas web con IA. Destaco por mi capacidad para diseñar arquitecturas escalables y crear soluciones innovadoras que satisfacen necesidades empresariales complejas.`,
     'experience.education': 'EDUCACIÓN',
     'experience.work': 'TRABAJO',
     'experience.course': 'CURSOS',
@@ -40,16 +36,29 @@ export const ui = {
     'skills.backend': 'Back-end',
     'skills.database': 'Base de datos',
     'skills.other': 'Otras',
-    'contact.paragraph.1': `Hey, soy un desarrollador de software apasionado por crear soluciones innovadoras que mejoren la vida de las personas. Disfruto del desarrollo de software y de las actividades físicas, llevando una vida saludable.`,
-    'contact.paragraph.2': `Me considero una persona tranquila que valora el aprendizaje continuo. Para mí, la programación es una herramienta poderosa para impactar positivamente en el mundo. Estoy siempre dispuesto a asumir nuevos retos y proyectos emocionantes. Próximo Licenciado en Informática.`,
-    'contact.paragraph.3': `Si tienes alguna pregunta o estás interesado en colaborar conmigo, no dudes en contactarme.`,
+    'contact.paragraph.1': `Hey! Soy Rodrigo Andino, desarrollador Full Stack y próximo Licenciado en Informática.
+Me apasiona crear soluciones tecnológicas que realmente aporten valor, desde sistemas de gestión hasta plataformas web y con IA.`,
+    'contact.paragraph.2': `Soy una persona tranquila, curiosa y enfocada en el aprendizaje constante. Disfruto tanto del desarrollo de software como de mantener una vida activa y saludable.`,
+    'contact.paragraph.3': `
+Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar en proyectos con impacto real.`,
+    'contact.paragraph.4': `¿Querés charlar, colaborar o tenés alguna idea en mente?
+¡No dudes en escribirme! Estoy siempre abierto a nuevos retos. 🚀`,
     'contact.btn': 'Descargar CV',
     'project.learn': 'Lo que aprendí',
     'project.characteristics': 'Características',
     'project.date': 'Fecha',
     'project.technologies': 'Tecnologías',
     'project.state': 'Estado',
-    'project.deploy': 'Deploy'
+    'project.deploy': 'Deploy',
+    // Nuevas traducciones para aria-labels
+    'aria.logoHome': 'logo - ir al inicio',
+    'aria.goToHome': 'Ir al inicio',
+    'aria.goToExperience': 'Ir a experiencia',
+    'aria.goToProjects': 'Ir a proyectos',
+    'aria.goToSkills': 'Ir a tecnologías',
+    'aria.goToContact': 'Ir a contacto',
+    'aria.changeLang': 'Cambiar idioma',
+    'aria.switchTheme': 'Cambiar tema'
   },
 
   en: {
@@ -64,7 +73,7 @@ export const ui = {
     'title.contact': 'Contact me',
     'bento.title': 'ANDINO RODRIGO AGUSTÍN',
     'bento.subtitle': 'Full Stack Developer',
-    'bento.description': `Specializing in web applications, with 1+ year of experience designing and developing full-stack solutions. Proficient in building RESTful APIs using Java and Spring Boot, and crafting dynamic, high-performance interfaces with React.js, Next.js, Astro, and TypeScript.`,
+    'bento.description': `Systems Analyst and Full Stack Developer specialized in web applications, with over 1 year of experience creating complete solutions. I work with Java and Spring Boot on the backend, and with React, Next.js, Astro, and TypeScript on the frontend. Focused on developing RESTful APIs, management systems, and scalable architectures.`,
     'bento.download': 'Download',
     'bento.availability': `Connect with me 🚀 Let's create something amazing`,
     'bento.country': 'ARGENTINA',
@@ -73,7 +82,7 @@ export const ui = {
     'bento.author': 'Master Roshi',
     'bento.myStack': 'My Stack',
     'bento.send': 'Send 🚀',
-    'experience.description': `Experienced in nuclear instrumentation and control, with customer service, leadership and teamwork skills. In addition, I am an electrical and computer technician in training. My passion is software development, where I can innovate and create solutions with my talent.`,
+    'experience.description': `Systems Analyst with extensive experience in software development and management systems. My technical background in electrical engineering and nuclear instrumentation has provided me with a solid foundation in critical systems. I have led the development of multiple full-stack projects, from enterprise management systems to AI-powered web platforms. I excel at designing scalable architectures and creating innovative solutions that address complex business needs.`,
     'experience.education': 'EDUCATION',
     'experience.work': 'WORK EXPERIENCE',
     'experience.course': 'COURSES',
@@ -86,15 +95,28 @@ export const ui = {
     'skills.backend': 'Back-end',
     'skills.database': 'Database',
     'skills.other': 'Other',
-    'contact.paragraph.1': `Hey, I'm a passionate software developer dedicated to creating innovative solutions that improve people's lives. I enjoy software development and physical activities, maintaining a healthy lifestyle.`,
-    'contact.paragraph.2': `I consider myself a calm individual who values continuous learning. For me, programming is a powerful tool to positively impact the world. I am always ready to take on new challenges and exciting projects. Future Computer Science Graduate.`,
-    'contact.paragraph.3': `If you have any questions or are interested in collaborating with me, feel free to reach out.`,
+    'contact.paragraph.1': `Hey! I'm Rodrigo Andino, a Full Stack Developer and soon-to-be Computer Science graduate.
+I'm passionate about creating meaningful technological solutions, from management systems to web platforms and AI applications.`,
+    'contact.paragraph.2': `I'm a calm and curious person, focused on continuous learning. I enjoy both software development and maintaining an active and healthy lifestyle.`,
+    'contact.paragraph.3': `I love taking on new challenges, learning emerging technologies, and working on projects with real impact.`,
+
+    'contact.paragraph.4': `Want to chat, collaborate, or have an idea in mind?
+Don't hesitate to reach out! I'm always open to new challenges. 🚀`,
     'contact.btn': 'Download Resume',
     'project.learn': 'What I learned',
     'project.characteristics': 'Characteristics',
     'project.date': 'Date',
     'project.technologies': 'Technologies',
     'project.state': 'State',
-    'project.deploy': 'Deploy'
+    'project.deploy': 'Deploy',
+    // New translations for aria-labels
+    'aria.logoHome': 'logo - go to home',
+    'aria.goToHome': 'Go to home',
+    'aria.goToExperience': 'Go to experience',
+    'aria.goToProjects': 'Go to projects',
+    'aria.goToSkills': 'Go to skills',
+    'aria.goToContact': 'Go to contact',
+    'aria.changeLang': 'Change language',
+    'aria.switchTheme': 'Switch theme'
   }
 }

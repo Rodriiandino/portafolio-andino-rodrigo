@@ -26,7 +26,7 @@ const t = useTranslations(currentLocale)
         <a
           href='/'
           class='item tooltip'
-          aria-label='Go to home'
+          aria-label={t('aria.goToHome')}
           data-section='home'
         >
           <IconHouse />
@@ -37,26 +37,38 @@ const t = useTranslations(currentLocale)
         <a
           href='#experience'
           class='item tooltip'
-          aria-label='Go to experience'
+          aria-label={t('aria.goToExperience')}
         >
           <IconExperience />
           <span class='tooltip__text'>{t('nav.experience')}</span>
         </a>
       </li>
       <li>
-        <a href='#projects' class='item tooltip' aria-label='Go to projects'>
+        <a
+          href='#projects'
+          class='item tooltip'
+          aria-label={t('aria.goToProjects')}
+        >
           <IconProjects />
           <span class='tooltip__text'>{t('nav.projects')}</span>
         </a>
       </li>
       <li>
-        <a href='#skills' class='item tooltip' aria-label='Go to skills'>
+        <a
+          href='#skills'
+          class='item tooltip'
+          aria-label={t('aria.goToSkills')}
+        >
           <IconTech />
           <span class='tooltip__text'>{t('nav.skills')}</span>
         </a>
       </li>
       <li>
-        <a href='#contact' class='item tooltip' aria-label='Go to contact'>
+        <a
+          href='#contact'
+          class='item tooltip'
+          aria-label={t('aria.goToContact')}
+        >
           <IconContact />
           <span class='tooltip__text'>{t('nav.contact')}</span>
         </a>
@@ -65,7 +77,7 @@ const t = useTranslations(currentLocale)
         <a
           href={`/${changeLang}`}
           class='utils__button'
-          aria-label='change language'
+          aria-label={t('aria.changeLang')}
         >
           <IconLanguageNav />
           <IconLanguageNavLight />
@@ -74,7 +86,7 @@ const t = useTranslations(currentLocale)
         <button
           class='utils__button'
           btn-switch-theme
-          aria-label='switch theme'
+          aria-label={t('aria.switchTheme')}
         >
           <IconMoonNav />
           <IconSunNav />

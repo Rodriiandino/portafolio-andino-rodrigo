@@ -1,5 +1,57 @@
 [
   {
+    "title": "Omni Resto | Sistema Integral de Gestión para Restaurantes",
+    "description": "Aplicación de escritorio multiplataforma avanzada diseñada para optimizar la gestión operativa de restaurantes. Construida con arquitectura hexagonal utilizando Rust y React, esta solución empresarial maneja desde la gestión de comandas hasta el control financiero. Actualmente implementada y en uso activo por clientes reales, demostrando un rendimiento robusto en entornos de producción.",
+    "what_i_learned": [
+      "Implementación de arquitectura hexagonal en Rust para sistemas backend",
+      "Desarrollo de aplicaciones de escritorio de alto rendimiento con Tauri",
+      "Gestión avanzada de estado con Zustand y TanStack Router",
+      "Seguimiento de inventario en tiempo real y gestión automatizada de stock",
+      "Implementación de sistemas seguros de control de acceso basado en roles",
+      "Integración de sistemas de impresión para comandas de cocina/barra",
+      "Desarrollo de sistemas complejos de reportes financieros y análisis",
+      "Mejores prácticas de desarrollo multiplataforma",
+      "Desarrollo seguro con tipos usando Rust y TypeScript",
+      "Optimización de consultas y relaciones en base de datos SQLite"
+    ],
+    "features": "Sistema de Gestión de Escritorio",
+    "date": "2025",
+    "technologies": [
+      "Rust",
+      "React",
+      "TypeScript",
+      "Tauri",
+      "SQLite",
+      "TanStack Router",
+      "Zustand",
+      "TailwindCSS"
+    ],
+    "status": "Completo",
+    "deploy": {
+      "page": "Aplicación de Escritorio",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/omni-resto",
+    "images": [
+      {
+        "src": "/projects/omni_resto/omni_resto_1.webp",
+        "alt": "Omni Resto - Vista del Dashboard"
+      },
+      {
+        "src": "/projects/omni_resto/omni_resto_2.webp",
+        "alt": "Omni Resto - Gestión de Comandas"
+      },
+      {
+        "src": "/projects/omni_resto/omni_resto_3.webp",
+        "alt": "Omni Resto - Reportes Financieros"
+      },
+      {
+        "src": "/projects/omni_resto/omni_resto_4.webp",
+        "alt": "Omni Resto - Control de Inventario"
+      }
+    ]
+  },
+  {
     "title": "Servicios Rimoldi | Plataforma Web Corporativa de Alto Rendimiento",
     "description": "Sitio web empresarial altamente optimizado para una compañía líder en movimientos de suelos, con más de 40 años en el mercado. Implementación de prácticas avanzadas de SEO técnico, performance perfecta (100/100 en PageSpeed Insights) y experiencia de usuario excepcional con diseño responsivo de vanguardia.",
     "what_i_learned": [

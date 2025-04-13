@@ -1,5 +1,57 @@
 [
   {
+    "title": "Omni Resto | Comprehensive Restaurant Management System",
+    "description": "Advanced cross-platform desktop application designed to streamline restaurant operations management. Built with hexagonal architecture using Rust and React, this enterprise-grade solution handles everything from order management to financial control. Currently deployed and actively used by real clients, demonstrating robust performance in production environments.",
+    "what_i_learned": [
+      "Implementation of hexagonal architecture in Rust for backend systems",
+      "Development of high-performance desktop applications with Tauri",
+      "Advanced state management with Zustand and TanStack Router",
+      "Real-time inventory tracking and automated stock management",
+      "Implementation of secure role-based access control systems",
+      "Integration of printer systems for kitchen/bar orders",
+      "Development of complex financial reporting and analytics systems",
+      "Cross-platform development best practices",
+      "Type-safe development with Rust and TypeScript",
+      "Optimization of SQLite database queries and relationships"
+    ],
+    "features": "Desktop Management System",
+    "date": "2025",
+    "technologies": [
+      "Rust",
+      "React",
+      "TypeScript",
+      "Tauri",
+      "SQLite",
+      "TanStack Router",
+      "Zustand",
+      "TailwindCSS"
+    ],
+    "status": "Complete",
+    "deploy": {
+      "page": "Desktop Application",
+      "demo": ""
+    },
+    "github": "https://github.com/Rodriiandino/omni-resto",
+    "images": [
+      {
+        "src": "/projects/omni_resto/omni_resto_1.webp",
+        "alt": "Omni Resto - Dashboard View"
+      },
+      {
+        "src": "/projects/omni_resto/omni_resto_2.webp",
+        "alt": "Omni Resto - Order Management"
+      },
+      {
+        "src": "/projects/omni_resto/omni_resto_3.webp",
+        "alt": "Omni Resto - Financial Reports"
+      },
+      {
+        "src": "/projects/omni_resto/omni_resto_4.webp",
+        "alt": "Omni Resto - Inventory Control"
+      }
+    ]
+  },
+  {
     "title": "Servicios Rimoldi | High-Performance Corporate Web Platform",
     "description": "Highly optimized business website for a leading soil movement company with over 40 years in the market. Implementation of advanced technical SEO practices, perfect performance (100/100 on PageSpeed Insights) and exceptional user experience with cutting-edge responsive design.",
     "what_i_learned": [

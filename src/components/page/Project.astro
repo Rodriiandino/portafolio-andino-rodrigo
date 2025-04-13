@@ -53,7 +53,11 @@ const seoDescription =
     : `Project: ${project.title}. ${project.description} Built with ${project.technologies.join(', ')}. Status: ${project.status}. View code and demo of the project.`
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  image={project.images[0].src}
+>
   <main class='project__page'>
     <div class='back-button-container'>
       <a

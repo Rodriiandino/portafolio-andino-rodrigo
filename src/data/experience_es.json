@@ -5,7 +5,14 @@
         "date": "2022 - Cursando",
         "title": "Licenciatura en Informática",
         "complementary": "Universidad Siglo 21",
-        "description": "Actualmente cursando el Cuarto año de la carrera, con enfoque en algoritmos, estructuras de datos, POO con Java, concurrencia, paralelismo, arquitectura de software, bases de datos (SQL) e ingeniería de software. Además, desarrollo habilidades en liderazgo, trabajo en equipo y gestión organizacional.",
+        "description": "Actualmente cursando el ciclo superior de la carrera, profundizando en áreas avanzadas como concurrencia, paralelismo, arquitectura de software empresarial, ingeniería de software y gestión de proyectos IT. Desarrollo de competencias en liderazgo tecnológico y gestión organizacional.",
+        "link": ""
+      },
+      {
+        "date": "2022 - 2025",
+        "title": "Analista en Sistemas",
+        "complementary": "Universidad Siglo 21",
+        "description": "Título intermedio de la Licenciatura en Informática. Especializado en desarrollo de software, análisis de sistemas y diseño de soluciones tecnológicas. Formación sólida en algoritmos, estructuras de datos, programación orientada a objetos con Java, bases de datos SQL, arquitectura de software y metodologías ágiles. Competencias en análisis de requerimientos, diseño de sistemas, gestión de proyectos IT y optimización de procesos. Habilidades destacadas en resolución de problemas, trabajo en equipo y comunicación efectiva.",
         "link": ""
       },
       {
