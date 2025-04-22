@@ -2,6 +2,7 @@ import './styles/projects-gallery-card.css'
 import { useEffect, useRef } from 'preact/hooks'
 import { IconCode, IconDemo } from '../icons/icons'
 import { useImageDimensions } from '../hooks/useImageDimensions'
+import { useTranslations } from '../../i18n/utils'
 
 export default function ProjectsGalleryCard({
   image,
@@ -12,8 +13,10 @@ export default function ProjectsGalleryCard({
   link_code,
   link_demo,
   icons,
-  highlight
+  highlight,
+  currentLocale = 'es'
 }) {
+  const t = useTranslations(currentLocale)
   const cardRef = useRef(null)
 
   useEffect(() => {
@@ -35,10 +38,16 @@ export default function ProjectsGalleryCard({
         ref={cardRef}
         class={`projects__gallery-item ${highlight ? 'highlight' : ''}`}
       >
-        <img src={image} alt={image_alt} class='gallery__img' loading='lazy' />
+        <img
+          src={image}
+          alt={image_alt}
+          class='gallery__img'
+          loading='lazy'
+          decoding={'async'}
+        />
         <div class='gallery__item-info'>
           <h4 class='item__title'>
-            <a href={title_url}>
+            <a href={title_url} aria-label={title} title={title}>
               {title}
               <svg
                 class='item__title-icon'
@@ -67,12 +76,26 @@ export default function ProjectsGalleryCard({
           <p class='item__description'>{description}</p>
           <footer class='item__footer'>
             <div class='footer__links'>
-              <a href={link_code} target='_blank' rel='noopener noreferrer'>
-                <IconCode /> Code
-              </a>
+              {link_code && (
+                <a
+                  href={link_code}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label={`${currentLocale === 'es' ? 'Ir a GitHub de' : 'Go to GitHub of'} ${title}`}
+                  title={`${currentLocale === 'es' ? 'Ir a GitHub de' : 'Go to GitHub of'} ${title}`}
+                >
+                  <IconCode /> {t('link.code')}
+                </a>
+              )}
               {link_demo && (
-                <a href={link_demo} target='_blank' rel='noopener noreferrer'>
-                  <IconDemo /> Demo
+                <a
+                  href={link_demo}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label={`${currentLocale === 'es' ? 'Ir a la demo de' : 'Go to demo of'} ${title}`}
+                  title={`${currentLocale === 'es' ? 'Ir a la demo de' : 'Go to demo of'} ${title}`}
+                >
+                  <IconDemo /> {t('link.demo')}
                 </a>
               )}
             </div>

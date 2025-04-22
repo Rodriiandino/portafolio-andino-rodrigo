@@ -204,9 +204,19 @@ const seoDescription =
         </table>
 
         <footer class='aside__footer'>
-          <a href={project.github} target='_blank' rel='noopener noreferrer'>
-            <IconCode /> Code
-          </a>
+          {
+            project.github && (
+              <a
+                href={project.github}
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label={`${currentLocale === 'es' ? 'Ir a GitHub de' : 'Go to GitHub of'} ${project.title}`}
+                title={`${currentLocale === 'es' ? 'Ir a GitHub de' : 'Go to GitHub of'} ${project.title}`}
+              >
+                <IconCode /> {t('link.code')}
+              </a>
+            )
+          }
 
           {
             project.deploy.demo && (
@@ -214,8 +224,10 @@ const seoDescription =
                 href={project.deploy.demo}
                 target='_blank'
                 rel='noopener noreferrer'
+                aria-label={`${currentLocale === 'es' ? 'Ir a la demo de' : 'Go to demo of'} ${project.title}`}
+                title={`${currentLocale === 'es' ? 'Ir a la demo de' : 'Go to demo of'} ${project.title}`}
               >
-                <IconDemo /> Demo
+                <IconDemo /> {t('link.demo')}
               </a>
             )
           }

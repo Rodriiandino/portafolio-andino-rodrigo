@@ -1,5 +1,55 @@
 [
   {
+    "title": "Andino Trinidad | Graphic Design Portfolio",
+    "description": "Professional website for a graphic designer with over 4 years of experience in the visual field. Designed to showcase a portfolio of more than 60 visual projects and 20 brand identities, with a focus on user experience and optimal performance. The site stands out for its exceptional speed, accessibility, and SEO optimization.",
+    "what_i_learned": [
+      "Static site architecture with Astro Framework",
+      "Mobile-first implementation with TailwindCSS",
+      "Advanced web performance and SEO optimization",
+      "Implementation of smooth animations with Intersection Observer API",
+      "Visual assets optimization (images and SVG)",
+      "Secure and scalable development with TypeScript",
+      "Deployment and configuration on Vercel",
+      "Implementation of web accessibility best practices",
+      "Advanced responsive design for all device types",
+      "Optimized visual resource loading strategies"
+    ],
+    "features": "Professional Portfolio",
+    "date": "2025",
+    "technologies": [
+      "Astro",
+      "TailwindCSS",
+      "TypeScript",
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "status": "Complete",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://andinotrinidad.com/"
+    },
+    "github": "",
+    "images": [
+      {
+        "src": "/projects/portafolio_trini/portafolio_trini_1.webp",
+        "alt": "Trinidad Portfolio - Main View"
+      },
+      {
+        "src": "/projects/portafolio_trini/portafolio_trini_2.webp",
+        "alt": "Trinidad Portfolio - Projects"
+      },
+      {
+        "src": "/projects/portafolio_trini/portafolio_trini_3.webp",
+        "alt": "Trinidad Portfolio - Experience"
+      },
+      {
+        "src": "/projects/portafolio_trini/portafolio_trini_4.webp",
+        "alt": "Trinidad Portfolio - Contact"
+      }
+    ]
+  },
+  {
     "title": "Omni Resto | Comprehensive Restaurant Management System",
     "description": "Advanced cross-platform desktop application designed to streamline restaurant operations management. Built with hexagonal architecture using Rust and React, this enterprise-grade solution handles everything from order management to financial control. Currently deployed and actively used by real clients, demonstrating robust performance in production environments.",
     "what_i_learned": [
@@ -171,7 +221,7 @@
       "Mixed rendering strategies (SSR, SSG and CSR) optimized for SEO and UX",
       "Advanced state management and caching with TanStack Query",
       "Integration with RESTful APIs and Spring-based backend systems",
-      "CDN configuration and cloud security services (Cloudflare)",
+      "CDN configuration and cloud security services (Cloudflare) ",
       "Implementation of advanced SEO strategies and schema markup",
       "Integration of email communication systems with Resend API",
       "Deployment and advanced configuration on cloud platforms"

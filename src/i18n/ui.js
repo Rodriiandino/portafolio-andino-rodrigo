@@ -58,7 +58,9 @@ Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar
     'aria.goToSkills': 'Ir a tecnologías',
     'aria.goToContact': 'Ir a contacto',
     'aria.changeLang': 'Cambiar idioma',
-    'aria.switchTheme': 'Cambiar tema'
+    'aria.switchTheme': 'Cambiar tema',
+    'link.code': 'Código',
+    'link.demo': 'Demo'
   },
 
   en: {
@@ -117,6 +119,8 @@ Don't hesitate to reach out! I'm always open to new challenges. 🚀`,
     'aria.goToSkills': 'Go to skills',
     'aria.goToContact': 'Go to contact',
     'aria.changeLang': 'Change language',
-    'aria.switchTheme': 'Switch theme'
+    'aria.switchTheme': 'Switch theme',
+    'link.code': 'Code',
+    'link.demo': 'Demo'
   }
 }

@@ -1,5 +1,55 @@
 [
   {
+    "title": "Andino Trinidad | Portafolio de Diseño Gráfico",
+    "description": "Sitio web profesional para una diseñadora gráfica con más de 4 años de experiencia en el campo visual. Diseñado para mostrar un portfolio de más de 60 proyectos visuales y 20 identidades de marca, con un enfoque en la experiencia del usuario y rendimiento óptimo. El sitio destaca por su velocidad excepcional, accesibilidad y optimización SEO.",
+    "what_i_learned": [
+      "Arquitectura de sitios estáticos con Astro Framework",
+      "Implementación de diseño mobile-first con TailwindCSS",
+      "Optimización avanzada de rendimiento web y SEO",
+      "Implementación de animaciones fluidas con Intersection Observer API",
+      "Optimización de assets visuales (imágenes y SVG)",
+      "Desarrollo seguro y escalable con TypeScript",
+      "Despliegue y configuración en Vercel",
+      "Implementación de mejores prácticas de accesibilidad web",
+      "Diseño responsivo avanzado para todo tipo de dispositivos",
+      "Estrategias de carga optimizada de recursos visuales"
+    ],
+    "features": "Portafolio Profesional",
+    "date": "2025",
+    "technologies": [
+      "Astro",
+      "TailwindCSS",
+      "TypeScript",
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "status": "Completo",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://andinotrinidad.com/"
+    },
+    "github": "",
+    "images": [
+      {
+        "src": "/projects/portafolio_trini/portafolio_trini_1.webp",
+        "alt": "Portafolio Trinidad - Vista Principal"
+      },
+      {
+        "src": "/projects/portafolio_trini/portafolio_trini_2.webp",
+        "alt": "Portafolio Trinidad - Proyectos"
+      },
+      {
+        "src": "/projects/portafolio_trini/portafolio_trini_3.webp",
+        "alt": "Portafolio Trinidad - Experiencia"
+      },
+      {
+        "src": "/projects/portafolio_trini/portafolio_trini_4.webp",
+        "alt": "Portafolio Trinidad - Contacto"
+      }
+    ]
+  },
+  {
     "title": "Omni Resto | Sistema Integral de Gestión para Restaurantes",
     "description": "Aplicación de escritorio multiplataforma avanzada diseñada para optimizar la gestión operativa de restaurantes. Construida con arquitectura hexagonal utilizando Rust y React, esta solución empresarial maneja desde la gestión de comandas hasta el control financiero. Actualmente implementada y en uso activo por clientes reales, demostrando un rendimiento robusto en entornos de producción.",
     "what_i_learned": [
