@@ -25,6 +25,13 @@
     ],
     "workExperience": [
       {
+        "date": "05/2025 - Present",
+        "title": "Full Stack Developer",
+        "complementary": "NotChatbot",
+        "description": "Currently working as a fullstack developer in remote mode, participating in web application development. Designing, developing and maintaining interfaces using React and Next.js, as well as implementing APIs using Next functionalities and managing relational databases. Technologies used: React, Next.js, JavaScript, REST APIs, Tailwind CSS, relational databases, and Git.",
+        "link": "https://www.notchatbot.com/"
+      },
+      {
         "date": "2024 - Present",
         "title": "Full-Stack Software Developer",
         "complementary": "Freelance",
@@ -39,24 +46,10 @@
         "link": ""
       },
       {
-        "date": "08/2024 to 10/2024",
-        "title": "Specialized Officer in Instrumentation and Control 2024",
-        "complementary": "Henisa Sudamericana s.a.",
-        "description": "During the shutdown of the Embalse Nuclear Power Plant, I performed preventive maintenance and calibration of high-precision equipment, such as valves and sensors, in a critical safety environment. Applied problem-solving techniques and ensured compliance with strict safety protocols.",
-        "link": ""
-      },
-      {
-        "date": "09/2022 to 12/2022",
-        "title": "Specialized Officer in Instrumentation and Control 2022",
-        "complementary": "Henisa Sudamericana s.a.",
-        "description": "Calibrated and maintained critical systems, working closely with safety teams to ensure the proper functioning of instruments.",
-        "link": ""
-      },
-      {
-        "date": "10/2021 to 11/2021",
-        "title": "Internship in Instrumentation and Control",
-        "complementary": "Nucleoeléctrica Argentina s.a.",
-        "description": "During this internship, I gained experience in the calibration and measurement of instruments, sensors, and valves, as well as in leak verification in controlled areas. This experience provided me with valuable insight into industrial processes in a regulated environment.",
+        "date": "2021 - 2024",
+        "title": "Specialized Officer in Instrumentation and Control",
+        "complementary": "Henisa Sudamericana s.a. & Nucleoeléctrica Argentina s.a.",
+        "description": "Experience in multiple projects at the Embalse Nuclear Power Plant during different periods (2021, 2022, and 2024). Performed preventive maintenance and calibration of high-precision equipment such as valves and sensors in critical safety environments. Worked closely with safety teams, applying problem-solving techniques and ensuring compliance with strict safety protocols. During initial internships (2021), gained experience in calibration and measurement of instruments, leak verification in controlled areas, obtaining valuable insight into industrial processes in regulated environments.",
         "link": ""
       }
     ]

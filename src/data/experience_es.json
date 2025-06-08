@@ -25,6 +25,13 @@
     ],
     "workExperience": [
       {
+        "date": "05/2025 - Actualidad",
+        "title": "Full Stack Developer",
+        "complementary": "NotChatbot",
+        "description": "Actualmente me desempeño como desarrollador fullstack en modalidad remota, participando en el desarrollo de aplicaciones web. Realizando diseño, desarrollo y mantenimiento de interfaces utilizando React y Next.js, así como la implementación de APIs utilizando las funcionalidades de Next y gestión de bases de datos relacionales. Tecnologías utilizadas: React, Next.js, JavaScript, APIs REST, Tailwind CSS, bases de datos relacionales y Git.",
+        "link": "https://www.notchatbot.com/"
+      },
+      {
         "date": "2024 - Actualidad",
         "title": "Desarrollador de software - Full Stack",
         "complementary": "Freelance",
@@ -39,24 +46,10 @@
         "link": ""
       },
       {
-        "date": "08/2024 al 10/2024",
-        "title": "Oficial Especializado en Instrumentación y Control 2024",
-        "complementary": "Henisa Sudamericana s.a.",
-        "description": "Durante la parada de la central nuclear de Embalse, realicé mantenimiento preventivo y calibración de equipos de alta precisión, como válvulas y sensores, en un entorno de seguridad crítica. Apliqué técnicas de resolución de problemas y aseguré el cumplimiento de estrictos protocolos de seguridad.",
-        "link": ""
-      },
-      {
-        "date": "09/2022 al 12/2022",
-        "title": "Oficial Especializado en Instrumentación y Control 2022",
-        "complementary": "Henisa Sudamericana s.a.",
-        "description": "Calibré y mantuve sistemas críticos, trabajando en estrecha colaboración con equipos de seguridad para garantizar el correcto funcionamiento de los instrumentos.",
-        "link": ""
-      },
-      {
-        "date": "10/2021 al 11/2021",
-        "title": "Pasantías realizadas en Instrumentación y Control",
-        "complementary": "Nucleoeléctrica Argentina s.a.",
-        "description": "Durante esta pasantía, adquirí experiencia en la calibración y medición de instrumentos, sensores y válvulas, así como en la verificación de fugas en áreas controladas. Esta experiencia me brindó una valiosa comprensión de los procesos industriales en un entorno regulado.",
+        "date": "2021 - 2024",
+        "title": "Oficial Especializado en Instrumentación y Control",
+        "complementary": "Henisa Sudamericana s.a. & Nucleoeléctrica Argentina s.a.",
+        "description": "Experiencia en múltiples proyectos en la Central Nuclear de Embalse durante diferentes períodos (2021, 2022 y 2024). Realicé mantenimiento preventivo y calibración de equipos de alta precisión como válvulas y sensores en entornos de seguridad crítica. Trabajé en estrecha colaboración con equipos de seguridad, aplicando técnicas de resolución de problemas y asegurando el cumplimiento de estrictos protocolos de seguridad. Durante las pasantías iniciales (2021), adquirí experiencia en calibración y medición de instrumentos, verificación de fugas en áreas controladas, obteniendo valiosa comprensión de procesos industriales en entornos regulados.",
         "link": ""
       }
     ]
