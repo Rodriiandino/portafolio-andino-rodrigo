@@ -1,5 +1,50 @@
 [
   {
+    "title": "RSDesign | Estudio de Diseño Creativo",
+    "description": "RSDesign es un estudio de diseño con una visión creativa y profesional, que ha trabajado con más de 20 empresas, creado más de 200 flyers y desarrollado múltiples identidades visuales completas. Para fortalecer su presencia, se desarrolló un sitio web moderno y altamente optimizado.",
+    "what_i_learned": [
+      "Arquitectura de sitios estáticos con Astro Framework",
+      "Implementación de diseño mobile-first con TailwindCSS",
+      "Desarrollo seguro y escalable con TypeScript",
+      "Animaciones con Intersection Observer",
+      "Optimización avanzada de rendimiento web y SEO"
+    ],
+    "features": "Sitio Web Corporativo",
+    "date": "2025",
+    "technologies": [
+      "Astro",
+      "TailwindCSS",
+      "TypeScript",
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "status": "Completo",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://rsdesigncba.com/"
+    },
+    "github": "",
+    "images": [
+      {
+        "src": "/projects/rsdesign/rsdesign_1.webp",
+        "alt": "RSDesign - Vista Principal"
+      },
+      {
+        "src": "/projects/rsdesign/rsdesign_2.webp",
+        "alt": "RSDesign - Servicios Destacados"
+      },
+      {
+        "src": "/projects/rsdesign/rsdesign_3.webp",
+        "alt": "RSDesign - Galería de Proyectos"
+      },
+      {
+        "src": "/projects/rsdesign/rsdesign_4.webp",
+        "alt": "RSDesign - Branding"
+      }
+    ]
+  },
+  {
     "title": "Andino Trinidad | Portafolio de Diseño Gráfico",
     "description": "Sitio web profesional para una diseñadora gráfica con más de 4 años de experiencia en el campo visual. Diseñado para mostrar un portfolio de más de 60 proyectos visuales y 20 identidades de marca, con un enfoque en la experiencia del usuario y rendimiento óptimo. El sitio destaca por su velocidad excepcional, accesibilidad y optimización SEO.",
     "what_i_learned": [

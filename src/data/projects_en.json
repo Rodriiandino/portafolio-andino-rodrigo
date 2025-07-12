@@ -1,5 +1,50 @@
 [
   {
+    "title": "RSDesign | Creative Design Studio",
+    "description": "RSDesign is a creative and professional design studio that has worked with over 20 companies, created 200+ flyers, and developed multiple complete visual identities. To strengthen its presence, a modern and highly optimized website was developed.",
+    "what_i_learned": [
+      "Static site architecture with Astro Framework",
+      "Mobile-first implementation with TailwindCSS",
+      "Secure and scalable development with TypeScript",
+      "Animations with Intersection Observer",
+      "Advanced web performance and SEO optimization"
+    ],
+    "features": "Corporate Website",
+    "date": "2025",
+    "technologies": [
+      "Astro",
+      "TailwindCSS",
+      "TypeScript",
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "status": "Complete",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://rsdesigncba.com/"
+    },
+    "github": "",
+    "images": [
+      {
+        "src": "/projects/rsdesign/rsdesign_1.webp",
+        "alt": "RSDesign - Main View"
+      },
+      {
+        "src": "/projects/rsdesign/rsdesign_2.webp",
+        "alt": "RSDesign - Services Overview"
+      },
+      {
+        "src": "/projects/rsdesign/rsdesign_3.webp",
+        "alt": "RSDesign - Project Gallery"
+      },
+      {
+        "src": "/projects/rsdesign/rsdesign_4.webp",
+        "alt": "RSDesign - Branding"
+      }
+    ]
+  },
+  {
     "title": "Andino Trinidad | Graphic Design Portfolio",
     "description": "Professional website for a graphic designer with over 4 years of experience in the visual field. Designed to showcase a portfolio of more than 60 visual projects and 20 brand identities, with a focus on user experience and optimal performance. The site stands out for its exceptional speed, accessibility, and SEO optimization.",
     "what_i_learned": [
