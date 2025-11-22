@@ -6,10 +6,9 @@ import { useState } from 'preact/hooks'
 
 export default function ProjectsGallery({ projects, locale }) {
   const t = useTranslations(locale)
+  const highlightedProjects = ['Vivero Irupe - Frontend']
   const [limit, setLimit] = useState(6)
-  const [filteredProjects, setFilteredProjects] = useState(
-    projects.slice(0, limit)
-  )
+  const [filteredProjects, setFilteredProjects] = useState(projects)
   const [showFilter, setShowFilter] = useState(false)
   const [filter, setFilter] = useState('')
 
@@ -44,8 +43,6 @@ export default function ProjectsGallery({ projects, locale }) {
   const handleLoadMore = () => {
     handleFilter('All')
   }
-
-  const highlightedProjects = ['Vivero Irupe - Frontend']
 
   const sortAndFilterProjects = projects => {
     const highlighted = projects.filter(project =>

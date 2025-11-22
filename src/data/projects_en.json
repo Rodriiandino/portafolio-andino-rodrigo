@@ -1,5 +1,53 @@
 [
   {
+    "title": "BP Importados | Full Stack E-commerce Platform",
+    "description": "Comprehensive design and development of an e-commerce platform for BP Importados, a leading store in technological and exclusive products in Embalse, Córdoba. The goal was to build a scalable, secure, and SEO-optimized online store capable of managing a diverse catalog (Apple, Samsung, Vapers, JBL, Perfumery), offering a fluid user experience on both mobile and desktop devices.",
+    "what_i_learned": [
+      "Hybrid rendering architecture with Next.js (SSR, CSR, and SSG) for instant load times and optimal SEO indexing",
+      "Implementation of Payload CMS as a headless content manager for flexible and decoupled frontend administration",
+      "Advanced state management with Zustand for efficient global state and shopping cart logic",
+      "PostgreSQL database implementation with schema management and versioning through migrations",
+      "Strict TypeScript implementation across the entire ecosystem for robust development",
+      "Media processing and optimization with Sharp, served from Cloudflare R2 to reduce latency and costs",
+      "Advanced security configuration in Cloudflare for DDoS attack mitigation and infrastructure protection",
+      "Responsive UI/UX design with Tailwind CSS including Dark/Light Mode functionality",
+      "Cloud infrastructure optimization for scalable e-commerce operations",
+      "Integration of headless CMS architecture patterns for content flexibility"
+    ],
+    "features": "E-commerce Platform",
+    "date": "2025",
+    "technologies": [
+      "Next.js",
+      "Payload CMS",
+      "TypeScript",
+      "TailwindCSS",
+      "PostgreSQL",
+      "Zustand",
+      "Cloudflare R2",
+      "Sharp"
+    ],
+    "status": "Complete",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://bpimportados.com/"
+    },
+    "github": "",
+    "images": [
+      {
+        "src": "/projects/bp_importados/bp_importados_1.webp",
+        "alt": "BP Importados - Main View dark mode"
+      },
+      {
+        "src": "/projects/bp_importados/bp_importados_2.webp",
+        "alt": "BP Importados - Main View light mode"
+      },
+      {
+        "src": "/projects/bp_importados/bp_importados_3.webp",
+        "alt": "BP Importados - catalog view"
+      }
+    ]
+  },
+  {
     "title": "RSDesign | Creative Design Studio",
     "description": "RSDesign is a creative and professional design studio that has worked with over 20 companies, created 200+ flyers, and developed multiple complete visual identities. To strengthen its presence, a modern and highly optimized website was developed.",
     "what_i_learned": [

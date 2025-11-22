@@ -14,7 +14,7 @@ export const ui = {
     'bento.title': 'ANDINO RODRIGO AGUSTÍN',
     'bento.subtitle': 'Full Stack Developer',
     'bento.description':
-      'Analista en Sistemas y Desarrollador Full Stack especializado en aplicaciones web, con más de 1 año de experiencia creando soluciones completas. Trabajo con Java y Spring Boot en el backend, y con React, Next.js, Astro y TypeScript en el frontend. Enfocado en el desarrollo de APIs RESTful, sistemas de gestión y arquitecturas escalables.',
+      'Analista en Sistemas y Desarrollador Full Stack, con más de 3 años de experiencia creando soluciones completas. Trabajo con Java y Spring Boot en el backend, y con React, Next.js, Astro y TypeScript en el frontend. Enfocado en el desarrollo de APIs RESTful, sistemas de gestión, arquitecturas escalables, integración de IA y sistemas real-time con WebSockets.',
     'bento.download': 'Descargar',
     'bento.availability': 'Conectemos 🚀 Creemos algo increíble',
     'bento.country': 'ARGENTINA',
@@ -36,8 +36,8 @@ export const ui = {
     'skills.backend': 'Back-end',
     'skills.database': 'Base de datos',
     'skills.other': 'Otras',
-    'contact.paragraph.1': `Hey! Soy Rodrigo Andino, desarrollador Full Stack y próximo Licenciado en Informática.
-Me apasiona crear soluciones tecnológicas que realmente aporten valor, desde sistemas de gestión hasta plataformas web y con IA.`,
+    'contact.paragraph.1': `Hey! Soy Rodrigo Andino, Analista en Sistemas, desarrollador Full Stack y próximo Licenciado en Informática.
+Me apasiona crear soluciones tecnológicas que realmente aporten valor, desde sistemas de gestión hasta plataformas web con IA y sistemas real-time.`,
     'contact.paragraph.2': `Soy una persona tranquila, curiosa y enfocada en el aprendizaje constante. Disfruto tanto del desarrollo de software como de mantener una vida activa y saludable.`,
     'contact.paragraph.3': `
 Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar en proyectos con impacto real.`,
@@ -75,7 +75,7 @@ Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar
     'title.contact': 'Contact me',
     'bento.title': 'ANDINO RODRIGO AGUSTÍN',
     'bento.subtitle': 'Full Stack Developer',
-    'bento.description': `Systems Analyst and Full Stack Developer specialized in web applications, with over 1 year of experience creating complete solutions. I work with Java and Spring Boot on the backend, and with React, Next.js, Astro, and TypeScript on the frontend. Focused on developing RESTful APIs, management systems, and scalable architectures.`,
+    'bento.description': `Systems Analyst and Full Stack Developer specialized in web applications, with over 3 years of experience creating complete solutions. I work with Java and Spring Boot on the backend, and with React, Next.js, Astro, and TypeScript on the frontend. Focused on developing RESTful APIs, management systems, scalable architectures, AI integration, and real-time systems with WebSockets.`,
     'bento.download': 'Download',
     'bento.availability': `Connect with me 🚀 Let's create something amazing`,
     'bento.country': 'ARGENTINA',
@@ -97,8 +97,8 @@ Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar
     'skills.backend': 'Back-end',
     'skills.database': 'Database',
     'skills.other': 'Other',
-    'contact.paragraph.1': `Hey! I'm Rodrigo Andino, a Full Stack Developer and soon-to-be Computer Science graduate.
-I'm passionate about creating meaningful technological solutions, from management systems to web platforms and AI applications.`,
+    'contact.paragraph.1': `Hey! I'm Rodrigo Andino, a Systems Analyst, Full Stack Developer, and soon-to-be Computer Science graduate.
+I'm passionate about creating meaningful technological solutions, from management systems to web platforms with AI and real-time applications.`,
     'contact.paragraph.2': `I'm a calm and curious person, focused on continuous learning. I enjoy both software development and maintaining an active and healthy lifestyle.`,
     'contact.paragraph.3': `I love taking on new challenges, learning emerging technologies, and working on projects with real impact.`,
 

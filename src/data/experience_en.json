@@ -28,7 +28,7 @@
         "date": "05/2025 - Present",
         "title": "Full Stack Developer",
         "complementary": "NotChatbot",
-        "description": "Currently working as a fullstack developer in remote mode, participating in web application development. Designing, developing and maintaining interfaces using React and Next.js, as well as implementing APIs using Next functionalities and managing relational databases. Technologies used: React, Next.js, JavaScript, REST APIs, Tailwind CSS, relational databases, and Git.",
+        "description": "Currently working as a fullstack developer in remote mode, developing real-time web applications. Key participant in the migration to Convex for real-time database functionality, implementing WebSockets for instant data synchronization. Created and published custom NPM packages for the team. Performed maintenance and improvements on webhook integrations with multiple platforms including e-commerce systems and social media applications. Enhanced AI chatbot integration for sales optimization. Designed and maintained modern interfaces using React and Next.js, while managing scalable real-time architectures. Technologies used: React, Next.js, JavaScript, Convex, WebSockets, REST APIs, Webhooks, AI Integration, NPM packages, Tailwind CSS, and Git.",
         "link": "https://www.notchatbot.com/"
       },
       {

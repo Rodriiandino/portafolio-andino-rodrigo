@@ -1,5 +1,53 @@
 [
   {
+    "title": "BP Importados | Plataforma E-commerce Full Stack",
+    "description": "Diseño y desarrollo integral de una plataforma e-commerce para BP Importados, una tienda líder en productos tecnológicos y exclusivos en Embalse, Córdoba. El objetivo fue construir una tienda online escalable, segura y optimizada para SEO, capaz de gestionar un catálogo diverso (Apple, Samsung, Vapers, JBL, Perfumería) ofreciendo una experiencia de usuario fluida tanto en móviles como en escritorio.",
+    "what_i_learned": [
+      "Arquitectura de renderizado híbrido con Next.js (SSR, CSR y SSG) para tiempos de carga instantáneos e indexación SEO óptima",
+      "Implementación de Payload CMS como gestor de contenidos headless, permitiendo una administración flexible y desacoplada del frontend",
+      "Gestión avanzada de estado con Zustand para el manejo eficiente del estado global y la lógica del carrito de compras",
+      "Implementación de base de datos PostgreSQL con gestión de esquemas y versionado mediante migraciones",
+      "Implementación estricta de TypeScript en todo el ecosistema para desarrollo robusto",
+      "Procesamiento y optimización de imágenes con Sharp, servidas desde Cloudflare R2 para reducir latencia y costos",
+      "Configuración avanzada en Cloudflare para mitigación de ataques DDoS y protección de la infraestructura",
+      "Diseño UI/UX responsivo con Tailwind CSS incluyendo funcionalidad de Modo Oscuro/Claro",
+      "Optimización de infraestructura cloud para operaciones e-commerce escalables",
+      "Integración de patrones de arquitectura headless CMS para flexibilidad de contenido"
+    ],
+    "features": "Plataforma E-commerce",
+    "date": "2025",
+    "technologies": [
+      "Next.js",
+      "Payload CMS",
+      "TypeScript",
+      "TailwindCSS",
+      "PostgreSQL",
+      "Zustand",
+      "Cloudflare R2",
+      "Sharp"
+    ],
+    "status": "Completo",
+    "deploy": {
+      "page": "Vercel",
+      "demo": "https://bpimportados.com/"
+    },
+    "github": "",
+    "images": [
+      {
+        "src": "/projects/bp_importados/bp_importados_1.webp",
+        "alt": "BP Importados - Vista Principal modo oscuro"
+      },
+      {
+        "src": "/projects/bp_importados/bp_importados_2.webp",
+        "alt": "BP Importados - Vista Principal modo claro"
+      },
+      {
+        "src": "/projects/bp_importados/bp_importados_3.webp",
+        "alt": "BP Importados - Vista del catálogo"
+      }
+    ]
+  },
+  {
     "title": "RSDesign | Estudio de Diseño Creativo",
     "description": "RSDesign es un estudio de diseño con una visión creativa y profesional, que ha trabajado con más de 20 empresas, creado más de 200 flyers y desarrollado múltiples identidades visuales completas. Para fortalecer su presencia, se desarrolló un sitio web moderno y altamente optimizado.",
     "what_i_learned": [
