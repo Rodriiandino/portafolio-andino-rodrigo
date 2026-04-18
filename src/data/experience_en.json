@@ -25,10 +25,17 @@
     ],
     "workExperience": [
       {
-        "date": "05/2025 - Present",
+        "date": "02/2026 - Present",
+        "title": "Tech Lead",
+        "complementary": "NotChatbot",
+        "description": "Currently serving as Tech Lead, responsible for ensuring code quality and production stability. Coordinating the team's technical execution, overseeing deliveries and ensuring scalable, secure, and efficient development standards.",
+        "link": "https://www.notchatbot.com/"
+      },
+      {
+        "date": "05/2025 - 02/2026",
         "title": "Full Stack Developer",
         "complementary": "NotChatbot",
-        "description": "Currently working as a fullstack developer in remote mode, developing real-time web applications. Key participant in the migration to Convex for real-time database functionality, implementing WebSockets for instant data synchronization. Created and published custom NPM packages for the team. Performed maintenance and improvements on webhook integrations with multiple platforms including e-commerce systems and social media applications. Enhanced AI chatbot integration for sales optimization. Designed and maintained modern interfaces using React and Next.js, while managing scalable real-time architectures. Technologies used: React, Next.js, JavaScript, Convex, WebSockets, REST APIs, Webhooks, AI Integration, NPM packages, Tailwind CSS, and Git.",
+        "description": "Worked as a fullstack developer in remote mode, developing real-time web applications. Key participant in the migration to Convex for real-time database functionality, implementing WebSockets for instant data synchronization. Created and published custom NPM packages for the team. Performed maintenance and improvements on webhook integrations with multiple platforms including e-commerce systems and social media applications. Enhanced AI chatbot integration for sales optimization. Designed and maintained modern interfaces using React and Next.js, while managing scalable real-time architectures. Technologies used: React, Next.js, JavaScript, Convex, WebSockets, REST APIs, Webhooks, AI Integration, NPM packages, Tailwind CSS, and Git.",
         "link": "https://www.notchatbot.com/"
       },
       {
@@ -39,18 +46,18 @@
         "link": ""
       },
       {
-        "date": "2021 - Present",
+        "date": "2021 - 2025",
         "title": "Full-Stack Software Developer & Customer Service",
         "complementary": "Vivero Irupé",
         "description": "Family venture with over three years of experience in the customer service sector, where I developed key skills such as effective communication, conflict resolution, and leadership. During this period, I designed and developed Vivero Irupé, a full-stack web application featuring over 200 products.",
-        "link": ""
+        "link": "https://viveroirupe.com"
       },
       {
         "date": "2021 - 2024",
         "title": "Specialized Officer in Instrumentation and Control",
         "complementary": "Henisa Sudamericana s.a. & Nucleoeléctrica Argentina s.a.",
         "description": "Experience in multiple projects at the Embalse Nuclear Power Plant during different periods (2021, 2022, and 2024). Performed preventive maintenance and calibration of high-precision equipment such as valves and sensors in critical safety environments. Worked closely with safety teams, applying problem-solving techniques and ensuring compliance with strict safety protocols. During initial internships (2021), gained experience in calibration and measurement of instruments, leak verification in controlled areas, obtaining valuable insight into industrial processes in regulated environments.",
-        "link": ""
+        "link": "https://www.na-sa.com.ar/es/centrales-nucleares/embalse"
       }
     ]
   },

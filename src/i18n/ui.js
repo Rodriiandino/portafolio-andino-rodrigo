@@ -12,9 +12,9 @@ export const ui = {
     'title.skills': 'tecnologías',
     'title.contact': 'Contactame',
     'bento.title': 'ANDINO RODRIGO AGUSTÍN',
-    'bento.subtitle': 'Full Stack Developer',
+    'bento.subtitle': 'Tech Lead & Full Stack Developer',
     'bento.description':
-      'Analista en Sistemas y Desarrollador Full Stack, con más de 3 años de experiencia creando soluciones completas. Trabajo con Java y Spring Boot en el backend, y con React, Next.js, Astro y TypeScript en el frontend. Enfocado en el desarrollo de APIs RESTful, sistemas de gestión, arquitecturas escalables, integración de IA y sistemas real-time con WebSockets.',
+      'Analista en Sistemas y Líder Técnico Full Stack, con más de 4 años de experiencia. Trabajo con Java y Spring Boot en el backend, y con React, Next.js y TypeScript en el frontend. Enfocado en arquitecturas escalables, calidad de código, integración de IA y sistemas real-time con WebSockets.',
     'bento.download': 'Descargar',
     'bento.availability': 'Conectemos 🚀 Creemos algo increíble',
     'bento.country': 'ARGENTINA',
@@ -23,7 +23,7 @@ export const ui = {
     'bento.author': 'Maestro Roshi',
     'bento.myStack': 'Mi Stack',
     'bento.contact': 'Hola 👋',
-    'experience.description': `Analista en Sistemas con experiencia en desarrollo de software y sistemas de gestión. Mi formación técnica en electricidad y mi experiencia en instrumentación nuclear me han proporcionado una base sólida en sistemas críticos. He liderado el desarrollo de múltiples proyectos full stack, desde sistemas de gestión empresarial hasta plataformas web con IA. Destaco por mi capacidad para diseñar arquitecturas escalables y crear soluciones innovadoras que satisfacen necesidades empresariales complejas.`,
+    'experience.description': `Analista en Sistemas y Líder Técnico con experiencia en desarrollo de software, coordinación de equipos y estándares de calidad en producción. Mi formación técnica en electricidad y mi experiencia en instrumentación nuclear me han proporcionado una base sólida en sistemas críticos. He liderado la ejecución técnica de equipos y el desarrollo de múltiples proyectos full stack, desde sistemas de gestión empresarial hasta plataformas web con IA. Destaco por mi capacidad para diseñar arquitecturas escalables, garantizar la estabilidad en producción y crear soluciones innovadoras que satisfacen necesidades empresariales complejas.`,
     'experience.education': 'EDUCACIÓN',
     'experience.work': 'TRABAJO',
     'experience.course': 'CURSOS',
@@ -36,7 +36,7 @@ export const ui = {
     'skills.backend': 'Back-end',
     'skills.database': 'Base de datos',
     'skills.other': 'Otras',
-    'contact.paragraph.1': `Hey! Soy Rodrigo Andino, Analista en Sistemas, desarrollador Full Stack y próximo Licenciado en Informática.
+    'contact.paragraph.1': `Hey! Soy Rodrigo Andino, Analista en Sistemas, Líder Técnico Full Stack y próximo Licenciado en Informática.
 Me apasiona crear soluciones tecnológicas que realmente aporten valor, desde sistemas de gestión hasta plataformas web con IA y sistemas real-time.`,
     'contact.paragraph.2': `Soy una persona tranquila, curiosa y enfocada en el aprendizaje constante. Disfruto tanto del desarrollo de software como de mantener una vida activa y saludable.`,
     'contact.paragraph.3': `
@@ -74,8 +74,8 @@ Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar
     'title.skills': 'Skills',
     'title.contact': 'Contact me',
     'bento.title': 'ANDINO RODRIGO AGUSTÍN',
-    'bento.subtitle': 'Full Stack Developer',
-    'bento.description': `Systems Analyst and Full Stack Developer specialized in web applications, with over 3 years of experience creating complete solutions. I work with Java and Spring Boot on the backend, and with React, Next.js, Astro, and TypeScript on the frontend. Focused on developing RESTful APIs, management systems, scalable architectures, AI integration, and real-time systems with WebSockets.`,
+    'bento.subtitle': 'Tech Lead & Full Stack Developer',
+    'bento.description': `Systems Analyst and Full Stack Tech Lead, with over 4 years of experience building web applications. I work with Java and Spring Boot on the backend, and React, Next.js, and TypeScript on the frontend. Focused on scalable architectures, code quality, AI integration, and real-time systems with WebSockets.`,
     'bento.download': 'Download',
     'bento.availability': `Connect with me 🚀 Let's create something amazing`,
     'bento.country': 'ARGENTINA',
@@ -84,7 +84,7 @@ Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar
     'bento.author': 'Master Roshi',
     'bento.myStack': 'My Stack',
     'bento.send': 'Send 🚀',
-    'experience.description': `Systems Analyst with extensive experience in software development and management systems. My technical background in electrical engineering and nuclear instrumentation has provided me with a solid foundation in critical systems. I have led the development of multiple full-stack projects, from enterprise management systems to AI-powered web platforms. I excel at designing scalable architectures and creating innovative solutions that address complex business needs.`,
+    'experience.description': `Systems Analyst and Tech Lead with extensive experience in software development, team coordination, and production quality standards. My technical background in electrical engineering and nuclear instrumentation has provided me with a solid foundation in critical systems. I have led the technical execution of teams and the development of multiple full-stack projects, from enterprise management systems to AI-powered web platforms. I excel at designing scalable architectures, ensuring production stability, and creating innovative solutions that address complex business needs.`,
     'experience.education': 'EDUCATION',
     'experience.work': 'WORK EXPERIENCE',
     'experience.course': 'COURSES',
@@ -97,7 +97,7 @@ Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar
     'skills.backend': 'Back-end',
     'skills.database': 'Database',
     'skills.other': 'Other',
-    'contact.paragraph.1': `Hey! I'm Rodrigo Andino, a Systems Analyst, Full Stack Developer, and soon-to-be Computer Science graduate.
+    'contact.paragraph.1': `Hey! I'm Rodrigo Andino, a Systems Analyst, Full Stack Tech Lead, and soon-to-be Computer Science graduate.
 I'm passionate about creating meaningful technological solutions, from management systems to web platforms with AI and real-time applications.`,
     'contact.paragraph.2': `I'm a calm and curious person, focused on continuous learning. I enjoy both software development and maintaining an active and healthy lifestyle.`,
     'contact.paragraph.3': `I love taking on new challenges, learning emerging technologies, and working on projects with real impact.`,

@@ -25,10 +25,17 @@
     ],
     "workExperience": [
       {
-        "date": "05/2025 - Actualidad",
+        "date": "02/2026 - Actualidad",
+        "title": "Líder Técnico",
+        "complementary": "NotChatbot",
+        "description": "Actualmente me desempeño como Líder Técnico, responsable de garantizar la calidad del código y la estabilidad en producción. Coordino la ejecución técnica del equipo, supervisando entregas y asegurando estándares de desarrollo escalables, seguros y eficientes.",
+        "link": "https://www.notchatbot.com/"
+      },
+      {
+        "date": "05/2025 - 02/2026",
         "title": "Full Stack Developer",
         "complementary": "NotChatbot",
-        "description": "Actualmente me desempeño como desarrollador fullstack en modalidad remota, desarrollando aplicaciones web en tiempo real. Participante clave en la migración a Convex para funcionalidad de base de datos en tiempo real, implementando WebSockets para sincronización instantánea de datos. Creé y publiqué paquetes de NPM personalizados para el equipo. Realicé mantenimiento y mejoras en las integraciones con webhooks para múltiples plataformas incluyendo sistemas de e-commerce y aplicaciones de redes sociales. Mejoré la integración del chatbot de IA para optimización de ventas. Diseño y mantengo interfaces modernas utilizando React y Next.js, mientras gestiono arquitecturas escalables en tiempo real. Tecnologías utilizadas: React, Next.js, JavaScript, Convex, WebSockets, APIs REST, Webhooks, Integración de IA, paquetes NPM, Tailwind CSS y Git.",
+        "description": "Me desempeñé como desarrollador fullstack en modalidad remota, desarrollando aplicaciones web en tiempo real. Participante clave en la migración a Convex para funcionalidad de base de datos en tiempo real, implementando WebSockets para sincronización instantánea de datos. Creé y publiqué paquetes de NPM personalizados para el equipo. Realicé mantenimiento y mejoras en las integraciones con webhooks para múltiples plataformas incluyendo sistemas de e-commerce y aplicaciones de redes sociales. Mejoré la integración del chatbot de IA para optimización de ventas. Diseñé y mantuve interfaces modernas utilizando React y Next.js, mientras gestioné arquitecturas escalables en tiempo real. Tecnologías utilizadas: React, Next.js, JavaScript, Convex, WebSockets, APIs REST, Webhooks, Integración de IA, paquetes NPM, Tailwind CSS y Git.",
         "link": "https://www.notchatbot.com/"
       },
       {
@@ -39,18 +46,18 @@
         "link": ""
       },
       {
-        "date": "2021 - Actualidad",
+        "date": "2021 - 2025",
         "title": "Desarrollador web y Atención al Cliente",
         "complementary": "Vivero Irupé",
         "description": "Emprendimiento familiar con más de 3 años de experiencia en atención al cliente, donde desarrollé habilidades clave como comunicación efectiva, resolución de conflictos y liderazgo. Durante este período, diseñé y desarrollé Vivero Irupé, una web full-stack con más de 200 productos.",
-        "link": ""
+        "link": "https://viveroirupe.com"
       },
       {
         "date": "2021 - 2024",
         "title": "Oficial Especializado en Instrumentación y Control",
         "complementary": "Henisa Sudamericana s.a. & Nucleoeléctrica Argentina s.a.",
         "description": "Experiencia en múltiples proyectos en la Central Nuclear de Embalse durante diferentes períodos (2021, 2022 y 2024). Realicé mantenimiento preventivo y calibración de equipos de alta precisión como válvulas y sensores en entornos de seguridad crítica. Trabajé en estrecha colaboración con equipos de seguridad, aplicando técnicas de resolución de problemas y asegurando el cumplimiento de estrictos protocolos de seguridad. Durante las pasantías iniciales (2021), adquirí experiencia en calibración y medición de instrumentos, verificación de fugas en áreas controladas, obteniendo valiosa comprensión de procesos industriales en entornos regulados.",
-        "link": ""
+        "link": "https://www.na-sa.com.ar/es/centrales-nucleares/embalse"
       }
     ]
   },
