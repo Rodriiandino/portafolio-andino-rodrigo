@@ -7,6 +7,8 @@ import sitemap from '@astrojs/sitemap'
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
+  // Astro 7 defaults to 'jsx', which drops whitespace between inline elements
+  compressHTML: true,
   adapter: vercelAdapter(),
   site: 'https://portafolio-andino-rodrigo.vercel.app',
   i18n: {

@@ -18,7 +18,7 @@ export default function skillsList() {
       const updatedBtns = document.querySelectorAll('.skills__btn')
 
       updatedBtns.forEach(btn => {
-        btn.addEventListener('click', e => {
+        btn.addEventListener('click', () => {
           const activeBtn = document.querySelector('.active')
           if (activeBtn) {
             activeBtn.classList.remove('active')
