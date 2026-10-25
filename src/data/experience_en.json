@@ -28,14 +28,14 @@
         "date": "02/2026 - Present",
         "title": "Tech Lead",
         "complementary": "NotChatbot",
-        "description": "I lead the development team of an AI-powered conversational platform built on WhatsApp, Instagram and Meta APIs. I am responsible for code quality, production stability, planning and the team's engineering practices. I brought MCP and AI agents into our development processes, drive self-hosted AI model inference and analytics on OLAP databases, and lead security hardening and pentest readiness. I also teach internal sessions on tools, security and best practices. Technologies: Next.js, React, TypeScript, Convex, Vercel, AI SDK, MCP, WhatsApp and Meta APIs, and Clerk.",
+        "description": "I lead the development of an AI-powered conversational platform integrated with Meta. I am responsible for code quality, production stability, planning and the team's engineering practices. Under my leadership, the team adopted MCP and AI agents in its workflows. I take part in security hardening, pentest readiness, self-hosted AI model inference and analytics on OLAP databases, and I teach internal sessions on tools, security and best practices. Technologies: Next.js, React, TypeScript, Convex, Vercel, AI SDK, MCP, Meta APIs and Clerk.",
         "link": "https://www.notchatbot.com/"
       },
       {
         "date": "05/2025 - 02/2026",
         "title": "Full Stack Developer",
         "complementary": "NotChatbot",
-        "description": "Worked as a fullstack developer in remote mode, developing real-time web applications. Key participant in the migration to Convex for real-time database functionality, implementing WebSockets for instant data synchronization. Created and published custom NPM packages for the team. Performed maintenance and improvements on webhook integrations with multiple platforms including e-commerce systems and social media applications. Enhanced AI chatbot integration for sales optimization. Cut AI costs by roughly 50% by optimizing memory handling, tool calls and Convex queries. Designed and maintained modern interfaces using React and Next.js, while managing scalable real-time architectures. Technologies used: React, Next.js, JavaScript, Convex, WebSockets, REST APIs, Webhooks, AI Integration, NPM packages, Tailwind CSS, and Git.",
+        "description": "Worked as a fullstack developer in remote mode, developing real-time web applications. Key participant in the migration to Convex for real-time database functionality, implementing WebSockets for instant data synchronization. Created and published custom NPM packages for the team. Performed maintenance and improvements on webhook integrations with multiple platforms including e-commerce systems and social media applications. Enhanced AI chatbot integration for sales optimization. Designed and maintained modern interfaces using React and Next.js, while managing scalable real-time architectures. Technologies used: React, Next.js, JavaScript, Convex, WebSockets, REST APIs, Webhooks, AI Integration, NPM packages, Tailwind CSS, and Git.",
         "link": "https://www.notchatbot.com/"
       },
       {
