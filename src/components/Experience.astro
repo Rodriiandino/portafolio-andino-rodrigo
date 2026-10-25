@@ -12,25 +12,29 @@ const t = useTranslations(currentLocale)
 ---
 
 <section class='experience' id='experience'>
-  <h2>
+  <h2 data-reveal='up'>
     <IconExperience /> {t('title.experience')}
   </h2>
-  <p class='experience__description'>{t('experience.description')}</p>
+  <p class='experience__description' data-reveal='up'>
+    {t('experience.description')}
+  </p>
   <article class='experience__timeline'>
     <div>
-      <h3 class='timeline__title-theme'>{t('experience.work')}</h3>
+      <h3 class='timeline__title-theme' data-reveal='up'>
+        {t('experience.work')}
+      </h3>
       <ol class='timeline'>
         {currentLocale === 'es'
           ? experience_es?.map(item =>
               item.workExperience?.map(workItem => (
-                <li class='timeline__item'>
+                <li class='timeline__item' data-reveal='up'>
                   <ExperienceTimeLineItem {...workItem} />
                 </li>
               ))
             )
           : experience_en?.map(item =>
               item.workExperience?.map(workItem => (
-                <li class='timeline__item'>
+                <li class='timeline__item' data-reveal='up'>
                   <ExperienceTimeLineItem {...workItem} />
                 </li>
               ))
@@ -38,19 +42,21 @@ const t = useTranslations(currentLocale)
       </ol>
     </div>
     <div>
-      <h3 class='timeline__title-theme'>{t('experience.education')}</h3>
+      <h3 class='timeline__title-theme' data-reveal='up'>
+        {t('experience.education')}
+      </h3>
       <ol class='timeline'>
         {currentLocale === 'es'
           ? experience_es?.map(item =>
               item.education?.map(educationItem => (
-                <li class='timeline__item'>
+                <li class='timeline__item' data-reveal='up'>
                   <ExperienceTimeLineItem {...educationItem} />
                 </li>
               ))
             )
           : experience_en?.map(item =>
               item.education?.map(educationItem => (
-                <li class='timeline__item'>
+                <li class='timeline__item' data-reveal='up'>
                   <ExperienceTimeLineItem {...educationItem} />
                 </li>
               ))
@@ -58,19 +64,21 @@ const t = useTranslations(currentLocale)
       </ol>
     </div>
     <div>
-      <h3 class='timeline__title-theme'>{t('experience.course')}</h3>
+      <h3 class='timeline__title-theme' data-reveal='up'>
+        {t('experience.course')}
+      </h3>
       <ol class='timeline'>
         {currentLocale === 'es'
           ? experience_es?.map(item =>
               item.professionalCourses?.map(coursesItem => (
-                <li class='timeline__item'>
+                <li class='timeline__item' data-reveal='up'>
                   <ExperienceTimeLineItem {...coursesItem} />
                 </li>
               ))
             )
           : experience_en?.map(item =>
               item.professionalCourses?.map(coursesItem => (
-                <li class='timeline__item'>
+                <li class='timeline__item' data-reveal='up'>
                   <ExperienceTimeLineItem {...coursesItem} />
                 </li>
               ))

@@ -1,7 +1,7 @@
 # AGENTS.md
 
 Portafolio personal de **Rodrigo Agustín Andino** (Licenciado en Informática, Tech Lead, Argentina).
-Sitio estático bilingüe (es/en) hecho con Astro 5 + islas de Preact, desplegado en Vercel.
+Sitio estático bilingüe (es/en) hecho con Astro 7 + islas de Preact, desplegado en Vercel.
 
 - Producción: https://portafolio-andino-rodrigo.vercel.app
 - Repo: https://github.com/Rodriiandino/portafolio-andino-rodrigo (push a `main` = deploy en Vercel)
@@ -15,11 +15,12 @@ npm run dev            # http://localhost:4321  (es en /, en en /en)
 npm run build          # astro build -> dist/ (estático, adapter Vercel)
 npm run preview        # sirve el build
 npm run check:content  # valida paridad es/en, slugs e imágenes. Correrlo tras CUALQUIER cambio de contenido
+npm run check:reveal   # con `npm run preview` levantado: animaciones por scroll en Chrome headless (ver Trampas)
 npm run lint           # ESLint 10 (flat config: eslint.config.js) con reglas de Astro
 npm run format         # prettier (comillas simples, sin punto y coma, sin trailing commas)
 ```
 
-No hay tests. La verificación mínima es `npm run check:content && npm run lint && npm run build`, y para cambios de UI, probar la galería en el navegador (ver "Trampas").
+No hay tests unitarios. La verificación mínima es `npm run check:content && npm run lint && npm run build`; para cambios de UI, probar la galería en el navegador (ver "Trampas"), y si tocás animaciones, `npm run check:reveal` contra el preview.
 
 Node: `engines.node` = `24.x` (Astro 7 pide >= 22.23.4; Vercel toma esta versión del `package.json`).
 
@@ -55,7 +56,7 @@ src/
     page/Project.astro                    -> página de detalle de proyecto + su lógica cliente
     Bento, Experience, Skills, Contact, Nav, Header, Footer (.astro)
     Projects/ProjectsGallery.jsx, ProjectsGalleryCard.jsx (Preact) + styles/*.css
-    dom/*.js                              -> JS vanilla de cada sección (tema, nav, bento, skills)
+    dom/*.js                              -> JS vanilla de cada sección (tema, nav, bento, skills) + reveal.js (entradas por scroll)
     icons/icons.jsx, utils/convert_title_to_url.js, utils/responsive_image.js (srcset en build)
   data/
     projects_es.json / projects_en.json   -> proyectos (mismo orden en ambos)
@@ -65,6 +66,7 @@ src/
   assets/                                 -> imágenes optimizadas (bento, contacto, projects/*)
 public/                                   -> favicons, og-image, portadas de proyectos, manifest, robots
 scripts/check-content.mjs                 -> validador de contenido
+scripts/check-reveal.mjs                  -> verificación de las animaciones en Chrome headless (CDP, sin dependencias)
 ```
 
 ## Reglas de contenido (lo que se rompe si no las seguís)
@@ -96,8 +98,12 @@ scripts/check-content.mjs                 -> validador de contenido
 
 ## Trampas
 
+- **Animaciones ligadas al scroll: longhands, nunca el shorthand.** Vite 8 minifica con lightningcss, que fusiona `animation` + `animation-timeline: scroll()` en `animation: … scroll()`, un valor inválido que el navegador descarta: en dev anda y en producción el header no se esconde ni aparece el nav de abajo. Header y Nav usan `animation-name`/`-timing-function`/`-fill-mode`/`-timeline` por separado.
+- **Entradas por scroll = `data-reveal='up|down|left|right|fade|zoom'`.** El CSS (`Layout.astro`) oculta solo con `html.js` y sin movimiento reducido; `dom/reveal.js` pone `data-revealed` con un IntersectionObserver, escalona por tanda (70 ms, tope 3 pasos, sin escalonado en mobile) y toma solo los nodos nuevos (galería, lista de tecnologías). Estado en atributos, no en clases (Preact las pisa). No marcar el bento (LCP) ni anidar `data-reveal`. Detalle en la skill `diseno-portafolio`.
+- **`<html>` se reescribe en cada navegación.** ClientRouter copia los atributos del documento entrante: el script inline del `<head>` repone `js`, `dark` y `data-theme` en `astro:before-swap`. Toda marca nueva en `<html>` va ahí.
 - **`compressHTML: true`** en `astro.config.mjs` es a propósito: el default de Astro 7 (`'jsx'`) borra los espacios entre elementos en línea (ícono + texto, links) y cambia el texto renderizado.
-- **La galería puede romperse sin dar error.** Tras actualizar Astro, Preact o `@astrojs/preact`, verificá en el navegador que en `#projects` el botón "Ver Todos" pase de 6 a 16 proyectos y que el filtro por tecnología funcione. Si `<astro-island>` sigue con el atributo `ssr`, no hidrató.
+- **La galería puede romperse sin dar error.** Tras actualizar Astro, Preact o `@astrojs/preact`, verificá en el navegador que en `#projects` el botón "Ver Todos" muestre más proyectos y que el filtro por tecnología funcione (`check:reveal` lo prueba). Si `<astro-island>` sigue con el atributo `ssr`, no hidrató.
+- **El panel del navegador oculto no pinta frames** (≈3 fps, sin `requestAnimationFrame`): lo animado puede verse vacío ahí sin que haya bug. Confirmá con `npm run check:reveal`.
 
 - **Tema invertido**: en `Layout.astro`, los tokens bajo `[data-theme='light']` intercambian valores (`--white` es oscuro, `--light-background` es oscuro, etc.). Usá las variables semánticas (`--white`, `--black`, `--light-blue`…) tal como ya se usan; no inventes colores literales ni "arregles" los nombres sin migrar todos los componentes.
 - El tema se aplica antes del paint con un script inline (localStorage `darkMode-portafolio-andino` + `prefers-color-scheme`) y se repite en cada `astro:page-load`. Todo JS vanilla nuevo debe engancharse a `astro:page-load` (el sitio usa `ClientRouter`), no solo a `DOMContentLoaded`.

@@ -94,7 +94,7 @@ export default function ProjectsGallery({ projects, locale }) {
 
   return (
     <>
-      <div className='projects__toolbar'>
+      <div className='projects__toolbar' data-reveal='up'>
         <div className='projects__toolbar-top'>
           <p className='projects__count' aria-live='polite' aria-atomic='true'>
             <strong>{visible.length}</strong> {t('projects.countOf')}{' '}

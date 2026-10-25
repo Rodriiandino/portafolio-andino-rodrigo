@@ -10,19 +10,23 @@ const t = useTranslations(currentLocale)
 ---
 
 <section id='contact'>
-  <h2>
+  <h2 data-reveal='up'>
     <IconContact /> {t('title.contact')}
   </h2>
   <article class='contact__container'>
     <div class='contact__container-info'>
-      <div class='container__info'>
+      <div class='container__info' data-reveal='up'>
         <p class='info__text'>{t('contact.paragraph.1')}</p>
         <p class='info__text'>{t('contact.paragraph.2')}</p>
         <p class='info__text'>{t('contact.paragraph.3')}</p>
         <p class='info__text'>{t('contact.paragraph.4')}</p>
       </div>
 
-      <nav class='info__contact' aria-label={t('aria.contactLinks')}>
+      <nav
+        class='info__contact'
+        aria-label={t('aria.contactLinks')}
+        data-reveal='up'
+      >
         <a
           class='contact__link'
           href='mailto:andinorodrigo.job@gmail.com'
@@ -42,7 +46,7 @@ const t = useTranslations(currentLocale)
         </a>
       </nav>
     </div>
-    <div class='contact__img'>
+    <div class='contact__img' data-reveal='left'>
       <Image
         src={contactImg}
         alt={t('contact.imgAlt')}
