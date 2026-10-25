@@ -429,7 +429,7 @@
       "PostgreSQL",
       "Docker"
     ],
-    "status": "Completed",
+    "status": "Complete",
     "deploy": {
       "page": "Not Deployed",
       "demo": ""
@@ -475,7 +475,7 @@
       "TypeScript",
       "Vercel AI SDK"
     ],
-    "status": "Completed",
+    "status": "Complete",
     "deploy": {
       "page": "Vercel",
       "demo": "https://ai-interview-odyssey-infojobs.vercel.app/"
@@ -550,7 +550,7 @@
     "features": "Management System",
     "date": "2023",
     "technologies": ["Java", "JDBC", "MySQL", "JavaFX"],
-    "status": "Completed",
+    "status": "Complete",
     "deploy": {
       "page": "Desktop Application",
       "demo": ""
@@ -585,7 +585,7 @@
     "features": "Web Platform",
     "date": "2023 - 2024",
     "technologies": ["Next.js", "React", "MySQL"],
-    "status": "Completed",
+    "status": "Complete",
     "deploy": {
       "page": "Not Deployed",
       "demo": ""
@@ -618,7 +618,7 @@
     "features": "Web Application",
     "date": "2023",
     "technologies": ["HTML", "CSS", "JavaScript", "Astro"],
-    "status": "Completed",
+    "status": "Complete",
     "deploy": {
       "page": "Netlify",
       "demo": "https://pokedex1ra-generacion.netlify.app/"
@@ -646,7 +646,7 @@
     "features": "Desktop Application",
     "date": "2023",
     "technologies": ["Java", "JavaFX"],
-    "status": "Completed",
+    "status": "Complete",
     "deploy": {
       "page": "Not Deployed",
       "demo": ""
@@ -671,7 +671,7 @@
     "features": "Web Application",
     "date": "2023",
     "technologies": ["HTML", "CSS", "JavaScript"],
-    "status": "Completed",
+    "status": "Complete",
     "deploy": {
       "page": "GitHub",
       "demo": "https://rodriiandino.github.io/Challenge_One_Encriptador_G5/"

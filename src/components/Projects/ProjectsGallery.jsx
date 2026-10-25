@@ -4,9 +4,11 @@ import convertTitleToURL from '../utils/convert_title_to_url'
 import { useTranslations } from '../../i18n/utils'
 import { useEffect, useRef, useState } from 'preact/hooks'
 
+// Also read by Projects.astro to pick the larger `sizes` for the cover
+export const highlightedProjects = ['Vivero Irupe - Frontend']
+
 export default function ProjectsGallery({ projects, locale }) {
   const t = useTranslations(locale)
-  const highlightedProjects = ['Vivero Irupe - Frontend']
   const [limit, setLimit] = useState(6)
   const [filteredProjects, setFilteredProjects] = useState(projects)
   const [showFilter, setShowFilter] = useState(false)
@@ -173,7 +175,12 @@ export default function ProjectsGallery({ projects, locale }) {
             key={project.title}
             title={project.title}
             description={project.description}
-            image={project.images[0].src}
+            image={project.cover?.src ?? project.images[0].src}
+            image_srcset={project.cover?.srcset}
+            image_sizes={project.cover?.sizes}
+            image_width={project.cover?.width}
+            image_height={project.cover?.height}
+            vertical={project.cover?.vertical}
             image_alt={project.images[0].alt}
             title_url={
               locale === 'es'

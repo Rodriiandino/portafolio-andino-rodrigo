@@ -130,7 +130,10 @@ export function truncate(text, max = 155) {
   const clean = text.replace(/\s+/g, ' ').trim()
   if (clean.length <= max) return clean
   const cut = clean.slice(0, max - 1)
-  return `${cut.slice(0, cut.lastIndexOf(' ')).replace(/[,.;:]$/, '')}…`
+  const space = cut.lastIndexOf(' ')
+  // No space to cut at (one very long word): hard cut instead of slice(0, -1)
+  const head = space > 0 ? cut.slice(0, space) : cut
+  return `${head.replace(/[,.;:]$/, '')}…`
 }
 
 /** First year found in a project date like "2023 - 2024". */
@@ -312,6 +315,20 @@ export function projectSchema(locale, index, { title, description }) {
   }
 }
 
-/** Safe for <script type="application/ld+json" set:html>. */
+/**
+ * Safe for <script type="application/ld+json" set:html>: escapes the
+ * characters that could close the script element or start an HTML comment
+ * (`</script>`, `<!--`) plus U+2028/U+2029. The output is still valid JSON.
+ */
+const JSON_LD_ESCAPES = {
+  '<': '\\u003c',
+  '>': '\\u003e',
+  '&': '\\u0026',
+  '\u2028': '\\u2028',
+  '\u2029': '\\u2029'
+}
 export const serializeJsonLd = data =>
-  JSON.stringify(data).replace(/</g, '\\u003c')
+  JSON.stringify(data).replace(
+    /[<>&\u2028\u2029]/g,
+    char => JSON_LD_ESCAPES[char]
+  )

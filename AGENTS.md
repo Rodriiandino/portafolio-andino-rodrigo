@@ -30,8 +30,8 @@ Node: `engines.node` = `24.x` (Astro 7 pide >= 22.23.4; Vercel toma esta versió
 | Framework | Astro 7 (`output: 'static'`, `@astrojs/vercel`), `ClientRouter` (view transitions) |
 | Islas | Preact 10 (`.jsx`). Solo `ProjectsGallery` se hidrata (`client:visible`). **No subir a Preact 11**: con `@astrojs/preact` 6.1 la isla no hidrata y no da ningún error |
 | Estilos | CSS plano: `<style>` scoped en cada `.astro` + tokens globales en `src/layouts/Layout.astro`. **Sin Tailwind** |
-| Fuente | `@fontsource-variable/onest` |
-| Galería | PhotoSwipe 5 (`src/load-gallery.js`, `#my-gallery` en la página de proyecto) |
+| Fuente | `@fontsource-variable/onest`, solo subset latin: `@font-face` inline + `preload` en `Layout.astro` (no reimportar el paquete completo) |
+| Galería | PhotoSwipe 5 (`src/load-gallery.js`, importado solo desde `Project.astro`; se inicializa en `astro:page-load`) |
 | SEO | `src/components/SEO.astro`, `@astrojs/sitemap` con i18n, `public/robots.txt` |
 | Lenguaje | JS + TS en el frontmatter de `.astro` (`astro/tsconfigs/base`, `jsxImportSource: preact`) |
 
@@ -56,7 +56,7 @@ src/
     Bento, Experience, Skills, Contact, Nav, Header, Footer (.astro)
     Projects/ProjectsGallery.jsx, ProjectsGalleryCard.jsx (Preact) + styles/*.css
     dom/*.js                              -> JS vanilla de cada sección (tema, nav, bento, skills)
-    icons/icons.jsx, hooks/, utils/convert_title_to_url.js
+    icons/icons.jsx, utils/convert_title_to_url.js, utils/responsive_image.js (srcset en build)
   data/
     projects_es.json / projects_en.json   -> proyectos (mismo orden en ambos)
     experience_es.json / experience_en.json
@@ -75,9 +75,9 @@ scripts/check-content.mjs                 -> validador de contenido
 - El slug de la URL sale del `title` vía `convert_title_to_url.js` (minúsculas, espacios → `-`, se descarta todo lo que no sea `[a-z0-9-]`). **Renombrar un título cambia su URL** y rompe links/SEO. El slug es y en son distintos porque los títulos están traducidos.
 - Imágenes en **dos lugares** con la misma ruta relativa:
   - `src/assets/projects/<dir>/<dir>_N.webp`: todas. La página de detalle las resuelve con `import.meta.glob`.
-  - `public/projects/<dir>/<dir>_1.webp`: **solo la portada** (primera imagen). La card de la galería la carga desde `public/`.
+  - `public/projects/<dir>/<dir>_1.webp`: **solo la portada** (primera imagen). Se usa como `og:image` del proyecto (vista previa al compartir). La card de la galería usa la versión optimizada que `Projects.astro` genera desde `src/assets` en el build.
   - En el JSON, `src` siempre es `/projects/<dir>/<archivo>.webp`.
-- Formato `.webp`. La galería lee la proporción de la portada (>1.5 agrega la clase `vertical`).
+- Formato `.webp`. `Projects.astro` calcula en build el srcset, el width/height y la clase `vertical` (alto/ancho > 1.5) de cada portada; a la isla solo le pasa los campos que usa.
 - El proyecto destacado está hardcodeado por título en `ProjectsGallery.jsx` (`highlightedProjects`). Si lo renombrás, actualizalo ahí.
 
 **Experiencia** (`src/data/experience_{es,en}.json`): `[ {education[], workExperience[]}, {professionalCourses[]} ]`, ítems `{date, title, complementary, description, link}`. Mismo largo y orden en es y en.

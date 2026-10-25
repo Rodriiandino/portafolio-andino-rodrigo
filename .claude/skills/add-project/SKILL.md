@@ -12,7 +12,7 @@ Un proyecto vive en 4 lugares que tienen que quedar coherentes. Si falta uno, la
 | Datos en español | `src/data/projects_es.json` |
 | Datos en inglés | `src/data/projects_en.json` (mismo índice que es) |
 | Todas las capturas | `src/assets/projects/<dir>/<dir>_N.webp` |
-| Portada (solo la 1ª) | `public/projects/<dir>/<dir>_1.webp` |
+| Portada (solo la 1ª), para `og:image` | `public/projects/<dir>/<dir>_1.webp` |
 
 ## 1. Juntar la información
 
@@ -23,7 +23,7 @@ Pedí lo que falte, sin inventar. Lo mínimo: nombre, qué problema resuelve, pa
 - `<dir>`: snake_case corto y estable (`bp_importados`, `omni_resto`). No depende del título.
 - Convertí a `.webp` si hace falta (`cwebp -q 80 in.png -o out.webp`, o `sharp`). Si la herramienta no está instalada, pedile al usuario que convierta o que autorice instalarla. Ancho razonable: ~1600px como máximo.
 - La primera imagen es la portada: elegí la más representativa (home, vista principal). Copiala también a `public/projects/<dir>/`.
-- La galería detecta capturas verticales (alto/ancho > 1.5) y les cambia el layout de la card. Para mobile, una captura vertical como portada está bien.
+- La galería detecta en build las capturas verticales (alto/ancho > 1.5) y les cambia el layout de la card; también genera solas las versiones responsive (srcset). Subí la imagen original en buena resolución, sin achicarla a mano.
 
 ## 3. Entrada en el JSON (es y en)
 

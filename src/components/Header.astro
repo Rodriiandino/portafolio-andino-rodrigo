@@ -16,7 +16,9 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
 ---
 
 <header class='header' id='header'>
-  <a href='#main-content' class='skip-link'>{t('a11y.skipToContent')}</a>
+  <a href='#main-content' class='skip-link'>
+    {t('a11y.skipToContent')}
+  </a>
   <a
     href={`/${currentLocale === 'es' ? '' : 'en'}`}
     class='header__logo'

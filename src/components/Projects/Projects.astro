@@ -1,22 +1,68 @@
 ---
 import { IconProjects } from '../icons/icons'
 import { useTranslations } from '../../i18n/utils'
-import ProjectsGallery from './ProjectsGallery'
+import { getResponsiveImage } from '../utils/responsive_image'
+import ProjectsGallery, { highlightedProjects } from './ProjectsGallery'
 import projects_es from '../../data/projects_es.json'
 import projects_en from '../../data/projects_en.json'
 
 const { currentLocale = 'es' } = Astro
 
 const t = useTranslations(currentLocale)
+
+// Covers are resolved at build time from src/assets (same relative path as the
+// `src` in the JSON) so each card gets a resized srcset plus its real
+// width/height (no layout shift when it loads) and the `vertical` decision,
+// instead of downloading every full-size cover from public/ at hydration.
+const covers = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/projects/**/*.webp',
+  { eager: true }
+)
+
+const COVER_WIDTHS = [480, 720, 960, 1440]
+const COVER_SIZES = '(max-width: 768px) calc(100vw - 4rem), 480px'
+const HIGHLIGHT_COVER_SIZES = '(max-width: 768px) calc(100vw - 4rem), 860px'
+
+async function getCover(src, highlight) {
+  const meta = covers[`/src/assets${src}`]?.default
+  if (!meta) return null
+
+  const sizes = highlight ? HIGHLIGHT_COVER_SIZES : COVER_SIZES
+  const image = await getResponsiveImage(meta, {
+    widths: COVER_WIDTHS,
+    width: 720
+  })
+
+  return {
+    ...image,
+    sizes,
+    // Same rule the card used to compute at runtime (height / width > 1.5)
+    vertical: meta.height / meta.width > 1.5
+  }
+}
+
+// Only the fields the gallery renders are serialized into the island props
+const projects = await Promise.all(
+  (currentLocale === 'es' ? projects_es : projects_en).map(async project => ({
+    title: project.title,
+    description: project.description,
+    technologies: project.technologies,
+    github: project.github,
+    deploy: { demo: project.deploy.demo },
+    images: [{ src: project.images[0].src, alt: project.images[0].alt }],
+    cover: await getCover(
+      project.images[0].src,
+      highlightedProjects.includes(project.title)
+    )
+  }))
+)
 ---
 
 <section class='projects' id='projects'>
-  <h2><IconProjects /> {t('title.projects')}</h2>
-  <ProjectsGallery
-    client:visible
-    projects={currentLocale === 'es' ? projects_es : projects_en}
-    locale={currentLocale}
-  />
+  <h2>
+    <IconProjects /> {t('title.projects')}
+  </h2>
+  <ProjectsGallery client:visible projects={projects} locale={currentLocale} />
 </section>
 
 <style>

@@ -2,6 +2,8 @@
   "name": "portafolio-andino-rodrigo",
   "type": "module",
   "version": "0.0.1",
+  "description": "Portafolio bilingüe (es/en) de Rodrigo Agustín Andino, Tech Lead & Full Stack Developer. Astro 7 + Preact, estático en Vercel.",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,7 +12,9 @@
     "astro": "astro",
     "check:content": "node scripts/check-content.mjs",
     "format": "prettier --write \"src/**/*.{astro,js,jsx,ts,css}\" scripts",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format:check": "prettier --check \"src/**/*.{astro,js,jsx,ts,css}\" scripts",
+    "check": "npm run check:content && npm run lint && npm run build"
   },
   "dependencies": {
     "@astrojs/preact": "^6.1.1",

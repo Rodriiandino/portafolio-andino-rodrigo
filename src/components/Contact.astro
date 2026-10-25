@@ -10,22 +10,16 @@ const t = useTranslations(currentLocale)
 ---
 
 <section id='contact'>
-  <h2><IconContact /> {t('title.contact')}</h2>
+  <h2>
+    <IconContact /> {t('title.contact')}
+  </h2>
   <article class='contact__container'>
     <div class='contact__container-info'>
       <div class='container__info'>
-        <p class='info__text'>
-          {t('contact.paragraph.1')}
-        </p>
-        <p class='info__text'>
-          {t('contact.paragraph.2')}
-        </p>
-        <p class='info__text'>
-          {t('contact.paragraph.3')}
-        </p>
-        <p class='info__text'>
-          {t('contact.paragraph.4')}
-        </p>
+        <p class='info__text'>{t('contact.paragraph.1')}</p>
+        <p class='info__text'>{t('contact.paragraph.2')}</p>
+        <p class='info__text'>{t('contact.paragraph.3')}</p>
+        <p class='info__text'>{t('contact.paragraph.4')}</p>
       </div>
 
       <nav class='info__contact' aria-label={t('aria.contactLinks')}>
@@ -42,9 +36,10 @@ const t = useTranslations(currentLocale)
           href='https://drive.google.com/drive/folders/1ubdQQywhXjspH7phjBvDsFDLFQEtBPiU?usp=sharing'
           target='_blank'
           rel='noopener noreferrer'
-          >{t('contact.btn')}
-          <span class='sr-only'>({t('a11y.newTab')})</span></a
         >
+          {t('contact.btn')}
+          <span class='sr-only'>({t('a11y.newTab')})</span>
+        </a>
       </nav>
     </div>
     <div class='contact__img'>
@@ -52,7 +47,7 @@ const t = useTranslations(currentLocale)
         src={contactImg}
         alt={t('contact.imgAlt')}
         width={500}
-        quality={95}
+        quality={85}
       />
     </div>
   </article>

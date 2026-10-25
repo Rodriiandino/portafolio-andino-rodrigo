@@ -8,14 +8,16 @@ export default function skillsList() {
     if (!$btns.length || !$list) return
 
     const renderList = skills => {
-      $list.innerHTML = ''
-      skills.forEach(skill => {
-        const icon = skill.icon.replace(
-          '<svg',
-          '<svg aria-hidden="true" focusable="false"'
-        )
-        $list.innerHTML += `<li class="icon__svg">${icon} ${skill.name}</li>`
-      })
+      // Build the markup once: `innerHTML +=` re-parses the whole list per item
+      $list.innerHTML = skills
+        .map(skill => {
+          const icon = skill.icon.replace(
+            '<svg',
+            '<svg aria-hidden="true" focusable="false"'
+          )
+          return `<li class="icon__svg">${icon} ${skill.name}</li>`
+        })
+        .join('')
     }
 
     // Toggle buttons: the selected category is exposed with aria-pressed

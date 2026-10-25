@@ -1,11 +1,16 @@
 import './styles/projects-gallery-card.css'
-import { useEffect, useRef } from 'preact/hooks'
 import { IconCode, IconDemo } from '../icons/icons'
-import { useImageDimensions } from '../hooks/useImageDimensions'
 import { useTranslations } from '../../i18n/utils'
 
+// Cover srcset, dimensions and `vertical` are computed at build time in
+// Projects.astro, so the card renders its final layout before the image loads
 export default function ProjectsGalleryCard({
   image,
+  image_srcset,
+  image_sizes,
+  image_width,
+  image_height,
+  vertical,
   image_alt,
   title,
   title_url,
@@ -17,29 +22,18 @@ export default function ProjectsGalleryCard({
   currentLocale = 'es'
 }) {
   const t = useTranslations(currentLocale)
-  const cardRef = useRef(null)
-
-  useEffect(() => {
-    const calculateSize = async () => {
-      const aspectRatio = await useImageDimensions(image)
-      const card = cardRef.current
-
-      if (card && aspectRatio > 1.5) {
-        card.classList.add('vertical')
-      }
-    }
-
-    calculateSize()
-  }, [image])
 
   return (
     <>
       <article
-        ref={cardRef}
-        class={`projects__gallery-item ${highlight ? 'highlight' : ''}`}
+        class={`projects__gallery-item ${highlight ? 'highlight' : ''}${vertical ? ' vertical' : ''}`}
       >
         <img
           src={image}
+          srcset={image_srcset}
+          sizes={image_sizes}
+          width={image_width}
+          height={image_height}
           alt={image_alt}
           class='gallery__img'
           loading='lazy'

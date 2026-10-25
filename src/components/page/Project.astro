@@ -6,6 +6,7 @@ import projects_en from '../../data/projects_en.json'
 import convertTitleToURL from '../utils/convert_title_to_url'
 import { IconCode, IconDemo } from '../../components/icons/icons'
 import { truncate } from '../../lib/site.js'
+import { getResponsiveImage } from '../utils/responsive_image'
 
 const { title } = Astro.params
 const { currentLocale = 'es' } = Astro
@@ -43,6 +44,27 @@ function getImagePath(fileName: string | undefined) {
   return imageModule.default
 }
 
+// The page shows each image at most 700 CSS px wide (.project__image img), so
+// it gets a resized srcset (1x/2x) while the link keeps the original file for
+// the PhotoSwipe lightbox. Widths never upscale the original.
+const DISPLAY_WIDTHS = [700, 1400]
+const DISPLAY_SIZES = '(max-width: 700px) 100vw, 700px'
+
+const galleryImages = await Promise.all(
+  project.images.map(async image => {
+    const original = getImagePath(image.src)
+    if (!original) return null
+
+    const display = await getResponsiveImage(original, {
+      widths: DISPLAY_WIDTHS,
+      width: DISPLAY_WIDTHS[0],
+      quality: 85
+    })
+
+    return { alt: image.alt, original, display }
+  })
+)
+
 const seoTitle = `${project.title} | Rodrigo Andino`
 
 // Meta description: the project's own summary, cut to ~155 chars
@@ -73,7 +95,8 @@ const seoDescription = truncate(project.description, 155)
           <path
             stroke-linecap='round'
             stroke-linejoin='round'
-            d='M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18'></path>
+            d='M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18'
+          ></path>
         </svg>
         <span class='back-button__text'>{t('project.back')}</span>
       </a>
@@ -87,7 +110,8 @@ const seoDescription = truncate(project.description, 155)
           id='button-left'
           aria-label={t('project.prevImage')}
           aria-controls='my-gallery'
-          ><svg
+        >
+          <svg
             aria-hidden='true'
             focusable='false'
             xmlns='http://www.w3.org/2000/svg'
@@ -100,7 +124,8 @@ const seoDescription = truncate(project.description, 155)
             <path
               stroke-linecap='round'
               stroke-linejoin='round'
-              d='M6.75 15.75 3 12m0 0l3.75-3.75M3 12h18'></path>
+              d='M6.75 15.75 3 12m0 0l3.75-3.75M3 12h18'
+            ></path>
           </svg>
         </button>
         <button
@@ -109,7 +134,8 @@ const seoDescription = truncate(project.description, 155)
           id='button-right'
           aria-label={t('project.nextImage')}
           aria-controls='my-gallery'
-          ><svg
+        >
+          <svg
             aria-hidden='true'
             focusable='false'
             xmlns='http://www.w3.org/2000/svg'
@@ -122,7 +148,8 @@ const seoDescription = truncate(project.description, 155)
             <path
               stroke-linecap='round'
               stroke-linejoin='round'
-              d='M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3'></path>
+              d='M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3'
+            ></path>
           </svg>
         </button>
       </div>
@@ -131,33 +158,36 @@ const seoDescription = truncate(project.description, 155)
         id='image-status'
         role='status'
         data-template={t('project.imageStatus')}
-      >
-      </p>
+      ></p>
     </div>
     <div class='project__image' id='my-gallery'>
-      {
-        project.images.map((image, index) => {
-          const imgPath = getImagePath(image.src)
-          return (
-            <a
-              href={imgPath.src}
-              data-cropped='true'
-              data-pswp-width={imgPath.width}
-              data-pswp-height={imgPath.height}
-              class={index === 0 ? 'gallery-item active' : 'gallery-item'}
-              style={index === 0 ? '' : 'display: none;'}
-            >
-              <img
-                src={imgPath.src}
-                alt={image.alt}
-                id={`img-${index}`}
-                loading={index === 0 ? 'eager' : 'lazy'}
-                decoding='async'
-              />
-            </a>
-          )
-        })
-      }
+      {galleryImages.map((image, index) => {
+        if (!image) return null
+        const { original, display } = image
+        return (
+          <a
+            href={original.src}
+            data-cropped='true'
+            data-pswp-width={original.width}
+            data-pswp-height={original.height}
+            class={index === 0 ? 'gallery-item active' : 'gallery-item'}
+            style={index === 0 ? '' : 'display: none;'}
+          >
+            <img
+              src={display.src}
+              srcset={display.srcset}
+              sizes={DISPLAY_SIZES}
+              width={original.width}
+              height={original.height}
+              alt={image.alt}
+              id={`img-${index}`}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              fetchpriority={index === 0 ? 'high' : undefined}
+              decoding='async'
+            />
+          </a>
+        )
+      })}
     </div>
     <div class='project__aside-container'>
       <button
@@ -180,22 +210,23 @@ const seoDescription = truncate(project.description, 155)
           <path
             stroke-linecap='round'
             stroke-linejoin='round'
-            d='M3.75 9h16.5m-16.5 6.75h16.5'></path>
+            d='M3.75 9h16.5m-16.5 6.75h16.5'
+          ></path>
         </svg>
       </button>
       <aside class='project__aside' id='project-aside'>
         <div>
-          <h1 class='aside__title' id='title'>{project.title}</h1>
+          <h1 class='aside__title' id='title'>
+            {project.title}
+          </h1>
           <p class='aside__description'>{project.description}</p>
         </div>
 
         <div>
           <h2 class='aside__title'>{t('project.learn')}</h2>
-          {
-            project.what_i_learned?.map(learn => (
-              <p class='aside__learn'>{learn}</p>
-            ))
-          }
+          {project.what_i_learned?.map(learn => (
+            <p class='aside__learn'>{learn}</p>
+          ))}
         </div>
 
         <table class='aside__table'>
@@ -210,13 +241,11 @@ const seoDescription = truncate(project.description, 155)
             </tr>
             <tr class='aside__tr'>
               <th scope='row'>{t('project.technologies')}</th>
-              <td
-                >{
-                  project.technologies.map((tech, i) =>
-                    i === project.technologies.length - 1 ? tech : `${tech}, `
-                  )
-                }</td
-              >
+              <td>
+                {project.technologies.map((tech, i) =>
+                  i === project.technologies.length - 1 ? tech : `${tech}, `
+                )}
+              </td>
             </tr>
             <tr class='aside__tr'>
               <th scope='row'>{t('project.state')}</th>
@@ -230,39 +259,34 @@ const seoDescription = truncate(project.description, 155)
         </table>
 
         <footer class='aside__footer'>
-          {
-            project.github && (
-              <a
-                href={project.github}
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label={`${t('aria.codeOf')} ${project.title} (${t('a11y.newTab')})`}
-              >
-                <IconCode /> {t('link.code')}
-              </a>
-            )
-          }
+          {project.github && (
+            <a
+              href={project.github}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={`${t('aria.codeOf')} ${project.title} (${t('a11y.newTab')})`}
+            >
+              <IconCode /> {t('link.code')}
+            </a>
+          )}
 
-          {
-            project.deploy.demo && (
-              <a
-                href={project.deploy.demo}
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label={`${t('aria.demoOf')} ${project.title} (${t('a11y.newTab')})`}
-              >
-                <IconDemo /> {t('link.demo')}
-              </a>
-            )
-          }
+          {project.deploy.demo && (
+            <a
+              href={project.deploy.demo}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={`${t('aria.demoOf')} ${project.title} (${t('a11y.newTab')})`}
+            >
+              <IconDemo /> {t('link.demo')}
+            </a>
+          )}
         </footer>
       </aside>
     </div>
   </main>
 
   <script>
-    import projects_es from '../../data/projects_es.json'
-    import projects_en from '../../data/projects_en.json'
+    import '../../load-gallery.js'
 
     const handleProjectLogic = () => {
       const $html = document.querySelector('html') as HTMLHtmlElement
@@ -405,15 +429,11 @@ const seoDescription = truncate(project.description, 155)
         adjustAsideHeight()
       }
 
-      const currentLocale = $html.getAttribute('lang') as string
-      const projects = currentLocale === 'es' ? projects_es : projects_en
-      const project = projects.find(
-        project => project.title === $title.textContent
-      )
+      // One .gallery-item per project image (rendered at build time), so the
+      // project JSON does not need to be bundled into this script
+      const imgLength = $projectImage.querySelectorAll('.gallery-item').length
 
-      if (!project) return
-
-      const imgLength = project.images.length
+      if (!imgLength) return
 
       if (imgLength === 1) {
         $buttonsContainer.style.display = 'none'

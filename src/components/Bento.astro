@@ -21,9 +21,7 @@ const t = useTranslations(currentLocale)
       <h1>{t('bento.title')}</h1>
       <span>{t('bento.subtitle')}</span>
     </header>
-    <p>
-      {t('bento.description')}
-    </p>
+    <p>{t('bento.description')}</p>
     <footer class='bento__1-footer'>
       <nav class='bento__1-footer__nav' aria-label={t('aria.socialNav')}>
         <a
@@ -71,8 +69,9 @@ const t = useTranslations(currentLocale)
       src={bentoImg}
       alt={t('bento.portraitAlt')}
       width={500}
-      quality={95}
-      loading={'eager'}
+      quality={85}
+      loading='eager'
+      fetchpriority='high'
     />
   </article>
   <article class='bento__3 bento-item'>
@@ -95,13 +94,15 @@ const t = useTranslations(currentLocale)
           stroke='currentColor'
           stroke-width='1.5'
           stroke-linecap='round'
-          stroke-linejoin='round'></path>
+          stroke-linejoin='round'
+        ></path>
         <path
           d='M16.5641 12.8623L16.6274 4.31369L8.0788 4.37701'
           stroke='currentColor'
           stroke-width='2'
           stroke-linecap='round'
-          stroke-linejoin='round'></path>
+          stroke-linejoin='round'
+        ></path>
       </svg>
       <strong>CV</strong>
       <span>{t('bento.download')}</span>
@@ -135,9 +136,7 @@ const t = useTranslations(currentLocale)
   </article>
   <article class='bento__7 bento-item'>
     <blockquote>
-      <p>
-        {t('bento.phrase')}
-      </p>
+      <p>{t('bento.phrase')}</p>
       <cite>{t('bento.author')}</cite>
     </blockquote>
     <svg
@@ -150,7 +149,8 @@ const t = useTranslations(currentLocale)
       <g clip-path='url(#clip0_156_546)'>
         <path
           d='M42.3038 3.27005H30.6338C28.2177 3.27005 26.2575 5.46711 26.2575 8.17511V21.2553C26.2575 23.9633 28.2177 26.1603 30.6338 26.1603H37.9276V32.7004C37.9276 36.3077 35.3109 39.2405 32.0926 39.2405H31.3632C30.1506 39.2405 29.175 40.3339 29.175 41.693V46.5981C29.175 47.9572 30.1506 49.0506 31.3632 49.0506H32.0926C40.1522 49.0506 46.6801 41.7339 46.6801 32.7004V8.17511C46.6801 5.46711 44.7199 3.27005 42.3038 3.27005ZM16.0463 3.27005H4.37626C1.9602 3.27005 0 5.46711 0 8.17511V21.2553C0 23.9633 1.9602 26.1603 4.37626 26.1603H11.67V32.7004C11.67 36.3077 9.05338 39.2405 5.83501 39.2405H5.10563C3.89305 39.2405 2.9175 40.3339 2.9175 41.693V46.5981C2.9175 47.9572 3.89305 49.0506 5.10563 49.0506H5.83501C13.8946 49.0506 20.4225 41.7339 20.4225 32.7004V8.17511C20.4225 5.46711 18.4623 3.27005 16.0463 3.27005Z'
-          fill='#A6D1E6'></path>
+          fill='#A6D1E6'
+        ></path>
       </g>
       <defs>
         <clipPath id='clip0_156_546'>
