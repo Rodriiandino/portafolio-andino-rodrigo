@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Portafolio personal de **Rodrigo Agustín Andino** (Tech Lead & Full Stack Developer, Argentina).
+Portafolio personal de **Rodrigo Agustín Andino** (Licenciado en Informática, Tech Lead, Argentina).
 Sitio estático bilingüe (es/en) hecho con Astro 5 + islas de Preact, desplegado en Vercel.
 
 - Producción: https://portafolio-andino-rodrigo.vercel.app

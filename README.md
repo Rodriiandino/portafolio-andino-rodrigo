@@ -1,6 +1,6 @@
 # Portafolio | Rodrigo Agustín Andino
 
-Portafolio personal bilingüe (español / inglés) de **Rodrigo Agustín Andino**, Tech Lead & Full Stack Developer (Argentina).
+Portafolio personal bilingüe (español / inglés) de **Rodrigo Agustín Andino**, Licenciado en Informática y Tech Lead (Argentina).
 
 - Sitio: https://portafolio-andino-rodrigo.vercel.app (español en `/`, inglés en `/en/`)
 - Versión para LLMs: [`/llms.txt`](https://portafolio-andino-rodrigo.vercel.app/llms.txt)

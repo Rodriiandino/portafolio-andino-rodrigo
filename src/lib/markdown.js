@@ -181,7 +181,7 @@ export function llmsTxt() {
   return [
     `# ${PERSON_NAME}`,
     '',
-    `> ${PERSON_NAME} (Rodrigo Andino) is a ${t('en', 'bento.subtitle')} from Argentina, currently ${job.title} at ${job.complementary} (${job.date}). In his own words: "${clean(t('en', 'bento.description'))}"`,
+    `> ${PERSON_NAME} (Rodrigo Andino) is a software professional from Argentina (${t('en', 'bento.subtitle')}), currently ${job.title} at ${job.complementary} (${job.date}). In his own words: "${clean(t('en', 'bento.description'))}"`,
     '',
     `This is his personal portfolio, bilingual: Spanish at ${SITE_URL}/ (default) and English at ${SITE_URL}/en/. Every page has a Markdown version (same URL ending in .md).`,
     '',

@@ -18,7 +18,7 @@ export const WEBSITE_ID = `${SITE_URL}/#website`
 
 export const PERSON_NAME = 'Rodrigo Agustín Andino'
 export const PERSON_SHORT_NAME = 'Rodrigo Andino'
-export const EMAIL = 'andinorodrigo03@gmail.com'
+export const EMAIL = 'andinorodrigo.job@gmail.com'
 export const CV_URL =
   'https://drive.google.com/drive/folders/1ubdQQywhXjspH7phjBvDsFDLFQEtBPiU?usp=sharing'
 export const SOCIAL = {
@@ -41,6 +41,14 @@ export function getExperience(locale) {
     experience[locale]
   return { education, workExperience, professionalCourses }
 }
+
+/** University degrees already earned (an open date range means still studying). */
+export const getDegrees = locale =>
+  getExperience(locale).education.filter(
+    item =>
+      /universidad/i.test(item.complementary) &&
+      !/cursando|actualidad|present/i.test(item.date)
+  )
 
 /** Current job = first item of workExperience (the JSON is newest first). */
 export const getCurrentJob = locale => getExperience(locale).workExperience[0]
@@ -142,7 +150,9 @@ export const firstYear = date => date.match(/\d{4}/)?.[0]
 const SKILL_ALIASES = {
   JS: 'JavaScript',
   TS: 'TypeScript',
-  'Next js': 'Next.js'
+  'Next js': 'Next.js',
+  RAG: 'Retrieval-Augmented Generation (RAG)',
+  MCP: 'Model Context Protocol (MCP)'
 }
 
 /** Skills section + every project technology, deduplicated. */
@@ -162,6 +172,7 @@ export function getKnowsAbout() {
 /** Skill names grouped by the categories shown in the Skills section. */
 export function getSkillGroups(locale) {
   const labels = {
+    aiAgents: t(locale, 'skills.ai'),
     frontEnd: t(locale, 'skills.frontend'),
     backEnd: t(locale, 'skills.backend'),
     databases: t(locale, 'skills.database'),
@@ -189,13 +200,19 @@ function personNode(locale) {
     familyName: 'Andino',
     url: `${SITE_URL}/`,
     email: `mailto:${EMAIL}`,
-    jobTitle: t(locale, 'bento.subtitle'),
+    jobTitle: job.title,
     description: t(locale, 'bento.description'),
     worksFor: {
       '@type': 'Organization',
       name: job.complementary,
       ...(job.link && { url: job.link })
     },
+    hasCredential: getDegrees(locale).map(item => ({
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'degree',
+      name: item.title,
+      recognizedBy: { '@type': 'CollegeOrUniversity', name: item.complementary }
+    })),
     alumniOf: schools.map(name => ({
       '@type': /universidad/i.test(name)
         ? 'CollegeOrUniversity'
@@ -307,7 +324,7 @@ export function projectSchema(locale, index, { title, description }) {
         '@id': PERSON_ID,
         name: PERSON_NAME,
         url: homeUrl,
-        jobTitle: t(locale, 'bento.subtitle'),
+        jobTitle: getCurrentJob(locale).title,
         sameAs: Object.values(SOCIAL)
       },
       websiteNode()

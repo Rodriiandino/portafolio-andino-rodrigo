@@ -50,11 +50,11 @@ export default function skillsList() {
     }
 
     const initializeList = () => {
-      const frontEndBtn = document.querySelector('#frontEnd')
-      if (frontEndBtn) {
-        setActive(frontEndBtn)
+      const defaultBtn = document.querySelector('#aiAgents')
+      if (defaultBtn) {
+        setActive(defaultBtn)
       }
-      renderList(skillsData.frontEnd)
+      renderList(skillsData.aiAgents)
     }
 
     setupEventListeners()

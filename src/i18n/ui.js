@@ -12,9 +12,9 @@ export const ui = {
     'title.skills': 'tecnologías',
     'title.contact': 'Contactame',
     'bento.title': 'ANDINO RODRIGO AGUSTÍN',
-    'bento.subtitle': 'Tech Lead & Full Stack Developer',
+    'bento.subtitle': 'Tech Lead · Arquitectura de Software · IA y RAG',
     'bento.description':
-      'Analista en Sistemas y Líder Técnico Full Stack, con más de 4 años de experiencia. Trabajo con Java y Spring Boot en el backend, y con React, Next.js y TypeScript en el frontend. Enfocado en arquitecturas escalables, calidad de código, integración de IA y sistemas real-time con WebSockets.',
+      'Licenciado en Informática y Tech Lead en NotChatbot, donde lidero un equipo de 5 desarrolladores en una plataforma conversacional con IA. Más de 4 años construyendo software en producción con Next.js, React, TypeScript y Convex. Me enfoco en arquitectura escalable, sistemas RAG, agentes y MCP.',
     'bento.download': 'Descargar',
     'bento.availability': 'Conectemos 🚀 Creemos algo increíble',
     'bento.country': 'ARGENTINA',
@@ -22,7 +22,7 @@ export const ui = {
       '“Hay que trabajar, hay que aprender, hay que comer, hay que descansar, y también hay que jugar”',
     'bento.author': 'Maestro Roshi',
     'bento.myStack': 'Mi Stack',
-    'experience.description': `Analista en Sistemas y Líder Técnico con experiencia en desarrollo de software, coordinación de equipos y estándares de calidad en producción. Mi formación técnica en electricidad y mi experiencia en instrumentación nuclear me han proporcionado una base sólida en sistemas críticos. He liderado la ejecución técnica de equipos y el desarrollo de múltiples proyectos full stack, desde sistemas de gestión empresarial hasta plataformas web con IA. Destaco por mi capacidad para diseñar arquitecturas escalables, garantizar la estabilidad en producción y crear soluciones innovadoras que satisfacen necesidades empresariales complejas.`,
+    'experience.description': `Licenciado en Informática y Líder Técnico de un equipo de 5 desarrolladores. Mi trabajo combina arquitectura de software, calidad en producción e ingeniería de IA: sistemas RAG, agentes y servidores MCP, optimización de costos de inferencia y plataformas real-time. Mi formación técnica en electricidad y mi experiencia en instrumentación nuclear me dieron disciplina y una base sólida en sistemas críticos. Cerré la carrera con un Trabajo Final de Grado aprobado con 10: un sistema de gestión del conocimiento basado en Generación Aumentada por Recuperación (RAG).`,
     'experience.education': 'EDUCACIÓN',
     'experience.work': 'TRABAJO',
     'experience.course': 'CURSOS',
@@ -34,9 +34,10 @@ export const ui = {
     'skills.frontend': 'Front-end',
     'skills.backend': 'Back-end',
     'skills.database': 'Base de datos',
+    'skills.ai': 'IA & Agentes',
     'skills.other': 'Otras',
-    'contact.paragraph.1': `Hey! Soy Rodrigo Andino, Analista en Sistemas, Líder Técnico Full Stack y próximo Licenciado en Informática.
-Me apasiona crear soluciones tecnológicas que realmente aporten valor, desde sistemas de gestión hasta plataformas web con IA y sistemas real-time.`,
+    'contact.paragraph.1': `Hey! Soy Rodrigo Andino, Licenciado en Informática y Tech Lead.
+Me apasiona crear soluciones tecnológicas que realmente aporten valor: plataformas con IA, sistemas RAG, agentes y aplicaciones real-time.`,
     'contact.paragraph.2': `Soy una persona tranquila, curiosa y enfocada en el aprendizaje constante. Disfruto tanto del desarrollo de software como de mantener una vida activa y saludable.`,
     'contact.paragraph.3': `
 Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar en proyectos con impacto real.`,
@@ -95,8 +96,8 @@ Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar
     'title.skills': 'Skills',
     'title.contact': 'Contact me',
     'bento.title': 'ANDINO RODRIGO AGUSTÍN',
-    'bento.subtitle': 'Tech Lead & Full Stack Developer',
-    'bento.description': `Systems Analyst and Full Stack Tech Lead, with over 4 years of experience building web applications. I work with Java and Spring Boot on the backend, and React, Next.js, and TypeScript on the frontend. Focused on scalable architectures, code quality, AI integration, and real-time systems with WebSockets.`,
+    'bento.subtitle': 'Tech Lead · Software Architecture · AI & RAG',
+    'bento.description': `Computer Science graduate and Tech Lead at NotChatbot, where I lead a team of 5 developers building an AI-powered conversational platform. 4+ years shipping production software with Next.js, React, TypeScript and Convex. Focused on scalable architecture, RAG systems, AI agents and MCP.`,
     'bento.download': 'Download',
     'bento.availability': `Connect with me 🚀 Let's create something amazing`,
     'bento.country': 'ARGENTINA',
@@ -104,7 +105,7 @@ Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar
       '"You have to work, you have to learn, you have to eat, you have to rest, and you also have to play"',
     'bento.author': 'Master Roshi',
     'bento.myStack': 'My Stack',
-    'experience.description': `Systems Analyst and Tech Lead with extensive experience in software development, team coordination, and production quality standards. My technical background in electrical engineering and nuclear instrumentation has provided me with a solid foundation in critical systems. I have led the technical execution of teams and the development of multiple full-stack projects, from enterprise management systems to AI-powered web platforms. I excel at designing scalable architectures, ensuring production stability, and creating innovative solutions that address complex business needs.`,
+    'experience.description': `Computer Science graduate and Tech Lead of a team of 5 developers. My work combines software architecture, production quality and AI engineering: RAG systems, AI agents and MCP servers, inference cost optimization and real-time platforms. My technical background in electrical engineering and nuclear instrumentation gave me discipline and a solid foundation in critical systems. I completed my degree with a final thesis graded 10/10: a knowledge management system built on Retrieval-Augmented Generation (RAG).`,
     'experience.education': 'EDUCATION',
     'experience.work': 'WORK EXPERIENCE',
     'experience.course': 'COURSES',
@@ -116,9 +117,10 @@ Me gusta enfrentar nuevos desafíos, aprender tecnologías emergentes y trabajar
     'skills.frontend': 'Front-end',
     'skills.backend': 'Back-end',
     'skills.database': 'Database',
+    'skills.ai': 'AI & Agents',
     'skills.other': 'Other',
-    'contact.paragraph.1': `Hey! I'm Rodrigo Andino, a Systems Analyst, Full Stack Tech Lead, and soon-to-be Computer Science graduate.
-I'm passionate about creating meaningful technological solutions, from management systems to web platforms with AI and real-time applications.`,
+    'contact.paragraph.1': `Hey! I'm Rodrigo Andino, a Computer Science graduate and Tech Lead.
+I'm passionate about building technology that delivers real value: AI-powered platforms, RAG systems, AI agents and real-time applications.`,
     'contact.paragraph.2': `I'm a calm and curious person, focused on continuous learning. I enjoy both software development and maintaining an active and healthy lifestyle.`,
     'contact.paragraph.3': `I love taking on new challenges, learning emerging technologies, and working on projects with real impact.`,
 
