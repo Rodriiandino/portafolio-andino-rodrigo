@@ -40,6 +40,27 @@ const fontFace = `@font-face{font-family:'Onest Variable';font-style:normal;font
         }
 
         document.documentElement.setAttribute('data-theme', theme)
+
+        // Tells the CSS that JS runs, so [data-reveal] content may start
+        // hidden (without JS it is simply visible)
+        document.documentElement.classList.add('js')
+
+        // ClientRouter copies the incoming <html> attributes, which arrive as
+        // the server sent them: without this, every navigation would drop
+        // `js` (revealed content flickers) and reset the theme to light until
+        // astro:page-load re-syncs it. Registered once per document.
+        if (window.__rootSwapHook) return
+        window.__rootSwapHook = true
+        document.addEventListener('astro:before-swap', function (event) {
+          const current = document.documentElement
+          const incoming = event.newDocument.documentElement
+          incoming.classList.add('js')
+          incoming.classList.toggle('dark', current.classList.contains('dark'))
+          incoming.setAttribute(
+            'data-theme',
+            current.getAttribute('data-theme') || 'light'
+          )
+        })
       })()
     </script>
     <script>
@@ -47,7 +68,9 @@ const fontFace = `@font-face{font-family:'Onest Variable';font-style:normal;font
       // script is deferred, so the pre-paint theme comes from the inline
       // script above
       import themeChange from '../components/dom/theme-change.js'
+      import reveal from '../components/dom/reveal.js'
       themeChange()
+      reveal()
     </script>
     <link
       rel='preload'
@@ -360,9 +383,105 @@ const fontFace = `@font-face{font-family:'Onest Variable';font-style:normal;font
         .nav {
           animation-duration: auto !important;
         }
+      }
 
-        /* Cards fly in on scroll; show them in place instead */
-        .projects__gallery-item {
+      /* Scroll reveal (src/components/dom/reveal.js). Content starts hidden
+         only when JS runs and motion is welcome: without JS, or with reduced
+         motion, it is simply there. */
+      @media (prefers-reduced-motion: no-preference) {
+        html.js [data-reveal]:not([data-revealed]) {
+          opacity: 0;
+        }
+
+        html.js [data-revealed] {
+          animation-duration: 0.6s;
+          animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+          animation-delay: var(--reveal-delay, 0ms);
+          /* backwards, not both: once finished, the element is back on its
+             own styles, so hover transforms keep working */
+          animation-fill-mode: backwards;
+        }
+
+        html.js [data-reveal='up'][data-revealed] {
+          animation-name: reveal-up;
+        }
+
+        html.js [data-reveal='down'][data-revealed] {
+          animation-name: reveal-down;
+        }
+
+        html.js [data-reveal='left'][data-revealed] {
+          animation-name: reveal-left;
+        }
+
+        html.js [data-reveal='right'][data-revealed] {
+          animation-name: reveal-right;
+        }
+
+        html.js [data-reveal='fade'][data-revealed] {
+          animation-name: reveal-fade;
+        }
+
+        html.js [data-reveal='zoom'][data-revealed] {
+          animation-name: reveal-zoom;
+        }
+
+        /* Revealed by keyboard focus: no motion under the reader's eyes.
+           Same specificity as the rules above and declared after them, so
+           it wins */
+        html.js [data-reveal][data-revealed='instant'] {
+          animation-name: none;
+        }
+      }
+
+      /* `translate`/`scale` instead of `transform`, so the keyframes never
+         fight a component's own transform (pick a variant whose property the
+         element does not animate on hover: .icon__svg scales, so it uses up). Only `from`: the end state is the
+         element's real style. left/right name the direction of the motion */
+      @keyframes reveal-up {
+        from {
+          opacity: 0;
+          translate: 0 1.5rem;
+        }
+      }
+
+      @keyframes reveal-down {
+        from {
+          opacity: 0;
+          translate: 0 -1.5rem;
+        }
+      }
+
+      @keyframes reveal-left {
+        from {
+          opacity: 0;
+          translate: 1.5rem 0;
+        }
+      }
+
+      @keyframes reveal-right {
+        from {
+          opacity: 0;
+          translate: -1.5rem 0;
+        }
+      }
+
+      @keyframes reveal-fade {
+        from {
+          opacity: 0;
+        }
+      }
+
+      @keyframes reveal-zoom {
+        from {
+          opacity: 0;
+          scale: 0.92;
+        }
+      }
+
+      @media print {
+        html.js [data-reveal] {
+          opacity: 1 !important;
           animation: none !important;
         }
       }

@@ -15,7 +15,7 @@ export default function skillsList() {
             '<svg',
             '<svg aria-hidden="true" focusable="false"'
           )
-          return `<li class="icon__svg">${icon} ${skill.name}</li>`
+          return `<li class="icon__svg" data-reveal="up">${icon} ${skill.name}</li>`
         })
         .join('')
     }
