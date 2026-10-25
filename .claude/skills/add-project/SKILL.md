@@ -55,7 +55,7 @@ Reglas:
 
 ## 4. Archivar un proyecto viejo o de práctica (opcional)
 
-Agregá `"archived": true` en el mismo índice de es y en. Queda oculto por defecto y solo se ve con el interruptor "Incluir proyectos de práctica", con la etiqueta "Práctica". Es preferible a borrarlo, porque no rompe su URL.
+Agregá `"archived": true` en el mismo índice de es y en. Queda oculto por defecto y solo se ve con el interruptor "Ver prácticas", con la etiqueta "Práctica". Es preferible a borrarlo, porque no rompe su URL.
 
 ## 5. Destacar un proyecto (opcional)
 

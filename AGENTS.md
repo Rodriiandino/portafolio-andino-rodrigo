@@ -79,7 +79,7 @@ scripts/check-content.mjs                 -> validador de contenido
   - En el JSON, `src` siempre es `/projects/<dir>/<archivo>.webp`.
 - Formato `.webp`. `Projects.astro` calcula en build el srcset, el width/height y la clase `vertical` (alto/ancho > 1.5) de cada portada; a la isla solo le pasa los campos que usa.
 - El proyecto destacado está hardcodeado por título en `ProjectsGallery.jsx` (`highlightedProjects`). Si lo renombrás, actualizalo ahí.
-- `archived: true` (opcional, igual en es y en) oculta un proyecto viejo o de práctica: solo aparece al activar "Incluir proyectos de práctica" en la galería, con la etiqueta "Práctica". Su página de detalle sigue existiendo. Hoy: Inmobiliaria, Pokedex, Conversor y Encriptador.
+- `archived: true` (opcional, igual en es y en) oculta un proyecto viejo o de práctica: solo aparece al activar "Ver prácticas" en la galería, con la etiqueta "Práctica". Su página de detalle sigue existiendo. Hoy: Inmobiliaria, Pokedex, Conversor y Encriptador.
 - Nombres de tecnologías: el filtro agrupa por string exacto, así que reutilizá los existentes (`Tailwind CSS`, `Next.js`…).
 
 **Experiencia** (`src/data/experience_{es,en}.json`): `[ {education[], workExperience[]}, {professionalCourses[]} ]`, ítems `{date, title, complementary, description, link}`. Mismo largo y orden en es y en.
