@@ -81,7 +81,12 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
     justify-content: space-between;
     align-items: center;
 
-    animation: fadeOut linear both;
+    /* Longhands on purpose: the CSS minifier (lightningcss, Vite 8) folds the
+       `animation` shorthand + `animation-timeline` into one invalid shorthand
+       that browsers drop, which kills the scroll animation in production */
+    animation-name: fadeOut;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
     animation-timeline: scroll();
     animation-range: 0 300px;
   }
