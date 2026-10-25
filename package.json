@@ -11,6 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check:content": "node scripts/check-content.mjs",
+    "check:reveal": "node scripts/check-reveal.mjs",
     "format": "prettier --write \"src/**/*.{astro,js,jsx,ts,css}\" scripts",
     "lint": "eslint .",
     "format:check": "prettier --check \"src/**/*.{astro,js,jsx,ts,css}\" scripts",

@@ -28,6 +28,7 @@ export default function ProjectsGalleryCard({
     <>
       <article
         class={`projects__gallery-item ${highlight ? 'highlight' : ''}${vertical ? ' vertical' : ''}`}
+        data-reveal='up'
       >
         <img
           src={image}

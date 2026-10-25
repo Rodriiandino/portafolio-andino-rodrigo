@@ -8,10 +8,15 @@ const t = useTranslations(currentLocale)
 ---
 
 <section class='skills' id='skills'>
-  <h2>
+  <h2 data-reveal='up'>
     <IconTech /> {t('title.skills')}
   </h2>
-  <div class='btn__container' role='group' aria-label={t('skills.filterLabel')}>
+  <div
+    class='btn__container'
+    role='group'
+    data-reveal='up'
+    aria-label={t('skills.filterLabel')}
+  >
     <button type='button' class='skills__btn' id='all' aria-pressed='false'>
       {t('skills.all')}
     </button>

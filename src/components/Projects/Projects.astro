@@ -60,7 +60,7 @@ const projects = await Promise.all(
 ---
 
 <section class='projects' id='projects'>
-  <h2>
+  <h2 data-reveal='up'>
     <IconProjects /> {t('title.projects')}
   </h2>
   <ProjectsGallery client:visible projects={projects} locale={currentLocale} />

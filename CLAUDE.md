@@ -10,7 +10,7 @@ Todo lo de arriba (stack, mapa, reglas de contenido, trampas) aplica. Esta secci
 - Ante un pedido de contenido ("agregá este proyecto", "actualizá mi experiencia", "cambiá mi cargo"), usá las skills del proyecto antes de tocar archivos a mano:
   - `/add-project`: alta, edición o reorden de proyectos (JSON es/en + imágenes en `src/assets` y `public`).
   - `/update-profile`: cargo, años de experiencia, trabajos, estudios, cursos, stack y textos SEO.
-- Cerrá todo cambio con `npm run check:content` y, si tocaste código o rutas, `npm run build`. Si `node_modules` no existe, pedile al usuario que corra `! npm install` (no instales nada sin permiso).
+- Cerrá todo cambio con `npm run check:content` y, si tocaste código o rutas, `npm run build`. Si tocaste animaciones, `data-reveal` o el header/nav, además `npm run check:reveal` con `npm run preview` levantado. Si `node_modules` no existe, pedile al usuario que corra `! npm install` (no instales nada sin permiso).
 - Para cambios visuales, levantá el sitio con el preview del navegador (`.claude/launch.json`, config `astro-dev`) y revisá **los dos temas y los dos idiomas** (`/` y `/en`), en desktop y en mobile (la página de proyecto cambia de layout por debajo de 1100px).
 - No hagas push a `main` sin pedido explícito: eso dispara el deploy de producción en Vercel.
 
@@ -25,6 +25,17 @@ Todo lo de arriba (stack, mapa, reglas de contenido, trampas) aplica. Esta secci
 | Deploy / previews en Vercel (cuenta personal: MCP `vercel-personal`) | `deploy-to-vercel` |
 | Revisión de cambios antes de commitear | `code-review`, `simplify` |
 | Auditoría de seguridad (headers, dependencias) | `security-audit` |
+
+## Skills y agentes propios
+
+| Para | Qué |
+| --- | --- |
+| Cualquier cambio visual: secciones, estilos, animaciones, scripts del cliente | skill `diseno-portafolio` |
+| Revisar un diff antes de commitear | agente `revisor-portafolio` |
+| Auditoría completa (contenido, SEO, a11y, performance en paralelo) | comando `/auditar-web` |
+| Auditorías sueltas (solo reportan, no editan) | agentes `auditor-contenido`, `auditor-seo`, `auditor-accesibilidad`, `auditor-performance` |
+
+Los agentes viven en `.claude/agents/` y ya conocen las trampas del repo: no hace falta explicárselas al invocarlos. Vienen adaptados de los de `Rodriiandino/rsdesign`.
 
 ## Skills del ecosistema instaladas en el proyecto
 
@@ -41,10 +52,11 @@ Instaladas en `.claude/skills/` con `npx skills` (fuentes y hashes en `skills-lo
 | Performance | `core-web-vitals`, `performance` | LCP/CLS/INP, imágenes, fuentes, JS de las islas |
 | Calidad general | `best-practices`, `web-quality-audit` | Auditoría integral antes de un release (`web-quality-audit/scripts/analyze.sh` es de solo lectura y requiere `jq`) |
 | Diseño | `frontend-design`, `web-design-guidelines` | Secciones nuevas, rediseños, revisión de UI |
+| Preact (la galería) | `vercel-react-best-practices` | Hooks, renders y bundle de la isla: las reglas de React aplican casi enteras a Preact (ignorá las de Next.js/RSC) |
 
 Notas:
 - Los scripts de `seo-geo` usan la API paga de DataForSEO (`DATAFORSEO_LOGIN`/`DATAFORSEO_PASSWORD`). Sin credenciales, usá solo sus guías y referencias. No los corras sin que el usuario lo pida.
-- No se instaló ninguna skill de Preact: las disponibles tienen muy poca adopción, y acá Preact se usa solo en la galería.
+- No se instaló ninguna skill específica de Preact (las que hay tienen muy poca adopción); para la galería se usa `vercel-react-best-practices`.
 
 ## Visibilidad para crawlers de IA
 
