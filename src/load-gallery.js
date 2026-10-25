@@ -1,11 +1,30 @@
 import PhotoSwipeLightbox from 'photoswipe/lightbox'
 import 'photoswipe/style.css'
+import { useTranslations } from './i18n/utils'
+
+// Imported only by the project page (page/Project.astro), so PhotoSwipe's CSS
+// and lightbox code are not shipped to the home page.
+let lightbox = null
 
 function initGallery() {
-  const lightbox = new PhotoSwipeLightbox({
+  // Drop the instance from the previous page so clicks never open two
+  // lightboxes, and do nothing on pages without a gallery
+  lightbox?.destroy()
+  lightbox = null
+  if (!document.querySelector('#my-gallery')) return
+
+  // Localized titles/labels for the lightbox controls (PhotoSwipe defaults to English)
+  const t = useTranslations(document.documentElement.lang || 'es')
+
+  lightbox = new PhotoSwipeLightbox({
     gallery: '#my-gallery',
     children: 'a',
-    pswpModule: () => import('photoswipe')
+    pswpModule: () => import('photoswipe'),
+    closeTitle: t('gallery.close'),
+    zoomTitle: t('gallery.zoom'),
+    arrowPrevTitle: t('gallery.prev'),
+    arrowNextTitle: t('gallery.next'),
+    errorMsg: t('gallery.error')
   })
 
   lightbox.on('uiRegister', function () {
@@ -14,6 +33,7 @@ function initGallery() {
       order: 8,
       isButton: true,
       tagName: 'a',
+      title: t('gallery.download'),
 
       // SVG with outline
       html: {
@@ -38,6 +58,7 @@ function initGallery() {
   lightbox.init()
 }
 
-initGallery()
-
+// astro:page-load also fires on the first load (after module scripts run), and
+// ClientRouter awaits this module before dispatching it on navigations, so the
+// listener alone covers every case
 document.addEventListener('astro:page-load', initGallery)

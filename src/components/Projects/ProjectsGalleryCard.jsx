@@ -1,11 +1,16 @@
 import './styles/projects-gallery-card.css'
-import { useEffect, useRef } from 'preact/hooks'
 import { IconCode, IconDemo } from '../icons/icons'
-import { useImageDimensions } from '../hooks/useImageDimensions'
 import { useTranslations } from '../../i18n/utils'
 
+// Cover srcset, dimensions and `vertical` are computed at build time in
+// Projects.astro, so the card renders its final layout before the image loads
 export default function ProjectsGalleryCard({
   image,
+  image_srcset,
+  image_sizes,
+  image_width,
+  image_height,
+  vertical,
   image_alt,
   title,
   title_url,
@@ -14,42 +19,37 @@ export default function ProjectsGalleryCard({
   link_demo,
   icons,
   highlight,
+  archived,
   currentLocale = 'es'
 }) {
   const t = useTranslations(currentLocale)
-  const cardRef = useRef(null)
-
-  useEffect(() => {
-    const calculateSize = async () => {
-      const aspectRatio = await useImageDimensions(image)
-      const card = cardRef.current
-
-      if (card && aspectRatio > 1.5) {
-        card.classList.add('vertical')
-      }
-    }
-
-    calculateSize()
-  }, [image])
 
   return (
     <>
       <article
-        ref={cardRef}
-        class={`projects__gallery-item ${highlight ? 'highlight' : ''}`}
+        class={`projects__gallery-item ${highlight ? 'highlight' : ''}${vertical ? ' vertical' : ''}`}
       >
         <img
           src={image}
+          srcset={image_srcset}
+          sizes={image_sizes}
+          width={image_width}
+          height={image_height}
           alt={image_alt}
           class='gallery__img'
           loading='lazy'
           decoding={'async'}
         />
+        {archived && (
+          <span class='item__badge'>{t('projects.practiceBadge')}</span>
+        )}
         <div class='gallery__item-info'>
-          <h4 class='item__title'>
-            <a href={title_url} aria-label={title} title={title}>
+          <h3 class='item__title'>
+            <a href={title_url} title={title}>
               {title}
               <svg
+                aria-hidden='true'
+                focusable='false'
                 class='item__title-icon'
                 viewBox='0 0 18 18'
                 fill='none'
@@ -72,7 +72,7 @@ export default function ProjectsGalleryCard({
                 ></path>
               </svg>
             </a>
-          </h4>
+          </h3>
           <p class='item__description'>{description}</p>
           <footer class='item__footer'>
             <div class='footer__links'>
@@ -81,8 +81,7 @@ export default function ProjectsGalleryCard({
                   href={link_code}
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label={`${currentLocale === 'es' ? 'Ir a GitHub de' : 'Go to GitHub of'} ${title}`}
-                  title={`${currentLocale === 'es' ? 'Ir a GitHub de' : 'Go to GitHub of'} ${title}`}
+                  aria-label={`${t('aria.codeOf')} ${title} (${t('a11y.newTab')})`}
                 >
                   <IconCode /> {t('link.code')}
                 </a>
@@ -92,8 +91,7 @@ export default function ProjectsGalleryCard({
                   href={link_demo}
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label={`${currentLocale === 'es' ? 'Ir a la demo de' : 'Go to demo of'} ${title}`}
-                  title={`${currentLocale === 'es' ? 'Ir a la demo de' : 'Go to demo of'} ${title}`}
+                  aria-label={`${t('aria.demoOf')} ${title} (${t('a11y.newTab')})`}
                 >
                   <IconDemo /> {t('link.demo')}
                 </a>

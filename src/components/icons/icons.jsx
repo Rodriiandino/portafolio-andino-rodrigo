@@ -1,6 +1,8 @@
 export function IconLogo() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       className='logo-dark'
       width='40'
       height='40'
@@ -26,6 +28,8 @@ export function IconLogo() {
 export function IconLogoLight() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       className='logo-light'
       width='40'
       height='40'
@@ -51,7 +55,14 @@ export function IconLogoLight() {
 
 export function IconLanguage() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='45' height='45' fill='none'>
+    <svg
+      aria-hidden='true'
+      focusable='false'
+      xmlns='http://www.w3.org/2000/svg'
+      width='45'
+      height='45'
+      fill='none'
+    >
       <path
         fill='currentColor'
         d='M24.5818 28.8725 19.9636 24.48l.0546-.0525c3.0803-3.2951 5.3816-7.1938 6.7454-11.4275h5.3273V9.5H19.3636V6h-3.6363v3.5H3V13h20.3091c-1.2182 3.36-3.1455 6.5625-5.7636 9.3625-1.691-1.8025-3.091-3.78-4.2-5.8625H9.70909c1.32731 2.8525 3.14541 5.5475 5.41821 7.98l-9.25457 8.785 2.58182 2.485L17.5455 27 23.2 32.4425l1.3818-3.57ZM34.8182 20h-3.6364L23 41h3.6364l2.0363-5.25h8.6364L39.3636 41H43l-8.1818-21Zm-4.7637 12.25L33 24.6725l2.9455 7.5775h-5.891Z'
@@ -63,6 +74,8 @@ export function IconLanguage() {
 export function IconMoon() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       className='icon-moon'
       width='45'
       height='45'
@@ -85,6 +98,8 @@ export function IconMoon() {
 export function IconSun() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       className='icon-sun'
       width='45'
       height='45'
@@ -113,6 +128,8 @@ export function IconSun() {
 export function IconHouse() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       width='36'
       height='36'
       viewBox='0 0 36 36'
@@ -143,6 +160,8 @@ export function IconHouse() {
 export function IconExperience() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       width='36'
       height='36'
       viewBox='0 0 36 36'
@@ -161,6 +180,8 @@ export function IconExperience() {
 export function IconProjects() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       width='36'
       height='36'
       viewBox='0 0 36 36'
@@ -179,6 +200,8 @@ export function IconProjects() {
 export function IconContact() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       width='36'
       height='36'
       viewBox='0 0 36 36'
@@ -209,6 +232,8 @@ export function IconContact() {
 export function IconTech() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       width='36'
       height='36'
       viewBox='0 0 36 36'
@@ -227,6 +252,8 @@ export function IconTech() {
 export function IconLanguageNav() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       className='icon-language-nav'
       width='45'
       height='45'
@@ -246,6 +273,8 @@ export function IconLanguageNav() {
 export function IconLanguageNavLight() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       className='icon-language-nav-light'
       width='45'
       height='45'
@@ -265,6 +294,8 @@ export function IconLanguageNavLight() {
 export function IconMoonNav() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       className='icon-moon-nav'
       width='45'
       height='45'
@@ -288,6 +319,8 @@ export function IconMoonNav() {
 export function IconSunNav() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       className='icon-sun-nav'
       width='45'
       height='45'
@@ -316,7 +349,14 @@ export function IconSunNav() {
 
 export function IconGmail() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='35' height='35' fill='none'>
+    <svg
+      aria-hidden='true'
+      focusable='false'
+      xmlns='http://www.w3.org/2000/svg'
+      width='35'
+      height='35'
+      fill='none'
+    >
       <path
         stroke='currentColor'
         strokeWidth={2}
@@ -328,7 +368,14 @@ export function IconGmail() {
 
 export function IconGitHub() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='46' height='45' fill='none'>
+    <svg
+      aria-hidden='true'
+      focusable='false'
+      xmlns='http://www.w3.org/2000/svg'
+      width='46'
+      height='45'
+      fill='none'
+    >
       <path
         fill='currentColor'
         d='M22.9824 3.35303C12.1147 3.34863 3.3125 12.1465 3.3125 23.0054c0 8.5869 5.50635 15.8862 13.1748 18.5669 1.0327.2592.8745-.4746.8745-.9756v-3.4058c-5.9634.6987-6.2051-3.2475-6.605-3.9067-.80856-1.3799-2.72018-1.7315-2.14889-2.3906 1.35791-.6988 2.74219.1757 4.34619 2.5444 1.1602 1.7183 3.4233 1.4282 4.5703 1.1426.2505-1.0327.7866-1.9556 1.5249-2.6719-6.1787-1.1074-8.7539-4.8779-8.7539-9.3604 0-2.1753.7163-4.1748 2.1226-5.7876-.8965-2.6586.0835-4.935.2153-5.2734 2.5532-.2285 5.2075 1.8281 5.4141 1.9907 1.4502-.3911 3.1069-.5976 4.9614-.5976 1.8633 0 3.5244.2153 4.9878.6108.4966-.3779 2.9575-2.1445 5.3305-1.9292.1275.3384 1.0855 2.562.2417 5.1856 1.4239 1.6171 2.149 3.6342 2.149 5.8139 0 4.4912-2.5928 8.2661-8.7891 9.356.5307.5219.9521 1.1444 1.2396 1.831.2875.6866.4353 1.4236.4347 2.168v4.9439c.0352.3955 0 .7866.6592.7866 7.7827-2.6236 13.3857-9.9756 13.3857-18.6372 0-10.8633-8.8066-19.65677-19.6655-19.65677Z'
@@ -339,7 +386,14 @@ export function IconGitHub() {
 
 export function IconLinkedIn() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='46' height='45' fill='none'>
+    <svg
+      aria-hidden='true'
+      focusable='false'
+      xmlns='http://www.w3.org/2000/svg'
+      width='46'
+      height='45'
+      fill='none'
+    >
       <path
         fill='currentColor'
         d='M39.1719 4.92188H6.82812c-.77783 0-1.40624.62841-1.40624 1.40624V38.6719c0 .7778.62841 1.4062 1.40624 1.4062H39.1719c.7778 0 1.4062-.6284 1.4062-1.4062V6.32812c0-.77783-.6284-1.40624-1.4062-1.40624ZM15.8501 34.8794h-5.2163V18.1011h5.2163v16.7783Zm-2.606-19.0723c-.5979 0-1.1825-.1773-1.6797-.5095-.4972-.3322-.8847-.8044-1.1136-1.3569-.2288-.5525-.2887-1.1604-.172-1.7469.1167-.5864.4046-1.1252.8274-1.548.4229-.4228.9616-.71079 1.5481-.82745.5865-.11666 1.1944-.05679 1.7469.17205.5524.2288 1.0246.6164 1.3568 1.1136.3323.4972.5096 1.0817.5096 1.6797-.0044 1.6699-1.3579 3.0234-3.0235 3.0234Zm22.1353 19.0723h-5.2119v-8.1606c0-1.9468-.0352-4.4473-2.7114-4.4473-2.7115 0-3.129 2.1181-3.129 4.3066v8.3013h-5.2075V18.1011h5.001v2.2939h.0703c.6944-1.3183 2.395-2.7114 4.9351-2.7114 5.2822 0 6.2534 3.4761 6.2534 7.9936v9.2022Z'
@@ -350,7 +404,14 @@ export function IconLinkedIn() {
 
 export function IconTwitter() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='46' height='45' fill='none'>
+    <svg
+      aria-hidden='true'
+      focusable='false'
+      xmlns='http://www.w3.org/2000/svg'
+      width='46'
+      height='45'
+      fill='none'
+    >
       <path
         fill='currentColor'
         d='M23 2.8125c-10.8721 0-19.6875 8.8154-19.6875 19.6875S12.1279 42.1875 23 42.1875 42.6875 33.3721 42.6875 22.5 33.8721 2.8125 23 2.8125Zm9.4614 14.8403c.0132.2066.0132.4219.0132.6328 0 6.4512-4.9131 13.8824-13.8911 13.8824-2.7686 0-5.335-.8042-7.4971-2.1885.3955.0439.7735.0615 1.1778.0615 2.2851 0 4.3857-.7734 6.06-2.083-2.1445-.0439-3.9463-1.4502-4.5615-3.3838.7515.1099 1.4282.1099 2.2017-.0879-1.1043-.2243-2.0968-.824-2.809-1.6972-.7121-.8732-1.1-1.966-1.0978-3.0928v-.0615c.646.3647 1.4063.5888 2.2017.6196-.6687-.4456-1.2171-1.0494-1.5965-1.7577-.3795-.7083-.5783-1.4993-.5788-2.3029 0-.9096.2373-1.7402.6636-2.4609 1.2256 1.5088 2.755 2.7428 4.4888 3.6218 1.7338.879 3.6332 1.3834 5.5746 1.4803-.6899-3.3179 1.7886-6.003 4.7681-6.003 1.4063 0 2.6719.5889 3.564 1.5381 1.103-.2065 2.1577-.6196 3.0981-1.1733-.3647 1.1294-1.1294 2.083-2.1445 2.685.9844-.1054 1.9336-.3779 2.8125-.7602-.6636.9756-1.4942 1.8413-2.4478 2.5312Z'
@@ -361,7 +422,14 @@ export function IconTwitter() {
 
 export function IconInstagram() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='46' height='45' fill='none'>
+    <svg
+      aria-hidden='true'
+      focusable='false'
+      xmlns='http://www.w3.org/2000/svg'
+      width='46'
+      height='45'
+      fill='none'
+    >
       <path
         fill='currentColor'
         d='M24.9275 3.75c2.1094.00563 3.18.01688 4.1044.04313l.3637.01312c.42.015.8344.03375 1.335.05625 1.995.09375 3.3563.40875 4.5506.87188 1.2375.47625 2.28 1.12124 3.3225 2.16187.9535.9373 1.6912 2.0711 2.1619 3.32245.4631 1.1944.7782 2.5557.8719 4.5525.0225.4988.0412.9132.0562 1.3351l.0113.3637c.0281.9225.0394 1.9931.0431 4.1025l.0019 1.3988v2.4562c.0046 1.3676-.0098 2.7353-.0431 4.1025l-.0113.3637c-.015.4219-.0337.8363-.0562 1.3351-.0938 1.9968-.4125 3.3562-.8738 4.5524-.4693 1.2521-1.2073 2.3862-2.1619 3.3226-.9375.9531-2.0712 1.6907-3.3225 2.1618-1.1943.4632-2.5556.7782-4.5506.8719-.4449.021-.8899.0397-1.335.0562l-.3637.0113c-.9244.0263-1.995.0394-4.1044.0431l-1.3988.0019h-2.4543c-1.3683.0047-2.7365-.0097-4.1044-.0431l-.3638-.0113c-.4451-.0168-.8901-.0362-1.335-.0581-1.995-.0937-3.3562-.4087-4.5525-.8719-1.2512-.4699-2.38454-1.2078-3.32058-2.1618-.95429-.937-1.6927-2.0709-2.16375-3.3226-.46312-1.1943-.77812-2.5556-.87187-4.5524-.02089-.445-.03964-.89-.05625-1.3351l-.00938-.3637c-.03455-1.3672-.05018-2.7348-.04687-4.1025v-3.855c-.00523-1.3676.00852-2.7353.04125-4.1025l.01312-.3637c.015-.4219.03375-.8363.05625-1.3351.09375-1.9968.40875-3.3562.87188-4.5525C5.70334 8.96607 6.44322 7.83192 7.4 6.89625c.9358-.95349 2.06839-1.69127 3.3187-2.16187 1.1963-.46313 2.5557-.77813 4.5525-.87188.4988-.0225.915-.04125 1.335-.05625L16.97 3.795c1.3672-.03331 2.7349-.04769 4.1025-.04313l3.855-.00187ZM23 13.125c-2.4864 0-4.871.9877-6.6291 2.7459-1.7582 1.7581-2.7459 4.1427-2.7459 6.6291 0 2.4864.9877 4.871 2.7459 6.6291C18.129 30.8873 20.5136 31.875 23 31.875c2.4864 0 4.871-.9877 6.6291-2.7459 1.7582-1.7581 2.7459-4.1427 2.7459-6.6291 0-2.4864-.9877-4.871-2.7459-6.6291C27.871 14.1127 25.4864 13.125 23 13.125Zm0 3.75c.7387-.0001 1.4702.1453 2.1527.4278.6825.2826 1.3026.6968 1.825 1.2191.5225.5222.9369 1.1422 1.2197 1.8246.2828.6824.4284 1.4139.4285 2.1526.0002.7386-.1452 1.4701-.4278 2.1526-.2826.6825-.6968 1.3027-1.219 1.8251-.5223.5224-1.1423.9369-1.8247 1.2197-.6824.2828-1.4138.4284-2.1525.4285-1.4919 0-2.9226-.5926-3.9775-1.6475s-1.6475-2.4857-1.6475-3.9775.5926-2.9226 1.6475-3.9775 2.4856-1.6475 3.9775-1.6475m9.8437-6.5625c-.6216 0-1.2177.2469-1.6573.6865-.4395.4395-.6864 1.0356-.6864 1.6572 0 .6217.2469 1.2178.6864 1.6573.4396.4396 1.0357.6865 1.6573.6865.6216 0 1.2178-.2469 1.6573-.6865.4395-.4395.6865-1.0356.6865-1.6573 0-.6216-.247-1.2177-.6865-1.6572-.4395-.4396-1.0357-.6865-1.6573-.6865Z'
@@ -372,7 +440,14 @@ export function IconInstagram() {
 
 export function IconCode() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='29' height='29' fill='none'>
+    <svg
+      aria-hidden='true'
+      focusable='false'
+      xmlns='http://www.w3.org/2000/svg'
+      width='29'
+      height='29'
+      fill='none'
+    >
       <g stroke='CurrentColor'>
         <path d='m23.0767 8.92619 2.3543 2.11711c2.1393 1.927 3.2089 2.8898 3.2089 4.126 0 1.2347-1.0696 2.1989-3.2103 4.1245l-2.3529 2.1185' />
         <path d='m18.0768 5-5.5133 20.5744' opacity='.5' />
@@ -384,7 +459,14 @@ export function IconCode() {
 
 export function IconDemo() {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width='29' height='29' fill='none'>
+    <svg
+      aria-hidden='true'
+      focusable='false'
+      xmlns='http://www.w3.org/2000/svg'
+      width='29'
+      height='29'
+      fill='none'
+    >
       <path
         fill='CurrentColor'
         d='M19.0047 4.69317c1.7327-1.74 4.2678-1.77625 5.6719-.36734 1.4065 1.41134 1.3678 3.96334-.3662 5.70337l-2.929 2.9398c-.1696.1704-.2647.4011-.2643.6416.0005.2404.0964.4708.2668.6405.1703.1697.4011.2647.6415.2643.2404-.0005.4708-.0964.6405-.2667l2.929-2.9399c2.3079-2.3188 2.5979-6.01993.3661-8.26259-2.2354-2.243878-5.9293-1.95146-8.2408.36733L11.8634 9.2945c-2.31033 2.3188-2.60033 6.0199-.3661 8.2614.0828.0892.1827.1608.2938.2105.111.0497.231.0766.3527.079.1216.0023.2425-.0198.3555-.0652.1129-.0454.2155-.113.3017-.1989.0863-.0859.1543-.1883.2001-.301.0458-.1128.0684-.2336.0665-.3553-.0019-.1217-.0283-.2417-.0777-.353-.0493-.1112-.1205-.2114-.2094-.2945-1.4053-1.4114-1.3678-3.9634.3662-5.7034l5.858-5.88093Z'
@@ -401,6 +483,8 @@ export function IconDemo() {
 export function IconArgentina() {
   return (
     <svg
+      aria-hidden='true'
+      focusable='false'
       className='icon-argentina'
       xmlns='http://www.w3.org/2000/svg'
       fill='none'

@@ -22,44 +22,44 @@ const t = useTranslations(currentLocale)
   <h4 class='timeline__header'>{title}</h4>
   <h5 class='timeline__subheader'>{complementary}</h5>
 </div>
-<p class='timeline__description'>
-  {description}
-</p>
-{
-  link && (
-    <a
-      href={link}
-      class='timeline__link'
-      target='_blank'
-      rel='noopener noreferrer'
+<p class='timeline__description'>{description}</p>
+{link && (
+  <a
+    href={link}
+    class='timeline__link'
+    target='_blank'
+    rel='noopener noreferrer'
+  >
+    {t('experience.btn')}
+    <span class='sr-only'>
+      {t('experience.btnContext')} {title} ({t('a11y.newTab')})
+    </span>
+    <svg
+      aria-hidden='true'
+      width='21'
+      height='21'
+      viewBox='0 0 21 21'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
     >
-      {t('experience.btn')}
-      <svg
-        width='21'
-        height='21'
-        viewBox='0 0 21 21'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <path
-          opacity='0.5'
-          d='M5.67514 15.6194L5.32158 15.2659L16.097 4.49043L16.4506 4.84399L5.67514 15.6194Z'
-          stroke='currentColor'
-          stroke-width='1.5'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-        />
-        <path
-          d='M16.5641 12.8623L16.6274 4.31369L8.0788 4.37701'
-          stroke='currentColor'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-        />
-      </svg>
-    </a>
-  )
-}
+      <path
+        opacity='0.5'
+        d='M5.67514 15.6194L5.32158 15.2659L16.097 4.49043L16.4506 4.84399L5.67514 15.6194Z'
+        stroke='currentColor'
+        stroke-width='1.5'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+      />
+      <path
+        d='M16.5641 12.8623L16.6274 4.31369L8.0788 4.37701'
+        stroke='currentColor'
+        stroke-width='2'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+      />
+    </svg>
+  </a>
+)}
 
 <style>
   .timeline__separator {

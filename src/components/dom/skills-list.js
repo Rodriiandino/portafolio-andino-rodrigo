@@ -8,9 +8,24 @@ export default function skillsList() {
     if (!$btns.length || !$list) return
 
     const renderList = skills => {
-      $list.innerHTML = ''
-      skills.forEach(skill => {
-        $list.innerHTML += `<li class="icon__svg">${skill.icon} ${skill.name}</li>`
+      // Build the markup once: `innerHTML +=` re-parses the whole list per item
+      $list.innerHTML = skills
+        .map(skill => {
+          const icon = skill.icon.replace(
+            '<svg',
+            '<svg aria-hidden="true" focusable="false"'
+          )
+          return `<li class="icon__svg">${icon} ${skill.name}</li>`
+        })
+        .join('')
+    }
+
+    // Toggle buttons: the selected category is exposed with aria-pressed
+    const setActive = activeBtn => {
+      $btns.forEach(btn => {
+        const isActive = btn === activeBtn
+        btn.classList.toggle('active', isActive)
+        btn.setAttribute('aria-pressed', String(isActive))
       })
     }
 
@@ -18,12 +33,8 @@ export default function skillsList() {
       const updatedBtns = document.querySelectorAll('.skills__btn')
 
       updatedBtns.forEach(btn => {
-        btn.addEventListener('click', e => {
-          const activeBtn = document.querySelector('.active')
-          if (activeBtn) {
-            activeBtn.classList.remove('active')
-          }
-          btn.classList.toggle('active')
+        btn.addEventListener('click', () => {
+          setActive(btn)
 
           if (btn.id === 'all') {
             let allSkills = []
@@ -39,11 +50,11 @@ export default function skillsList() {
     }
 
     const initializeList = () => {
-      const frontEndBtn = document.querySelector('#frontEnd')
-      if (frontEndBtn) {
-        frontEndBtn.classList.add('active')
+      const defaultBtn = document.querySelector('#aiAgents')
+      if (defaultBtn) {
+        setActive(defaultBtn)
       }
-      renderList(skillsData.frontEnd)
+      renderList(skillsData.aiAgents)
     }
 
     setupEventListeners()

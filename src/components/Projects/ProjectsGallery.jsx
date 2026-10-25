@@ -2,132 +2,177 @@ import './styles/projects-gallery.css'
 import ProjectsGalleryCard from './ProjectsGalleryCard'
 import convertTitleToURL from '../utils/convert_title_to_url'
 import { useTranslations } from '../../i18n/utils'
-import { useState } from 'preact/hooks'
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
+
+// Also read by Projects.astro to pick the larger `sizes` for the cover
+export const highlightedProjects = ['Vivero Irupe - Frontend']
+
+const ALL = 'All'
+const INITIAL_LIMIT = 6
+// Chips shown before "+N more": the most used technologies
+const TOP_CHIPS = 8
 
 export default function ProjectsGallery({ projects, locale }) {
   const t = useTranslations(locale)
-  const highlightedProjects = ['Vivero Irupe - Frontend']
-  const [limit, setLimit] = useState(6)
-  const [filteredProjects, setFilteredProjects] = useState(projects)
-  const [showFilter, setShowFilter] = useState(false)
-  const [filter, setFilter] = useState('')
+  const [filter, setFilter] = useState(ALL)
+  const [showPractice, setShowPractice] = useState(false)
+  const [showAllChips, setShowAllChips] = useState(false)
+  const [expanded, setExpanded] = useState(false)
+  const galleryRef = useRef(null)
+  // Index of the card that should receive focus after "See all" reveals more
+  const focusIndexRef = useRef(null)
 
-  const handleShowFilter = () => {
-    setShowFilter(!showFilter)
-  }
+  // Practice/old projects stay hidden unless the switch is on
+  const pool = useMemo(
+    () => (showPractice ? projects : projects.filter(p => !p.archived)),
+    [projects, showPractice]
+  )
 
-  const allTechnologies = projects.flatMap(project => project.technologies)
-  const uniqueTechnologies = [...new Set(allTechnologies)].sort()
-
-  const handleFilter = technology => {
-    setFilter(technology)
-    if (technology === 'All') {
-      setFilteredProjects(projects)
-      setLimit(projects.length)
-    } else {
-      const filteredProjects = projects.filter(project =>
-        project.technologies.includes(technology)
+  // Technologies of the visible pool, most used first
+  const technologies = useMemo(() => {
+    const counts = new Map()
+    pool.forEach(project =>
+      project.technologies.forEach(tech =>
+        counts.set(tech, (counts.get(tech) ?? 0) + 1)
       )
-      setFilteredProjects(filteredProjects)
-      setLimit(filteredProjects.length)
+    )
+    return [...counts.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .map(([name, count]) => ({ name, count }))
+  }, [pool])
+
+  // Hiding practice projects can remove the selected technology
+  useEffect(() => {
+    if (filter !== ALL && !technologies.some(tech => tech.name === filter)) {
+      setFilter(ALL)
     }
+  }, [technologies, filter])
+
+  const filtered = useMemo(
+    () =>
+      filter === ALL
+        ? pool
+        : pool.filter(project => project.technologies.includes(filter)),
+    [pool, filter]
+  )
+
+  const ordered = useMemo(() => {
+    const highlighted = filtered.filter(p =>
+      highlightedProjects.includes(p.title)
+    )
+    const rest = filtered.filter(p => !highlightedProjects.includes(p.title))
+    return [...highlighted, ...rest]
+  }, [filtered])
+
+  const showEverything = expanded || filter !== ALL
+  const visible = showEverything ? ordered : ordered.slice(0, INITIAL_LIMIT)
+
+  useEffect(() => {
+    if (focusIndexRef.current === null || !galleryRef.current) return
+    const links = galleryRef.current.querySelectorAll('.item__title a')
+    links[focusIndexRef.current]?.focus()
+    focusIndexRef.current = null
+  }, [visible.length])
+
+  const selectedIndex = technologies.findIndex(tech => tech.name === filter)
+  let chips = showAllChips ? technologies : technologies.slice(0, TOP_CHIPS)
+  // Keep the selected chip visible even when the list is collapsed
+  if (!showAllChips && selectedIndex >= TOP_CHIPS) {
+    chips = [...chips, technologies[selectedIndex]]
   }
+  const hiddenChips = technologies.length - chips.length
 
-  const handleFilterClick = event => {
-    const technology = event.currentTarget.dataset.technology
-
-    handleFilter(technology)
-    handleShowFilter()
+  const selectTechnology = name => {
+    setFilter(current => (current === name ? ALL : name))
   }
 
   const handleLoadMore = () => {
-    handleFilter('All')
-  }
-
-  const sortAndFilterProjects = projects => {
-    const highlighted = projects.filter(project =>
-      highlightedProjects.includes(project.title)
-    )
-
-    const normal = projects
-      .filter(project => !highlightedProjects.includes(project.title))
-      .sort((a, b) => {
-        const aRatio = a.images[0].height / a.images[0].width || 1
-        const bRatio = b.images[0].height / b.images[0].width || 1
-        return bRatio - aRatio
-      })
-
-    return [...highlighted, ...normal].slice(0, limit)
+    // The button disappears: move focus to the first newly revealed project
+    focusIndexRef.current = INITIAL_LIMIT
+    setExpanded(true)
   }
 
   return (
     <>
-      <header className='projects__filter'>
-        <p className='projects__load-more'>
-          {t('projects.loadMore')}
-          <span className='projects__load-more-span'>
-            {filteredProjects.length} / {projects.length}
-          </span>
-        </p>
-
-        <div className='projects__filter-container'>
-          {
-            <p className='projects__filter-text'>
-              {t('projects.filter')}{' '}
-              <span className={'projects__filter-text-span'}>{filter}</span>
-            </p>
-          }
+      <div className='projects__toolbar'>
+        <div className='projects__toolbar-top'>
+          <p className='projects__count' aria-live='polite' aria-atomic='true'>
+            <strong>{visible.length}</strong> {t('projects.countOf')}{' '}
+            {filtered.length}{' '}
+            {t(
+              filtered.length === 1
+                ? 'projects.countLabelOne'
+                : 'projects.countLabel'
+            )}
+          </p>
 
           <button
-            className='projects__filter-button'
-            onClick={handleShowFilter}
-            aria-label='Filter projects'
+            type='button'
+            role='switch'
+            aria-checked={showPractice ? 'true' : 'false'}
+            className='projects__switch'
+            onClick={() => setShowPractice(value => !value)}
           >
-            <svg
-              width='45'
-              height='45'
-              viewBox='0 0 45 45'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <rect width='45' height='45' rx='22.5' fill='#C7EEFF'></rect>
-              <path
-                d='M19.2353 30.0252C19.2353 29.6575 19.3438 29.3048 19.5368 29.0448C19.7299 28.7847 19.9917 28.6387 20.2647 28.6387H26.4412C26.7142 28.6387 26.976 28.7847 27.1691 29.0448C27.3621 29.3048 27.4706 29.6575 27.4706 30.0252C27.4706 30.3929 27.3621 30.7456 27.1691 31.0057C26.976 31.2657 26.7142 31.4118 26.4412 31.4118H20.2647C19.9917 31.4118 19.7299 31.2657 19.5368 31.0057C19.3438 30.7456 19.2353 30.3929 19.2353 30.0252ZM15.1176 21.7059C15.1176 21.3381 15.2261 20.9855 15.4192 20.7254C15.6122 20.4654 15.874 20.3193 16.1471 20.3193H30.5588C30.8318 20.3193 31.0937 20.4654 31.2867 20.7254C31.4798 20.9855 31.5882 21.3381 31.5882 21.7059C31.5882 22.0736 31.4798 22.4263 31.2867 22.6863C31.0937 22.9464 30.8318 23.0924 30.5588 23.0924H16.1471C15.874 23.0924 15.6122 22.9464 15.4192 22.6863C15.2261 22.4263 15.1176 22.0736 15.1176 21.7059ZM11 13.3866C11 13.0188 11.1085 12.6661 11.3015 12.4061C11.4946 12.1461 11.7564 12 12.0294 12H34.6765C34.9495 12 35.2113 12.1461 35.4044 12.4061C35.5974 12.6661 35.7059 13.0188 35.7059 13.3866C35.7059 13.7543 35.5974 14.107 35.4044 14.367C35.2113 14.627 34.9495 14.7731 34.6765 14.7731H12.0294C11.7564 14.7731 11.4946 14.627 11.3015 14.367C11.1085 14.107 11 13.7543 11 13.3866Z'
-                fill='currentColor'
-              ></path>
-            </svg>
+            <span className='projects__switch-track' aria-hidden='true'>
+              <span className='projects__switch-thumb'></span>
+            </span>
+            {t('projects.practiceToggle')}
           </button>
         </div>
 
-        {showFilter && (
-          <div className='projects__filter-list'>
+        <div
+          className='projects__chips'
+          role='group'
+          aria-label={t('projects.filterList')}
+        >
+          <button
+            type='button'
+            className='projects__chip'
+            aria-pressed={filter === ALL ? 'true' : 'false'}
+            onClick={() => setFilter(ALL)}
+          >
+            {t('projects.all')}
+            <span className='projects__chip-count'>{pool.length}</span>
+          </button>
+          {chips.map(tech => (
             <button
-              className='projects__filter-list-item'
-              onClick={handleFilterClick}
-              data-technology='All'
+              type='button'
+              key={tech.name}
+              className='projects__chip'
+              aria-pressed={filter === tech.name ? 'true' : 'false'}
+              onClick={() => selectTechnology(tech.name)}
             >
-              All
+              {tech.name}
+              <span className='projects__chip-count'>{tech.count}</span>
             </button>
-            {uniqueTechnologies.map(technology => (
-              <button
-                key={technology}
-                data-technology={technology}
-                className='projects__filter-list-item'
-                onClick={handleFilterClick}
-              >
-                {technology}
-              </button>
-            ))}
-          </div>
-        )}
-      </header>
-      <div className='projects__gallery'>
-        {sortAndFilterProjects(filteredProjects).map(project => (
+          ))}
+          {(hiddenChips > 0 || showAllChips) && (
+            <button
+              type='button'
+              className='projects__chip projects__chip--more'
+              aria-expanded={showAllChips ? 'true' : 'false'}
+              onClick={() => setShowAllChips(value => !value)}
+            >
+              {showAllChips
+                ? t('projects.lessTech')
+                : `+${hiddenChips} ${t('projects.moreTech')}`}
+            </button>
+          )}
+        </div>
+      </div>
+
+      <div className='projects__gallery' ref={galleryRef}>
+        {visible.map(project => (
           <ProjectsGalleryCard
             key={project.title}
             title={project.title}
             description={project.description}
-            image={project.images[0].src}
+            image={project.cover?.src ?? project.images[0].src}
+            image_srcset={project.cover?.srcset}
+            image_sizes={project.cover?.sizes}
+            image_width={project.cover?.width}
+            image_height={project.cover?.height}
+            vertical={project.cover?.vertical}
             image_alt={project.images[0].alt}
             title_url={
               locale === 'es'
@@ -137,12 +182,18 @@ export default function ProjectsGallery({ projects, locale }) {
             link_code={project.github}
             link_demo={project.deploy.demo}
             highlight={highlightedProjects.includes(project.title)}
+            archived={project.archived}
+            currentLocale={locale}
           />
         ))}
       </div>
 
-      {limit !== projects.length && (
-        <button className='projects__btn' onClick={handleLoadMore}>
+      {visible.length < ordered.length && (
+        <button
+          type='button'
+          className='projects__btn'
+          onClick={handleLoadMore}
+        >
           {t('projects.btn')}
         </button>
       )}

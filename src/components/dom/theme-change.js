@@ -2,17 +2,27 @@ export default function themeChange() {
   const handleThemeLogic = () => {
     const $html = document.querySelector('html')
     const ls = localStorage
+    const $btnsSwitchTheme = document.querySelectorAll('[btn-switch-theme]')
+
+    // The toggles are labelled "Dark mode": pressed means the dark theme is on
+    const syncPressed = isDark => {
+      $btnsSwitchTheme.forEach(btn =>
+        btn.setAttribute('aria-pressed', String(isDark))
+      )
+    }
 
     const setThemeDark = () => {
       $html?.classList.add('dark')
       $html?.setAttribute('data-theme', 'dark')
       ls.setItem('darkMode-portafolio-andino', 'true')
+      syncPressed(true)
     }
 
     const setThemeLight = () => {
       $html?.classList.remove('dark')
       $html?.setAttribute('data-theme', 'light')
       ls.setItem('darkMode-portafolio-andino', 'false')
+      syncPressed(false)
     }
 
     const changeColor = () => {
@@ -38,10 +48,7 @@ export default function themeChange() {
     }
 
     const setupEventListeners = () => {
-      const $updateBtnSwitchTheme =
-        document.querySelectorAll('[btn-switch-theme]')
-
-      $updateBtnSwitchTheme.forEach(btn => {
+      $btnsSwitchTheme.forEach(btn => {
         btn.addEventListener('click', changeColor)
       })
     }

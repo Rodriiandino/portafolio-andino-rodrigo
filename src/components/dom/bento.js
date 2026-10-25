@@ -32,9 +32,9 @@ export default function bento() {
         day: 'numeric'
       })
 
-      $hour.innerHTML = time
-      $day.innerHTML = dayName
-      $date.innerHTML = dateName
+      $hour.textContent = time
+      $day.textContent = dayName
+      $date.textContent = dateName
     }
 
     if (timeInterval) {
@@ -45,7 +45,14 @@ export default function bento() {
     timeInterval = setInterval(getTime, 10000)
 
     if ($bento_6_list.children.length === 0) {
-      const mySkills = ['TS', 'React', 'Next js', 'Java', 'Spring Boot', 'SQL']
+      const mySkills = [
+        'TS',
+        'React',
+        'Next js',
+        'Java',
+        'Spring Boot',
+        'Convex'
+      ]
       let allSkills = []
       Object.values(skillsData).forEach(skillGroup => {
         allSkills = [...allSkills, ...skillGroup]
@@ -55,11 +62,24 @@ export default function bento() {
         mySkills.includes(skill.name)
       )
 
-      skillsFilter.forEach(skill => {
-        $bento_6_list.innerHTML += `<li class="icon__svg" style="width: 58px">${skill.icon}</li>`
-      })
+      $bento_6_list.innerHTML = skillsFilter
+        .map(skill => {
+          // The icon is decorative; the name is announced by screen readers only
+          const icon = skill.icon.replace(
+            '<svg',
+            '<svg aria-hidden="true" focusable="false"'
+          )
+          return `<li class="icon__svg" style="width: 58px">${icon}<span class="sr-only">${skill.name}</span></li>`
+        })
+        .join('')
     }
   }
 
   document.addEventListener('astro:page-load', handleBenToLogic)
+  // The clock only exists on the home page: stop it before ClientRouter
+  // swaps in another page (handleBenToLogic restarts it on return)
+  document.addEventListener('astro:before-swap', () => {
+    clearInterval(timeInterval)
+    timeInterval = undefined
+  })
 }
