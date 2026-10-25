@@ -45,7 +45,14 @@ export default function bento() {
     timeInterval = setInterval(getTime, 10000)
 
     if ($bento_6_list.children.length === 0) {
-      const mySkills = ['TS', 'React', 'Next js', 'Convex', 'RAG', 'MCP']
+      const mySkills = [
+        'TS',
+        'React',
+        'Next js',
+        'Java',
+        'Spring Boot',
+        'Convex'
+      ]
       let allSkills = []
       Object.values(skillsData).forEach(skillGroup => {
         allSkills = [...allSkills, ...skillGroup]

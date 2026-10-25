@@ -189,3 +189,19 @@
 .opacity {
   opacity: 1;
 }
+
+/* Practice / older projects, only visible when the gallery switch is on */
+.item__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background-color: var(--black-transparent-08);
+  color: var(--white);
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-elevation-low);
+}

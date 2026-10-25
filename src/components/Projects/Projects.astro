@@ -47,6 +47,7 @@ const projects = await Promise.all(
     title: project.title,
     description: project.description,
     technologies: project.technologies,
+    archived: Boolean(project.archived),
     github: project.github,
     deploy: { demo: project.deploy.demo },
     images: [{ src: project.images[0].src, alt: project.images[0].alt }],

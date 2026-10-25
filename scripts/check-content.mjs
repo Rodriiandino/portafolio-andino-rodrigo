@@ -111,6 +111,15 @@ projects.es.forEach((es, i) => {
     errors.push(
       `${pair}: status "${es.status}" (es) does not match "${en.status}" (en)`
     )
+  // Optional flag: hides old/practice projects behind the gallery switch
+  for (const [lang, project] of [
+    ['es', es],
+    ['en', en]
+  ])
+    if ('archived' in project && typeof project.archived !== 'boolean')
+      errors.push(`${pair}: "archived" must be true or false (${lang})`)
+  if (Boolean(es.archived) !== Boolean(en.archived))
+    errors.push(`${pair}: "archived" differs between es and en`)
   if (es.github !== en.github)
     warnings.push(`${pair}: github link differs between es and en`)
   if (es.deploy?.demo !== en.deploy?.demo)

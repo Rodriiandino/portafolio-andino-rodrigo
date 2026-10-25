@@ -28,7 +28,7 @@
         "date": "02/2026 - Actualidad",
         "title": "Líder Técnico",
         "complementary": "NotChatbot",
-        "description": "Lidero un equipo de 5 desarrolladores en NotChatbot, una plataforma conversacional con IA sobre WhatsApp, Instagram y las APIs de Meta. Soy responsable de la calidad del código, la estabilidad en producción, la planificación y las metodologías del equipo. Incorporé MCP y agentes de IA a los procesos de desarrollo (skills, autodev de tickets, KPIs y code reviews), impulso el self-hosting de inferencia de IA en RunPod y la analítica con MotherDuck, y lidero la mejora de seguridad y la preparación para pentest. Doy clases internas sobre herramientas, seguridad y buenas prácticas. Tecnologías: Next.js, React, TypeScript, Convex, Vercel, AI SDK, MCP, RunPod, MotherDuck, WhatsApp y Meta APIs, y Clerk.",
+        "description": "Lidero el equipo de desarrollo de una plataforma conversacional con IA sobre WhatsApp, Instagram y las APIs de Meta. Soy responsable de la calidad del código, la estabilidad en producción, la planificación y las metodologías del equipo. Incorporé MCP y agentes de IA a los procesos de desarrollo, impulso el hosting propio de modelos de IA y la analítica sobre bases OLAP, y lidero la mejora de seguridad y la preparación para pentest. Doy clases internas sobre herramientas, seguridad y buenas prácticas. Tecnologías: Next.js, React, TypeScript, Convex, Vercel, AI SDK, MCP, WhatsApp y Meta APIs, y Clerk.",
         "link": "https://www.notchatbot.com/"
       },
       {

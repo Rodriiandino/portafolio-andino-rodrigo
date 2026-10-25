@@ -19,6 +19,7 @@ export default function ProjectsGalleryCard({
   link_demo,
   icons,
   highlight,
+  archived,
   currentLocale = 'es'
 }) {
   const t = useTranslations(currentLocale)
@@ -39,6 +40,9 @@ export default function ProjectsGalleryCard({
           loading='lazy'
           decoding={'async'}
         />
+        {archived && (
+          <span class='item__badge'>{t('projects.practiceBadge')}</span>
+        )}
         <div class='gallery__item-info'>
           <h3 class='item__title'>
             <a href={title_url} title={title}>

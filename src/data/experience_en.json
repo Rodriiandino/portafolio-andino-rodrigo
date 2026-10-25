@@ -28,7 +28,7 @@
         "date": "02/2026 - Present",
         "title": "Tech Lead",
         "complementary": "NotChatbot",
-        "description": "I lead a team of 5 developers at NotChatbot, an AI-powered conversational platform built on WhatsApp, Instagram and Meta APIs. I am responsible for code quality, production stability, planning and the team's engineering practices. I brought MCP and AI agents into our development processes (skills, ticket autodev, KPIs and code reviews), drive self-hosted AI inference on RunPod and analytics with MotherDuck, and lead security hardening and pentest readiness. I also teach internal sessions on tools, security and best practices. Technologies: Next.js, React, TypeScript, Convex, Vercel, AI SDK, MCP, RunPod, MotherDuck, WhatsApp and Meta APIs, and Clerk.",
+        "description": "I lead the development team of an AI-powered conversational platform built on WhatsApp, Instagram and Meta APIs. I am responsible for code quality, production stability, planning and the team's engineering practices. I brought MCP and AI agents into our development processes, drive self-hosted AI model inference and analytics on OLAP databases, and lead security hardening and pentest readiness. I also teach internal sessions on tools, security and best practices. Technologies: Next.js, React, TypeScript, Convex, Vercel, AI SDK, MCP, WhatsApp and Meta APIs, and Clerk.",
         "link": "https://www.notchatbot.com/"
       },
       {

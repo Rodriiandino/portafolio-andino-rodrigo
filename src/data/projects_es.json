@@ -20,7 +20,7 @@
       "Next.js",
       "Payload CMS",
       "TypeScript",
-      "TailwindCSS",
+      "Tailwind CSS",
       "PostgreSQL",
       "Zustand",
       "Cloudflare R2",
@@ -61,7 +61,7 @@
     "date": "2025",
     "technologies": [
       "Astro",
-      "TailwindCSS",
+      "Tailwind CSS",
       "TypeScript",
       "JavaScript",
       "CSS",
@@ -111,7 +111,7 @@
     "date": "2025",
     "technologies": [
       "Astro",
-      "TailwindCSS",
+      "Tailwind CSS",
       "TypeScript",
       "JavaScript",
       "CSS",
@@ -167,7 +167,7 @@
       "SQLite",
       "TanStack Router",
       "Zustand",
-      "TailwindCSS"
+      "Tailwind CSS"
     ],
     "status": "Completo",
     "deploy": {
@@ -213,7 +213,7 @@
     "date": "2025",
     "technologies": [
       "Astro",
-      "TailwindCSS",
+      "Tailwind CSS",
       "TypeScript",
       "JavaScript",
       "CSS",
@@ -274,7 +274,7 @@
       "React",
       "Next.js",
       "TypeScript",
-      "Tailwind",
+      "Tailwind CSS",
       "TanStack Query",
       "Cloudflare",
       "Swagger"
@@ -376,7 +376,7 @@
     "technologies": [
       "Next.js",
       "React",
-      "Tailwind",
+      "Tailwind CSS",
       "TypeScript",
       "Zustand",
       "Vercel AI SDK"
@@ -471,7 +471,7 @@
     "technologies": [
       "Next.js",
       "React",
-      "Tailwind",
+      "Tailwind CSS",
       "TypeScript",
       "Vercel AI SDK"
     ],
@@ -515,7 +515,11 @@
     ],
     "features": "API RESTful",
     "date": "2023",
-    "technologies": ["Java", "Spring Boot", "MySQL"],
+    "technologies": [
+      "Java",
+      "Spring Boot",
+      "MySQL"
+    ],
     "status": "En Progreso",
     "deploy": {
       "page": "No Deploy",
@@ -549,7 +553,12 @@
     ],
     "features": "Sistema de Gestión",
     "date": "2023",
-    "technologies": ["Java", "JDBC", "MySQL", "JavaFX"],
+    "technologies": [
+      "Java",
+      "JDBC",
+      "MySQL",
+      "JavaFX"
+    ],
     "status": "Completo",
     "deploy": {
       "page": "Aplicación de Escritorio",
@@ -584,7 +593,11 @@
     ],
     "features": "Plataforma Web",
     "date": "2023 - 2024",
-    "technologies": ["Next.js", "React", "MySQL"],
+    "technologies": [
+      "Next.js",
+      "React",
+      "MySQL"
+    ],
     "status": "Completo",
     "deploy": {
       "page": "No Deploy",
@@ -604,7 +617,8 @@
         "src": "/projects/inmobiliaria_next14/inmobiliaria_next14_3.webp",
         "alt": "Inmobiliaria con Next.js 14"
       }
-    ]
+    ],
+    "archived": true
   },
   {
     "title": "Pokedex Gen 1 | Aplicación Web con Astro",
@@ -617,7 +631,12 @@
     ],
     "features": "Aplicación Web",
     "date": "2023",
-    "technologies": ["HTML", "CSS", "JavaScript", "Astro"],
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Astro"
+    ],
     "status": "Completo",
     "deploy": {
       "page": "Netlify",
@@ -633,7 +652,8 @@
         "src": "/projects/1erGeneracion_pokedex/1erGeneracion_pokedex_2.webp",
         "alt": "1erGeneracionPokedex"
       }
-    ]
+    ],
+    "archived": true
   },
   {
     "title": "Conversor Universal de Unidades en Java",
@@ -645,7 +665,10 @@
     ],
     "features": "Aplicación de Escritorio",
     "date": "2023",
-    "technologies": ["Java", "JavaFX"],
+    "technologies": [
+      "Java",
+      "JavaFX"
+    ],
     "status": "Completo",
     "deploy": {
       "page": "No Deploy",
@@ -657,7 +680,8 @@
         "src": "/projects/conversor/conversor_1.webp",
         "alt": "Converter"
       }
-    ]
+    ],
+    "archived": true
   },
   {
     "title": "Encriptador Texto | Cifrado de Mensajes",
@@ -670,7 +694,11 @@
     ],
     "features": "Aplicación Web",
     "date": "2023",
-    "technologies": ["HTML", "CSS", "JavaScript"],
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
     "status": "Completo",
     "deploy": {
       "page": "github",
@@ -686,6 +714,7 @@
         "src": "/projects/encriptador/encriptador_2.webp",
         "alt": "Encriptado de Texto"
       }
-    ]
+    ],
+    "archived": true
   }
 ]
