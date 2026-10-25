@@ -9,14 +9,28 @@ const t = useTranslations(currentLocale)
 
 <section class='skills' id='skills'>
   <h2><IconTech /> {t('title.skills')}</h2>
-  <div class='btn__container'>
-    <button class='skills__btn' id='all'>{t('skills.all')}</button>
-    <button class='skills__btn active' id='frontEnd'
-      >{t('skills.frontend')}</button
+  <div class='btn__container' role='group' aria-label={t('skills.filterLabel')}>
+    <button type='button' class='skills__btn' id='all' aria-pressed='false'
+      >{t('skills.all')}</button
     >
-    <button class='skills__btn' id='backEnd'>{t('skills.backend')}</button>
-    <button class='skills__btn' id='databases'>{t('skills.database')}</button>
-    <button class='skills__btn' id='else'>{t('skills.other')}</button>
+    <button
+      type='button'
+      class='skills__btn active'
+      id='frontEnd'
+      aria-pressed='true'>{t('skills.frontend')}</button
+    >
+    <button type='button' class='skills__btn' id='backEnd' aria-pressed='false'
+      >{t('skills.backend')}</button
+    >
+    <button
+      type='button'
+      class='skills__btn'
+      id='databases'
+      aria-pressed='false'>{t('skills.database')}</button
+    >
+    <button type='button' class='skills__btn' id='else' aria-pressed='false'
+      >{t('skills.other')}</button
+    >
   </div>
   <article class='skills_container'>
     <ul class='skills__list'></ul>

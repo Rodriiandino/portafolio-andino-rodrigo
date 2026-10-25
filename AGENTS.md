@@ -43,7 +43,14 @@ src/
     index.astro, en/index.astro           -> ambos renderizan components/page/Page.astro
     projects/[title].astro                -> detalle es (getStaticPaths sobre projects_es.json)
     en/projects/[title].astro             -> detalle en (getStaticPaths sobre projects_en.json)
+    llms.txt.ts, llms-full.txt.ts         -> /llms.txt y /llms-full.txt (GEO, generados de los JSON)
+    index.md.ts, en/index.md.ts           -> /index.md y /en/index.md (perfil completo en Markdown)
+    projects/[title].md.ts (+ en/)        -> /projects/<slug>.md por proyecto e idioma
+  lib/
+    site.js                               -> URLs, canonical/hreflang, JSON-LD (Person, ProfilePage, WebSite, proyectos) y datos de contacto/redes
+    markdown.js                           -> generadores de llms.txt, llms-full.txt y las versiones .md
   components/
+    SEO.astro                             -> <head>: meta, OG, hreflang, link text/markdown y JSON-LD (usa lib/site.js)
     page/Page.astro                       -> home + <title>/<meta description> por idioma (hardcodeados)
     page/Project.astro                    -> página de detalle de proyecto + su lógica cliente
     Bento, Experience, Skills, Contact, Nav, Header, Footer (.astro)
@@ -78,6 +85,12 @@ scripts/check-content.mjs                 -> validador de contenido
 **Strings de UI** (`src/i18n/ui.js`): toda key existe en `es` y en `en`. `t(key)` hace fallback silencioso al español, así que una key que falta en en muestra texto en español en el sitio en inglés sin dar ningún error.
 
 **Perfil y SEO**: el cargo y los años de experiencia se repiten en varios lugares. Cuando cambia el perfil, revisarlos todos juntos: `ui.js` (`bento.*`, `experience.description`, `contact.*`), `components/page/Page.astro` (title/description por idioma), `components/SEO.astro` (keywords, og:site_name, alt de imagen), `README.md`.
+
+**SEO/GEO generado** (`src/lib/site.js` + `src/lib/markdown.js`): no hay texto duplicado a mano; todo sale de los JSON y de `ui.js` en build.
+- JSON-LD: en la home, `ProfilePage` + `Person` (`@id` `/#person`) + `WebSite`; en cada proyecto, `WebPage` + `SoftwareSourceCode` (si tiene `github`) o `CreativeWork` + `BreadcrumbList`, con `author` apuntando a `/#person`. `jobTitle`/`description` = `bento.subtitle`/`bento.description`; `worksFor` = **primer ítem** de `workExperience` (mantener el trabajo actual primero); `alumniOf` = instituciones de `education`; `knowsAbout` = `skills.js` + tecnologías de los proyectos. Redes, email y link del CV viven en `SOCIAL`/`EMAIL`/`CV_URL` de `site.js` (si cambian en Bento/Contact/Footer, cambiarlos ahí también).
+- hreflang (head y sitemap): es/en/x-default; los proyectos se emparejan **por índice** entre `projects_es` y `projects_en`, por eso el orden tiene que coincidir. Canonical absoluto con barra final (igual que el sitemap).
+- Endpoints estáticos: `/llms.txt`, `/llms-full.txt`, `/index.md`, `/en/index.md`, `/projects/<slug>.md`, `/en/projects/<slug>.md`. Cada página HTML enlaza su `.md` con `<link rel="alternate" type="text/markdown">`. Están excluidos del sitemap (`filter` en `astro.config.mjs`).
+- `public/robots.txt`: permite todo, con grupos explícitos para bots de búsqueda/IA y `Content-Signal: search=yes, ai-input=yes, ai-train=yes`.
 
 ## Trampas
 

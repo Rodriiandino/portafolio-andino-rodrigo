@@ -77,19 +77,19 @@
     var(--black-transparent-09) 100%
   );
   transition: all 0.3s ease-in-out;
+  /* Only opacity hides the overlay (no visibility: hidden) so its links stay
+     reachable by keyboard and screen readers; focus reveals it like hover */
   opacity: 0;
-  visibility: hidden;
 }
 
-.projects__gallery-item:hover .gallery__item-info {
+.projects__gallery-item:hover .gallery__item-info,
+.projects__gallery-item:focus-within .gallery__item-info {
   opacity: 1;
-  visibility: visible;
 }
 
 @media (max-width: 768px) {
   .gallery__item-info {
     opacity: 1;
-    visibility: visible;
   }
 
   .projects__gallery-item {

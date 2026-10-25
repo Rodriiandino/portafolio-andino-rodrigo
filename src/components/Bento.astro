@@ -15,7 +15,7 @@ const { currentLocale = 'es' } = Astro
 const t = useTranslations(currentLocale)
 ---
 
-<section class='bento'>
+<section class='bento' id='main-content' tabindex='-1'>
   <article class='bento__1 bento-item'>
     <header class='bento__1-header'>
       <h1>{t('bento.title')}</h1>
@@ -25,13 +25,13 @@ const t = useTranslations(currentLocale)
       {t('bento.description')}
     </p>
     <footer class='bento__1-footer'>
-      <nav class='bento__1-footer__nav'>
+      <nav class='bento__1-footer__nav' aria-label={t('aria.socialNav')}>
         <a
           class='bento__1-footer__item'
           href='https://github.com/Rodriiandino'
           target='_blank'
           rel='noopener noreferrer'
-          aria-label='Go to GitHub'
+          aria-label={`GitHub (${t('a11y.newTab')})`}
         >
           <IconGitHub />
         </a>
@@ -40,7 +40,7 @@ const t = useTranslations(currentLocale)
           href='https://www.linkedin.com/in/rodrigoandino03/'
           target='_blank'
           rel='noopener noreferrer'
-          aria-label='Go to LinkedIn'
+          aria-label={`LinkedIn (${t('a11y.newTab')})`}
         >
           <IconLinkedIn />
         </a>
@@ -49,7 +49,7 @@ const t = useTranslations(currentLocale)
           href='https://twitter.com/Rodriiandino1'
           target='_blank'
           rel='noopener noreferrer'
-          aria-label='Go to Twitter'
+          aria-label={`Twitter (${t('a11y.newTab')})`}
         >
           <IconTwitter />
         </a>
@@ -58,7 +58,7 @@ const t = useTranslations(currentLocale)
           href='https://www.instagram.com/rodriiandino/'
           target='_blank'
           rel='noopener noreferrer'
-          aria-label='Go to Instagram'
+          aria-label={`Instagram (${t('a11y.newTab')})`}
         >
           <IconInstagram />
         </a>
@@ -69,7 +69,7 @@ const t = useTranslations(currentLocale)
     <Image
       class='bento__2-img'
       src={bentoImg}
-      alt='Retrato de Rodrigo Andino, morocho de ojos marrones, pelo corto y con una chomba negra'
+      alt={t('bento.portraitAlt')}
       width={500}
       quality={95}
       loading={'eager'}
@@ -81,9 +81,9 @@ const t = useTranslations(currentLocale)
       href='https://drive.google.com/drive/folders/1ubdQQywhXjspH7phjBvDsFDLFQEtBPiU?usp=sharing'
       target='_blank'
       rel='noopener noreferrer'
-      aria-label='Go to download CV'
     >
       <svg
+        aria-hidden='true'
         class='bento__3-icon'
         viewBox='0 0 21 21'
         fill='none'
@@ -105,6 +105,7 @@ const t = useTranslations(currentLocale)
       </svg>
       <strong>CV</strong>
       <span>{t('bento.download')}</span>
+      <span class='sr-only'>({t('a11y.newTab')})</span>
     </a>
   </article>
   <article class='bento__4 bento-item'>
@@ -112,9 +113,9 @@ const t = useTranslations(currentLocale)
       href='https://www.linkedin.com/in/rodrigoandino03/'
       target='_blank'
       rel='noopener noreferrer'
-      aria-label='Go to LinkedIn'
     >
       {t('bento.availability')}
+      <span class='sr-only'>({t('a11y.newTab')})</span>
     </a>
   </article>
   <article class='bento__5 bento-item'>
@@ -123,9 +124,9 @@ const t = useTranslations(currentLocale)
       <IconArgentina />
     </div>
     <div>
-      <img src='/icons/star.svg' alt='star icon' height='25' width='25' />
-      <img src='/icons/star.svg' alt='star icon' height='25' width='25' />
-      <img src='/icons/star.svg' alt='star icon' height='25' width='25' />
+      <img src='/icons/star.svg' alt='' height='25' width='25' />
+      <img src='/icons/star.svg' alt='' height='25' width='25' />
+      <img src='/icons/star.svg' alt='' height='25' width='25' />
     </div>
   </article>
   <article class='bento__6 bento-item'>
@@ -140,6 +141,7 @@ const t = useTranslations(currentLocale)
       <cite>{t('bento.author')}</cite>
     </blockquote>
     <svg
+      aria-hidden='true'
       class='bento__7-icon'
       viewBox='0 0 47 53'
       fill='none'
@@ -166,13 +168,13 @@ const t = useTranslations(currentLocale)
     <img
       class='bento__9-img-dark bento__9-img'
       src='/img/star-wars-dark.webp'
-      alt='star wars dark'
+      alt=''
       loading='eager'
     />
     <img
       class='bento__9-img-light bento__9-img'
       src='/img/star-wars-light.webp'
-      alt='star wars light'
+      alt=''
       loading='eager'
     />
   </article>
@@ -204,6 +206,16 @@ const t = useTranslations(currentLocale)
     box-shadow: var(--shadow-elevation-medium);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation-duration: 1.2s;
+  }
+
+  /* Links that fill their whole card draw the focus ring inside the card */
+  .bento__3-link:focus-visible,
+  .bento__4 a:focus-visible {
+    outline-offset: -8px;
+  }
+
+  #main-content:focus {
+    outline: none;
   }
 
   .bento-item:hover {

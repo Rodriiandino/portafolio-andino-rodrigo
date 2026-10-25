@@ -34,7 +34,11 @@ const t = useTranslations(currentLocale)
       rel='noopener noreferrer'
     >
       {t('experience.btn')}
+      <span class='sr-only'>
+        {t('experience.btnContext')} {title} ({t('a11y.newTab')})
+      </span>
       <svg
+        aria-hidden='true'
         width='21'
         height='21'
         viewBox='0 0 21 21'

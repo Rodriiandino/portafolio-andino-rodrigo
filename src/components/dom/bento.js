@@ -56,7 +56,12 @@ export default function bento() {
       )
 
       skillsFilter.forEach(skill => {
-        $bento_6_list.innerHTML += `<li class="icon__svg" style="width: 58px">${skill.icon}</li>`
+        // The icon is decorative; the name is announced by screen readers only
+        const icon = skill.icon.replace(
+          '<svg',
+          '<svg aria-hidden="true" focusable="false"'
+        )
+        $bento_6_list.innerHTML += `<li class="icon__svg" style="width: 58px">${icon}<span class="sr-only">${skill.name}</span></li>`
       })
     }
   }

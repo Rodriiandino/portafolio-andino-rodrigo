@@ -2,7 +2,7 @@ import './styles/projects-gallery.css'
 import ProjectsGalleryCard from './ProjectsGalleryCard'
 import convertTitleToURL from '../utils/convert_title_to_url'
 import { useTranslations } from '../../i18n/utils'
-import { useState } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 
 export default function ProjectsGallery({ projects, locale }) {
   const t = useTranslations(locale)
@@ -11,10 +11,21 @@ export default function ProjectsGallery({ projects, locale }) {
   const [filteredProjects, setFilteredProjects] = useState(projects)
   const [showFilter, setShowFilter] = useState(false)
   const [filter, setFilter] = useState('')
+  const filterButtonRef = useRef(null)
+  const galleryRef = useRef(null)
+  // Index of the card that should receive focus after "See all" reveals more
+  const focusIndexRef = useRef(null)
 
   const handleShowFilter = () => {
     setShowFilter(!showFilter)
   }
+
+  useEffect(() => {
+    if (focusIndexRef.current === null || !galleryRef.current) return
+    const links = galleryRef.current.querySelectorAll('.item__title a')
+    links[focusIndexRef.current]?.focus()
+    focusIndexRef.current = null
+  }, [limit])
 
   const allTechnologies = projects.flatMap(project => project.technologies)
   const uniqueTechnologies = [...new Set(allTechnologies)].sort()
@@ -38,9 +49,21 @@ export default function ProjectsGallery({ projects, locale }) {
 
     handleFilter(technology)
     handleShowFilter()
+    // The list unmounts with the focused option: return focus to its trigger
+    filterButtonRef.current?.focus()
+  }
+
+  const handleFilterKeyDown = event => {
+    if (event.key === 'Escape') {
+      setShowFilter(false)
+      filterButtonRef.current?.focus()
+    }
   }
 
   const handleLoadMore = () => {
+    // The button disappears once everything is shown: move focus to the first
+    // newly revealed project instead of losing it
+    focusIndexRef.current = Math.min(limit, filteredProjects.length)
     handleFilter('All')
   }
 
@@ -63,7 +86,11 @@ export default function ProjectsGallery({ projects, locale }) {
   return (
     <>
       <header className='projects__filter'>
-        <p className='projects__load-more'>
+        <p
+          className='projects__load-more'
+          aria-live='polite'
+          aria-atomic='true'
+        >
           {t('projects.loadMore')}
           <span className='projects__load-more-span'>
             {filteredProjects.length} / {projects.length}
@@ -74,16 +101,25 @@ export default function ProjectsGallery({ projects, locale }) {
           {
             <p className='projects__filter-text'>
               {t('projects.filter')}{' '}
-              <span className={'projects__filter-text-span'}>{filter}</span>
+              <span className={'projects__filter-text-span'}>
+                {filter === 'All' ? t('projects.all') : filter}
+              </span>
             </p>
           }
 
           <button
+            type='button'
+            ref={filterButtonRef}
             className='projects__filter-button'
             onClick={handleShowFilter}
-            aria-label='Filter projects'
+            onKeyDown={handleFilterKeyDown}
+            aria-label={t('projects.filterButton')}
+            aria-expanded={showFilter ? 'true' : 'false'}
+            aria-controls='projects-filter-list'
           >
             <svg
+              aria-hidden='true'
+              focusable='false'
               width='45'
               height='45'
               viewBox='0 0 45 45'
@@ -100,20 +136,30 @@ export default function ProjectsGallery({ projects, locale }) {
         </div>
 
         {showFilter && (
-          <div className='projects__filter-list'>
+          <div
+            id='projects-filter-list'
+            className='projects__filter-list'
+            role='group'
+            aria-label={t('projects.filterList')}
+            onKeyDown={handleFilterKeyDown}
+          >
             <button
+              type='button'
               className='projects__filter-list-item'
               onClick={handleFilterClick}
               data-technology='All'
+              aria-pressed={filter === 'All' ? 'true' : 'false'}
             >
-              All
+              {t('projects.all')}
             </button>
             {uniqueTechnologies.map(technology => (
               <button
+                type='button'
                 key={technology}
                 data-technology={technology}
                 className='projects__filter-list-item'
                 onClick={handleFilterClick}
+                aria-pressed={filter === technology ? 'true' : 'false'}
               >
                 {technology}
               </button>
@@ -121,7 +167,7 @@ export default function ProjectsGallery({ projects, locale }) {
           </div>
         )}
       </header>
-      <div className='projects__gallery'>
+      <div className='projects__gallery' ref={galleryRef}>
         {sortAndFilterProjects(filteredProjects).map(project => (
           <ProjectsGalleryCard
             key={project.title}
@@ -137,12 +183,17 @@ export default function ProjectsGallery({ projects, locale }) {
             link_code={project.github}
             link_demo={project.deploy.demo}
             highlight={highlightedProjects.includes(project.title)}
+            currentLocale={locale}
           />
         ))}
       </div>
 
       {limit !== projects.length && (
-        <button className='projects__btn' onClick={handleLoadMore}>
+        <button
+          type='button'
+          className='projects__btn'
+          onClick={handleLoadMore}
+        >
           {t('projects.btn')}
         </button>
       )}

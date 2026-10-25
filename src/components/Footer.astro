@@ -5,16 +5,20 @@ import {
   IconTwitter,
   IconInstagram
 } from './icons/icons'
+import { useTranslations } from '../i18n/utils'
+
+const { currentLocale = 'es' } = Astro
+const t = useTranslations(currentLocale)
 ---
 
 <footer class='footer'>
-  <nav class='footer__nav'>
+  <nav class='footer__nav' aria-label={t('aria.socialNav')}>
     <a
       class='footer__item'
       href='https://github.com/Rodriiandino'
       target='_blank'
       rel='noopener noreferrer'
-      aria-label='Go to GitHub'
+      aria-label={`GitHub (${t('a11y.newTab')})`}
     >
       <IconGitHub />
     </a>
@@ -23,7 +27,7 @@ import {
       href='https://www.linkedin.com/in/rodrigoandino03/'
       target='_blank'
       rel='noopener noreferrer'
-      aria-label='Go to LinkedIn'
+      aria-label={`LinkedIn (${t('a11y.newTab')})`}
     >
       <IconLinkedIn />
     </a>
@@ -32,7 +36,7 @@ import {
       href='https://twitter.com/Rodriiandino1'
       target='_blank'
       rel='noopener noreferrer'
-      aria-label='Go to Twitter'
+      aria-label={`Twitter (${t('a11y.newTab')})`}
     >
       <IconTwitter />
     </a>
@@ -41,7 +45,7 @@ import {
       href='https://www.instagram.com/rodriiandino/'
       target='_blank'
       rel='noopener noreferrer'
-      aria-label='Go to Instagram'
+      aria-label={`Instagram (${t('a11y.newTab')})`}
     >
       <IconInstagram />
     </a>

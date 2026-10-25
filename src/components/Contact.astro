@@ -28,7 +28,7 @@ const t = useTranslations(currentLocale)
         </p>
       </div>
 
-      <nav class='info__contact'>
+      <nav class='info__contact' aria-label={t('aria.contactLinks')}>
         <a
           class='contact__link'
           href='mailto:andinorodrigo03@gmail.com'
@@ -41,12 +41,19 @@ const t = useTranslations(currentLocale)
           class='contact__link-btn'
           href='https://drive.google.com/drive/folders/1ubdQQywhXjspH7phjBvDsFDLFQEtBPiU?usp=sharing'
           target='_blank'
-          rel='noopener noreferrer'>{t('contact.btn')}</a
+          rel='noopener noreferrer'
+          >{t('contact.btn')}
+          <span class='sr-only'>({t('a11y.newTab')})</span></a
         >
       </nav>
     </div>
     <div class='contact__img'>
-      <Image src={contactImg} alt='contact-img' width={500} quality={95} />
+      <Image
+        src={contactImg}
+        alt={t('contact.imgAlt')}
+        width={500}
+        quality={95}
+      />
     </div>
   </article>
 </section>

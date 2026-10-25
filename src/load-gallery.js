@@ -1,11 +1,20 @@
 import PhotoSwipeLightbox from 'photoswipe/lightbox'
 import 'photoswipe/style.css'
+import { useTranslations } from './i18n/utils'
 
 function initGallery() {
+  // Localized titles/labels for the lightbox controls (PhotoSwipe defaults to English)
+  const t = useTranslations(document.documentElement.lang || 'es')
+
   const lightbox = new PhotoSwipeLightbox({
     gallery: '#my-gallery',
     children: 'a',
-    pswpModule: () => import('photoswipe')
+    pswpModule: () => import('photoswipe'),
+    closeTitle: t('gallery.close'),
+    zoomTitle: t('gallery.zoom'),
+    arrowPrevTitle: t('gallery.prev'),
+    arrowNextTitle: t('gallery.next'),
+    errorMsg: t('gallery.error')
   })
 
   lightbox.on('uiRegister', function () {
@@ -14,6 +23,7 @@ function initGallery() {
       order: 8,
       isButton: true,
       tagName: 'a',
+      title: t('gallery.download'),
 
       // SVG with outline
       html: {

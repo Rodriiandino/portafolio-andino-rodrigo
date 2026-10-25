@@ -1,4 +1,14 @@
 ---
+import {
+  OG_LOCALE,
+  SITE_URL,
+  getPageUrls,
+  homeSchema,
+  projectSchema,
+  resolvePage,
+  serializeJsonLd
+} from '../lib/site.js'
+
 interface Props {
   title: string
   description: string
@@ -10,76 +20,113 @@ const {
   title,
   description,
   canonical,
-  image = 'og-image.jpg'
+  image = '/og-image.jpg'
 } = Astro.props as Props
 
-const determineCanonicalURL = () => {
-  if (Astro.url.host.includes('localhost')) return 'http://localhost:4321'
-  return canonical || Astro.url.pathname
-}
+const page = resolvePage(Astro.url.pathname)
+const locale = page.locale
+const otherLocale = locale === 'es' ? 'en' : 'es'
+const urls = getPageUrls(page, Astro.url.pathname)
+const canonicalURL = canonical
+  ? new URL(canonical, SITE_URL).href
+  : urls.canonical
+const imageURL = new URL(image.startsWith('/') ? image : `/${image}`, SITE_URL)
+  .href
 
-const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
+const copy = {
+  es: {
+    imageAlt: 'Portfolio de Rodrigo Andino, Tech Lead y Full Stack Developer',
+    siteName: 'Rodrigo Andino | Tech Lead & Full Stack Developer',
+    keywords:
+      'Rodrigo Andino, Rodrigo Agustín Andino, Tech Lead, Líder Técnico, Full Stack Developer, desarrollador full stack, React, Next.js, TypeScript, Java, Spring Boot, Astro, NotChatbot, Argentina, portfolio'
+  },
+  en: {
+    imageAlt: 'Portfolio of Rodrigo Andino, Tech Lead and Full Stack Developer',
+    siteName: 'Rodrigo Andino | Tech Lead & Full Stack Developer',
+    keywords:
+      'Rodrigo Andino, Rodrigo Agustín Andino, Tech Lead, Full Stack Developer, React, Next.js, TypeScript, Java, Spring Boot, Astro, NotChatbot, Argentina, portfolio'
+  }
+}[locale]
+
+const jsonLd =
+  page.type === 'home'
+    ? homeSchema(locale, { title, description })
+    : page.type === 'project'
+      ? projectSchema(locale, page.index, { title, description })
+      : null
 ---
 
 <title>{title}</title>
-
-<meta charset='UTF-8' />
 <meta name='description' content={description} />
 <link rel='canonical' href={canonicalURL} />
-<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-<meta name='theme-color' content='#06283d' />
+{urls.alternates &&
+  Object.entries(urls.alternates).map(([lang, href]) => (
+    <link rel='alternate' hreflang={lang} href={href} />
+  ))}
+{urls.markdown && (
+  <link rel='alternate' type='text/markdown' href={urls.markdown} />
+)}
+<link
+  rel='alternate'
+  type='text/plain'
+  title='llms.txt'
+  href={`${SITE_URL}/llms.txt`}
+/>
 
 <meta
-  name='keywords'
-  content='desarrollador full stack, frontend developer, backend developer, HTML, CSS, JavaScript, React.js, TypeScript, Next.js, Astro, Java, Spring Boot, desarrollador web, portfolio, Argentina, desarrollo de software, aplicaciones web, programador web'
+  name='theme-color'
+  media='(prefers-color-scheme: light)'
+  content='#f1fcfd'
 />
 <meta
-  name='news_keywords'
-  content='desarrollo web, full stack developer, HTML, CSS, JavaScript, React.js, TypeScript, Java, Spring Boot, desarrollo de software, aplicaciones web'
+  name='theme-color'
+  media='(prefers-color-scheme: dark)'
+  content='#1f2937'
 />
 
+<meta name='keywords' content={copy.keywords} />
 <meta name='author' content='Rodrigo Andino' />
 <meta name='copyright' content='Rodrigo Andino' />
-<meta name='language' content={Astro.currentLocale || 'es'} />
-<meta name='generator' content={Astro.generator} />
-<meta name='rating' content='General' />
-
-<meta name='twitter:card' content='summary_large_image' />
-<meta name='twitter:creator' content='@Rodriiandino1' />
-<meta name='twitter:title' content={title} />
-<meta name='twitter:description' content={description} />
-<meta name='twitter:image' content={new URL(image, Astro.url)} />
-<meta
-  name='twitter:image:alt'
-  content='Portfolio de Rodrigo Andino - Desarrollador Full Stack'
-/>
-
-<meta property='og:image' content={new URL(image, Astro.url)} />
-<meta
-  property='og:image:alt'
-  content='Portfolio de Rodrigo Andino - Desarrollador Full Stack'
-/>
-<meta property='og:title' content={title} />
-<meta property='og:description' content={description} />
-<meta property='og:url' content={Astro.url} />
-<meta
-  property='og:site_name'
-  content='Portfolio Rodrigo Andino | Desarrollador Full Stack'
-/>
-<meta property='og:type' content='website' />
-<meta property='og:locale' content='es_AR' />
-
 <meta
   name='robots'
   content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
 />
-<meta name='googlebot' content='index, follow' />
-<meta name='bingbot' content='index, follow' />
+
+<meta name='twitter:card' content='summary_large_image' />
+<meta name='twitter:site' content='@Rodriiandino1' />
+<meta name='twitter:creator' content='@Rodriiandino1' />
+<meta name='twitter:title' content={title} />
+<meta name='twitter:description' content={description} />
+<meta name='twitter:image' content={imageURL} />
+<meta name='twitter:image:alt' content={copy.imageAlt} />
+
+<meta
+  property='og:type'
+  content={page.type === 'home' ? 'profile' : 'website'}
+/>
+<meta property='og:title' content={title} />
+<meta property='og:description' content={description} />
+<meta property='og:url' content={canonicalURL} />
+<meta property='og:site_name' content={copy.siteName} />
+<meta property='og:locale' content={OG_LOCALE[locale]} />
+<meta property='og:locale:alternate' content={OG_LOCALE[otherLocale]} />
+<meta property='og:image' content={imageURL} />
+<meta property='og:image:alt' content={copy.imageAlt} />
+{page.type === 'home' && (
+  <>
+    <meta property='profile:first_name' content='Rodrigo' />
+    <meta property='profile:last_name' content='Andino' />
+    <meta property='profile:username' content='Rodriiandino' />
+  </>
+)}
 
 <link rel='icon' type='image/png' href='/favicon-96x96.png' sizes='96x96' />
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 <link rel='shortcut icon' href='/favicon.ico' />
 <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
 <link rel='manifest' href='/site.webmanifest' />
-
 <link rel='sitemap' href='/sitemap-index.xml' />
+
+{jsonLd && (
+  <script type='application/ld+json' set:html={serializeJsonLd(jsonLd)} />
+)}

@@ -116,6 +116,12 @@
   text-decoration: underline;
 }
 
+/* The list background is --light-blue, the default ring color */
+.projects__filter-list button:focus-visible {
+  outline-color: var(--dark-background);
+  outline-offset: -3px;
+}
+
 .projects__filter-text {
   font-size: var(--step--1);
   color: var(--white);

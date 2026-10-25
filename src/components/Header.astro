@@ -16,6 +16,7 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
 ---
 
 <header class='header' id='header'>
+  <a href='#main-content' class='skip-link'>{t('a11y.skipToContent')}</a>
   <a
     href={`/${currentLocale === 'es' ? '' : 'en'}`}
     class='header__logo'
@@ -24,32 +25,22 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
     <IconLogo />
     <IconLogoLight />
   </a>
-  <nav class='header__nav'>
+  <nav class='header__nav' aria-label={t('aria.mainNav')}>
     <ul class='nav__lists'>
       <li class='list'>
-        <a
-          href={`/${currentLocale === 'es' ? '' : 'en'}`}
-          aria-label={t('aria.goToHome')}>{t('nav.home')}</a
-        >
+        <a href={`/${currentLocale === 'es' ? '' : 'en'}`}>{t('nav.home')}</a>
       </li>
       <li class='list'>
-        <a href='#experience' aria-label={t('aria.goToExperience')}
-          >{t('nav.experience')}</a
-        >
+        <a href='#experience'>{t('nav.experience')}</a>
       </li>
       <li class='list'>
-        <a href='#projects' aria-label={t('aria.goToProjects')}
-          >{t('nav.projects')}</a
-        >
+        <a href='#projects'>{t('nav.projects')}</a>
       </li>
       <li class='list'>
-        <a href='#skills' aria-label={t('aria.goToSkills')}>{t('nav.skills')}</a
-        >
+        <a href='#skills'>{t('nav.skills')}</a>
       </li>
       <li class='list'>
-        <a href='#contact' aria-label={t('aria.goToContact')}
-          >{t('nav.contact')}</a
-        >
+        <a href='#contact'>{t('nav.contact')}</a>
       </li>
     </ul>
   </nav>
@@ -57,14 +48,17 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
     <a
       href={`/${changeLang}`}
       class='utils__button'
+      hreflang={changeLang || 'es'}
       aria-label={t('aria.changeLang')}
     >
       <IconLanguage />
     </a>
     <button
+      type='button'
       class='utils__button'
       btn-switch-theme
-      aria-label={t('aria.switchTheme')}
+      aria-label={t('aria.darkMode')}
+      aria-pressed='false'
     >
       <IconMoon />
       <IconSun />
@@ -88,6 +82,13 @@ const changeLang = currentLocale === 'en' ? '' : 'en'
     animation: fadeOut linear both;
     animation-timeline: scroll();
     animation-range: 0 300px;
+  }
+
+  /* The scroll animation hides the header; keep it visible while a control
+     inside it has focus so the focused element is never obscured (2.4.11) */
+  .header:focus-within {
+    opacity: 1 !important;
+    top: 0 !important;
   }
 
   @keyframes fadeOut {

@@ -10,7 +10,20 @@ export default function skillsList() {
     const renderList = skills => {
       $list.innerHTML = ''
       skills.forEach(skill => {
-        $list.innerHTML += `<li class="icon__svg">${skill.icon} ${skill.name}</li>`
+        const icon = skill.icon.replace(
+          '<svg',
+          '<svg aria-hidden="true" focusable="false"'
+        )
+        $list.innerHTML += `<li class="icon__svg">${icon} ${skill.name}</li>`
+      })
+    }
+
+    // Toggle buttons: the selected category is exposed with aria-pressed
+    const setActive = activeBtn => {
+      $btns.forEach(btn => {
+        const isActive = btn === activeBtn
+        btn.classList.toggle('active', isActive)
+        btn.setAttribute('aria-pressed', String(isActive))
       })
     }
 
@@ -19,11 +32,7 @@ export default function skillsList() {
 
       updatedBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          const activeBtn = document.querySelector('.active')
-          if (activeBtn) {
-            activeBtn.classList.remove('active')
-          }
-          btn.classList.toggle('active')
+          setActive(btn)
 
           if (btn.id === 'all') {
             let allSkills = []
@@ -41,7 +50,7 @@ export default function skillsList() {
     const initializeList = () => {
       const frontEndBtn = document.querySelector('#frontEnd')
       if (frontEndBtn) {
-        frontEndBtn.classList.add('active')
+        setActive(frontEndBtn)
       }
       renderList(skillsData.frontEnd)
     }

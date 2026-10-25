@@ -5,6 +5,7 @@ import projects_es from '../../data/projects_es.json'
 import projects_en from '../../data/projects_en.json'
 import convertTitleToURL from '../utils/convert_title_to_url'
 import { IconCode, IconDemo } from '../../components/icons/icons'
+import { truncate } from '../../lib/site.js'
 
 const { title } = Astro.params
 const { currentLocale = 'es' } = Astro
@@ -42,15 +43,10 @@ function getImagePath(fileName: string | undefined) {
   return imageModule.default
 }
 
-const seoTitle =
-  currentLocale === 'es'
-    ? `${project.title} | ${project.technologies.slice(0, 3).join(', ')} | Portfolio de Rodrigo Andino`
-    : `${project.title} | ${project.technologies.slice(0, 3).join(', ')} | Rodrigo Andino's Portfolio`
+const seoTitle = `${project.title} | Rodrigo Andino`
 
-const seoDescription =
-  currentLocale === 'es'
-    ? `Proyecto: ${project.title}. ${project.description} Desarrollado con ${project.technologies.join(', ')}. Estado: ${project.status}. Ver código y demo del proyecto.`
-    : `Project: ${project.title}. ${project.description} Built with ${project.technologies.join(', ')}. Status: ${project.status}. View code and demo of the project.`
+// Meta description: the project's own summary, cut to ~155 chars
+const seoDescription = truncate(project.description, 155)
 ---
 
 <Layout
@@ -58,14 +54,15 @@ const seoDescription =
   description={seoDescription}
   image={project.images[0].src}
 >
-  <main class='project__page'>
+  <main class='project__page' id='main-content'>
     <div class='back-button-container'>
       <a
-        href='javascript:history.back()'
+        href={currentLocale === 'es' ? '/#projects' : '/en/#projects'}
         class='back-button'
-        title={currentLocale === 'es' ? 'Volver' : 'Go back'}
       >
         <svg
+          aria-hidden='true'
+          focusable='false'
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
           viewBox='0 0 24 24'
@@ -78,14 +75,21 @@ const seoDescription =
             stroke-linejoin='round'
             d='M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18'></path>
         </svg>
-        <span>{currentLocale === 'es' ? 'Volver' : 'Back'}</span>
+        <span class='back-button__text'>{t('project.back')}</span>
       </a>
     </div>
 
     <div class='project__buttons'>
       <div class='buttons__container'>
-        <button class='project__image-button' id='button-left'
+        <button
+          type='button'
+          class='project__image-button'
+          id='button-left'
+          aria-label={t('project.prevImage')}
+          aria-controls='my-gallery'
           ><svg
+            aria-hidden='true'
+            focusable='false'
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
             viewBox='0 0 24 24'
@@ -99,8 +103,15 @@ const seoDescription =
               d='M6.75 15.75 3 12m0 0l3.75-3.75M3 12h18'></path>
           </svg>
         </button>
-        <button class='project__image-button' id='button-right'
+        <button
+          type='button'
+          class='project__image-button'
+          id='button-right'
+          aria-label={t('project.nextImage')}
+          aria-controls='my-gallery'
           ><svg
+            aria-hidden='true'
+            focusable='false'
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
             viewBox='0 0 24 24'
@@ -115,6 +126,13 @@ const seoDescription =
           </svg>
         </button>
       </div>
+      <p
+        class='sr-only'
+        id='image-status'
+        role='status'
+        data-template={t('project.imageStatus')}
+      >
+      </p>
     </div>
     <div class='project__image' id='my-gallery'>
       {
@@ -142,8 +160,16 @@ const seoDescription =
       }
     </div>
     <div class='project__aside-container'>
-      <div class='aside__move-top'>
+      <button
+        type='button'
+        class='aside__move-top'
+        aria-label={t('project.toggleDetails')}
+        aria-expanded='false'
+        aria-controls='project-aside'
+      >
         <svg
+          aria-hidden='true'
+          focusable='false'
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
           viewBox='0 0 24 24'
@@ -156,8 +182,8 @@ const seoDescription =
             stroke-linejoin='round'
             d='M3.75 9h16.5m-16.5 6.75h16.5'></path>
         </svg>
-      </div>
-      <aside class='project__aside'>
+      </button>
+      <aside class='project__aside' id='project-aside'>
         <div>
           <h1 class='aside__title' id='title'>{project.title}</h1>
           <p class='aside__description'>{project.description}</p>
@@ -175,15 +201,15 @@ const seoDescription =
         <table class='aside__table'>
           <tbody class='aside__tbody'>
             <tr class='aside__tr'>
-              <th>{t('project.characteristics')}</th>
+              <th scope='row'>{t('project.characteristics')}</th>
               <td>{project.features}</td>
             </tr>
             <tr class='aside__tr'>
-              <th>{t('project.date')}</th>
+              <th scope='row'>{t('project.date')}</th>
               <td>{project.date}</td>
             </tr>
             <tr class='aside__tr'>
-              <th>{t('project.technologies')}</th>
+              <th scope='row'>{t('project.technologies')}</th>
               <td
                 >{
                   project.technologies.map((tech, i) =>
@@ -193,11 +219,11 @@ const seoDescription =
               >
             </tr>
             <tr class='aside__tr'>
-              <th>{t('project.state')}</th>
+              <th scope='row'>{t('project.state')}</th>
               <td>{project.status}</td>
             </tr>
             <tr class='aside__tr'>
-              <th>{t('project.deploy')}</th>
+              <th scope='row'>{t('project.deploy')}</th>
               <td>{project.deploy.page}</td>
             </tr>
           </tbody>
@@ -210,8 +236,7 @@ const seoDescription =
                 href={project.github}
                 target='_blank'
                 rel='noopener noreferrer'
-                aria-label={`${currentLocale === 'es' ? 'Ir a GitHub de' : 'Go to GitHub of'} ${project.title}`}
-                title={`${currentLocale === 'es' ? 'Ir a GitHub de' : 'Go to GitHub of'} ${project.title}`}
+                aria-label={`${t('aria.codeOf')} ${project.title} (${t('a11y.newTab')})`}
               >
                 <IconCode /> {t('link.code')}
               </a>
@@ -224,8 +249,7 @@ const seoDescription =
                 href={project.deploy.demo}
                 target='_blank'
                 rel='noopener noreferrer'
-                aria-label={`${currentLocale === 'es' ? 'Ir a la demo de' : 'Go to demo of'} ${project.title}`}
-                title={`${currentLocale === 'es' ? 'Ir a la demo de' : 'Go to demo of'} ${project.title}`}
+                aria-label={`${t('aria.demoOf')} ${project.title} (${t('a11y.newTab')})`}
               >
                 <IconDemo /> {t('link.demo')}
               </a>
@@ -244,7 +268,7 @@ const seoDescription =
       const $html = document.querySelector('html') as HTMLHtmlElement
       const $moveTop = document.querySelector(
         '.aside__move-top'
-      ) as HTMLDivElement
+      ) as HTMLButtonElement
       const $asideContainer = document.querySelector(
         '.project__aside-container'
       ) as HTMLDivElement
@@ -261,6 +285,9 @@ const seoDescription =
         '#button-right'
       ) as HTMLButtonElement
       const $title = document.querySelector('#title') as HTMLHeadingElement
+      const $imageStatus = document.querySelector(
+        '#image-status'
+      ) as HTMLParagraphElement | null
 
       if (
         !$html ||
@@ -318,6 +345,11 @@ const seoDescription =
         }
       }
 
+      // translate === 90 means the mobile details panel is open
+      const syncExpanded = () => {
+        $moveTop.setAttribute('aria-expanded', String(translate === 90))
+      }
+
       const handleMoveTopClick = () => {
         if (translate == 0) {
           updateProjectImg(false)
@@ -328,6 +360,7 @@ const seoDescription =
           $asideContainer.style.transform = `translateY(${translate}%)`
           translate = 0
         }
+        syncExpanded()
         adjustAsideHeight()
       }
 
@@ -337,7 +370,16 @@ const seoDescription =
           $asideContainer.style.transform = `translateY(${translate}%)`
           translate = 0
         }
+        syncExpanded()
         adjustAsideHeight()
+      }
+
+      // On mobile the collapsed panel sits off-screen: open it when keyboard
+      // focus moves into it so the focused link is not hidden (WCAG 2.4.11)
+      const handleAsideFocusIn = (event: FocusEvent) => {
+        if (!breakpoint.matches || translate === 90) return
+        if (event.target === $moveTop) return
+        handleMoveTopClick()
       }
 
       const handleBreakpointChange = (e: MediaQueryListEvent) => {
@@ -346,6 +388,7 @@ const seoDescription =
           $asideContainer.style.transform = `translateY(90%)`
           translate = 0
         }
+        syncExpanded()
         adjustAsideHeight()
       }
 
@@ -358,6 +401,7 @@ const seoDescription =
           $asideContainer.style.removeProperty('max-height')
           translate = 0
         }
+        syncExpanded()
         adjustAsideHeight()
       }
 
@@ -375,13 +419,8 @@ const seoDescription =
         $buttonsContainer.style.display = 'none'
       }
 
-      const handleLeftClick = () => {
-        if (currentImg === 0) {
-          currentImg = imgLength - 1
-        } else {
-          currentImg--
-        }
-
+      const showImage = (index: number) => {
+        currentImg = index
         const galleryItems = $projectImage.querySelectorAll('.gallery-item')
         galleryItems.forEach(item => {
           ;(item as HTMLElement).style.display = 'none'
@@ -392,31 +431,27 @@ const seoDescription =
         if (currentItem) {
           ;(currentItem as HTMLElement).style.display = ''
           currentItem.classList.add('active')
+        }
+
+        // Polite status so screen readers hear which image is now shown
+        if ($imageStatus?.dataset.template) {
+          $imageStatus.textContent = $imageStatus.dataset.template
+            .replace('{current}', String(currentImg + 1))
+            .replace('{total}', String(imgLength))
         }
       }
 
+      const handleLeftClick = () => {
+        showImage(currentImg === 0 ? imgLength - 1 : currentImg - 1)
+      }
+
       const handleRightClick = () => {
-        if (currentImg === imgLength - 1) {
-          currentImg = 0
-        } else {
-          currentImg++
-        }
-
-        const galleryItems = $projectImage.querySelectorAll('.gallery-item')
-        galleryItems.forEach(item => {
-          ;(item as HTMLElement).style.display = 'none'
-          item.classList.remove('active')
-        })
-
-        const currentItem = galleryItems[currentImg]
-        if (currentItem) {
-          ;(currentItem as HTMLElement).style.display = ''
-          currentItem.classList.add('active')
-        }
+        showImage(currentImg === imgLength - 1 ? 0 : currentImg + 1)
       }
 
       const cleanup = () => {
         $moveTop.removeEventListener('click', handleMoveTopClick)
+        $asideContainer.removeEventListener('focusin', handleAsideFocusIn)
         $projectImage.removeEventListener('click', handleProjectImageClick)
         breakpoint.removeEventListener('change', handleBreakpointChange)
         window.removeEventListener('resize', handleResize)
@@ -426,6 +461,7 @@ const seoDescription =
 
       cleanup()
       $moveTop.addEventListener('click', handleMoveTopClick)
+      $asideContainer.addEventListener('focusin', handleAsideFocusIn)
       $projectImage.addEventListener('click', handleProjectImageClick)
       breakpoint.addEventListener('change', handleBreakpointChange)
       window.addEventListener('resize', handleResize)
@@ -615,11 +651,26 @@ const seoDescription =
     .aside__move-top {
       z-index: 100;
       display: none;
+      border: none;
+      padding: 0;
+      font: inherit;
     }
 
     .aside__move-top svg {
       color: var(--light-background);
       width: 1rem;
+    }
+
+    /* The bar is always --sky-blue; in the dark theme --light-background is
+       almost white on it (1.1:1), so use the dark navy there (WCAG 1.4.11) */
+    [data-theme='dark'] .aside__move-top svg {
+      color: var(--dark-blue);
+    }
+
+    /* Theme-independent ring: the bar background never changes */
+    .aside__move-top:focus-visible {
+      outline: 3px solid #06283d;
+      outline-offset: -3px;
     }
 
     .aside__title {
@@ -803,8 +854,15 @@ const seoDescription =
     }
 
     @media (max-width: 480px) {
-      .back-button span {
-        display: none;
+      /* Visually hidden, still the link's accessible name */
+      .back-button__text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
       }
 
       .back-button {

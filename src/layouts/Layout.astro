@@ -21,6 +21,8 @@ const { title, description, canonical, image } = Astro.props
 
 <html lang={currentLocale} data-theme='light'>
   <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <script is:inline>
       ;(function () {
         const storedTheme = localStorage.getItem('darkMode-portafolio-andino')
@@ -147,6 +149,9 @@ const { title, description, canonical, image } = Astro.props
         --black-transparent-02: #f3f4f62a;
         --black-transparent-08: #f3f4f6f5;
         --black-transparent-09: #f3f4f6f0;
+        /* --grey (#8199b4) only reaches 2.8:1 on the light background; this
+           shade keeps the same hue at 5.5:1 (WCAG 1.4.3) */
+        --grey: #4f6782;
 
         --light-blue: #06283d;
         --dark-blue: #a6d1e6;
@@ -279,6 +284,71 @@ const { title, description, canonical, image } = Astro.props
       }
       ::-webkit-scrollbar-thumb:hover {
         background: var(--sky-blue);
+      }
+
+      /* Accessibility */
+      :focus-visible {
+        /* --light-blue is inverted per theme, so it contrasts with the page
+           background in both (>= 9:1) */
+        outline: 3px solid var(--light-blue);
+        outline-offset: 3px;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
+        padding: 0.75rem 1.25rem;
+        background-color: var(--black);
+        color: var(--white);
+        border: 2px solid var(--light-blue);
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        text-decoration: none;
+        transform: translateY(-200%);
+      }
+
+      .skip-link:focus {
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        /* Scroll-linked header/nav animations follow the user's own scrolling
+           and are what shows or hides them, so they keep their timing */
+        .header,
+        .nav {
+          animation-duration: auto !important;
+        }
+
+        /* Cards fly in on scroll; show them in place instead */
+        .projects__gallery-item {
+          animation: none !important;
+        }
       }
     </style>
   </body>

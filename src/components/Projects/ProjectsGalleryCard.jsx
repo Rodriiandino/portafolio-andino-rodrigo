@@ -46,10 +46,12 @@ export default function ProjectsGalleryCard({
           decoding={'async'}
         />
         <div class='gallery__item-info'>
-          <h4 class='item__title'>
-            <a href={title_url} aria-label={title} title={title}>
+          <h3 class='item__title'>
+            <a href={title_url} title={title}>
               {title}
               <svg
+                aria-hidden='true'
+                focusable='false'
                 class='item__title-icon'
                 viewBox='0 0 18 18'
                 fill='none'
@@ -72,7 +74,7 @@ export default function ProjectsGalleryCard({
                 ></path>
               </svg>
             </a>
-          </h4>
+          </h3>
           <p class='item__description'>{description}</p>
           <footer class='item__footer'>
             <div class='footer__links'>
@@ -81,8 +83,7 @@ export default function ProjectsGalleryCard({
                   href={link_code}
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label={`${currentLocale === 'es' ? 'Ir a GitHub de' : 'Go to GitHub of'} ${title}`}
-                  title={`${currentLocale === 'es' ? 'Ir a GitHub de' : 'Go to GitHub of'} ${title}`}
+                  aria-label={`${t('aria.codeOf')} ${title} (${t('a11y.newTab')})`}
                 >
                   <IconCode /> {t('link.code')}
                 </a>
@@ -92,8 +93,7 @@ export default function ProjectsGalleryCard({
                   href={link_demo}
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label={`${currentLocale === 'es' ? 'Ir a la demo de' : 'Go to demo of'} ${title}`}
-                  title={`${currentLocale === 'es' ? 'Ir a la demo de' : 'Go to demo of'} ${title}`}
+                  aria-label={`${t('aria.demoOf')} ${title} (${t('a11y.newTab')})`}
                 >
                   <IconDemo /> {t('link.demo')}
                 </a>
