@@ -53,11 +53,15 @@ Reglas:
 - `src` de las imágenes idénticos en es y en; los `alt` sí se traducen.
 - `what_i_learned`: 4 a 10 ítems, en tono de logro técnico (qué y con qué), igual que los existentes. Proyectos de clientes reales: sin datos sensibles.
 
-## 4. Destacar un proyecto (opcional)
+## 4. Archivar un proyecto viejo o de práctica (opcional)
+
+Agregá `"archived": true` en el mismo índice de es y en. Queda oculto por defecto y solo se ve con el interruptor "Incluir proyectos de práctica", con la etiqueta "Práctica". Es preferible a borrarlo, porque no rompe su URL.
+
+## 5. Destacar un proyecto (opcional)
 
 `src/components/Projects/ProjectsGallery.jsx` → `highlightedProjects` contiene **títulos exactos** (los de es y los de en, si difieren). Si renombrás un proyecto destacado, actualizalo ahí.
 
-## 5. Verificar
+## 6. Verificar
 
 ```bash
 npm run check:content   # paridad, slugs, imágenes en ambos lugares
